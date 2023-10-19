@@ -67,9 +67,8 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         jPasswordField2 = new javax.swing.JPasswordField();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
+        setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Datos Personales del docente:");
@@ -97,41 +96,46 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         jLabel6.setText("Ingrese los cursos en los que se encuentra calificado:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
-        jCheckBox1.setText("jCheckBox1");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
+        jCheckBox1.setText("Ciencia y tecnologia");
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, -1, -1));
 
-        jCheckBox2.setText("jCheckBox1");
+        jCheckBox2.setText("Matematicas");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
-        jCheckBox3.setText("jCheckBox1");
+        jCheckBox3.setText("Personal Social");
         getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
-        jCheckBox4.setText("jCheckBox1");
+        jCheckBox4.setText("Arte y cultura");
         getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
-        jCheckBox5.setText("jCheckBox1");
+        jCheckBox5.setText("Comunicación");
         getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
-        jCheckBox6.setText("jCheckBox1");
+        jCheckBox6.setText("Ciencias Sociales");
         getContentPane().add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
 
-        jCheckBox7.setText("jCheckBox1");
+        jCheckBox7.setText("Educa.Fisica");
         getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
 
-        jCheckBox8.setText("jCheckBox1");
-        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
+        jCheckBox8.setText("Ingles");
+        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
-        jCheckBox9.setText("jCheckBox1");
-        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, -1, -1));
+        jCheckBox9.setText("Religion");
+        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
 
-        jCheckBox10.setText("jCheckBox1");
-        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
+        jCheckBox10.setText("Computación");
+        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, -1, -1));
 
-        jCheckBox11.setText("jCheckBox1");
-        getContentPane().add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
+        jCheckBox11.setText("Desarrollo personal ciudadanía y cívica");
+        getContentPane().add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
-        jCheckBox12.setText("jCheckBox1");
-        getContentPane().add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
+        jCheckBox12.setText("Educación para el trabajo");
+        getContentPane().add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
         jLabel7.setText("Ingrese 5 preguntas para la recuperación de su contraseña en caso de un olvido");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
@@ -180,6 +184,10 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

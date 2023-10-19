@@ -57,9 +57,8 @@ public class asignar_tutor_directivo_1 extends javax.swing.JInternalFrame {
         btn_AsignarTutor_crear = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
+        setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 255));

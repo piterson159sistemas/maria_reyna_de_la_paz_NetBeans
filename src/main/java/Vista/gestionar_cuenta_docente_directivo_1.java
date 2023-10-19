@@ -54,9 +54,9 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
         jButton2 = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tbl_AsignarArea_registro.setModel(new javax.swing.table.DefaultTableModel(

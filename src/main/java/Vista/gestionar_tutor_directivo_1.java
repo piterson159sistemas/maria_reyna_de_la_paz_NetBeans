@@ -34,9 +34,8 @@ public class gestionar_tutor_directivo_1 extends javax.swing.JInternalFrame {
         tbl_AsignarTutor_registro_1 = new javax.swing.JTable();
 
         setClosable(true);
-        setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
+        setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_GestionarTutor_grado_1.addActionListener(new java.awt.event.ActionListener() {
