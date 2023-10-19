@@ -1,14 +1,11 @@
 package Modelo;
 
 public class Alumno extends Persona{
-
-    public Alumno(String Nombre, String ApellidoP, String ApellidoM, 
-                   String TipoDocumento, int NumDocumento) {
-        
-        super(Nombre, ApellidoP, ApellidoM, TipoDocumento, NumDocumento);
+    
+    
+    public Alumno(String TipoDocumento, int NumDocumento, String Nombre, String ApellidoP, String ApellidoM) {
+        super(TipoDocumento, NumDocumento, Nombre, ApellidoP, ApellidoM);
     }
-
-
 
     public void RegistrarAlumno(){}
     public void AsignarGrado(){}

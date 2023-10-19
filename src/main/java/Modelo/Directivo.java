@@ -1,13 +1,18 @@
 
 package Modelo;
 
-public class Directivo {
+public class Directivo implements Gestionable{
+
+    public Directivo() {
+    }
     
+ 
+public void RegistrarDirectivo(){}
+
+    @Override
+    public void gestionarContraDocente() {
+        
+    }
     
-public void RegustrarDirectivo(){}
-public void CambiarContraseña(){}
-public void CrearCodigo(){}
-public void Actualizar(){}
-public void GestionarContrDocente(){}
         
 }
