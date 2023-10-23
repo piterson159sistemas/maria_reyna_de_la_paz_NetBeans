@@ -1,32 +1,25 @@
 package Conexion;
 
+// librerias para el SQL
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
+/**
+ *  
+ * @author grupo4
+ */
+public class Conexion {
 
-public class Conexion implements paramsConexion{
-    Connection conexion=null;
-    Statement st;
-    PreparedStatement ps;
-    ResultSet rs;
-    ResultSetMetaData mdata;
-    
-   
-    public Connection setConexion(){
-        try{
-            Class.forName(driver);
-            conexion = DriverManager.getConnection(ruta,user,pass);
-        }catch(ClassNotFoundException | SQLException e){
-            JOptionPane.showMessageDialog(null, "Error:"
-                    + " Revisar clase paramsConexion "+e.getMessage());
+    //conexion local
+    public static Connection conectar() {
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/colegio", "root", "12345");
+            return cn;
+        } catch (SQLException e) {
+            System.out.println("Error en la conexion local " + e);
         }
-        return conexion;
+        return null;
     }
-    
 }
+
