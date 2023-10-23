@@ -1,9 +1,6 @@
 package DAO;
 
-import DAO.Conexion;
 import Modelo.Usuario;
-import Vista.MenuDirec;
-import Vista.MenuDocente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

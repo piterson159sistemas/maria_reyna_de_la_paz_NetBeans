@@ -40,10 +40,10 @@ public class MenuDirec extends javax.swing.JFrame {
         jMReg = new javax.swing.JMenu();
         jMINotas = new javax.swing.JMenuItem();
         jMIAsistencia = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jmiListaAlumnos = new javax.swing.JMenuItem();
         jMAsig = new javax.swing.JMenu();
         jMIArea = new javax.swing.JMenuItem();
-        jMITutorA = new javax.swing.JMenuItem();
+        jmiTutoria = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -125,15 +125,10 @@ public class MenuDirec extends javax.swing.JFrame {
         });
         jMReg.add(jMIAsistencia);
 
-        jMenuItem2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenuItem2.setText("Lista ");
-        jMenuItem2.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMReg.add(jMenuItem2);
+        jmiListaAlumnos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jmiListaAlumnos.setText("Lista ");
+        jmiListaAlumnos.setPreferredSize(new java.awt.Dimension(180, 30));
+        jMReg.add(jmiListaAlumnos);
 
         jMenuBar1.add(jMReg);
 
@@ -152,15 +147,10 @@ public class MenuDirec extends javax.swing.JFrame {
         });
         jMAsig.add(jMIArea);
 
-        jMITutorA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMITutorA.setText("Tutor");
-        jMITutorA.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMITutorA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMITutorAActionPerformed(evt);
-            }
-        });
-        jMAsig.add(jMITutorA);
+        jmiTutoria.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jmiTutoria.setText("Tutor");
+        jmiTutoria.setPreferredSize(new java.awt.Dimension(180, 30));
+        jMAsig.add(jmiTutoria);
 
         jMenuBar1.add(jMAsig);
 
@@ -173,23 +163,11 @@ public class MenuDirec extends javax.swing.JFrame {
     Cerrar();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jMITutorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITutorAActionPerformed
-        asignar_tutor_directivo_1 AsignarTutor = new asignar_tutor_directivo_1();
-        Panel.add(AsignarTutor);
-        AsignarTutor.setVisible(true);
-    }//GEN-LAST:event_jMITutorAActionPerformed
-
     private void jMIAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAreaActionPerformed
         asignar_area_directivo_1 AsignarArea= new asignar_area_directivo_1();
         Panel.add(AsignarArea);
         AsignarArea.setVisible(true);
     }//GEN-LAST:event_jMIAreaActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        lista_estudiantes_directivo_1 LEstudiantes = new lista_estudiantes_directivo_1();
-        Panel.add(LEstudiantes);
-        LEstudiantes.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMIAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAsistenciaActionPerformed
         //REGISTRO ASSITENCIA
@@ -225,18 +203,18 @@ public class MenuDirec extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane Panel;
-    private javax.swing.JMenu jMAsig;
+    public javax.swing.JMenu jMAsig;
     private javax.swing.JMenu jMCCD;
     private javax.swing.JMenuItem jMIATutor;
     private javax.swing.JMenuItem jMIArea;
     private javax.swing.JMenuItem jMIAsistencia;
     private javax.swing.JMenuItem jMIDocente;
     private javax.swing.JMenuItem jMINotas;
-    private javax.swing.JMenuItem jMITutorA;
     private javax.swing.JMenu jMReg;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jmAC;
+    public javax.swing.JMenuItem jmiListaAlumnos;
+    public javax.swing.JMenuItem jmiTutoria;
     // End of variables declaration//GEN-END:variables
 }

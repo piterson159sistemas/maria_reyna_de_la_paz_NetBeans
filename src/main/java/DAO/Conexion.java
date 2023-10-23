@@ -1,7 +1,7 @@
 package DAO;
 
 // librerias para el SQL
-import com.mysql.cj.protocol.Resultset;
+import java.sql.ResultSet;;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,10 +13,10 @@ import java.sql.Statement;
 public class Conexion {
     
     //atributos para manejo de comandos sql
-    private Statement st;
-    private PreparedStatement pst;
-    private Resultset rs;
-    private ResultSetMetaData rsmd;
+    Statement st;
+    PreparedStatement pst;
+    ResultSet rs;
+    ResultSetMetaData rsmd;
     
     //atributos de conexion
     String ip="localhost";

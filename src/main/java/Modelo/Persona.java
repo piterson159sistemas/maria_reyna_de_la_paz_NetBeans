@@ -1,7 +1,9 @@
 
 package Modelo;
 
-public class Persona {
+import java.util.ArrayList;
+
+public abstract class Persona {
     private String TipoDocumento;
     private int NumDocumento;
     private String Nombre;
@@ -18,6 +20,14 @@ public class Persona {
         this.Nombre = Nombre;
         this.ApellidoP = ApellidoP;
         this.ApellidoM = ApellidoM;
+    }
+
+    public Persona(ArrayList<String>data) {
+        this.TipoDocumento = data.get(0);
+        this.NumDocumento = Integer.parseInt(data.get(1));
+        this.Nombre = data.get(2);;
+        this.ApellidoP = data.get(3);
+        this.ApellidoM = data.get(4);
     }
 
     public String getTipoDocumento() {

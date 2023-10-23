@@ -1,31 +1,53 @@
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Registrar_GestionAprendi.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Area.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\MenuDocente.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Docente.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Ver_Asistencias.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Notas.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\gestionar_cuenta_docente_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Directivo.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\MenuDirec.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Grado.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Registrar_Conducta.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Conexion\Conexion.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Ver_notas.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\recopilar_codigo_cambioContraseña.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\crear_cuenta_docentes_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\asignar_tutor_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\recuperar_contraseña_preguntas.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Asistencia.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Alumno.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\login.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\VCCambios.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\entregar_contraseña_nueva.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Persona.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Registrar_TIC.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\gestionar_tutor_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Registrar_Asistencia.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\Modelos\Usuario.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\lista_estudiantes_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\Registrar_Notas.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\asignar_area_directivo_1.java
-D:\Users\Alejo\Downloads\actu\maria_reyna_de_la_paz\src\main\java\interfaces\entregar_cuenta_docente_EDITAR.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\crudAlumno.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\GradoAlum.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\gestionar_cuenta_docente_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\QueryLogin.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Grado.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\Conexion.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Usuario.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\entregar_contraseña_nueva.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Alumno.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\entregar_cuenta_docente_EDITAR.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Calificacion.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CAsignarTutoria.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\recuperar_contraseña_preguntas.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Main\Main.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Directivo.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Modificable.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Estado.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CLogin.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Competencia.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Area.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Docente.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\gestionar_tutor_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\recopilar_codigo_cambioContraseña.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Ver_notas.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Rol.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Evaluacion.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\crear_cuenta_docentes_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Persona.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Asistencia.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CMenuDocente.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CMenuDirec.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Gestionable.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CListadoAlumDirec.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Tutoria.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Horario.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Pago.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_Notas.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Periodo.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\AreaDocencia.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Ver_Asistencias.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\asignar_tutor_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\login.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_Conducta.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_GestionAprendi.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Nivel.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\lista_estudiantes_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\MenuDocente.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\MenuDirec.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\CompTransversal.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\asignar_area_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_TIC.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_Asistencia.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Registrable.java

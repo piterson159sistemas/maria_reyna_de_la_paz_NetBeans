@@ -28,9 +28,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         txtNumDoc = new javax.swing.JTextField();
         cbxTipoDoc = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnInsertar = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -110,30 +112,40 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
         cbxTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
-        cbxTipoDoc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Carnet de extrangería", "Pasaporte" }));
+        cbxTipoDoc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Carnet de extranjeria", "Pasaporte" }));
         cbxTipoDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbxTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 150, 40));
 
-        jButton1.setBackground(new java.awt.Color(133, 164, 199));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\update-student.png")); // NOI18N
-        jButton1.setText("Actualizar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 130, 40));
+        btnBuscar.setBackground(new java.awt.Color(133, 164, 199));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\search-student.png")); // NOI18N
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 40, 30));
 
-        jButton2.setBackground(new java.awt.Color(133, 164, 199));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\add-student.png")); // NOI18N
-        jButton2.setText(" Agregar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 120, 36));
+        btnInsertar.setBackground(new java.awt.Color(133, 164, 199));
+        btnInsertar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnInsertar.setForeground(new java.awt.Color(0, 0, 0));
+        btnInsertar.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\add-student.png")); // NOI18N
+        btnInsertar.setText(" Agregar");
+        jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 120, 36));
 
-        jButton3.setBackground(new java.awt.Color(133, 164, 199));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\delete-student.png")); // NOI18N
-        jButton3.setText("Eliminar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 116, 40));
+        btnBorrar.setBackground(new java.awt.Color(133, 164, 199));
+        btnBorrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBorrar.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\delete-student.png")); // NOI18N
+        btnBorrar.setText("Eliminar");
+        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 116, 40));
+
+        btnActualizar.setBackground(new java.awt.Color(133, 164, 199));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(0, 0, 0));
+        btnActualizar.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\resources\\img\\update-student.png")); // NOI18N
+        btnActualizar.setText("Actualizar");
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 130, 40));
+
+        txtSearch.setBackground(new java.awt.Color(204, 204, 204));
+        txtSearch.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\java\\img\\fondooooooo.jpg")); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 320));
@@ -164,10 +176,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JList<String> List;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnBorrar;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnInsertar;
     public javax.swing.JComboBox<String> cbxTipoDoc;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
     public javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -187,5 +200,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtApellidoP;
     public javax.swing.JTextField txtNombres;
     public javax.swing.JTextField txtNumDoc;
+    public javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
