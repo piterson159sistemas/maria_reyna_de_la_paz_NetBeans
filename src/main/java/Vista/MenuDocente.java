@@ -26,17 +26,6 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
      }
     public MenuDocente() {
         initComponents();
-               this.setTitle("MenuDocente");
-               this.setLocationRelativeTo(null);//PARA CENTRAR EL FORMULARIO
-               this.setExtendedState(this.MAXIMIZED_BOTH);
-               
-               this.setLayout(null);//Control detallado
-        jDesktopPane_menuD= new JDesktopPane();//iniciamos 
-        
-        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-        this.jDesktopPane_menuD.setBounds(0,0,ancho,(alto-100));//coordenadas de las interfaces que saldran en el espacio 
-        this.add(jDesktopPane_menuD);
     }
 
     /**
@@ -74,7 +63,7 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 470));
+        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 590));
 
         jMenu1.setText("Registrar");
         jMenu1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -158,19 +147,19 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Ver_notas vernotas = new Ver_notas();
-         jDesktopPane_menuD.add(vernotas);
+         Panel.add(vernotas);
                 vernotas.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
        Registrar_GestionAprendi RGestionA = new Registrar_GestionAprendi();
-       jDesktopPane_menuD.add(RGestionA);
+       Panel.add(RGestionA);
                 RGestionA.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
                 Registrar_Notas RegiNota = new Registrar_Notas();
-                jDesktopPane_menuD.add(RegiNota);
+                Panel.add(RegiNota);
                 RegiNota.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -184,62 +173,27 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         Registrar_Asistencia RegiAsis = new Registrar_Asistencia();
-        jDesktopPane_menuD.add(RegiAsis);
+        Panel.add(RegiAsis);
                 RegiAsis.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Ver_Asistencias verAsistencias = new Ver_Asistencias();
-          jDesktopPane_menuD.add(verAsistencias);
+          Panel.add(verAsistencias);
                 verAsistencias.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
        Registrar_TIC rTIC= new Registrar_TIC();
-       jDesktopPane_menuD.add(rTIC);
+       Panel.add(rTIC);
                 rTIC.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         Registrar_Conducta RConducta = new Registrar_Conducta();
-          jDesktopPane_menuD.add(RConducta);
+          Panel.add(RConducta);
                 RConducta.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuDocente().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane Panel;

@@ -4,6 +4,7 @@ package Vista;
 import static Vista.MenuDocente.jDesktopPane_menuD;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class MenuDirec extends javax.swing.JFrame {
@@ -24,21 +25,6 @@ public class MenuDirec extends javax.swing.JFrame {
     public MenuDirec() {
         initComponents();
         
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);//PARA QUE NO PUEDA CERRAR LA VENTANA MENU
-               
-        this.setSize(new Dimension(619, 700));//TAMANO DEL FORMULARIO SUS DIMENSIONES
-        this.setExtendedState(this.MAXIMIZED_BOTH);//ES PARA QUE SE ADAPTE ENTODA LA PANTALLA
-        this.setLocationRelativeTo(null);//PARA CENTRAR EL FORMULARIO
-        this.setTitle("MenuDirectivo");
-        
-        this.setLayout(null);//Control detallado
-        jDesktopPane_menu= new JDesktopPane();//iniciamos 
-        
-        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-        this.jDesktopPane_menu.setBounds(0,0,ancho,(alto-100));//coordenadas de las interfaces que saldran en el espacio 
-        this.add(jDesktopPane_menu);
-
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -67,7 +53,7 @@ public class MenuDirec extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 530));
+        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 620));
 
         jmAC.setText("Administrar cuentas");
         jmAC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -183,99 +169,59 @@ public class MenuDirec extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMIAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAreaActionPerformed
-       asignar_area_directivo_1 AsignarArea= new asignar_area_directivo_1();
-            jDesktopPane_menu.add(AsignarArea);
-            AsignarArea.setVisible(true);
-    }//GEN-LAST:event_jMIAreaActionPerformed
-
-    private void jMIATutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIATutorActionPerformed
-        gestionar_tutor_directivo_1 gesTutor = new gestionar_tutor_directivo_1();//iniciar interfaz
-        jDesktopPane_menu.add(gesTutor);//Poner dentro del espacio dado
-       gesTutor.setVisible(true);//para que la interfaz sea visible
-        
-    }//GEN-LAST:event_jMIATutorActionPerformed
-
-    private void jMIDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDocenteActionPerformed
-            gestionar_cuenta_docente_directivo_1 GesDoce = new gestionar_cuenta_docente_directivo_1();
-            jDesktopPane_menu.add(GesDoce);
-            GesDoce.setVisible(true);
-
-
-            
-    }//GEN-LAST:event_jMIDocenteActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        crear_cuenta_docentes_directivo_1 CcuentDocente = new crear_cuenta_docentes_directivo_1();
-        jDesktopPane_menu.add(CcuentDocente);
-        CcuentDocente.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       lista_estudiantes_directivo_1 LEstudiantes = new lista_estudiantes_directivo_1();
-        jDesktopPane_menu.add(LEstudiantes);
-        LEstudiantes.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMITutorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITutorAActionPerformed
-        asignar_tutor_directivo_1 AsignarTutor = new asignar_tutor_directivo_1();
-        jDesktopPane_menu.add(AsignarTutor);
-        AsignarTutor.setVisible(true);
-    }//GEN-LAST:event_jMITutorAActionPerformed
-
-    private void jMINotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINotasActionPerformed
-      ///REGISTRO NOTAS
-      Registrar_Notas RegiNota = new Registrar_Notas();
-                jDesktopPane_menu.add(RegiNota);
-                RegiNota.setVisible(true);
-    }//GEN-LAST:event_jMINotasActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
     Cerrar();
     }//GEN-LAST:event_formWindowClosing
 
+    private void jMITutorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITutorAActionPerformed
+        asignar_tutor_directivo_1 AsignarTutor = new asignar_tutor_directivo_1();
+        Panel.add(AsignarTutor);
+        AsignarTutor.setVisible(true);
+    }//GEN-LAST:event_jMITutorAActionPerformed
+
+    private void jMIAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAreaActionPerformed
+        asignar_area_directivo_1 AsignarArea= new asignar_area_directivo_1();
+        Panel.add(AsignarArea);
+        AsignarArea.setVisible(true);
+    }//GEN-LAST:event_jMIAreaActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        lista_estudiantes_directivo_1 LEstudiantes = new lista_estudiantes_directivo_1();
+        Panel.add(LEstudiantes);
+        LEstudiantes.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     private void jMIAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAsistenciaActionPerformed
         //REGISTRO ASSITENCIA
-               Registrar_Asistencia RegiAsis = new Registrar_Asistencia();
-        jDesktopPane_menu.add(RegiAsis);
-                RegiAsis.setVisible(true);
-                
+        Registrar_Asistencia RegiAsis = new Registrar_Asistencia();
+        Panel.add(RegiAsis);
+        RegiAsis.setVisible(true);
     }//GEN-LAST:event_jMIAsistenciaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuDirec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuDirec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuDirec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuDirec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jMINotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINotasActionPerformed
+        ///REGISTRO NOTAS
+        Registrar_Notas RegiNota = new Registrar_Notas();
+        Panel.add(RegiNota);
+        RegiNota.setVisible(true);
+    }//GEN-LAST:event_jMINotasActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuDirec().setVisible(true);
-            }
-        });
-    }
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        crear_cuenta_docentes_directivo_1 CcuentDocente = new crear_cuenta_docentes_directivo_1();
+        Panel.add(CcuentDocente);
+        CcuentDocente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMIATutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIATutorActionPerformed
+        gestionar_tutor_directivo_1 gesTutor = new gestionar_tutor_directivo_1();//iniciar interfaz
+        Panel.add(gesTutor);//Poner dentro del espacio dado
+        gesTutor.setVisible(true);//para que la interfaz sea visible
+    }//GEN-LAST:event_jMIATutorActionPerformed
+
+    private void jMIDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDocenteActionPerformed
+        gestionar_cuenta_docente_directivo_1 GesDoce = new gestionar_cuenta_docente_directivo_1();
+        Panel.add(GesDoce);
+        GesDoce.setVisible(true);
+    }//GEN-LAST:event_jMIDocenteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane Panel;
