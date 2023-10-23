@@ -11,6 +11,6 @@ public class CMenuDocente {
         menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
         menu.setDefaultCloseOperation(menu.EXIT_ON_CLOSE);
         menu.setVisible(true);
-        menu.setTitle("Menu de Gestión Directivo");
+        menu.setTitle("Menu de Gestión Docente");
     }
 }
