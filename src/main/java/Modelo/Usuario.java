@@ -1,6 +1,6 @@
 
 package Modelo;
-    
+
 
 public class Usuario extends Persona implements Modificable, Registrable{
     protected String codigo;
@@ -67,4 +67,18 @@ public class Usuario extends Persona implements Modificable, Registrable{
 
     }
 
+    
+    public String ValidarTipoUsuario(String cod){
+        
+        //boolean usuarioValido = codigo.equals(userData[0]) && clave.equals(userData[1]);
+        //String tipoUsuario;
+            if (cod.startsWith("D") ) {return "DIRECTOR"; } 
+            else {return "PROFESOR"; } 
+     
+        
+ 
+    } 
+    
 }
+    
+
