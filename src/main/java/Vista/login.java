@@ -4,20 +4,21 @@
  */
 package Vista;
 
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
-/**
- *
- * @author JESSY
- */
+
+import Controlador.Consultas;
+import javax.swing.JOptionPane;
+
+
 public class login extends javax.swing.JFrame {
 
     public login() {
         initComponents();
+        this.setTitle("Login");
+        this.setLocationRelativeTo(null);
+txtCod.setBackground(new java.awt.Color(0,0,0,1));
+txtClave.setBackground(new java.awt.Color(0,0,0,1));
+
 
     }
 
@@ -32,44 +33,29 @@ public class login extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         btnCambiarClave = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btnIngresarDire = new javax.swing.JButton();
         txtClave = new javax.swing.JPasswordField();
         txtCod = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        btnIngresarProfe = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
+        btnCambiarClave.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCambiarClave.setText("Cambiar contraseña");
+        btnCambiarClave.setBorder(null);
         btnCambiarClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCambiarClaveActionPerformed(evt);
             }
         });
         jPanel2.add(btnCambiarClave);
-        btnCambiarClave.setBounds(130, 400, 160, 50);
+        btnCambiarClave.setBounds(60, 700, 310, 60);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("LOGIN");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(140, 30, 148, 64);
-
-        btnIngresarDire.setText("Ingresar Directivo");
-        btnIngresarDire.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarDireActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnIngresarDire);
-        btnIngresarDire.setBounds(220, 280, 160, 50);
-
+        txtClave.setBorder(null);
         txtClave.setEchoChar('\u25cf');
         txtClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,35 +63,28 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtClave);
-        txtClave.setBounds(210, 210, 190, 30);
+        txtClave.setBounds(70, 490, 300, 60);
+
+        txtCod.setBorder(null);
         jPanel2.add(txtCod);
-        txtCod.setBounds(210, 140, 190, 30);
+        txtCod.setBounds(70, 400, 300, 60);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("¿Olvido su contraseña?");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(110, 360, 195, 25);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Ingresar Codigo:");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(10, 140, 140, 25);
-
-        btnIngresarProfe.setText("Ingresar Profesor");
-        btnIngresarProfe.addActionListener(new java.awt.event.ActionListener() {
+        btnIngresar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnIngresar.setText("Ingresar");
+        btnIngresar.setBorder(null);
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarProfeActionPerformed(evt);
+                btnIngresarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnIngresarProfe);
-        btnIngresarProfe.setBounds(20, 280, 160, 50);
+        jPanel2.add(btnIngresar);
+        btnIngresar.setBounds(70, 570, 280, 60);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Ingresar Contraseña:");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(10, 210, 176, 25);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LO.png"))); // NOI18N
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(0, 0, 440, 790);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 470));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,48 +93,16 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClaveActionPerformed
 
-    private void btnIngresarProfeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarProfeActionPerformed
-               //Creamos variables Usuario y Contra:)
-        String Usuario = "DO12345";
-        String Contraseña = "123";
-        //Ahora para obtener los valores de txtContrasena
-        String Pass = new String(txtClave.getPassword());
-        //Creamos las Validaciones
-        //lo que se digite en el campo usuario  y campo contrasena es correcto iniciar ir a la siguiente interfaz
-        if(txtCod.getText().equals(Usuario)&& Pass.equals(Contraseña)){
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
 
-            ////Siguiente interfaz usando el boton ingresar directivo SI ES CORRECTO EL USUARIO Y CONTRA
-        this.setVisible(false);
-        MenuDocente menuDocente= new MenuDocente();
-        menuDocente.setVisible(true);
-        }else{ //y si no pues mensaje de error
-            JOptionPane.showMessageDialog(this,"Usuario/Contraseña incorrecta >:)");
-        }
-
+       Consultas con = new Consultas();
+       con.consultarUsuario(txtCod.getText(),txtClave.getText());
     
-    }//GEN-LAST:event_btnIngresarProfeActionPerformed
-
-    private void btnIngresarDireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarDireActionPerformed
-        //Creamos variables Usuario y Contra:)
-        String Usuario = "D72549418";
-        String Contraseña = "123";
-        //Ahora para obtener los valores de txtContrasena
-        String Pass = new String(txtClave.getPassword());
-        //Creamos las Validaciones
-        //lo que se digite en el campo usuario  y campo contrasena es correcto iniciar ir a la siguiente interfaz
-        if(txtCod.getText().equals(Usuario)&& Pass.equals(Contraseña)){
-
-            ////Siguiente interfaz usando el boton ingresar directivo SI ES CORRECTO EL USUARIO Y CONTRA
-            this.setVisible(false);
-            MenuDirec menu = new MenuDirec();
-            menu.setVisible(true);
-        }else{ //y si no pues mensaje de error
-            JOptionPane.showMessageDialog(this,"Usuario/Contraseña incorrecta >:)");
-        }
-
-    }//GEN-LAST:event_btnIngresarDireActionPerformed
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnCambiarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarClaveActionPerformed
+      
+        this.setVisible(false);
         recopilar_codigo_cambioContraseña RcopilarCodigoC = new recopilar_codigo_cambioContraseña();
         RcopilarCodigoC.setVisible(true);
     }//GEN-LAST:event_btnCambiarClaveActionPerformed
@@ -217,12 +164,8 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCambiarClave;
-    public javax.swing.JButton btnIngresarDire;
-    public javax.swing.JButton btnIngresarProfe;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    public javax.swing.JButton btnIngresar;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JPasswordField txtClave;
     public javax.swing.JTextField txtCod;
