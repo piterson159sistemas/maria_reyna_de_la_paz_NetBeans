@@ -82,16 +82,16 @@ public class login extends javax.swing.JFrame {
         jLabel5.setText("MARIA REYNA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 120, 20));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\java\\img\\user2.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user2.png"))); // NOI18N
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\java\\img\\password.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password.png"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\java\\img\\logo.jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.jpeg"))); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 120));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Raul\\UTP\\Proyecto AED\\maria_reyna_de_la_paz_NetBeans\\src\\main\\java\\img\\fondooooooo.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondooooooo.jpg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 410));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 410));
