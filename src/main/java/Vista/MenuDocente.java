@@ -62,8 +62,6 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
                 formWindowClosing(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 590));
 
         jMenu1.setText("Registrar");
         jMenu1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -141,6 +139,17 @@ public static JDesktopPane jDesktopPane_menuD;//declaramos
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
