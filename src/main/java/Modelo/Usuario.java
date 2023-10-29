@@ -72,7 +72,7 @@ public class Usuario extends Persona implements Modificable, Registrable{
         
         //boolean usuarioValido = codigo.equals(userData[0]) && clave.equals(userData[1]);
         //String tipoUsuario;
-            if (cod.startsWith("D") ) {return "DIRECTOR"; } 
+            if (cod.startsWith("D") || cod.startsWith("d") ) {return "DIRECTOR"; } 
             else {return "PROFESOR"; } 
      
         
