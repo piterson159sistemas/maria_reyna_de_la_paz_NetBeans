@@ -3,12 +3,13 @@ package Modelo;
 
 import java.util.Date;
 
-public class GradoAlum {
+public class GradoAlumno {
     private Nivel nivel;
     private Grado grado;
     private Date Anio;
+    private String Estado;
 
-    public GradoAlum(Nivel nivel,Grado grado, Date Anio) {
+    public GradoAlumno(Nivel nivel,Grado grado, Date Anio) {
         this.nivel = nivel;
         this.grado = grado;
         this.Anio = Anio;

@@ -5,9 +5,9 @@ package Modelo;
 public class AreaDocencia {
     private Docente docente;
     private Area area;
-    private GradoAlum grado;
+    private GradoAlumno grado;
 
-    public AreaDocencia(Docente docente, Area area, GradoAlum grado) {
+    public AreaDocencia(Docente docente, Area area, GradoAlumno grado) {
         this.docente = docente;
         this.area = area;
         this.grado = grado;
@@ -31,11 +31,11 @@ public class AreaDocencia {
         this.area = area;
     }
 
-    public GradoAlum getGrado() {
+    public GradoAlumno getGrado() {
         return grado;
     }
 
-    public void setGrado(GradoAlum grado) {
+    public void setGrado(GradoAlumno grado) {
         this.grado = grado;
     }
     

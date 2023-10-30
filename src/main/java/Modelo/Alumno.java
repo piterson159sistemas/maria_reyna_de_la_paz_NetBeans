@@ -3,7 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 
 public class Alumno extends Persona{
-    Grado grado;
+    GradoAlumno grado;
     
     public Alumno(String TipoDocumento, int NumDocumento, String Nombre, String ApellidoP, String ApellidoM) {
         super(TipoDocumento, NumDocumento, Nombre, ApellidoP, ApellidoM);

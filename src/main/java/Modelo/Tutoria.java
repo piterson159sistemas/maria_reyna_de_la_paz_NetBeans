@@ -6,10 +6,10 @@ import java.util.Date;
 
 public class Tutoria {
     private Docente docente;
-    private GradoAlum grado;
+    private GradoAlumno grado;
     private Date anio;
 
-    public Tutoria(Docente docente, GradoAlum grado, Date anio) {
+    public Tutoria(Docente docente, GradoAlumno grado, Date anio) {
         this.docente = docente;
         this.grado = grado;
         this.anio = anio;
@@ -25,11 +25,11 @@ public class Tutoria {
         this.docente = docente;
     }
 
-    public GradoAlum getGrado() {
+    public GradoAlumno getGrado() {
         return grado;
     }
 
-    public void setGrado(GradoAlum grado) {
+    public void setGrado(GradoAlumno grado) {
         this.grado = grado;
     }
 
