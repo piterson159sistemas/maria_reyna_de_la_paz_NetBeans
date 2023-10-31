@@ -32,7 +32,7 @@ public class CListadoAlumDirec implements ActionListener{
     }
 
     public  ArrayList<String> leerAlumno(){
-        JComponent campos[]= {vista.cbxTipoDoc,vista.txtNumDoc,vista.txtNombres,
+        JComponent campos[]= {vista.cbxFiltrarNivel,vista.txtNumDoc,vista.txtNombres,
         vista.txtApellidoP,vista.txtApellidoM};
         int numCampos= campos.length;
         
@@ -68,7 +68,7 @@ public class CListadoAlumDirec implements ActionListener{
     }
     
     public void mostraAlumno(ArrayList<String> data){
-        JComponent campos[]= {vista.cbxTipoDoc,vista.txtNumDoc,vista.txtNombres,
+        JComponent campos[]= {vista.cbxFiltrarNivel,vista.txtNumDoc,vista.txtNombres,
         vista.txtApellidoP,vista.txtApellidoM};
         int numCampos= campos.length;
         
@@ -98,20 +98,20 @@ public class CListadoAlumDirec implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnBuscar){
             //falta
-            int NumDoc = Integer.parseInt(vista.txtSearch.getText());
+            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
             ArrayList<String> dataAlumno = crudAlum.Buscar(NumDoc);
             mostraAlumno(dataAlumno);            
         }
         
         if(e.getSource()==vista.btnActualizar){
-            int NumDoc = Integer.parseInt(vista.txtSearch.getText());
+            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
             alum = new Alumno(leerAlumno());
             crudAlum.Actualizar(alum);
             Actualizarlista();
         }
         
         if(e.getSource()==vista.btnBorrar){
-            int NumDoc = Integer.parseInt(vista.txtSearch.getText());
+            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
             crudAlum.Eliminar(NumDoc);
             Actualizarlista();
         }
