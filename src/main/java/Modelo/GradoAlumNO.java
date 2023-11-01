@@ -1,10 +1,9 @@
 
 package Modelo;
-
 import java.util.Date;
 
 public class GradoAlumno {
-    private Nivel nivel;
+     private Nivel nivel;
     private Grado grado;
     private Date Anio;
     private String Estado;
