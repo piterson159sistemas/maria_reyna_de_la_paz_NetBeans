@@ -6,12 +6,12 @@ import java.util.Date;
 
 public class Tutoria {
     private Docente docente;
-    private GradoAlumno grado;
+   // private GradoAlumno grado;
     private Date anio;
 
-    public Tutoria(Docente docente, GradoAlumno grado, Date anio) {
+    public Tutoria(Docente docente, int grado, Date anio) {
         this.docente = docente;
-        this.grado = grado;
+      //  this.grado = grado;
         this.anio = anio;
     }
 
@@ -25,13 +25,13 @@ public class Tutoria {
         this.docente = docente;
     }
 
-    public GradoAlumno getGrado() {
-        return grado;
-    }
+    //public GradoAlumno getGrado() {
+   //     return grado;
+    //}
 
-    public void setGrado(GradoAlumno grado) {
-        this.grado = grado;
-    }
+    //public void setGrado(GradoAlumno grado) {
+       // this.grado = grado;
+    //}
 
     public Date getAnio() {
         return anio;
