@@ -35,17 +35,21 @@ public class crudAlumno {
         return dataAlumno;
     }
     
-    public Stack<String> Listar(){
-        String sqlStatement="Select concat(Nombres,\" \",Apellido_P,\" \",Apellido_M)"
-                + " as Estudiante from Alumno;";
-        Stack<String> Alumnos = new Stack<>();
+    public String[] Listar(){
+        String sqlStatement="select concat(Nombres,\" \",Apellido_P,\" \",Apellido_M)"
+                +" as Alumno, e.Estado from grado_alumno g" 
+                +" inner join alumno a on (g.CodigoA = a.N_DocumentoA)" 
+                +" inner join estado_grado_alumno e on"
+                +" (g.Codigo_Grado_Alumno = e.Codigo_EstadoGA);";
+        
+        String[] Alumnos = new String[2];
         try {
-            Connection cn = con.conectar();
-            con.st= cn.createStatement();
+            //Connection cn = con.conectar();
+            con.st = con.conectar().createStatement();
             con.rs = con.st.executeQuery(sqlStatement);
             
             while( con.rs.next()){
-                Alumnos.add(con.rs.getString(1));
+                //Alumnos.add(con.rs.getString(1));
             }
         } catch (SQLException e) {
             msjDialog("ERROR al mostrar la lista de Alumnos "+e);
