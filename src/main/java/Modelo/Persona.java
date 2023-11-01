@@ -22,9 +22,9 @@ public abstract class Persona {
 
     public Persona(ArrayList<String>data) {
         this.NumDocumento = Integer.parseInt(data.get(0));
-        this.Nombre = data.get(1);;
-        this.ApellidoP = data.get(2);
-        this.ApellidoM = data.get(3);
+        this.Nombre = data.get(2);;
+        this.ApellidoP = data.get(3);
+        this.ApellidoM = data.get(4);
     }
 
     public int getNumDocumento() {

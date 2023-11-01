@@ -3,40 +3,42 @@ package Modelo;
 import java.util.Date;
 
 public class GradoAlumno {
-    private Nivel nivel;
-    private Grado grado;
-    private Date Anio;
-    private String Estado;
+    private int anio;
+    private String grado;
+    private String nivel;
+    private String estado;
 
-    public GradoAlumno(Nivel nivel,Grado grado, Date Anio) {
-        this.nivel = nivel;
+    public GradoAlumno(int anio,String grado, String nivel,String estado) {
+        this.anio = anio;
         this.grado = grado;
-        this.Anio = Anio;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
         this.nivel = nivel;
+        this.estado=estado;
     }
 
-    public Grado getGrado() {
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public String getGrado() {
         return grado;
     }
 
-    public void setGrado(Grado grado) {
+    public void setGrado(String grado) {
         this.grado = grado;
     }
-
-    public Date getAnio() {
-        return Anio;
+    
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setAnio(Date Anio) {
-        this.Anio = Anio;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
+
     
     public void RegistrarGrado(){}
     public void CrearCodigo(){}

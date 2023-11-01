@@ -1,19 +1,27 @@
 package Modelo;
 
+import java.awt.GradientPaint;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumno extends Persona{
     private String TipoDocumento;
-    GradoAlumno grado;
+    GradoAlumno gradoAlumno;
     
     public Alumno(int NumDocumento,String TipoDocumento,String Nombre,
-            String ApellidoP, String ApellidoM) {
+            String ApellidoP, String ApellidoM,GradoAlumno gradoAlumno ) {
+        
         super(NumDocumento, Nombre, ApellidoP, ApellidoM);
         this.TipoDocumento=TipoDocumento;
+        this.gradoAlumno=gradoAlumno;
     }
 
     public Alumno(ArrayList<String>data){
         super(data);
+        this.TipoDocumento=data.get(1);
+        int anio = LocalDate.now().getYear();
+        this.gradoAlumno=new GradoAlumno(anio,data.get(5),
+                                    data.get(6),data.get(7));
     }
 
     public String getTipoDocumento() {
@@ -25,11 +33,11 @@ public class Alumno extends Persona{
     }
 
     public GradoAlumno getGrado() {
-        return grado;
+        return gradoAlumno;
     }
 
-    public void setGrado(GradoAlumno grado) {
-        this.grado = grado;
+    public void setGrado(GradoAlumno gradoAlumno) {
+        this.gradoAlumno = gradoAlumno;
     }
     
     public void RegistrarAlumno(){}
