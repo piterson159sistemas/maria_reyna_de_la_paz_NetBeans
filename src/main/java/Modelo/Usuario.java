@@ -13,13 +13,11 @@ public class Usuario extends Persona implements Modificable, Registrable{
         this.clave=clave;
     }
 
-    public Usuario(String TipoDocumento, int NumDocumento, 
+    public Usuario(String codigo, int NumDocumento, 
             String Nombre, String ApellidoP, String ApellidoM) {
-        super(TipoDocumento, NumDocumento, Nombre, ApellidoP, ApellidoM);
+        super(NumDocumento, Nombre, ApellidoP, ApellidoM);
+        this.codigo=codigo;
     }
-
-
-    
 
     public String getCodigo() {
         return codigo;
@@ -67,16 +65,10 @@ public class Usuario extends Persona implements Modificable, Registrable{
 
     }
 
-    
     public String ValidarTipoUsuario(String cod){
         
-        //boolean usuarioValido = codigo.equals(userData[0]) && clave.equals(userData[1]);
-        //String tipoUsuario;
             if (cod.startsWith("D") || cod.startsWith("d") ) {return "DIRECTOR"; } 
             else {return "PROFESOR"; } 
-     
-        
- 
     } 
     
 }
