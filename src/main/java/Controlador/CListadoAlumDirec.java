@@ -55,6 +55,7 @@ public class CListadoAlumDirec implements ActionListener{
     }
     
     public void Actualizarlista(){
+        /*
         Stack<String> Alumnos = crudAlum.Listar();
         DefaultListModel<String> listModel = new DefaultListModel<>();;
         Iterator<String> iterator = Alumnos.iterator();
@@ -65,6 +66,7 @@ public class CListadoAlumDirec implements ActionListener{
             iterator.remove(); 
         }
         vista.List.setModel(listModel);
+        */
     }
     
     public void mostraAlumno(ArrayList<String> data){
