@@ -4,7 +4,6 @@
  */
 package Vista;
 
-import static Vista.MenuDirec.jDesktopPane_menu;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 

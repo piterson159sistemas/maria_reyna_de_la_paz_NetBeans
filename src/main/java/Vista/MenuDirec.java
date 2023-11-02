@@ -8,10 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class MenuDirec extends javax.swing.JFrame {
-///para mostrar los internalFrames que abramos
-    ///con JDesktopPane podemos mantener los jframes contenidos en un espacio dado
-     public static JDesktopPane jDesktopPane_menu;//declaramos
-    
+
      private void Cerrar(){//METODO PARA QUE PREGUNTE AL INTENTAR CERRAR LA APLICACION
          String botones[]= {"Cerrar","Cancelar"};
          int eleccion = JOptionPane.showOptionDialog(this,"¿Desea cerrar la aplicacion?","Titulo",0,0,null,botones,this);
