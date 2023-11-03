@@ -16,6 +16,7 @@ Modelo\Registrable.class
 Vista\Ver_notas$1.class
 Vista\MenuDirec$3.class
 Vista\Registrar_GestionAprendi.class
+Controlador\CListadoAlumDirec$1.class
 Vista\asignar_area_directivo_1.class
 Vista\Registrar_Asistencia$1.class
 Modelo\Competencia.class
@@ -26,7 +27,6 @@ Vista\MenuDirec$6.class
 Modelo\Docente.class
 Modelo\Horario.class
 Vista\MenuDocente$3.class
-Vista\lista_estudiantes_directivo_1$1.class
 Vista\Registrar_Notas$3.class
 Vista\MenuDirec$7.class
 Vista\MenuDocente$7.class
@@ -38,7 +38,6 @@ Modelo\Persona.class
 Vista\Registrar_Asistencia.class
 Vista\gestionar_tutor_directivo_1.class
 Vista\recopilar_codigo_cambioContraseña.class
-Vista\lista_estudiantes_directivo_1$2.class
 Modelo\Pago.class
 Vista\MenuDocente$2.class
 Vista\Registrar_Conducta$1.class
@@ -81,6 +80,7 @@ Vista\Registrar_Notas$2.class
 Vista\crear_cuenta_docentes_directivo_1$1.class
 Vista\gestionar_cuenta_docente_directivo_1$2.class
 Vista\Ver_notas.class
+Procesos\ListaAlumnos.class
 Vista\MenuDirec.class
 Vista\MenuDirec$4.class
 Vista\MenuDocente.class
