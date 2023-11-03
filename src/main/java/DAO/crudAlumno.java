@@ -1,6 +1,7 @@
 
 package DAO;
 
+import Procesos.ListaAlumnos;
 import Modelo.Alumno;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -15,6 +16,23 @@ import javax.swing.table.DefaultTableModel;
 
 public class crudAlumno {
     Conexion con= new Conexion();
+    
+   public ArrayList<String> BuscarNombresAlumno(){
+       ArrayList<String> nombres = new ArrayList<>();
+       String sqlST="select concat(Nombres,' ',Apellido_P,' ',Apellido_M) as Alumno from alumno;";
+       
+       try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                nombres.add(con.rs.getString(1));
+            }
+       } catch (SQLException e) {
+       }
+        return nombres;
+   }
+    
     
     public Queue<String> BuscarGrados(String nivel){
         Queue<String> grados = new LinkedList<>();
@@ -48,28 +66,8 @@ public class crudAlumno {
         return niveles;
     }
     
-    public ArrayList<String> Buscar(int NumDoc){
-        String sqlStatement="SELECT * from Alumno WHERE N_DocumentoA=("+NumDoc+");";
-        ArrayList<String> dataAlumno=new ArrayList<>(); 
-         try {
-            
-            Connection cn = con.conectar();
-            con.rs=con.st.executeQuery(sqlStatement);
-            int numColum= con.rs.getMetaData().getColumnCount();
-            
-            if(con.rs.next()){
-                for(int i=0;i<numColum;i++){
-                    dataAlumno.add(con.rs.getString(i+1));
-                    System.err.println(dataAlumno.get(i));
-                }
-            }
-            cn.close();
-        } catch (Exception e) {
-            msjDialog("Alumno no registrado "+ e);
-        }
-        return dataAlumno;
-    }
     
+    //Busca un alumno de la tabla de alumnos
     public String[] Buscar(String numDoc,String estado){
         String sqlST="Select a.N_DocumentoA, a.Nombres, a.Apellido_P, a.Apellido_M"
                 +" ,a.Tipo_Documento, g.Nivel, g.Grado, e.Estado from"
@@ -93,13 +91,14 @@ public class crudAlumno {
                 }
             }
         } catch (SQLException e) {
-            msjDialog("ERROR al buscar alumno de la Tabla "+e);
+            ListaAlumnos.msjDialog("ERROR al buscar alumno de la Tabla "+e);
         }
         return dataAlumno;
     }
     
+    //Filra a los alumnos en la tabla segun nivel,grado y estadoGrado
     public String[] Filtrar(String nivel, String grado,String estadoGrado){
-        String[] filtros = new String[2];
+        String[] filtros = new String[3];
         
         // 1° Filtramos por nivel
         
@@ -126,19 +125,21 @@ public class crudAlumno {
         if( !( estadoGrado.equals("...") ) ){ //si el estadoGrado es diferente a "..."
             // filtramos segun un estado especifico
             switch(estadoGrado){
-                case "Aprobado" -> filtros[1]="='Aprobado';";
-                case "En Curso" -> filtros[1]="='En Curso';";
-                case "Desaprobado"-> filtros[1]="='Desaprobado';";
-                default -> filtros[1]="='Retirado';";
+                case "Aprobado" -> filtros[1]="='Aprobado'";
+                case "En Curso" -> filtros[1]="='En Curso'";
+                case "Desaprobado"-> filtros[1]="='Desaprobado'";
+                default -> filtros[1]="='Retirado'";
 
             }
        }else{ //si el estado = "..." mostramos todos los estados(sin filtrar)
-            filtros[1]="is not null;"; 
+            filtros[1]="is not null"; 
         }
+        filtros[2]=""; // espacio designado por si se filtra por nombre en barra de busqueda
         
         return filtros;
     }
     
+    //Lista los alumnos en una tabla
     public void Listar(JTable tabla, JLabel cantAulmnos,String[] filtros){
         //Definimos un modelo de encabezados para la tabla 
         String[] Titulos= {"Cod","Alumno","Estado"};
@@ -157,7 +158,8 @@ public class crudAlumno {
                 +" inner join estado_grado_alumno e on"
                 +" (g.Codigo_EstadoGA = e.Codigo_EstadoGA) "
                 +" where Codigo_Grado "+filtros[0]
-                +" and e.Estado "+filtros[1]+" ;";
+                +" and e.Estado "+filtros[1]
+                +" "+filtros[2]+" ;";
         
         Object[] dataAlumno = new Object[3];
         int cantRegisttros=0;
@@ -177,7 +179,7 @@ public class crudAlumno {
             cantAulmnos.setText(Integer.toString(cantRegisttros));
             cn.close();
         } catch (SQLException e) {
-            msjDialog("ERROR al mostrar la lista de Alumnos "+e);
+            ListaAlumnos.msjDialog("ERROR al mostrar la lista de Alumnos "+e);
         }
     }
 
@@ -192,10 +194,10 @@ public class crudAlumno {
             con.pst.setString(4, a.getApellidoP());
             con.pst.setString(5, a.getApellidoM());
             con.pst.executeUpdate();
-            msjDialog("Alumno registrado exitosamente");
+            ListaAlumnos.msjDialog("Alumno registrado exitosamente");
             cn.close();
         }catch(SQLException e){
-            msjDialog("ERROR al registrar Alumno "+e);
+            ListaAlumnos.msjDialog("ERROR al registrar Alumno "+e);
         }
         
     }
@@ -208,10 +210,10 @@ public class crudAlumno {
             con.pst =cn.prepareStatement(sqlStatement);
             con.pst.setInt(1, NumDoc);
             con.pst.executeUpdate();
-            msjDialog("Registro eliminado exitosamente");
+            ListaAlumnos.msjDialog("Registro eliminado exitosamente");
             cn.close();
         } catch (SQLException e) {
-            msjDialog("ERROR al eliminar registro "+e);
+            ListaAlumnos.msjDialog("ERROR al eliminar registro "+e);
         }
         
     }
@@ -227,15 +229,12 @@ public class crudAlumno {
             con.pst.setString(3, a.getApellidoM());
             con.pst.setInt(4, a.getNumDocumento());
             con.pst.executeUpdate();
-            msjDialog("Datos de Alumno actualizados exitosamente");
+            ListaAlumnos.msjDialog("Datos de Alumno actualizados exitosamente");
             cn.close();
         } catch (SQLException e) {
-            msjDialog("ERROR al Actializar registro "+e);
+            ListaAlumnos.msjDialog("ERROR al Actializar registro "+e);
         }
         
     }
-    
-    public static void msjDialog(String mensaje){
-        JOptionPane.showMessageDialog(null,mensaje);
-    }    
+      
 }
