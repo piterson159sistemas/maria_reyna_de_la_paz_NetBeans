@@ -18,6 +18,11 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
 import javax.swing.text.JTextComponent;
+//dependencias para manejar restricciones en un JtextField 
+import javax.swing.text.PlainDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import java.awt.event.KeyEvent;
 
 public class CListadoAlumDirec implements ActionListener,MouseListener{
     lista_estudiantes_directivo_1 vista;
@@ -35,15 +40,30 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         vista.tblListaAlumnos.addMouseListener(this);
         listaEst.setTitle("Gestion de Estudiantes");
         listaEst.setVisible(true);
+        //TextFiled del buscador mostrará sugerecias segun se escriba
+        ArrayList<String> nombres= crudAlum.BuscarNombresAlumno();
+        listaA.MostrarSugerencias(vista.txtBuscar, nombres);
         
+        // carga de los elemento de todos los combos del frm
         listaA.cargaInicialCombos(vista.cbxFiltrarNivel, vista.cbxFiltrarGrado);
         listaA.cargaInicialCombos(vista.cbxNivel, vista.cbxGrado);
         listaA.cargarNiveles(vista.cbxFiltrarNivel);
         listaA.cargarNiveles(vista.cbxNivel);
+        listaA.cargarEstados(vista.cbxFiltrarEstadoGrado);
+        listaA.cargarEstados(vista.cbxEstadoGrado);
+        listaA.cargarTiposDoc(vista.cbxTipoDoc);
+        
+        //cargamos las restricciones de los campos y combos del frm
+        PermitirSoloLetras(vista.txtNombres);
+        PermitirSoloLetras(vista.txtApellidoP);
+        PermitirSoloLetras(vista.txtApellidoM);
+        vista.txtNumDoc.setEditable(false);
+        detectarCambioCombo(vista.cbxTipoDoc, vista.txtNumDoc);
+        
         ActualizarLista();
         //Combos para filtrar
         CargarCombosEnlazados(vista.cbxFiltrarNivel,vista.cbxFiltrarGrado);
-        //combos para ver datos Alumno
+        //combos para ver y modificar datos de Alumno
         CargarCombosEnlazados(vista.cbxNivel,vista.cbxGrado);
     }
 
@@ -66,18 +86,21 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         //retornamos los datos del alumno
        return data;
-        
-    
     }
     
     public void ActualizarLista(){
+        String[] filtros = definirFiltros();
+        crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtros);
+        listaA.formatoColumnasTabla(vista.tblListaAlumnos);
+    }
+    
+    public String[] definirFiltros(){
         String nivel=vista.cbxFiltrarNivel.getSelectedItem().toString();
         String grado=vista.cbxFiltrarGrado.getSelectedItem().toString();
         String estado=vista.cbxFiltrarEstadoGrado.getSelectedItem().toString();
-        String[] filtros = crudAlum.Filtrar(nivel, grado,estado);
         
-        crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtros);
-        listaA.formatoColumnasTabla(vista.tblListaAlumnos);
+        String[] filtros = crudAlum.Filtrar(nivel, grado,estado);
+        return filtros;
     }
     
     public void mostraAlumno(ArrayList<String> data){
@@ -106,7 +129,98 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         vista.txtNumDoc.setText(data.get(0));
     }
+    
+    public boolean VerificarDatos( ArrayList<String> dataAlumno){
+         for(String dato:dataAlumno){
+             System.out.println(dato);
+             if(dato.equals("0") || dato.equals("...")){
+                 ListaAlumnos.msjDialog("Los campos no puden ser vacios o \"...\"");
+                 return false;
+             }
+         }
+         return true;
+    }
+    
+    //metodo que permite ingresar solo letras y espacios en blaco en un txtField
+    public void PermitirSoloLetras(JTextField campo){
+        campo.setDocument(new PlainDocument() {
+            @Override
+            //sobreescribe este metodo para limitar los datos que se insertan
+            public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+                // se verifica si lo que se inserta es nulo para salir del metodo con return
+                if (str == null) {
+                    return;
+                }
+                 
+                //for que recorre cada uno de los caracteres de un string
+                for (int i = 0; i < str.length(); i++) {
+                    char c = str.charAt(i);
+                    //se valida si el caracter es una letra, espacio en blanco o tecla retroceso
+                    if (Character.isLetter(c) || Character.isWhitespace(c) || c == KeyEvent.VK_BACK_SPACE) {
+                        //si es un caracter valido se inserta 
+                        super.insertString(offset, String.valueOf(c), attr);
+                        offset++;
+                    }
+                }
+            }
+        });
+        
+    }
 
+    public void PermitirSoloNumeros(JTextField campo,int limit){
+        campo.setDocument(new PlainDocument() {
+                @Override
+                public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {         
+                    if (str == null) {
+                        return;
+                    }
+                    /* Se comprueba si:
+                    Lo ingresado contiene solo digitos con la expresion regular "\\d"  
+                    La cant de digitos esta dentro del limite
+                    */
+                    if (str.matches("\\d+") && 
+                            (limit <= 0 ||(getLength() + str.length() <= limit)) ) {
+                        super.insertString(offset, str, attr);
+                    }
+                            
+                    
+                }
+            }); 
+        
+    }
+
+    public void detectarCambioCombo(JComboBox combo,JTextField campo){
+        combo.addItemListener(new ItemListener() {
+        int limit=0; 
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    /*Cada vez que se cambia de un item a otro dentro del combo
+                    se limpia el campo
+                    */
+                    campo.setText("");
+                    String tipoDoc=vista.cbxTipoDoc.getSelectedItem().toString();
+                    
+                    //si el tipoDoc es valido (diferente a "..." )
+                    if( !("...".equals(tipoDoc)) ){
+                        campo.setEditable(true);
+                        // verificamos si es del tipo DNI o un tipo diferente
+                        if ("DNI".equals(tipoDoc)) {
+                             limit=8;
+                             PermitirSoloNumeros(campo, 8);
+                        } else {
+                            limit=9;
+                            PermitirSoloNumeros(campo, 9);
+                        }
+                    }else{
+                        campo.setEditable(false);
+                        PermitirSoloNumeros(campo, 0);
+                    }
+                }
+            }
+        });
+        
+    }
     
     /* Metodo para cargar los comboBox Nivel y Grado de forma enlazada, es decir,
     segun que Nivel se escoge se muestra los grados enlazados(pertenecientes)
@@ -138,10 +252,16 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(e.getSource()==vista.btnBuscar){
-            //falta detallar
-            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
-            ArrayList<String> dataAlumno = crudAlum.Buscar(NumDoc);
-            mostraAlumno(dataAlumno);            
+            //1° obtenemos nombre completo del alumno
+            String nombreAlumno = vista.txtBuscar.getText();
+            //2° Se establcen los filtros de nivel, grado y estado para la busqueda
+            String[] filtros = definirFiltros();
+            //3° se establece el filtro para buscar por nombre
+            filtros[2]="and concat(Nombres,' ',Apellido_P,' ',Apellido_M)='"+nombreAlumno+"'";
+            //4° listamos al alumno en la tabla segun nombre,nivel,grado y estado
+            crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtros);
+            //5° aplicamos un foramto de presentacion a la tabla
+            listaA.formatoColumnasTabla(vista.tblListaAlumnos);
         }
         
         if(e.getSource()==vista.btnActualizar){
@@ -158,9 +278,15 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(e.getSource()==vista.btnInsertar){
-            alum = new Alumno(leerAlumno());
+            ArrayList<String>data = listaA.leerAlumno(vista);
+            boolean alumnoValido=VerificarDatos(data);
+            if(alumnoValido){
+                alum=new Alumno(data);
+            }
+            //insercion en la bd
+            /*alum = new Alumno(leerAlumno());
             crudAlum.Insertar(alum);
-            ActualizarLista();
+            ActualizarLista();*/
             
         }
     }
