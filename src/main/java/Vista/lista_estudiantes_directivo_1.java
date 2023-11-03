@@ -139,7 +139,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
         cbxTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
-        cbxTipoDoc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Carnet de extranjeria", "Pasaporte" }));
         cbxTipoDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbxTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 150, 40));
 
@@ -150,7 +149,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         cbxEstadoGrado.setBackground(new java.awt.Color(204, 204, 204));
         cbxEstadoGrado.setForeground(new java.awt.Color(0, 0, 0));
-        cbxEstadoGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Aprobado", "En Curso", "Desaprobado", "Retirado" }));
         cbxEstadoGrado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbxEstadoGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 100, 40));
 
@@ -210,11 +208,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search-student.png"))); // NOI18N
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 40, 30));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, 30));
 
         txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 130, 30));
+        getContentPane().add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 190, 30));
 
         cbxFiltrarNivel.setBackground(new java.awt.Color(204, 204, 204));
         cbxFiltrarNivel.setForeground(new java.awt.Color(0, 0, 0));
@@ -280,7 +278,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         cbxFiltrarEstadoGrado.setBackground(new java.awt.Color(204, 204, 204));
         cbxFiltrarEstadoGrado.setForeground(new java.awt.Color(0, 0, 0));
-        cbxFiltrarEstadoGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Aprobado", "En Curso", "Desaprobado", "Retirado" }));
         getContentPane().add(cbxFiltrarEstadoGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 120, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
