@@ -2,16 +2,8 @@
 package Procesos;
 import DAO.crudAlumno;
 import Vista.lista_estudiantes_directivo_1;
-import Modelo.Alumno;
-import Modelo.Grado;
-import Modelo.GradoAlumno;
-import Modelo.Nivel;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.Queue;
-import java.util.Stack;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -29,12 +21,13 @@ public class ListaAlumnos {
     public ArrayList<String> leerAlumno(lista_estudiantes_directivo_1 led){
         
         JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
-        led.txtApellidoP,led.txtApellidoM,led.cbxGrado,led.cbxNivel,led.cbxEstadoGrado};
+        led.txtApellidoP,led.txtApellidoM,led.txtAnio,led.cbxGrado,led.cbxNivel,
+        led.cbxEstadoGrado};
         int numCampos= campos.length;
         
         ArrayList<String>data = new ArrayList<>();
         String dato;
-        boolean campoVacio,comboVacio;
+        boolean campoVacio;
                 
         
         for (int i = 0; i < numCampos; i++) {
@@ -46,11 +39,8 @@ public class ListaAlumnos {
                     data.add("0");
             }
             else {
-                comboVacio= "...".equals( ((JComboBox)campos[i]).getSelectedItem().toString() );
-                if(!comboVacio)
-                    data.add(i, ((JComboBox)campos[i]).getSelectedItem().toString());
-                else
-                    data.add("...");
+                data.add(i, ((JComboBox)campos[i]).getSelectedItem().toString());
+
             }
         }
         return data;
@@ -64,9 +54,10 @@ public class ListaAlumnos {
     
     //muestra en el frm todos los datos del alumno seleccionado de la tabla 
     public void MostrarAlumno(String[] data,lista_estudiantes_directivo_1 led){
-        JComponent campos[]= {led.txtNumDoc,led.txtNombres,
-        led.txtApellidoP,led.txtApellidoM,led.cbxTipoDoc, led.cbxNivel,
-        led.cbxGrado,led.cbxEstadoGrado};
+        JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
+        led.txtApellidoP,led.txtApellidoM,led.cbxNivel,led.cbxGrado,
+        led.cbxEstadoGrado,led.txtAnio};
+        
         int numCampos= campos.length;
         
         for (int i = 0; i < numCampos; i++) {
