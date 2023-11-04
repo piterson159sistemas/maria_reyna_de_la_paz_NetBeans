@@ -25,6 +25,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         lblTipoDoc = new javax.swing.JLabel();
         lblNivel = new javax.swing.JLabel();
         txtNumDoc = new javax.swing.JTextField();
+        txtAnio = new javax.swing.JTextField();
         btnInsertar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
@@ -32,6 +33,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         cbxGrado = new javax.swing.JComboBox<>();
         cbxEstadoGrado = new javax.swing.JComboBox<>();
         cbxNivel = new javax.swing.JComboBox<>();
+        lblAnio = new javax.swing.JLabel();
         lblNumDoc = new javax.swing.JLabel();
         lblGradro = new javax.swing.JLabel();
         lblEstado = new javax.swing.JLabel();
@@ -54,6 +56,8 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         lblNumAlumnos = new javax.swing.JLabel();
         cbxFiltrarEstadoGrado = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
+        txtFiltrarAnio = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -104,7 +108,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         lblTipoDoc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTipoDoc.setForeground(new java.awt.Color(255, 255, 255));
         lblTipoDoc.setText("Tipo de documento");
-        jPanel1.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 147, -1));
+        jPanel1.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 147, -1));
 
         lblNivel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblNivel.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,33 +118,38 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         txtNumDoc.setBackground(new java.awt.Color(204, 204, 204));
         txtNumDoc.setForeground(new java.awt.Color(0, 0, 0));
         txtNumDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel1.add(txtNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 150, 40));
+        jPanel1.add(txtNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 150, 40));
+
+        txtAnio.setBackground(new java.awt.Color(204, 204, 204));
+        txtAnio.setForeground(new java.awt.Color(0, 0, 0));
+        txtAnio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel1.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 100, 40));
 
         btnInsertar.setBackground(new java.awt.Color(133, 164, 199));
         btnInsertar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnInsertar.setForeground(new java.awt.Color(0, 0, 0));
         btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add-student.png"))); // NOI18N
         btnInsertar.setText(" Agregar");
-        jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 130, 40));
+        jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 40));
 
         btnBorrar.setBackground(new java.awt.Color(133, 164, 199));
         btnBorrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBorrar.setForeground(new java.awt.Color(0, 0, 0));
         btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete-student.png"))); // NOI18N
         btnBorrar.setText("Retirar");
-        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 260, 120, 40));
+        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 120, 40));
 
         btnActualizar.setBackground(new java.awt.Color(133, 164, 199));
         btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(0, 0, 0));
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update-student.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 140, 40));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 140, 40));
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
         cbxTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
         cbxTipoDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel1.add(cbxTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 150, 40));
+        jPanel1.add(cbxTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 150, 40));
 
         cbxGrado.setBackground(new java.awt.Color(204, 204, 204));
         cbxGrado.setForeground(new java.awt.Color(0, 0, 0));
@@ -157,10 +166,15 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         cbxNivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbxNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 130, 40));
 
+        lblAnio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblAnio.setForeground(new java.awt.Color(255, 255, 255));
+        lblAnio.setText("Año");
+        jPanel1.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 30, -1));
+
         lblNumDoc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblNumDoc.setForeground(new java.awt.Color(255, 255, 255));
         lblNumDoc.setText("Número de Documento");
-        jPanel1.add(lblNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 138, -1));
+        jPanel1.add(lblNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 138, -1));
 
         lblGradro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblGradro.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,9 +187,9 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         jPanel1.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 50, -1));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondooooooo.jpg"))); // NOI18N
-        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 340));
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 330));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 340));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
 
         tblListaAlumnos.setBackground(new java.awt.Color(204, 204, 204));
         tblListaAlumnos.setForeground(new java.awt.Color(0, 0, 0));
@@ -221,8 +235,8 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("ESTADO");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jLabel8.setText("AÑO");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -285,6 +299,15 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         jLabel9.setText("GRADO");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        txtFiltrarAnio.setBackground(new java.awt.Color(204, 204, 204));
+        txtFiltrarAnio.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(txtFiltrarAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 110, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("ESTADO");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -303,6 +326,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     public javax.swing.JComboBox<String> cbxGrado;
     public javax.swing.JComboBox<String> cbxNivel;
     public javax.swing.JComboBox<String> cbxTipoDoc;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -316,6 +340,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblApellidoM;
     private javax.swing.JLabel lblApellidoP;
     private javax.swing.JLabel lblEstado;
@@ -326,9 +351,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNumDoc;
     private javax.swing.JLabel lblTipoDoc;
     public javax.swing.JTable tblListaAlumnos;
+    public javax.swing.JTextField txtAnio;
     public javax.swing.JTextField txtApellidoM;
     public javax.swing.JTextField txtApellidoP;
     public javax.swing.JTextField txtBuscar;
+    public javax.swing.JTextField txtFiltrarAnio;
     public javax.swing.JTextField txtNombres;
     public javax.swing.JTextField txtNumDoc;
     // End of variables declaration//GEN-END:variables
