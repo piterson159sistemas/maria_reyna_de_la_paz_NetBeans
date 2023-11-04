@@ -20,8 +20,8 @@ public class Alumno extends Persona{
         super(data);
         this.TipoDocumento=data.get(1);
         int anio = LocalDate.now().getYear();
-        this.gradoAlumno=new GradoAlumno(anio,data.get(5),
-                                    data.get(6),data.get(7));
+        this.gradoAlumno=new GradoAlumno(Integer.parseInt(data.get(5)),
+                data.get(6),data.get(7),data.get(8));
     }
 
     public String getTipoDocumento() {
