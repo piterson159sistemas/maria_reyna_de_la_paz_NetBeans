@@ -69,16 +69,16 @@ public class crudAlumno {
     
     //Busca un alumno de la tabla de alumnos
     public String[] Buscar(String numDoc,String estado){
-        String sqlST="Select a.N_DocumentoA, a.Nombres, a.Apellido_P, a.Apellido_M"
-                +" ,a.Tipo_Documento, g.Nivel, g.Grado, e.Estado from"
-                +" grado_alumno ga" 
+        String sqlST="Select a.N_DocumentoA, a.Tipo_Documento, a.Nombres,"
+                +" a.Apellido_P, a.Apellido_M, g.Nivel, g.Grado, e.Estado, ga.Año"
+                +" from grado_alumno ga" 
                 +" inner join alumno a on (ga.CodigoA = a.N_DocumentoA)" 
                 +" inner join grado g on (ga.Codigo_Grado = g.Codigo_Grado)" 
                 +" inner join estado_grado_alumno e on (ga.Codigo_EstadoGA = e.Codigo_EstadoGA)"
                 +" where a.N_DocumentoA='"+numDoc+"'"
                 +" and e.Estado='"+estado+"';";
-        String[] dataAlumno=new String[8];
-        int max=dataAlumno.length;
+        String[] dataAlumno=new String[9];
+        int longitud=dataAlumno.length;
         try {
             Connection cn = con.conectar();
             con.st = cn.createStatement();
@@ -86,7 +86,9 @@ public class crudAlumno {
             if(con.rs.next()){
                 //1° dato es dni del alumno
                 dataAlumno[0]= Integer.toString(con.rs.getInt(1));
-                for (int i = 1; i < max; i++) {
+                // ult. dato devuelve una fecha, lo convertimos a Año "YYYY"
+                dataAlumno[8]= (con.rs.getString(9)).substring(0, 4);
+                for (int i = 1; i < longitud-1; i++) {
                     dataAlumno[i]= con.rs.getString(i+1);
                 }
             }
@@ -97,50 +99,60 @@ public class crudAlumno {
     }
     
     //Filra a los alumnos en la tabla segun nivel,grado y estadoGrado
-    public String[] Filtrar(String nivel, String grado,String estadoGrado){
-        String[] filtros = new String[3];
+    public String Filtrar(String nivel, String grado,String estadoGrado,
+            String nombre,String anio){
         
-        // 1° Filtramos por nivel
-        
+       StringBuilder sb = new StringBuilder();
+        // 1° Filtro: Nivel 
+        String filtroNG,filtroEst = " ",filtroAnio=" ",filtroNom=" ";
         if(!(nivel.equals("..."))){ //Si el nivel es diferente a "..."
-            
-        // 2° Filtramos por grado
+        // 2° Filtro: Nivel y Grado
             if(!(grado.equals("..."))){  // y si además el grado es diferente a "..."
-                // entonces filtramos por Nivel y grado
-                filtros[0]= "=(select Codigo_Grado from grado where Grado=\""+grado+"\""
-                        +" and Nivel=\""+nivel+"\")";                       
+                // Filtrando por Nivel y grado
+                filtroNG= " where Codigo_Grado"
+                        +" =(select Codigo_Grado from grado where Grado='"+grado+"'"
+                        +" and Nivel='"+nivel+"')";                       
                 
-            }else{ //pero si el grado = "...", filtramos solo por Nivel
+            }else{ //Filtrando solo por Nivel
                 switch(nivel){
-                    case "Inicial" ->  filtros[0]="<=3";
-                    case "Primaria" ->  filtros[0]=">3 and Codigo_Grado<=9";
-                    default ->  filtros[0]=">9";  
+                    case "Inicial" ->  filtroNG=" where Codigo_Grado<=3";
+                    case "Primaria" ->  filtroNG=" where Codigo_Grado>3 and Codigo_Grado<=9";
+                    default ->  filtroNG=" where Codigo_Grado >9";  
                 }
             }
-        }else{ //Pero si el nivel = "..." mostramos todo(sin filtrar)
-            filtros[0]="is not null"; 
+        }else{ //Sin filtrar por nivel y grado
+            filtroNG=" where Codigo_Grado is not null"; 
         }
 
-        // 3° Filtramos por Estado
-        if( !( estadoGrado.equals("...") ) ){ //si el estadoGrado es diferente a "..."
-            // filtramos segun un estado especifico
+        // 3° Filtro: Estado
+        
+        if( !( estadoGrado.equals("...") ) ){ 
             switch(estadoGrado){
-                case "Aprobado" -> filtros[1]="='Aprobado'";
-                case "En Curso" -> filtros[1]="='En Curso'";
-                case "Desaprobado"-> filtros[1]="='Desaprobado'";
-                default -> filtros[1]="='Retirado'";
+                case "Aprobado" -> filtroEst=" and e.Estado='Aprobado'";
+                case "En Curso" -> filtroEst=" and e.Estado='En Curso'";
+                case "Desaprobado"-> filtroEst=" and e.Estado='Desaprobado'";
+                default -> filtroEst=" and e.Estado='Retirado'";
 
             }
-       }else{ //si el estado = "..." mostramos todos los estados(sin filtrar)
-            filtros[1]="is not null"; 
         }
-        filtros[2]=""; // espacio designado por si se filtra por nombre en barra de busqueda
         
-        return filtros;
+        //4° Filtro: nombre completo Alumno    
+        if( (nombre != null) && !(nombre.isBlank()) ){ //si nombre no esta vacio y no es nulo
+            filtroNom=" and concat(Nombres,' ',Apellido_P,' ',Apellido_M) like '"
+                    +nombre+"'";
+        }
+        
+        //5° Filtro: Año
+        if(!(anio.isBlank()) && (anio != null)){ //si el año no está vacio y no es nulo
+            filtroAnio=" and Año='"+anio+"'";
+        } 
+        return sb.append(filtroNG).append(filtroEst).append(filtroNom).
+                append(filtroAnio).toString();
+        
     }
     
     //Lista los alumnos en una tabla
-    public void Listar(JTable tabla, JLabel cantAulmnos,String[] filtros){
+    public void Listar(JTable tabla, JLabel cantAulmnos,String filtroCompleto){
         //Definimos un modelo de encabezados para la tabla 
         String[] Titulos= {"Cod","Alumno","Estado"};
         DefaultTableModel tableModel = new DefaultTableModel(null,Titulos);
@@ -152,14 +164,12 @@ public class crudAlumno {
         /* consulta para extraer [cod. alumno, nombre completo, estado de grado]
          de todos los alumnos del colegio */
         String sqlStatement="select a.N_DocumentoA as cod,"
-                +" concat(Nombres,\" \",Apellido_P,\" \",Apellido_M)"
+                +" concat(Nombres,' ',Apellido_P,' ',Apellido_M)"
                 +" as Alumno, e.Estado from grado_alumno g" 
                 +" inner join alumno a on (g.CodigoA = a.N_DocumentoA)" 
                 +" inner join estado_grado_alumno e on"
                 +" (g.Codigo_EstadoGA = e.Codigo_EstadoGA) "
-                +" where Codigo_Grado "+filtros[0]
-                +" and e.Estado "+filtros[1]
-                +" "+filtros[2]+" ;";
+                +filtroCompleto+" ;";
         
         Object[] dataAlumno = new Object[3];
         int cantRegisttros=0;
