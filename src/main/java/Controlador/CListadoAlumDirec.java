@@ -57,8 +57,11 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         PermitirSoloLetras(vista.txtNombres);
         PermitirSoloLetras(vista.txtApellidoP);
         PermitirSoloLetras(vista.txtApellidoM);
+        PermitirSoloNumeros(vista.txtAnio, 4);
+        PermitirSoloNumeros(vista.txtFiltrarAnio, 4);
         vista.txtNumDoc.setEditable(false);
         detectarCambioCombo(vista.cbxTipoDoc, vista.txtNumDoc);
+        
         
         ActualizarLista();
         //Combos para filtrar
@@ -89,18 +92,20 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     }
     
     public void ActualizarLista(){
-        String[] filtros = definirFiltros();
-        crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtros);
+        String filtro = definirFiltros(null);
+        crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
         listaA.formatoColumnasTabla(vista.tblListaAlumnos);
     }
     
-    public String[] definirFiltros(){
+    public String definirFiltros(String nombreAlumno){
         String nivel=vista.cbxFiltrarNivel.getSelectedItem().toString();
         String grado=vista.cbxFiltrarGrado.getSelectedItem().toString();
         String estado=vista.cbxFiltrarEstadoGrado.getSelectedItem().toString();
+        String anio=vista.txtFiltrarAnio.getText();
+        String nombre=nombreAlumno;
         
-        String[] filtros = crudAlum.Filtrar(nivel, grado,estado);
-        return filtros;
+        String filtro = crudAlum.Filtrar(nivel, grado,estado,nombre,anio);
+        return filtro;
     }
     
     public void mostraAlumno(ArrayList<String> data){
@@ -131,14 +136,65 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     }
     
     public boolean VerificarDatos( ArrayList<String> dataAlumno){
-         for(String dato:dataAlumno){
-             System.out.println(dato);
-             if(dato.equals("0") || dato.equals("...")){
-                 ListaAlumnos.msjDialog("Los campos no puden ser vacios o \"...\"");
-                 return false;
-             }
-         }
-         return true;
+            
+            String msj="";
+            
+            //Manejando formato del Año
+            int anio=Integer.parseInt(dataAlumno.get(5));
+            int LimitMin;
+            String nivel=dataAlumno.get(7);
+            
+            if(anio<1999){
+                msj+="Fecha incorrecta: año menor a 1999\n";
+            }else{
+                if(!nivel.equals("...")){
+
+                    if( (nivel.equals("Primaria") && anio<2000) 
+                          || (nivel.equals("Secundaria") && anio<2005)){
+
+                        switch (nivel) {
+                            case "Primaria" -> LimitMin=2000;
+                            default-> LimitMin=2005;
+                        }
+                        msj+="Fecha incorrecta: estudiante de nivel "+nivel+" con año"
+                                 + " de registro menor a "+LimitMin+"\n";
+                    }
+                }                
+            }
+            
+            
+            //Manejando formato del numDoc
+            String tipoDoc=dataAlumno.get(1);
+            String numDoc=dataAlumno.get(0);
+            if(!(tipoDoc.equals("..."))){
+                if( (tipoDoc.equals("DNI") && numDoc.length()<8)
+                    ||( !(tipoDoc.equals("DNI")) && numDoc.length()<9) ){
+
+                    switch (tipoDoc) {
+                        case "DNI" -> LimitMin=8;
+                        default-> LimitMin=9;
+                    }
+                    msj+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
+                            + " de "+LimitMin+" digitos\n";
+
+                }
+            }
+            
+        //Manejando campos vacios o "..."
+        buble:
+        for(String dato:dataAlumno){
+            if(dato.equals("0") || dato.equals("...")){
+                 msj+="No puede haber datos vacios o con valor \"...\"";
+                 break buble;
+            }
+        }
+        
+        if(!(msj.isBlank())){
+            listaA.msjDialog(msj);
+            return false;
+        }
+        
+        return true;
     }
     
     //metodo que permite ingresar solo letras y espacios en blaco en un txtField
@@ -189,32 +245,32 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         
     }
 
-    public void detectarCambioCombo(JComboBox combo,JTextField campo){
-        combo.addItemListener(new ItemListener() {
+    public void detectarCambioCombo(JComboBox tipoDoc,JTextField numDoc){
+        tipoDoc.addItemListener(new ItemListener() {
         int limit=0; 
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    /*Cada vez que se cambia de un item a otro dentro del combo
-                    se limpia el campo
+                    /*Cada vez que se cambia de un item a otro dentro del tipoDoc
+                    se limpia el numDoc
                     */
-                    campo.setText("");
+                    numDoc.setText("");
                     String tipoDoc=vista.cbxTipoDoc.getSelectedItem().toString();
                     
                     //si el tipoDoc es valido (diferente a "..." )
                     if( !("...".equals(tipoDoc)) ){
-                        campo.setEditable(true);
-                        // verificamos si es del tipo DNI o un tipo diferente
+                        numDoc.setEditable(true);
+                        // verificamos si tipoDocumento es un DNI o un tipo diferente
                         if ("DNI".equals(tipoDoc)) {
                              limit=8;
-                             PermitirSoloNumeros(campo, 8);
+                             PermitirSoloNumeros(numDoc, 8);
                         } else {
                             limit=9;
-                            PermitirSoloNumeros(campo, 9);
+                            PermitirSoloNumeros(numDoc, 9);
                         }
                     }else{
-                        campo.setEditable(false);
-                        PermitirSoloNumeros(campo, 0);
+                        numDoc.setEditable(false);
+                        PermitirSoloNumeros(numDoc, 0);
                     }
                 }
             }
@@ -254,12 +310,16 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         if(e.getSource()==vista.btnBuscar){
             //1° obtenemos nombre completo del alumno
             String nombreAlumno = vista.txtBuscar.getText();
-            //2° Se establcen los filtros de nivel, grado y estado para la busqueda
-            String[] filtros = definirFiltros();
-            //3° se establece el filtro para buscar por nombre
-            filtros[2]="and concat(Nombres,' ',Apellido_P,' ',Apellido_M)='"+nombreAlumno+"'";
-            //4° listamos al alumno en la tabla segun nombre,nivel,grado y estado
-            crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtros);
+            
+            if(nombreAlumno.isBlank()){
+                nombreAlumno="''";
+            }else{
+                nombreAlumno+="%";
+            }
+            //2° Se establece el nombre de busqueda
+            String filtro = definirFiltros(nombreAlumno);
+            //4° listamos al alumno en la tabla segun nombre y aplicando los demás filtros
+            crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtro);
             //5° aplicamos un foramto de presentacion a la tabla
             listaA.formatoColumnasTabla(vista.tblListaAlumnos);
         }
@@ -282,6 +342,9 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             boolean alumnoValido=VerificarDatos(data);
             if(alumnoValido){
                 alum=new Alumno(data);
+                for(String dato:data){
+                    System.out.println(dato);
+                }
             }
             //insercion en la bd
             /*alum = new Alumno(leerAlumno());
@@ -297,8 +360,8 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     public void mouseClicked(MouseEvent e) {
         //captura la fila que se selecciona
         int numfila = vista.tblListaAlumnos.rowAtPoint(e.getPoint());
-        int columNumDoc = 0; //num de coliumna de Num Doc dentro de la fila seleccionada
-        int columEstado = 2; //num de coliumna de estado dentro de la fila seleccionada
+        int columNumDoc = 0; //num de columna de Num Doc dentro de la fila seleccionada
+        int columEstado = 2; //num de columna de estado dentro de la fila seleccionada
         
         if(numfila>-1){
             String numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
