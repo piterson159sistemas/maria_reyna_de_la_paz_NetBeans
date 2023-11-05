@@ -26,7 +26,6 @@ public class ProcesosAlumnos {
         int numCampos= campos.length;
         
         ArrayList<String>data = new ArrayList<>();
-        String dato;
         boolean campoVacio;
                 
         
