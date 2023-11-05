@@ -14,7 +14,7 @@ import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 
 
 
-public class ListaAlumnos {
+public class ProcesosAlumnos {
     crudAlumno crudA=new crudAlumno();
     String all="..."; // los "..." indica filtrar todo
     
@@ -112,6 +112,23 @@ public class ListaAlumnos {
     public void cargaInicialCombos(JComboBox cbxNiveles,JComboBox cbxGrados){
         cbxNiveles.addItem(all);
         cbxGrados.addItem(all);
+    }
+    
+    public void Limpiarcampos(lista_estudiantes_directivo_1 led){
+        JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
+            led.txtApellidoP,led.txtApellidoM,led.cbxNivel,led.cbxGrado,
+            led.cbxEstadoGrado,led.txtAnio};
+        
+            int numCampos= campos.length;
+        
+            for (int i = 0; i < numCampos; i++) {
+                if(campos[i] instanceof JTextField){
+                    ((JTextField)campos[i]).setText("");
+                }else{
+                    ((JComboBox)campos[i]).setSelectedItem("...");
+                }
+            }
+        
     }
     
     public static void msjDialog(String mensaje){
