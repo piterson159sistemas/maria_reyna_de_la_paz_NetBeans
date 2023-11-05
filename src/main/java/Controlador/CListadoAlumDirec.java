@@ -2,7 +2,7 @@
 package Controlador;
 import DAO.crudAlumno;
 import Modelo.Alumno;
-import Procesos.ListaAlumnos;
+import Procesos.ProcesosAlumnos;
 import Vista.lista_estudiantes_directivo_1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +27,9 @@ import java.awt.event.KeyEvent;
 public class CListadoAlumDirec implements ActionListener,MouseListener{
     lista_estudiantes_directivo_1 vista;
     Alumno alum;
+    String[] dataAlumno;
     crudAlumno crudAlum = new crudAlumno();
-    ListaAlumnos listaA=new ListaAlumnos();
+    ProcesosAlumnos procesos=new ProcesosAlumnos();
 
     public CListadoAlumDirec(lista_estudiantes_directivo_1 listaEst) {
         vista=listaEst;
@@ -42,16 +43,16 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         listaEst.setVisible(true);
         //TextFiled del buscador mostrará sugerecias segun se escriba
         ArrayList<String> nombres= crudAlum.BuscarNombresAlumno();
-        listaA.MostrarSugerencias(vista.txtBuscar, nombres);
+        procesos.MostrarSugerencias(vista.txtBuscar, nombres);
         
         // carga de los elemento de todos los combos del frm
-        listaA.cargaInicialCombos(vista.cbxFiltrarNivel, vista.cbxFiltrarGrado);
-        listaA.cargaInicialCombos(vista.cbxNivel, vista.cbxGrado);
-        listaA.cargarNiveles(vista.cbxFiltrarNivel);
-        listaA.cargarNiveles(vista.cbxNivel);
-        listaA.cargarEstados(vista.cbxFiltrarEstadoGrado);
-        listaA.cargarEstados(vista.cbxEstadoGrado);
-        listaA.cargarTiposDoc(vista.cbxTipoDoc);
+        procesos.cargaInicialCombos(vista.cbxFiltrarNivel, vista.cbxFiltrarGrado);
+        procesos.cargaInicialCombos(vista.cbxNivel, vista.cbxGrado);
+        procesos.cargarNiveles(vista.cbxFiltrarNivel);
+        procesos.cargarNiveles(vista.cbxNivel);
+        procesos.cargarEstados(vista.cbxFiltrarEstadoGrado);
+        procesos.cargarEstados(vista.cbxEstadoGrado);
+        procesos.cargarTiposDoc(vista.cbxTipoDoc);
         
         //cargamos las restricciones de los campos y combos del frm
         PermitirSoloLetras(vista.txtNombres);
@@ -94,7 +95,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     public void ActualizarLista(){
         String filtro = definirFiltros(null);
         crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
-        listaA.formatoColumnasTabla(vista.tblListaAlumnos);
+        procesos.formatoColumnasTabla(vista.tblListaAlumnos);
     }
     
     public String definirFiltros(String nombreAlumno){
@@ -166,7 +167,9 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             //Manejando formato del numDoc
             String tipoDoc=dataAlumno.get(1);
             String numDoc=dataAlumno.get(0);
+            boolean codigoExiste=crudAlum.BuscarCodigo(numDoc);
             if(!(tipoDoc.equals("..."))){
+                //Se comprueba si NumDoc tiene la longitud correcta
                 if( (tipoDoc.equals("DNI") && numDoc.length()<8)
                     ||( !(tipoDoc.equals("DNI")) && numDoc.length()<9) ){
 
@@ -177,6 +180,9 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                     msj+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
                             + " de "+LimitMin+" digitos\n";
 
+                }else if(codigoExiste){//Si tiene longitud correcta se comprueba si ya existe
+                    msj+="El Numero de Documento "+numDoc+" ya existe, introduzca uno nuevo\n";
+                    
                 }
             }
             
@@ -190,7 +196,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(!(msj.isBlank())){
-            listaA.msjDialog(msj);
+            procesos.msjDialog(msj);
             return false;
         }
         
@@ -294,13 +300,13 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                     // remueve todos los grados del anterior nivel seleccionado
                     cbxGrado.removeAllItems();
                     //cargamos los grados del actual el nivel seleccionado
-                    listaA.cargarGrados(cbxGrado, nivelSelect);
+                    procesos.cargarGrados(cbxGrado, nivelSelect);
                 }
             }
         });
     }
     
-    // para controlar eventos(click) en los botones
+    // FUNCIONALIDAD BOTONES
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnFiltrar){
@@ -321,7 +327,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             //4° listamos al alumno en la tabla segun nombre y aplicando los demás filtros
             crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtro);
             //5° aplicamos un foramto de presentacion a la tabla
-            listaA.formatoColumnasTabla(vista.tblListaAlumnos);
+            procesos.formatoColumnasTabla(vista.tblListaAlumnos);
         }
         
         if(e.getSource()==vista.btnActualizar){
@@ -338,13 +344,15 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(e.getSource()==vista.btnInsertar){
-            ArrayList<String>data = listaA.leerAlumno(vista);
+            ArrayList<String>data = procesos.leerAlumno(vista);
             boolean alumnoValido=VerificarDatos(data);
+            for(String dato:data){
+                System.out.print("[ "+dato+" ],");
+            }
+            System.out.print("[ Codigo grado_alumno:"+dataAlumno[9]+" ]\n");
+            procesos.Limpiarcampos(vista);
             if(alumnoValido){
                 alum=new Alumno(data);
-                for(String dato:data){
-                    System.out.println(dato);
-                }
             }
             //insercion en la bd
             /*alum = new Alumno(leerAlumno());
@@ -366,8 +374,8 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         if(numfila>-1){
             String numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
             String estado=vista.tblListaAlumnos.getValueAt(numfila, columEstado).toString();
-            String[] data= crudAlum.Buscar(numDocAlumno,estado);
-            listaA.MostrarAlumno(data, vista);
+            dataAlumno= crudAlum.Buscar(numDocAlumno,estado);
+            procesos.MostrarAlumno(dataAlumno, vista);
             
             
         }
