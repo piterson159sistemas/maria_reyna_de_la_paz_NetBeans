@@ -3,7 +3,10 @@ package DAO;
 
 import Procesos.ProcesosAlumnos;
 import Modelo.Alumno;
+import Modelo.GradoAlumno;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class crudAlumno {
     Conexion con= new Conexion();
-    
+    ResultSet rs;
     
     public boolean BuscarCodigo(String codigo){
         boolean codigoExiste=true;
@@ -214,25 +217,120 @@ public class crudAlumno {
             ProcesosAlumnos.msjDialog("ERROR al mostrar la lista de Alumnos "+e);
         }
     }
-
-    public void Insertar(Alumno a){
-        String sqlStatement="INSERT INTO Alumno values(?,?,?,?,?);";
-        try{
-            Connection cn = con.conectar();
-            con.pst =cn.prepareStatement(sqlStatement);
-            con.pst.setInt(1, a.getNumDocumento());
-            con.pst.setString(2, a.getTipoDocumento());
-            con.pst.setString(3, a.getNombre());
-            con.pst.setString(4, a.getApellidoP());
-            con.pst.setString(5, a.getApellidoM());
-            con.pst.executeUpdate();
-            ProcesosAlumnos.msjDialog("Alumno registrado exitosamente");
-            cn.close();
-        }catch(SQLException e){
-            ProcesosAlumnos.msjDialog("ERROR al registrar Alumno "+e);
+    
+    /*
+            ****************************************************
+            *                     INSERTAR                     *
+            ****************************************************
+    */
+    
+    public void InsertarAlumno(Alumno a,Connection cn)throws SQLException{
+        String sqlST="INSERT INTO Alumno(N_DocumentoA,Tipo_Documento,Nombres,"
+                + "Apellido_P,Apellido_M) values(?,?,?,?,?);";
+        try( PreparedStatement st=cn.prepareStatement(sqlST)){
+            st.setInt(1, a.getNumDocumento());
+            st.setString(2, a.getTipoDocumento());
+            st.setString(3, a.getNombre());
+            st.setString(4, a.getApellidoP());
+            st.setString(5, a.getApellidoM());
+            st.executeUpdate();
         }
         
     }
+    
+    
+    public int obtenerCodGrado(String grado,String nivel){
+        int codGrado=0;
+        String sqlST="select Codigo_Grado from grado"
+        +" where Grado like '"+grado+"' and Nivel like '"+nivel+"';";
+        try{
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                codGrado=con.rs.getInt(1);
+            }
+            cn.close();
+        }catch(SQLException e){}
+        
+        return codGrado;
+    }
+    
+    public int obtenerCodEstado(String estado){
+        int codEstado=0;
+        String sqlST="select Codigo_EstadoGA from"
+                +" estado_grado_alumno WHERE Estado like '"+estado+"';";
+        try{
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);       
+            if(con.rs.next()){
+                codEstado=con.rs.getInt(1);
+            }
+            cn.close();
+        }catch(Exception e){} 
+        return codEstado;
+    }
+    
+    public void InsertarGradoAlumno(int anio,int codAlum,int codGrado, int codEstado,
+            Connection cn) throws SQLException{
+        String sqlST="INSERT INTO grado_alumno"
+                + " (Año,CodigoA,Codigo_Grado,Codigo_EstadoGA)"
+                + " values ( (?),?,?,?);";
+        try( PreparedStatement st=cn.prepareStatement(sqlST) ){
+            st.setInt(1, anio);
+            st.setInt(2, codAlum);
+            st.setInt(3, codGrado);
+            st.setInt(4, codEstado);
+            st.executeUpdate(); 
+         
+        }
+    }
+    
+    public void Insertar(Alumno a,int codGrado, int codEstado){
+        Connection cn=null;
+        try{
+           cn = con.conectar(); //establece conexion
+           /* Deshabilita la confirmación automática(autocommit) para
+           inicar la transacción */
+           cn.setAutoCommit(false);
+           //Realizamos las operaciones de insercion en la bd
+            InsertarAlumno(a, cn); // 1° op
+
+            int codAlum = a.getNumDocumento();
+            int anio=a.getGradoAlumno().getAnio();
+            
+            InsertarGradoAlumno(anio, codAlum,codGrado,codEstado, cn); // 2° op
+            
+            cn.commit(); //confirma la transacción
+            
+            ProcesosAlumnos.msjDialog("Alumno registrado correctamente");
+           
+        }catch (SQLException e){
+            //si ocurre un error desace la transacción(rollback)
+            if (cn != null) {
+                try { cn.rollback(); } 
+                catch (SQLException ex) {
+                    ProcesosAlumnos.msjDialog("ERROR al registrar al alumno");
+                    ex.printStackTrace(System.out);
+                }
+            }
+            e.printStackTrace(System.out);
+        }finally{
+            if (cn != null) {
+                try { 
+                    cn.setAutoCommit(true);
+                    cn.close(); } 
+                catch (SQLException e) {e.printStackTrace(System.out);}
+            }
+        }
+    }
+    
+        /*
+            ****************************************************
+            *                     ELIMINAR                     *
+            ****************************************************
+        */
     
     public void Eliminar(int NumDoc){
         String sqlStatement="DELETE FROM Alumno WHERE N_DocumentoA=(?);";
@@ -249,6 +347,12 @@ public class crudAlumno {
         }
         
     }
+    
+        /*
+            ****************************************************
+            *                    ACTUALIZAR                    *
+            ****************************************************
+        */
     
     public void Actualizar(Alumno a){
         String sqlStatement="UPDATE Alumno SET Nombres=(?), Apellido_P=(?),"
