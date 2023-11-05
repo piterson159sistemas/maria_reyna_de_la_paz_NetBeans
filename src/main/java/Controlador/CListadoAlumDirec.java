@@ -26,7 +26,7 @@ import java.awt.event.KeyEvent;
 
 public class CListadoAlumDirec implements ActionListener,MouseListener{
     lista_estudiantes_directivo_1 vista;
-    Alumno alum;
+    Alumno alumno;
     String[] dataAlumno;
     crudAlumno crudAlum = new crudAlumno();
     ProcesosAlumnos procesos=new ProcesosAlumnos();
@@ -38,6 +38,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         vista.btnActualizar.addActionListener(this);
         vista.btnBorrar.addActionListener(this);
         vista.btnInsertar.addActionListener(this);
+        vista.btnLimpiar.addActionListener(this);
         vista.tblListaAlumnos.addMouseListener(this);
         listaEst.setTitle("Gestion de Estudiantes");
         listaEst.setVisible(true);
@@ -313,6 +314,10 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             ActualizarLista();         
         }
         
+        if(e.getSource()==vista.btnLimpiar){
+            procesos.Limpiarcampos(vista);
+        }
+        
         if(e.getSource()==vista.btnBuscar){
             //1° obtenemos nombre completo del alumno
             String nombreAlumno = vista.txtBuscar.getText();
@@ -331,32 +336,58 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(e.getSource()==vista.btnActualizar){
-            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
-            alum = new Alumno(leerAlumno());
-            crudAlum.Actualizar(alum);
-            ActualizarLista();
+           /* int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
+            alumno = new Alumno(leerAlumno());
+            crudAlum.Actualizar(alumno);
+            ActualizarLista(); */
         }
         
         if(e.getSource()==vista.btnBorrar){
-            int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
+            /*int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
             crudAlum.Eliminar(NumDoc);
-            ActualizarLista();
+            ActualizarLista(); */
         }
         
         if(e.getSource()==vista.btnInsertar){
             ArrayList<String>data = procesos.leerAlumno(vista);
             boolean alumnoValido=VerificarDatos(data);
+            
+            // Tests de prueba
+            System.out.print("\n*****Datos Obtenidos Frm*****\n");
             for(String dato:data){
                 System.out.print("[ "+dato+" ],");
             }
-            System.out.print("[ Codigo grado_alumno:"+dataAlumno[9]+" ]\n");
-            procesos.Limpiarcampos(vista);
+            if(dataAlumno!=null && dataAlumno.length>0){
+                System.out.print("[ Codigo grado_alumno:"+dataAlumno[9]+" ]\n");   
+            }
+            // 
+            
+            
             if(alumnoValido){
-                alum=new Alumno(data);
+                alumno=new Alumno(data);
+                int codGrado= crudAlum.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
+                                                       ,alumno.getGradoAlumno().getNivel());
+                int codEstado= crudAlum.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
+                System.out.println(codGrado+" "+codEstado);
+                if(codGrado!=0 && codEstado!=0){
+                    crudAlum.Insertar(alumno,codGrado,codEstado);
+                }
+                
+                System.out.print("\n*****Datos Objeto Alumno*****\n");
+                System.out.print(alumno.getNumDocumento()+", ");
+                System.out.print(alumno.getTipoDocumento()+", ");
+                System.out.print(alumno.getNombre()+", ");
+                System.out.print(alumno.getApellidoP()+", ");
+                System.out.print(alumno.getApellidoM()+", ");
+                
+                System.out.print(alumno.getGradoAlumno().getAnio()+", ");
+                System.out.print(alumno.getGradoAlumno().getGrado()+", ");
+                System.out.print(alumno.getGradoAlumno().getNivel()+", ");
+                System.out.print(alumno.getGradoAlumno().getEstado()+"\n");
             }
             //insercion en la bd
-            /*alum = new Alumno(leerAlumno());
-            crudAlum.Insertar(alum);
+            /*alumno = new Alumno(leerAlumno());
+            crudAlum.Insertar(alumno);
             ActualizarLista();*/
             
         }
