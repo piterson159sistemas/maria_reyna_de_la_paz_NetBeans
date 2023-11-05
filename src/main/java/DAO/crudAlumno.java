@@ -1,7 +1,7 @@
 
 package DAO;
 
-import Procesos.ListaAlumnos;
+import Procesos.ProcesosAlumnos;
 import Modelo.Alumno;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -17,7 +17,25 @@ import javax.swing.table.DefaultTableModel;
 public class crudAlumno {
     Conexion con= new Conexion();
     
-   public ArrayList<String> BuscarNombresAlumno(){
+    
+    public boolean BuscarCodigo(String codigo){
+        boolean codigoExiste=true;
+        String sqlST="select N_DocumentoA from alumno where N_DocumentoA="+codigo+";";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            
+            if(!(con.rs.next())){ //si no se encuentra un registro en la busqueda
+                codigoExiste=false;
+            }
+        } catch (Exception e) {
+            
+        }
+        return codigoExiste;
+    }
+    
+    public ArrayList<String> BuscarNombresAlumno(){
        ArrayList<String> nombres = new ArrayList<>();
        String sqlST="select concat(Nombres,' ',Apellido_P,' ',Apellido_M) as Alumno from alumno;";
        
@@ -28,10 +46,11 @@ public class crudAlumno {
             while(con.rs.next()){
                 nombres.add(con.rs.getString(1));
             }
+            cn.close();
        } catch (SQLException e) {
        }
         return nombres;
-   }
+    }
     
     
     public Queue<String> BuscarGrados(String nivel){
@@ -70,14 +89,15 @@ public class crudAlumno {
     //Busca un alumno de la tabla de alumnos
     public String[] Buscar(String numDoc,String estado){
         String sqlST="Select a.N_DocumentoA, a.Tipo_Documento, a.Nombres,"
-                +" a.Apellido_P, a.Apellido_M, g.Nivel, g.Grado, e.Estado, ga.Año"
+                +" a.Apellido_P, a.Apellido_M, g.Nivel, g.Grado, e.Estado,"
+                +" ga.Año, ga.Codigo_Grado_Alumno"
                 +" from grado_alumno ga" 
                 +" inner join alumno a on (ga.CodigoA = a.N_DocumentoA)" 
                 +" inner join grado g on (ga.Codigo_Grado = g.Codigo_Grado)" 
                 +" inner join estado_grado_alumno e on (ga.Codigo_EstadoGA = e.Codigo_EstadoGA)"
                 +" where a.N_DocumentoA='"+numDoc+"'"
                 +" and e.Estado='"+estado+"';";
-        String[] dataAlumno=new String[9];
+        String[] dataAlumno=new String[10];
         int longitud=dataAlumno.length;
         try {
             Connection cn = con.conectar();
@@ -88,12 +108,14 @@ public class crudAlumno {
                 dataAlumno[0]= Integer.toString(con.rs.getInt(1));
                 // ult. dato devuelve una fecha, lo convertimos a Año "YYYY"
                 dataAlumno[8]= (con.rs.getString(9)).substring(0, 4);
-                for (int i = 1; i < longitud-1; i++) {
+                dataAlumno[9]= String.valueOf(con.rs.getInt(10));
+                for (int i = 1; i < longitud-2; i++) {
                     dataAlumno[i]= con.rs.getString(i+1);
                 }
             }
+            cn.close();
         } catch (SQLException e) {
-            ListaAlumnos.msjDialog("ERROR al buscar alumno de la Tabla "+e);
+            ProcesosAlumnos.msjDialog("ERROR al buscar alumno de la Tabla "+e);
         }
         return dataAlumno;
     }
@@ -189,7 +211,7 @@ public class crudAlumno {
             cantAulmnos.setText(Integer.toString(cantRegisttros));
             cn.close();
         } catch (SQLException e) {
-            ListaAlumnos.msjDialog("ERROR al mostrar la lista de Alumnos "+e);
+            ProcesosAlumnos.msjDialog("ERROR al mostrar la lista de Alumnos "+e);
         }
     }
 
@@ -204,10 +226,10 @@ public class crudAlumno {
             con.pst.setString(4, a.getApellidoP());
             con.pst.setString(5, a.getApellidoM());
             con.pst.executeUpdate();
-            ListaAlumnos.msjDialog("Alumno registrado exitosamente");
+            ProcesosAlumnos.msjDialog("Alumno registrado exitosamente");
             cn.close();
         }catch(SQLException e){
-            ListaAlumnos.msjDialog("ERROR al registrar Alumno "+e);
+            ProcesosAlumnos.msjDialog("ERROR al registrar Alumno "+e);
         }
         
     }
@@ -220,10 +242,10 @@ public class crudAlumno {
             con.pst =cn.prepareStatement(sqlStatement);
             con.pst.setInt(1, NumDoc);
             con.pst.executeUpdate();
-            ListaAlumnos.msjDialog("Registro eliminado exitosamente");
+            ProcesosAlumnos.msjDialog("Registro eliminado exitosamente");
             cn.close();
         } catch (SQLException e) {
-            ListaAlumnos.msjDialog("ERROR al eliminar registro "+e);
+            ProcesosAlumnos.msjDialog("ERROR al eliminar registro "+e);
         }
         
     }
@@ -239,10 +261,10 @@ public class crudAlumno {
             con.pst.setString(3, a.getApellidoM());
             con.pst.setInt(4, a.getNumDocumento());
             con.pst.executeUpdate();
-            ListaAlumnos.msjDialog("Datos de Alumno actualizados exitosamente");
+            ProcesosAlumnos.msjDialog("Datos de Alumno actualizados exitosamente");
             cn.close();
         } catch (SQLException e) {
-            ListaAlumnos.msjDialog("ERROR al Actializar registro "+e);
+            ProcesosAlumnos.msjDialog("ERROR al Actializar registro "+e);
         }
         
     }
