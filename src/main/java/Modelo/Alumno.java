@@ -32,14 +32,14 @@ public class Alumno extends Persona{
         this.TipoDocumento = TipoDocumento;
     }
 
-    public GradoAlumno getGrado() {
+    public GradoAlumno getGradoAlumno() {
         return gradoAlumno;
     }
 
-    public void setGrado(GradoAlumno gradoAlumno) {
+    public void setGradoAlumno(GradoAlumno gradoAlumno) {
         this.gradoAlumno = gradoAlumno;
     }
-    
+      
     public void RegistrarAlumno(){}
     public void AsignarGrado(){}
     public void OrdenarLista(){}
