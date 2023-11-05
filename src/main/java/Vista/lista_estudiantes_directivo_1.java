@@ -29,6 +29,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnInsertar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         cbxTipoDoc = new javax.swing.JComboBox<>();
         cbxGrado = new javax.swing.JComboBox<>();
         cbxEstadoGrado = new javax.swing.JComboBox<>();
@@ -145,6 +146,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update-student.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 140, 40));
+
+        btnLimpiar.setBackground(new java.awt.Color(133, 164, 199));
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Limpiar.png"))); // NOI18N
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 40, 40));
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
         cbxTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
@@ -319,6 +325,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnFiltrar;
     public javax.swing.JButton btnInsertar;
+    public javax.swing.JButton btnLimpiar;
     public javax.swing.JComboBox<String> cbxEstadoGrado;
     public javax.swing.JComboBox<String> cbxFiltrarEstadoGrado;
     public javax.swing.JComboBox<String> cbxFiltrarGrado;
