@@ -39,6 +39,16 @@ public class GradoAlumno {
         this.nivel = nivel;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
+
     
     public void RegistrarGrado(){}
     public void CrearCodigo(){}
