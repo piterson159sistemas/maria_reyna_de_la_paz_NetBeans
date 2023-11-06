@@ -28,22 +28,22 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     lista_estudiantes_directivo_1 vista;
     Alumno alumno;
     String[] dataAlumno;
-    crudAlumno crudAlum = new crudAlumno();
+    crudAlumno crudAlumno = new crudAlumno();
     ProcesosAlumnos procesos=new ProcesosAlumnos();
+    String msjError="";
 
     public CListadoAlumDirec(lista_estudiantes_directivo_1 listaEst) {
         vista=listaEst;
         vista.btnFiltrar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
-        vista.btnActualizar.addActionListener(this);
-        vista.btnBorrar.addActionListener(this);
+        vista.btnModificar.addActionListener(this);
         vista.btnInsertar.addActionListener(this);
         vista.btnLimpiar.addActionListener(this);
         vista.tblListaAlumnos.addMouseListener(this);
         listaEst.setTitle("Gestion de Estudiantes");
         listaEst.setVisible(true);
         //TextFiled del buscador mostrará sugerecias segun se escriba
-        ArrayList<String> nombres= crudAlum.BuscarNombresAlumno();
+        ArrayList<String> nombres= crudAlumno.BuscarNombresAlumno();
         procesos.MostrarSugerencias(vista.txtBuscar, nombres);
         
         // carga de los elemento de todos los combos del frm
@@ -72,30 +72,10 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         CargarCombosEnlazados(vista.cbxNivel,vista.cbxGrado);
     }
 
-    public  ArrayList<String> leerAlumno(){
-        JComponent campos[]= {vista.cbxFiltrarNivel,vista.txtNumDoc,vista.txtNombres,
-        vista.txtApellidoP,vista.txtApellidoM};
-        int numCampos= campos.length;
-        
-        ArrayList<String>data = new ArrayList<>();
-        String dato;
-        
-        //for para recorrer todos los campos, guardando su valor en una lista
-        for(int i=0; i<numCampos;i++){
-            if(campos[i] instanceof JTextField){
-                dato= ((JTextField)campos[i]).getText();
-            }else{
-                dato= ((JComboBox)campos[i]).getSelectedItem().toString();
-            }
-            data.add(dato);
-        }
-        //retornamos los datos del alumno
-       return data;
-    }
     
     public void ActualizarLista(){
         String filtro = definirFiltros(null);
-        crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
+        crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
         procesos.formatoColumnasTabla(vista.tblListaAlumnos);
     }
     
@@ -106,102 +86,74 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         String anio=vista.txtFiltrarAnio.getText();
         String nombre=nombreAlumno;
         
-        String filtro = crudAlum.Filtrar(nivel, grado,estado,nombre,anio);
+        String filtro = crudAlumno.Filtrar(nivel, grado,estado,nombre,anio);
         return filtro;
     }
-    
-    public void mostraAlumno(ArrayList<String> data){
-        JComponent campos[]= {vista.cbxFiltrarNivel,vista.txtNumDoc,vista.txtNombres,
-        vista.txtApellidoP,vista.txtApellidoM};
-        int numCampos= campos.length;
-        
-        for(int i=0; i<numCampos;i++){
-            if(campos[i] instanceof JTextField){
-                ((JTextField)campos[i]).setText(data.get(i));
-            }else{
-                switch(data.get(1)){
-                    case "DNI":
-                    ((JComboBox)campos[i]).setSelectedIndex(0);
-                    break;
-                
-                    case "Pasaporte":
-                        ((JComboBox)campos[i]).setSelectedIndex(1);
-                    break;
-                
-                    case "Carnet de extranjeria":
-                    ((JComboBox)campos[i]).setSelectedIndex(2);
-                    break;
-                }
-            }
-        }
-        vista.txtNumDoc.setText(data.get(0));
-    }
-    
+     
     public boolean VerificarDatos( ArrayList<String> dataAlumno){
             
-            String msj="";
-            
-            //Manejando formato del Año
-            int anio=Integer.parseInt(dataAlumno.get(5));
-            int LimitMin;
-            String nivel=dataAlumno.get(7);
-            
-            if(anio<1999){
-                msj+="Fecha incorrecta: año menor a 1999\n";
-            }else{
-                if(!nivel.equals("...")){
+        /*
+        *************VERIFICACION:FORMATO AÑO**********************************
+        */
+        int anio=Integer.parseInt(dataAlumno.get(5));
+        int LimitMin;
+        String nivel=dataAlumno.get(7);
 
-                    if( (nivel.equals("Primaria") && anio<2000) 
-                          || (nivel.equals("Secundaria") && anio<2005)){
+        if(anio<1999){
+            msjError+="Fecha incorrecta: año menor a 1999\n";
+        }else{
+            if(!nivel.equals("...")){
 
-                        switch (nivel) {
-                            case "Primaria" -> LimitMin=2000;
-                            default-> LimitMin=2005;
-                        }
-                        msj+="Fecha incorrecta: estudiante de nivel "+nivel+" con año"
-                                 + " de registro menor a "+LimitMin+"\n";
+                if( (nivel.equals("Primaria") && anio<2000) 
+                      || (nivel.equals("Secundaria") && anio<2005)){
+
+                    switch (nivel) {
+                        case "Primaria" -> LimitMin=2000;
+                        default-> LimitMin=2005;
                     }
-                }                
-            }
-            
-            
-            //Manejando formato del numDoc
-            String tipoDoc=dataAlumno.get(1);
-            String numDoc=dataAlumno.get(0);
-            boolean codigoExiste=crudAlum.BuscarCodigo(numDoc);
-            if(!(tipoDoc.equals("..."))){
-                //Se comprueba si NumDoc tiene la longitud correcta
-                if( (tipoDoc.equals("DNI") && numDoc.length()<8)
-                    ||( !(tipoDoc.equals("DNI")) && numDoc.length()<9) ){
-
-                    switch (tipoDoc) {
-                        case "DNI" -> LimitMin=8;
-                        default-> LimitMin=9;
-                    }
-                    msj+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
-                            + " de "+LimitMin+" digitos\n";
-
-                }else if(codigoExiste){//Si tiene longitud correcta se comprueba si ya existe
-                    msj+="El Numero de Documento "+numDoc+" ya existe, introduzca uno nuevo\n";
-                    
+                    msjError+="Fecha incorrecta: estudiante de nivel "+nivel+" con año"
+                             + " de registro menor a "+LimitMin+"\n";
                 }
-            }
+            }                
+        }
             
-        //Manejando campos vacios o "..."
-        buble:
+        /*
+        *************VERIFICACION:NUMERO DE DOCUMENTO**************************
+        */
+            
+        String tipoDoc=dataAlumno.get(1);
+        String numDoc=dataAlumno.get(0);
+        if(!(tipoDoc.equals("..."))){
+            //Se comprueba si NumDoc tiene la longitud correcta
+            if( (tipoDoc.equals("DNI") && numDoc.length()<8)
+                ||( !(tipoDoc.equals("DNI")) && numDoc.length()<9) ){
+
+                switch (tipoDoc) {
+                    case "DNI" -> LimitMin=8;
+                    default-> LimitMin=9;
+                }
+                msjError+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
+                        + " de "+LimitMin+" digitos\n";
+            }
+        }
+            
+        /*
+        *************VERIFICACION:CAMPOS VACIOS O "..."************************
+        */
+        bucle:
         for(String dato:dataAlumno){
             if(dato.equals("0") || dato.equals("...")){
-                 msj+="No puede haber datos vacios o con valor \"...\"";
-                 break buble;
+                 msjError+="No puede haber datos vacios o con valor \"...\"";
+                 break bucle;
             }
         }
         
-        if(!(msj.isBlank())){
-            procesos.msjDialog(msj);
+        if(!(msjError.isBlank())){
             return false;
+        }else {
+            return true;
         }
         
-        return true;
     }
     
     //metodo que permite ingresar solo letras y espacios en blaco en un txtField
@@ -227,9 +179,9 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                 }
             }
         });
-        
     }
 
+    //metodo que permite ingresar solo numeros y en cierta cantidad segun el tipo de docuemnto
     public void PermitirSoloNumeros(JTextField campo,int limit){
         campo.setDocument(new PlainDocument() {
                 @Override
@@ -245,13 +197,13 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                             (limit <= 0 ||(getLength() + str.length() <= limit)) ) {
                         super.insertString(offset, str, attr);
                     }
-                            
-                    
                 }
             }); 
-        
     }
-
+    
+    /* Metodo que detecta cuando se cambia de Item en el comboBox tipoDocumento
+       para que cambie tambien el limite de numeros permitidos para el numDocumento
+    */
     public void detectarCambioCombo(JComboBox tipoDoc,JTextField numDoc){
         tipoDoc.addItemListener(new ItemListener() {
         int limit=0; 
@@ -330,71 +282,64 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             //2° Se establece el nombre de busqueda
             String filtro = definirFiltros(nombreAlumno);
             //4° listamos al alumno en la tabla segun nombre y aplicando los demás filtros
-            crudAlum.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtro);
+            crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtro);
             //5° aplicamos un foramto de presentacion a la tabla
             procesos.formatoColumnasTabla(vista.tblListaAlumnos);
         }
         
-        if(e.getSource()==vista.btnActualizar){
-           /* int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
-            alumno = new Alumno(leerAlumno());
-            crudAlum.Actualizar(alumno);
-            ActualizarLista(); */
+        if(e.getSource()==vista.btnModificar){
+            ArrayList<String>data = procesos.leerAlumno(vista);
+            boolean alumnoValido=VerificarDatos(data);
+            boolean codigoExiste=crudAlumno.BuscarCodigo(data.get(0));
+            if(alumnoValido && codigoExiste){
+                alumno=new Alumno(data);
+                //actualizamos
+                int codGrado= crudAlumno.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
+                                                       ,alumno.getGradoAlumno().getNivel());
+                
+                int codEstado= crudAlumno.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
+                
+                int codGradoAlumno=Integer.parseInt(dataAlumno[9]);
+                crudAlumno.Actualizar(alumno, codGrado, codEstado, codGradoAlumno);
+                
+            }else{
+                if( !(codigoExiste) ){
+                    msjError+="El Alumno con Numero de Documento "
+                            +data.get(0)+ " aun no está registrado\n";
+                }
+                procesos.msjDialog(msjError);
+                msjError="";
+            }        
         }
         
-        if(e.getSource()==vista.btnBorrar){
-            /*int NumDoc = Integer.parseInt(vista.txtBuscar.getText());
-            crudAlum.Eliminar(NumDoc);
-            ActualizarLista(); */
-        }
         
         if(e.getSource()==vista.btnInsertar){
             ArrayList<String>data = procesos.leerAlumno(vista);
             boolean alumnoValido=VerificarDatos(data);
-            
-            // Tests de prueba
-            System.out.print("\n*****Datos Obtenidos Frm*****\n");
-            for(String dato:data){
-                System.out.print("[ "+dato+" ],");
-            }
-            if(dataAlumno!=null && dataAlumno.length>0){
-                System.out.print("[ Codigo grado_alumno:"+dataAlumno[9]+" ]\n");   
-            }
-            // 
-            
-            
-            if(alumnoValido){
+            boolean codigoExiste=crudAlumno.BuscarCodigo(data.get(0));
+
+            if(alumnoValido && !(codigoExiste)){
                 alumno=new Alumno(data);
-                int codGrado= crudAlum.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
+                int codGrado= crudAlumno.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
                                                        ,alumno.getGradoAlumno().getNivel());
-                int codEstado= crudAlum.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
-                System.out.println(codGrado+" "+codEstado);
-                if(codGrado!=0 && codEstado!=0){
-                    crudAlum.Insertar(alumno,codGrado,codEstado);
+                
+                int codEstado= crudAlumno.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
+                crudAlumno.Insertar(alumno,codGrado,codEstado);
+
+            }else{
+                if(codigoExiste){
+                    msjError+="El Numero de Documento "+data.get(0)
+                            + " ya existe, introduzca uno nuevo\n";
                 }
-                
-                System.out.print("\n*****Datos Objeto Alumno*****\n");
-                System.out.print(alumno.getNumDocumento()+", ");
-                System.out.print(alumno.getTipoDocumento()+", ");
-                System.out.print(alumno.getNombre()+", ");
-                System.out.print(alumno.getApellidoP()+", ");
-                System.out.print(alumno.getApellidoM()+", ");
-                
-                System.out.print(alumno.getGradoAlumno().getAnio()+", ");
-                System.out.print(alumno.getGradoAlumno().getGrado()+", ");
-                System.out.print(alumno.getGradoAlumno().getNivel()+", ");
-                System.out.print(alumno.getGradoAlumno().getEstado()+"\n");
+                procesos.msjDialog(msjError);
+                msjError="";
             }
-            //insercion en la bd
-            /*alumno = new Alumno(leerAlumno());
-            crudAlum.Insertar(alumno);
-            ActualizarLista();*/
             
         }
     }
 
     
-    // para controlar eventos(click) en la tabla de Alumnos
+    // FUNCIONALIDAD TABLA (clicks en el JTable)
     @Override
     public void mouseClicked(MouseEvent e) {
         //captura la fila que se selecciona
@@ -405,7 +350,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         if(numfila>-1){
             String numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
             String estado=vista.tblListaAlumnos.getValueAt(numfila, columEstado).toString();
-            dataAlumno= crudAlum.Buscar(numDocAlumno,estado);
+            dataAlumno= crudAlumno.Buscar(numDocAlumno,estado);
             procesos.MostrarAlumno(dataAlumno, vista);
             
             
@@ -413,7 +358,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         
     }
     
-    // no se usaran estos metodos asi que se dejan vacios
+    // no se usan estos metodos pero se deben implementar de todas formas
     @Override
     public void mousePressed(MouseEvent e) {}
 
@@ -425,9 +370,5 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
 
     @Override
     public void mouseExited(MouseEvent e) {}
-    
-    
-    
-    
     
 }
