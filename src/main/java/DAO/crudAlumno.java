@@ -109,8 +109,12 @@ public class crudAlumno {
             if(con.rs.next()){
                 //1° dato es dni del alumno
                 dataAlumno[0]= Integer.toString(con.rs.getInt(1));
-                // ult. dato devuelve una fecha, lo convertimos a Año "YYYY"
+                
+                // este campo devuelve una fecha, lo convertimos a Año "YYYY"
                 dataAlumno[8]= (con.rs.getString(9)).substring(0, 4);
+                
+                /* este campo devuelve el cod del registro exacto encontrado
+                en la tabla GradoAlumno */
                 dataAlumno[9]= String.valueOf(con.rs.getInt(10));
                 for (int i = 1; i < longitud-2; i++) {
                     dataAlumno[i]= con.rs.getString(i+1);
@@ -307,7 +311,7 @@ public class crudAlumno {
             ProcesosAlumnos.msjDialog("Alumno registrado correctamente");
            
         }catch (SQLException e){
-            //si ocurre un error desace la transacción(rollback)
+            //si ocurre un error deshace la transacción(rollback)
             if (cn != null) {
                 try { cn.rollback(); } 
                 catch (SQLException ex) {
@@ -354,22 +358,67 @@ public class crudAlumno {
             ****************************************************
         */
     
-    public void Actualizar(Alumno a){
-        String sqlStatement="UPDATE Alumno SET Nombres=(?), Apellido_P=(?),"
-                + " Apellido_M=(?) WHERE N_DocumentoA=(?);";
-        try {
-            Connection cn = con.conectar();
-            con.pst =cn.prepareStatement(sqlStatement);
-            con.pst.setString(1, a.getNombre());
-            con.pst.setString(2, a.getApellidoP());
-            con.pst.setString(3, a.getApellidoM());
-            con.pst.setInt(4, a.getNumDocumento());
-            con.pst.executeUpdate();
-            ProcesosAlumnos.msjDialog("Datos de Alumno actualizados exitosamente");
-            cn.close();
-        } catch (SQLException e) {
-            ProcesosAlumnos.msjDialog("ERROR al Actializar registro "+e);
+    public void Actualizar(Alumno a,int codGrado, int codEstado,int codGradoAlumno){
+        Connection cn=null;
+        try{
+           cn = con.conectar(); //establece conexion
+           cn.setAutoCommit(false);
+           //Realizamos las operaciones de actualizacion en la bd
+            ActualizarAlumno(a, cn); // 1° op
+
+            int anio=a.getGradoAlumno().getAnio();
+
+            ActualizarGradoAlumno(anio, codGrado,codEstado,codGradoAlumno, cn); // 2° op
+
+            cn.commit(); //confirma la transacción
+
+            ProcesosAlumnos.msjDialog("Datos del Alumno actualizados correctamente");
+
+        }catch (SQLException e){
+            //si ocurre un error deshace la transacción(rollback)
+            if (cn != null) {
+                try { cn.rollback(); } 
+                catch (SQLException ex) {
+                    ProcesosAlumnos.msjDialog("ERROR al actualizar datos del alumno");
+                    ex.printStackTrace(System.out);
+                }
+            }
+            e.printStackTrace(System.out);
+        }finally{
+            if (cn != null) {
+                try { 
+                    cn.setAutoCommit(true);
+                    cn.close(); } 
+                catch (SQLException e) {e.printStackTrace(System.out);}
+            }
         }
+        
+    }
+    
+    public void ActualizarAlumno(Alumno a,Connection cn) throws SQLException{
+        String sqlST="UPDATE Alumno SET Nombres=(?), Apellido_P=(?),"
+                + " Apellido_M=(?) WHERE N_DocumentoA=(?);";
+        try(PreparedStatement st=cn.prepareStatement(sqlST)) {
+            st.setString(1, a.getNombre());
+            st.setString(2, a.getApellidoP());
+            st.setString(3, a.getApellidoM());
+            st.setInt(4, a.getNumDocumento());
+            st.executeUpdate();
+        } 
+        
+    }
+    
+    public void ActualizarGradoAlumno(int anio,int codGrado, int codEstado,
+            int codGradoAlumno,Connection cn) throws SQLException{
+        String sqlST="UPDATE grado_alumno SET Año=(?), Codigo_Grado=(?),"
+                + " Codigo_EstadoGA=(?) WHERE Codigo_Grado_Alumno=(?);";
+        try(PreparedStatement st=cn.prepareStatement(sqlST)) {
+            st.setInt(1, anio );
+            st.setInt(2, codGrado);
+            st.setInt(3, codEstado);
+            st.setInt(4, codGradoAlumno);
+            st.executeUpdate();
+        } 
         
     }
       
