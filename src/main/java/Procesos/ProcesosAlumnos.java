@@ -53,7 +53,7 @@ public class ProcesosAlumnos {
     
     //muestra en el frm todos los datos del alumno seleccionado de la tabla 
     public void MostrarAlumno(String[] data,lista_estudiantes_directivo_1 led){
-        JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
+        JComponent campos[]= {led.cbxTipoDoc,led.txtNombres,
         led.txtApellidoP,led.txtApellidoM,led.cbxNivel,led.cbxGrado,
         led.cbxEstadoGrado,led.txtAnio};
         
@@ -61,11 +61,12 @@ public class ProcesosAlumnos {
         
         for (int i = 0; i < numCampos; i++) {
             if(campos[i] instanceof JTextField){
-                ((JTextField)campos[i]).setText(data[i]);
+                ((JTextField)campos[i]).setText(data[i+1]);
             }else{
-                ((JComboBox)campos[i]).setSelectedItem(data[i]);
+                ((JComboBox)campos[i]).setSelectedItem(data[i+1]);
             }
         }
+        led.txtNumDoc.setText(data[0]);
     }
     
     
