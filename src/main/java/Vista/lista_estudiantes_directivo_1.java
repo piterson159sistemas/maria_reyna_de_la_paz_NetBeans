@@ -27,8 +27,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         txtNumDoc = new javax.swing.JTextField();
         txtAnio = new javax.swing.JTextField();
         btnInsertar = new javax.swing.JButton();
-        btnBorrar = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         cbxTipoDoc = new javax.swing.JComboBox<>();
         cbxGrado = new javax.swing.JComboBox<>();
@@ -131,26 +130,19 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnInsertar.setForeground(new java.awt.Color(0, 0, 0));
         btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add-student.png"))); // NOI18N
         btnInsertar.setText(" Agregar");
-        jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 130, 40));
+        jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 130, 40));
 
-        btnBorrar.setBackground(new java.awt.Color(133, 164, 199));
-        btnBorrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBorrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete-student.png"))); // NOI18N
-        btnBorrar.setText("Retirar");
-        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 120, 40));
-
-        btnActualizar.setBackground(new java.awt.Color(133, 164, 199));
-        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnActualizar.setForeground(new java.awt.Color(0, 0, 0));
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update-student.png"))); // NOI18N
-        btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 140, 40));
+        btnModificar.setBackground(new java.awt.Color(133, 164, 199));
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(0, 0, 0));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update-student.png"))); // NOI18N
+        btnModificar.setText("Modificar");
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 140, 40));
 
         btnLimpiar.setBackground(new java.awt.Color(133, 164, 199));
         btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Limpiar.png"))); // NOI18N
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 40, 40));
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 40, 40));
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
         cbxTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
@@ -320,12 +312,11 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    public javax.swing.JButton btnActualizar;
-    public javax.swing.JButton btnBorrar;
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnFiltrar;
     public javax.swing.JButton btnInsertar;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnModificar;
     public javax.swing.JComboBox<String> cbxEstadoGrado;
     public javax.swing.JComboBox<String> cbxFiltrarEstadoGrado;
     public javax.swing.JComboBox<String> cbxFiltrarGrado;
