@@ -25,93 +25,126 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        txtCod = new javax.swing.JTextField();
-        txtClave = new javax.swing.JPasswordField();
-        btnCambiarClave = new javax.swing.JButton();
-        btnIngresar = new javax.swing.JButton();
+        rSAnimation1 = new rojeru_san.complementos.RSAnimation();
+        rSPanelMaterialGradient1 = new RSMaterialComponent.RSPanelMaterialGradient();
+        rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
+        rSPanelBorderImage1 = new RSMaterialComponent.RSPanelBorderImage();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        rSPanelBorderImage2 = new RSMaterialComponent.RSPanelBorderImage();
+        txtCod = new RSMaterialComponent.RSTextFieldIconOne();
+        txtClave = new RSMaterialComponent.RSPasswordIconOne();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnIngresar = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        btnCambiarClave = new RSMaterialComponent.RSButtonMaterialIconShadow();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        rSPanelMaterialGradient1.setBgShade(new java.awt.Color(102, 204, 255));
+        rSPanelMaterialGradient1.setColorPrimario(new java.awt.Color(102, 204, 255));
+        rSPanelMaterialGradient1.setColorSecundario(new java.awt.Color(0, 102, 255));
+        rSPanelMaterialGradient1.setGradiente(RSMaterialComponent.RSPanelMaterialGradient.Gradiente.HORIZONTAL);
+        rSPanelMaterialGradient1.setRound(15);
+        rSPanelMaterialGradient1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtCod.setBackground(new java.awt.Color(204, 204, 204));
-        txtCod.setForeground(new java.awt.Color(0, 0, 0));
-        txtCod.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-        jPanel2.add(txtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 160, 40));
+        rSPanelMaterial1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelMaterial1.setForeground(new java.awt.Color(153, 204, 255));
+        rSPanelMaterial1.setBgShade(new java.awt.Color(0, 102, 153));
+        rSPanelMaterial1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtClave.setBackground(new java.awt.Color(204, 204, 204));
-        txtClave.setForeground(new java.awt.Color(0, 0, 0));
-        txtClave.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-        jPanel2.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 160, 40));
+        rSPanelBorderImage1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelBorderImage1.setBgBorder(new java.awt.Color(255, 255, 255));
+        rSPanelBorderImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logo-removebg-preview.png"))); // NOI18N
+        rSPanelMaterial1.add(rSPanelBorderImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 100));
 
-        btnCambiarClave.setBackground(new java.awt.Color(21, 68, 122));
-        btnCambiarClave.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        btnCambiarClave.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarClave.setText("Cambiar contraseña");
-        btnCambiarClave.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-        jPanel2.add(btnCambiarClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 140, 40));
-
-        btnIngresar.setBackground(new java.awt.Color(21, 68, 122));
-        btnIngresar.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnIngresar.setText("Ingresar");
-        btnIngresar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
-        jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 140, 30));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Institucion Educativa Privada");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+        rSPanelMaterial1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Algerian", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("DE LA PAZ");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 100, 20));
-
-        jLabel5.setFont(new java.awt.Font("Algerian", 1, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("MARIA REYNA");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 120, 20));
+        rSPanelMaterial1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 120, 20));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user2.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("DE LA PAZ");
+        rSPanelMaterial1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        rSPanelBorderImage2.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelBorderImage2.setForeground(new java.awt.Color(255, 255, 255));
+        rSPanelBorderImage2.setBgBorder(new java.awt.Color(255, 255, 255));
+        rSPanelBorderImage2.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/librosApilados-removebg-preview.png"))); // NOI18N
+        rSPanelMaterial1.add(rSPanelBorderImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 80, 80));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.jpeg"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 120));
+        rSPanelMaterialGradient1.add(rSPanelMaterial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 440, 120));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondooooooo.jpg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 410));
+        txtCod.setForeground(new java.awt.Color(0, 61, 123));
+        txtCod.setBorderColor(new java.awt.Color(0, 51, 102));
+        txtCod.setColorIcon(new java.awt.Color(51, 153, 255));
+        txtCod.setPhColor(new java.awt.Color(0, 0, 0));
+        txtCod.setPlaceholder("Código de Usuario");
+        rSPanelMaterialGradient1.add(txtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 410));
+        txtClave.setForeground(new java.awt.Color(0, 61, 123));
+        txtClave.setBorderColor(new java.awt.Color(0, 51, 102));
+        txtClave.setColorIcon(new java.awt.Color(51, 153, 255));
+        txtClave.setPhColor(new java.awt.Color(0, 0, 0));
+        txtClave.setPlaceholder("Contraseña");
+        rSPanelMaterialGradient1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel2.setText("Código de Usuario");
+        rSPanelMaterialGradient1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel3.setText("Contraseña");
+        rSPanelMaterialGradient1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+
+        btnIngresar.setBackground(new java.awt.Color(0, 102, 204));
+        btnIngresar.setText("Ingresar");
+        btnIngresar.setBackgroundHover(new java.awt.Color(0, 204, 255));
+        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIngresar.setForegroundHover(new java.awt.Color(0, 61, 123));
+        btnIngresar.setForegroundIcon(new java.awt.Color(0, 61, 123));
+        btnIngresar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ARROW_FORWARD);
+        rSPanelMaterialGradient1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 140, -1));
+
+        btnCambiarClave.setBackground(new java.awt.Color(0, 86, 172));
+        btnCambiarClave.setText("Cambiar contraseña");
+        btnCambiarClave.setBackgroundHover(new java.awt.Color(0, 204, 255));
+        btnCambiarClave.setForegroundHover(new java.awt.Color(0, 61, 123));
+        btnCambiarClave.setForegroundIcon(new java.awt.Color(0, 61, 123));
+        btnCambiarClave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCambiarClave.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCK);
+        rSPanelMaterialGradient1.add(btnCambiarClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 200, -1));
+
+        getContentPane().add(rSPanelMaterialGradient1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCambiarClave;
-    public javax.swing.JButton btnIngresar;
+    public RSMaterialComponent.RSButtonMaterialIconShadow btnCambiarClave;
+    public RSMaterialComponent.RSButtonMaterialIconShadow btnIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
-    public javax.swing.JPasswordField txtClave;
-    public javax.swing.JTextField txtCod;
+    private rojeru_san.complementos.RSAnimation rSAnimation1;
+    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
+    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage2;
+    private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
+    private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
+    public RSMaterialComponent.RSPasswordIconOne txtClave;
+    public RSMaterialComponent.RSTextFieldIconOne txtCod;
     // End of variables declaration//GEN-END:variables
 
 

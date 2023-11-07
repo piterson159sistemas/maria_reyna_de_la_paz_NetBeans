@@ -13,6 +13,7 @@ public class Main {
         
         login = new login();
         cLogin = new CLogin(login);
+        System.out.println("hola mundo");
     }
     
 }
