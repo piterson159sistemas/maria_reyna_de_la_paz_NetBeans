@@ -77,6 +77,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         String filtro = definirFiltros(null);
         crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
         procesos.formatoColumnasTabla(vista.tblListaAlumnos);
+        procesos.CargarIconoEstado(vista.tblListaAlumnos);
     }
     
     public String definirFiltros(String nombreAlumno){
@@ -285,6 +286,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos, filtro);
             //5° aplicamos un foramto de presentacion a la tabla
             procesos.formatoColumnasTabla(vista.tblListaAlumnos);
+            procesos.CargarIconoEstado(vista.tblListaAlumnos);
         }
         
         if(e.getSource()==vista.btnModificar){
@@ -301,6 +303,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                 
                 int codGradoAlumno=Integer.parseInt(dataAlumno[9]);
                 crudAlumno.Actualizar(alumno, codGrado, codEstado, codGradoAlumno);
+                ActualizarLista();
                 
             }else{
                 if( !(codigoExiste) ){
@@ -325,6 +328,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
                 
                 int codEstado= crudAlumno.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
                 crudAlumno.Insertar(alumno,codGrado,codEstado);
+                ActualizarLista();
 
             }else{
                 if(codigoExiste){
@@ -345,7 +349,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         //captura la fila que se selecciona
         int numfila = vista.tblListaAlumnos.rowAtPoint(e.getPoint());
         int columNumDoc = 0; //num de columna de Num Doc dentro de la fila seleccionada
-        int columEstado = 2; //num de columna de estado dentro de la fila seleccionada
+        int columEstado = 3; //num de columna de estado dentro de la fila seleccionada
         
         if(numfila>-1){
             String numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();

@@ -183,7 +183,7 @@ public class crudAlumno {
     //Lista los alumnos en una tabla
     public void Listar(JTable tabla, JLabel cantAulmnos,String filtroCompleto){
         //Definimos un modelo de encabezados para la tabla 
-        String[] Titulos= {"Cod","Alumno","Estado"};
+        String[] Titulos= {"Cod","Alumno","Estado","Estado"};
         DefaultTableModel tableModel = new DefaultTableModel(null,Titulos);
         tabla.setModel(tableModel);
         
@@ -200,7 +200,7 @@ public class crudAlumno {
                 +" (g.Codigo_EstadoGA = e.Codigo_EstadoGA) "
                 +filtroCompleto+" ;";
         
-        Object[] dataAlumno = new Object[3];
+        Object[] dataAlumno = new Object[4];
         int cantRegisttros=0;
         try {
             Connection cn = con.conectar();
@@ -212,6 +212,7 @@ public class crudAlumno {
                 dataAlumno[0]= con.rs.getInt(1);
                 dataAlumno[1]= con.rs.getString(2);
                 dataAlumno[2]= con.rs.getString(3);
+                dataAlumno[3]= con.rs.getString(3);
                 tableModel.addRow(dataAlumno);
                 
             }

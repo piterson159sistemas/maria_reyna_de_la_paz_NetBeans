@@ -2,10 +2,13 @@
 package Procesos;
 import DAO.crudAlumno;
 import Vista.lista_estudiantes_directivo_1;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Queue;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -75,8 +78,13 @@ public class ProcesosAlumnos {
         tabla.getColumnModel().getColumn(0).setMaxWidth(0);
         tabla.getColumnModel().getColumn(0).setMinWidth(0);
         tabla.getColumnModel().getColumn(0).setPreferredWidth(0);
+        
         tabla.getColumnModel().getColumn(1).setPreferredWidth(160);
         tabla.getColumnModel().getColumn(2).setPreferredWidth(60);
+        
+        tabla.getColumnModel().getColumn(3).setMaxWidth(0);
+        tabla.getColumnModel().getColumn(3).setMinWidth(0);
+        tabla.getColumnModel().getColumn(3).setPreferredWidth(0);
     }
     
     public void cargarNiveles(JComboBox cbxNiveles){
@@ -129,6 +137,42 @@ public class ProcesosAlumnos {
                 }
             }
         
+    }
+    
+    public void CargarIconoEstado(JTable tblAlumnos){
+        tblAlumnos.setDefaultRenderer(Object.class, new ImgRender());
+        
+        
+        URL url_Retirado = getClass().getResource("/img/Retirado.png");
+        JLabel lblRetirado = new JLabel(new ImageIcon(url_Retirado));
+
+        URL url_Aprobado = getClass().getResource("/img/Aprobado.png");
+        JLabel lblAprobado = new JLabel(new ImageIcon(url_Aprobado));
+        
+        URL url_EnCurso = getClass().getResource("/img/EnCurso.png");
+        JLabel lblEnCurso = new JLabel(new ImageIcon(url_EnCurso));
+
+        URL url_Desaprobado = getClass().getResource("/img/Desaprobado.png");
+        JLabel lblDesaprobado = new JLabel(new ImageIcon(url_Desaprobado));
+        
+        int numFilas=tblAlumnos.getRowCount();
+        for(int i=0;i<numFilas;i++){
+        String estado= tblAlumnos.getValueAt(i, 2).toString();
+            switch (estado) {
+                case "Aprobado"-> {tblAlumnos.setValueAt("",i, 2);
+                                  tblAlumnos.setValueAt(lblAprobado,i, 2);}
+                
+                case "Desaprobado"-> {tblAlumnos.setValueAt("",i, 2);
+                                  tblAlumnos.setValueAt(lblDesaprobado,i, 2);}
+                
+                case "En Curso"-> {tblAlumnos.setValueAt("",i, 2);
+                                  tblAlumnos.setValueAt(lblEnCurso,i, 2);}
+                
+                default -> {tblAlumnos.setValueAt("",i, 2);
+                                  tblAlumnos.setValueAt(lblRetirado,i, 2);}
+            }
+        }
+    
     }
     
     public static void msjDialog(String mensaje){

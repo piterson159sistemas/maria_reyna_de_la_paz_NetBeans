@@ -196,7 +196,7 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         tblListaAlumnos.setGridColor(new java.awt.Color(0, 0, 0));
