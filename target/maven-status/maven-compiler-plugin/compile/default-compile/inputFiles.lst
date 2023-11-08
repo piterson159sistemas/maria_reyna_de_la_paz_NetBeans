@@ -17,7 +17,6 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Est
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CLogin.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Competencia.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Area.java
-D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Procesos\ListaAlumnos.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Docente.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\gestionar_tutor_directivo_1.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\recopilar_codigo_cambioContraseña.java
@@ -31,6 +30,7 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Asi
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CMenuDocente.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CMenuDirec.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Gestionable.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Procesos\ProcesosAlumnos.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CListadoAlumDirec.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Tutoria.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Horario.java
@@ -46,6 +46,7 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Regi
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Nivel.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\lista_estudiantes_directivo_1.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\MenuDocente.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\rsbuttom\RSButtonMetro.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\MenuDirec.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\CompTransversal.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\asignar_area_directivo_1.java
