@@ -1,20 +1,18 @@
 
 package Modelo;
 
+import java.util.ArrayList;
+
 
 public class AreaDocencia {
     private Docente docente;
-    private Area area;
-   private GradoAlumno grado;
-
-    public AreaDocencia(Docente docente, Area area, GradoAlumno grado) {
+    private ArrayList<String> areas; 
+    
+    public AreaDocencia(Docente docente, ArrayList<String> area ) {
         this.docente = docente;
-        this.area = area;
-        this.grado = grado;
+        this.areas = area;
     }
 
-    
-    
     public Docente getDocente() {
         return docente;
     }
@@ -23,20 +21,13 @@ public class AreaDocencia {
         this.docente = docente;
     }
 
-    public Area getArea() {
-        return area;
+    public ArrayList<String> getArea() {
+        return areas;
     }
 
-    public void setArea(Area area) {
-        this.area = area;
+    public void setArea(ArrayList<String> area) {
+        this.areas = area;
     }
 
-    public GradoAlumno getGrado() {
-        return grado;
-    }
-
-    public void setGrado(GradoAlumno grado) {
-        this.grado = grado;
-    }
 
 }
