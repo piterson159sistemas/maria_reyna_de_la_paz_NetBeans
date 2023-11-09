@@ -13,10 +13,9 @@ public class Usuario extends Persona implements Modificable, Registrable{
         this.clave=clave;
     }
 
-    public Usuario(String codigo, int NumDocumento, 
+    public Usuario(int NumDocumento, 
             String Nombre, String ApellidoP, String ApellidoM) {
         super(NumDocumento, Nombre, ApellidoP, ApellidoM);
-        this.codigo=codigo;
     }
 
     public String getCodigo() {
