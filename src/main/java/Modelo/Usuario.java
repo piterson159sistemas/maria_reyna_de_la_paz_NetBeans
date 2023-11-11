@@ -18,6 +18,13 @@ public class Usuario extends Persona implements Modificable, Registrable{
         super(NumDocumento, Nombre, ApellidoP, ApellidoM);
     }
 
+       // Constructor sin argumentos
+    public Usuario() {
+        // Inicializa el objeto sin argumentos
+        super(0, "", "", "");
+        this.codigo = "";
+    }
+    
     public String getCodigo() {
         return codigo;
     }
