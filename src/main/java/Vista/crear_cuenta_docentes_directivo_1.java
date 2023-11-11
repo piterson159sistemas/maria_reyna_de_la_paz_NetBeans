@@ -28,14 +28,14 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        Jtxtnombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        jTextFieldNumDocumento = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        jTextFieldApellidoP = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTextFieldApellidoM = new javax.swing.JTextField();
+        jbtnRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -50,23 +50,18 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        jTextFieldPregunta1 = new javax.swing.JTextField();
+        jTextFieldRespuesta1 = new javax.swing.JTextField();
+        jTextFieldPregunta2 = new javax.swing.JTextField();
+        jTextFieldRespuesta2 = new javax.swing.JTextField();
+        jTextFieldRespuesta3 = new javax.swing.JTextField();
+        jTextFieldPregunta3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        textFieldClave2 = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        jTextFieldClave = new javax.swing.JPasswordField();
 
-        setClosable(true);
         setMaximizable(true);
         setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,22 +71,27 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
 
         jLabel2.setText("Ingrese su nombre completo:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
-        getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, 30));
+        getContentPane().add(Jtxtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, 30));
 
         jLabel3.setText("Ingrese su apellido paterno:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
-        getContentPane().add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, 30));
+        getContentPane().add(jTextFieldNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, 30));
 
         jLabel4.setText("Ingrese su apellido materno:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-        getContentPane().add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 160, 30));
+        getContentPane().add(jTextFieldApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 160, 30));
 
         jLabel5.setText("Ingrese su DNI:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
-        getContentPane().add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 30));
+        getContentPane().add(jTextFieldApellidoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 30));
 
-        jButton1.setText("REGISTRAR");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 120, 80));
+        jbtnRegistrar.setText("REGISTRAR");
+        jbtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 120, 80));
 
         jLabel6.setText("Ingrese los cursos en los que se encuentra calificado:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
@@ -140,47 +140,35 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         jLabel7.setText("Ingrese 5 preguntas para la recuperación de su contraseña en caso de un olvido");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
 
-        jTextField1.setText("Pregunta 1");
-        jTextField1.setToolTipText("");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 250, 30));
+        jTextFieldPregunta1.setText("Pregunta 1");
+        jTextFieldPregunta1.setToolTipText("");
+        getContentPane().add(jTextFieldPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 250, 30));
 
-        jTextField2.setText("Respuesta 1");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 250, 30));
+        jTextFieldRespuesta1.setText("Respuesta 1");
+        getContentPane().add(jTextFieldRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 250, 30));
 
-        jTextField3.setText("Pregunta 2");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 250, 30));
+        jTextFieldPregunta2.setText("Pregunta 2");
+        getContentPane().add(jTextFieldPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 250, 30));
 
-        jTextField4.setText("Respuesta 2");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 250, 30));
+        jTextFieldRespuesta2.setText("Respuesta 2");
+        getContentPane().add(jTextFieldRespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 250, 30));
 
-        jTextField5.setText("Pregunta 3");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 250, 30));
+        jTextFieldRespuesta3.setText("Pregunta 3");
+        getContentPane().add(jTextFieldRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 250, 30));
 
-        jTextField6.setText("Respuesta 3");
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 250, 30));
-
-        jTextField7.setText("Pregunta 4");
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 250, 30));
-
-        jTextField8.setText("Respuesta 4");
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, 250, 30));
-
-        jTextField9.setText("Pregunta 5");
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 250, 30));
-
-        jTextField10.setText("Respuesta 5");
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, 250, 30));
+        jTextFieldPregunta3.setText("Respuesta 3");
+        getContentPane().add(jTextFieldPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 250, 30));
 
         jLabel11.setText("Crease una contraseña:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 760, 170, 30));
+        getContentPane().add(textFieldClave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 760, 170, 30));
 
         jLabel9.setText("La contraseña debe de contener mayusculas, minusculas, números y signos especiales");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
 
         jLabel10.setText("verifique su contraseña:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, -1, -1));
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 170, 30));
+        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 170, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,9 +177,13 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
+    private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnRegistrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JTextField Jtxtnombre;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
@@ -214,21 +206,17 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField jTextFieldApellidoM;
+    public javax.swing.JTextField jTextFieldApellidoP;
+    public javax.swing.JPasswordField jTextFieldClave;
+    public javax.swing.JTextField jTextFieldNumDocumento;
+    public javax.swing.JTextField jTextFieldPregunta1;
+    public javax.swing.JTextField jTextFieldPregunta2;
+    public javax.swing.JTextField jTextFieldPregunta3;
+    public javax.swing.JTextField jTextFieldRespuesta1;
+    public javax.swing.JTextField jTextFieldRespuesta2;
+    public javax.swing.JTextField jTextFieldRespuesta3;
+    public javax.swing.JButton jbtnRegistrar;
+    public javax.swing.JPasswordField textFieldClave2;
     // End of variables declaration//GEN-END:variables
 }
