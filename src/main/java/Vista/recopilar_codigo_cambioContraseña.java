@@ -26,106 +26,233 @@ public class recopilar_codigo_cambioContraseña extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txt_RecopilarDato_codigo = new javax.swing.JTextField();
-        btn_RecopilarCodigo_continuar = new javax.swing.JButton();
-        btn_RecopilarCodigo_salir = new javax.swing.JButton();
+        Jtxt_RecopilarDato_codigo = new javax.swing.JTextField();
+        btn_RevisarCodigo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jbtnChequeo = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jtxtNuevaContraRepitelo = new javax.swing.JPasswordField();
+        jtxtNuevaContra = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
+        jlbPregunta1 = new javax.swing.JLabel();
+        jtxtPregunta2 = new javax.swing.JTextField();
+        jlbPregunta2 = new javax.swing.JLabel();
+        jtxtPregunta1 = new javax.swing.JTextField();
+        jlbPregunta3 = new javax.swing.JLabel();
+        jtxtPregunta3 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        btnActualizarz = new javax.swing.JButton();
+        btn_Cancelarr = new javax.swing.JButton();
+        jbtMostrarContra = new javax.swing.JLabel();
+        jbtdejardemostrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_RecopilarCodigo_continuar.setText("Continuar");
-        btn_RecopilarCodigo_continuar.addActionListener(new java.awt.event.ActionListener() {
+        btn_RevisarCodigo.setText("Revisar Codigo");
+        btn_RevisarCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_RecopilarCodigo_continuarActionPerformed(evt);
+                btn_RevisarCodigoActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Ingresa tu codigo:");
+
+        jbtnChequeo.setText("Listo");
+        jbtnChequeo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnChequeoActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Repita su contraseña:");
+
+        jtxtNuevaContraRepitelo.setEchoChar('\u25cf');
+        jtxtNuevaContraRepitelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtNuevaContraRepiteloActionPerformed(evt);
+            }
+        });
+
+        jtxtNuevaContra.setEchoChar('\u25cf');
+        jtxtNuevaContra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtNuevaContraActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jlbPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, 20));
+        jPanel1.add(jtxtPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 210, -1));
+        jPanel1.add(jlbPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 70, 210, 20));
+        jPanel1.add(jtxtPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 210, -1));
+        jPanel1.add(jlbPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 210, 20));
+        jPanel1.add(jtxtPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 210, -1));
+
+        jLabel6.setText("Ingresa la nueva contraseña:");
+
+        btnActualizarz.setText("Actualizar");
+        btnActualizarz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarzActionPerformed(evt);
+            }
+        });
+
+        btn_Cancelarr.setText("Cancelar");
+        btn_Cancelarr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelarrActionPerformed(evt);
+            }
+        });
+
+        jbtMostrarContra.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\maria_reyna_de_la_paz_NetBeans-main\\src\\main\\resources\\img\\ver_32px.png")); // NOI18N
+        jbtMostrarContra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtMostrarContraMouseClicked(evt);
+            }
+        });
+
+        jbtdejardemostrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Desktop\\maria_reyna_de_la_paz_NetBeans-main\\src\\main\\resources\\img\\ocultar_32px.png")); // NOI18N
+        jbtdejardemostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtdejardemostrarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Jtxt_RecopilarDato_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_RecopilarCodigo_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(btn_RecopilarCodigo_continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(143, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 125, Short.MAX_VALUE)
-                .addComponent(txt_RecopilarDato_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnActualizarz, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)
+                                .addComponent(btn_Cancelarr, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jtxtNuevaContra, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtNuevaContraRepitelo, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btn_RevisarCodigo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbtMostrarContra, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbtdejardemostrar, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbtnChequeo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(165, 519, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Jtxt_RecopilarDato_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_RevisarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_RecopilarCodigo_salir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(20, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txt_RecopilarDato_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(btn_RecopilarCodigo_continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtxtNuevaContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtMostrarContra))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jtxtNuevaContraRepitelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnActualizarz, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_Cancelarr, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jbtdejardemostrar))))
+                .addGap(18, 18, 18)
+                .addComponent(jbtnChequeo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_RecopilarCodigo_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RecopilarCodigo_continuarActionPerformed
+    private void btn_RevisarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RevisarCodigoActionPerformed
       
-    }//GEN-LAST:event_btn_RecopilarCodigo_continuarActionPerformed
+    }//GEN-LAST:event_btn_RevisarCodigoActionPerformed
+
+    private void jbtnChequeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnChequeoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnChequeoActionPerformed
+
+    private void jtxtNuevaContraRepiteloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNuevaContraRepiteloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtNuevaContraRepiteloActionPerformed
+
+    private void jtxtNuevaContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNuevaContraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtNuevaContraActionPerformed
+
+    private void btnActualizarzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarzActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarzActionPerformed
+
+    private void btn_CancelarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CancelarrActionPerformed
+
+    private void jbtMostrarContraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtMostrarContraMouseClicked
+        jbtMostrarContra.setVisible(false);
+        jbtdejardemostrar.setVisible(true);
+        jtxtNuevaContra.setEchoChar((char)0);
+        jtxtNuevaContraRepitelo.setEchoChar((char)0);
+    }//GEN-LAST:event_jbtMostrarContraMouseClicked
+
+    private void jbtdejardemostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtdejardemostrarMouseClicked
+               jbtMostrarContra.setVisible(true);
+        jbtdejardemostrar.setVisible(false);
+        jtxtNuevaContra.setEchoChar('●');
+        jtxtNuevaContraRepitelo.setEchoChar('●');
+    }//GEN-LAST:event_jbtdejardemostrarMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(recopilar_codigo_cambioContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(recopilar_codigo_cambioContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(recopilar_codigo_cambioContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(recopilar_codigo_cambioContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new recopilar_codigo_cambioContraseña().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_RecopilarCodigo_continuar;
-    private javax.swing.JButton btn_RecopilarCodigo_salir;
+    public javax.swing.JTextField Jtxt_RecopilarDato_codigo;
+    public javax.swing.JButton btnActualizarz;
+    public javax.swing.JButton btn_Cancelarr;
+    public javax.swing.JButton btn_RevisarCodigo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txt_RecopilarDato_codigo;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel jbtMostrarContra;
+    public javax.swing.JLabel jbtdejardemostrar;
+    public javax.swing.JButton jbtnChequeo;
+    public javax.swing.JLabel jlbPregunta1;
+    public javax.swing.JLabel jlbPregunta2;
+    public javax.swing.JLabel jlbPregunta3;
+    public javax.swing.JPasswordField jtxtNuevaContra;
+    public javax.swing.JPasswordField jtxtNuevaContraRepitelo;
+    public javax.swing.JTextField jtxtPregunta1;
+    public javax.swing.JTextField jtxtPregunta2;
+    public javax.swing.JTextField jtxtPregunta3;
     // End of variables declaration//GEN-END:variables
 }
