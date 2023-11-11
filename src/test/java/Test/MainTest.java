@@ -2,77 +2,59 @@
 package Test;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.Color;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class MainTest {
 
-
     public static void main(String[] args) {
-        JFrame frame = new JFrame("JTable with Colored Headers");
+        JFrame frame = new JFrame("Limitar JCheckBox en Paneles");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
 
-        DefaultTableModel model = new DefaultTableModel();
-        JTable table = new JTable(model);
-        model.addColumn("Columna 1");
-        model.addColumn("Columna 2");
+        int maxCheckBoxesPerPanel = 3; // Número máximo de JCheckBox permitidos por panel
 
-        // Personaliza el renderizado de los encabezados
-        table.getTableHeader().setDefaultRenderer(new ColoredHeaderRenderer());
+        JPanel[] panels = new JPanel[3]; // Tres paneles
+        for (int i = 0; i < panels.length; i++) {
+            panels[i] = new JPanel();
+            panels[i].setLayout(new BoxLayout(panels[i], BoxLayout.Y_AXIS));
+            frame.add(panels[i]);
+        }
 
-        // Asigna un color a los encabezados
-        table.getTableHeader().setBackground(Color.YELLOW);
+        for (int panelIndex = 0; panelIndex < panels.length; panelIndex++) {
+            JCheckBox[] checkBoxes = new JCheckBox[5]; // Supongamos que hay 5 JCheckBox por panel
+            for (int i = 0; i < checkBoxes.length; i++) {
+                checkBoxes[i] = new JCheckBox("Panel " + (panelIndex + 1) + " - CheckBox " + (i + 1));
+                panels[panelIndex].add(checkBoxes[i]);
 
-        // Agrega algunos datos de ejemplo
-        model.addRow(new Object[]{"Dato 1", "Dato 2"});
-        model.addRow(new Object[]{"Dato 3", "Dato 4"});
-
-        // Agrega un ListSelectionListener para monitorear la selección de celdas
-        ListSelectionModel cellSelectionModel = table.getSelectionModel();
-        cellSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-        cellSelectionModel.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    int selectedRow = table.getSelectedRow();
-                    int selectedColumn = table.getSelectedColumn();
-
-                    if (selectedRow >= 0 && selectedColumn >= 0) {
-                        String columnName = table.getColumnName(selectedColumn);
-                        Color headerColor = table.getTableHeader().getBackground();
-
-                        // Muestra un cuadro de diálogo con información
-                        JOptionPane.showMessageDialog(frame, "Color del encabezado de la columna: " + headerColor.toString() + "\nNúmero de columna: " + selectedColumn);
+                int finalPanelIndex = panelIndex; // Variable final para ActionListener
+                checkBoxes[i].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        int checkedCount = 0;
+                        for (JCheckBox checkBox : checkBoxes) {
+                            if (checkBox.isSelected()) {
+                                checkedCount++;
+                            }
+                        }
+                        if (checkedCount >= maxCheckBoxesPerPanel) {
+                            for (JCheckBox checkBox : checkBoxes) {
+                                if (!checkBox.isSelected()) {
+                                    checkBox.setEnabled(false);
+                                }
+                            }
+                        } else {
+                            for (JCheckBox checkBox : checkBoxes) {
+                                checkBox.setEnabled(true);
+                            }
+                        }
                     }
-                }
+                });
             }
-        });
+        }
 
-        frame.add(new JScrollPane(table));
         frame.setSize(400, 300);
         frame.setVisible(true);
-    }
-
-    static class ColoredHeaderRenderer extends DefaultTableCellRenderer {
-        public ColoredHeaderRenderer() {
-            setHorizontalAlignment(SwingConstants.CENTER);
-            setForeground(Color.WHITE);  // Color del texto
-        }
-
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-            super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-            // Personaliza el color del fondo del encabezado aquí
-            setBackground(Color.BLUE);
-
-            return this;
-        }
     }
     
 }
