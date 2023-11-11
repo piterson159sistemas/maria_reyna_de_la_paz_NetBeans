@@ -56,6 +56,8 @@ public class asignar_area_directivo_1 extends javax.swing.JInternalFrame {
         txt_AsignarAreaDirectivo_año = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_AsignarArea_registro = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setClosable(true);
         setMaximizable(true);
@@ -181,7 +183,22 @@ public class asignar_area_directivo_1 extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbl_AsignarArea_registro);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 470, 470));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 470, 230));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,6 +241,8 @@ public class asignar_area_directivo_1 extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable tbl_AsignarArea_registro;
     private javax.swing.JTextField txt_AsignarAreaDirectivo_año;
     // End of variables declaration//GEN-END:variables
