@@ -78,6 +78,7 @@ Modelo\Tutoria.class
 Vista\Registrar_TIC$1.class
 Vista\MenuDocente$6.class
 Procesos\ProcesosAlumnos.class
+Procesos\ImgRender.class
 Main\Main.class
 Vista\recopilar_codigo_cambioContraseña$2.class
 Vista\Registrar_Notas$2.class
@@ -100,6 +101,7 @@ Modelo\AreaDocencia.class
 Modelo\Periodo.class
 Vista\gestionar_cuenta_docente_directivo_1$3.class
 Vista\Ver_Asistencias$1.class
+Modelo\GradoDocencia.class
 Vista\entregar_contraseña_nueva.class
 Vista\asignar_area_directivo_1$3.class
 Vista\MenuDocente$5.class
