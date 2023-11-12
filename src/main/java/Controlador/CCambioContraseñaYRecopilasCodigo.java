@@ -38,7 +38,7 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
+
             if (e.getSource() == recocodi.btn_RevisarCodigo) {
                 RC = new RecopilarCodigo();
                 us = new Usuario();
@@ -107,17 +107,23 @@ if (e.getSource() == recocodi.btnActualizarz) {
         boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
 
         if (actualizacionExitosa) {
-            JOptionPane.showMessageDialog(null, "Contraseña actualizada correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al actualizar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    } else {
-        JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden o alguno de los campos está vacío. Intenta de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
-}
-        } catch (Exception k) {
-            JOptionPane.showMessageDialog(null, "Error al ejecutar el botón actionPerformed en CCambioContraseña: " + k);
-        }
+                    // Mostrar el mensaje con la información del usuario
+                    String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
+                            + "Su código institucional es: " + us.getCodigo() + "\n"
+                            + "Su contraseña es: " + nuevaContraseña + "\n"
+                            + "Anoté su correo institucional y su contraseña\n"
+                            + "Por favor, no comparta con nadie su correo institucional o su contraseña a menos que un directivo se lo pida personalmente.";
 
+                    JOptionPane.showMessageDialog(null, mensajeBienvenida);
+                } else {
+                    // Resto del código...
+                }
+            }
+        } 
     }
 }
+    
+
+
+     
+ 

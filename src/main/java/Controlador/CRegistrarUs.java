@@ -13,7 +13,8 @@ public class CRegistrarUs implements ActionListener {
     Usuario us;
     crear_cuenta_docentes_directivo_1 v;
     IntoDocentes intd = new IntoDocentes();
- private String nombre; // Variable para almacenar el nombre
+    private String nombre; // Variable para almacenar el nombre
+
     public CRegistrarUs(crear_cuenta_docentes_directivo_1 cd) {
         v = cd;
         v.jbtnRegistrar.addActionListener(this);
@@ -25,58 +26,50 @@ public class CRegistrarUs implements ActionListener {
         }
         v.setVisible(true);
     }
+
     public void ValidacionYregistro() {
+        // Obtener valores de los campos de texto
+        nombre = v.Jtxtnombre.getText();
+        String apellidoP = v.jTextFieldApellidoP.getText();
+        String apellidoM = v.jTextFieldApellidoM.getText();
+        int numeroDocumento = Integer.parseInt(v.jTextFieldNumDocumento.getText());
 
-         // Obtener valores de los campos de texto
-                nombre = v.Jtxtnombre.getText();
-                String apellidoP = v.jTextFieldApellidoP.getText();
-                String apellidoM = v.jTextFieldApellidoM.getText();
-                int numeroDocumento = Integer.parseInt(v.jTextFieldNumDocumento.getText());
-                
-                 // Obtener valores de los campos de preguntas y respuestas
-                String pregunta1 = v.jTextFieldPregunta1.getText();
-                String respuesta1 = v.jTextFieldRespuesta1.getText();
-                String pregunta2 = v.jTextFieldPregunta2.getText();
-                String respuesta2 = v.jTextFieldRespuesta2.getText();
-                String pregunta3 = v.jTextFieldPregunta3.getText();
-                String respuesta3 = v.jTextFieldRespuesta3.getText();
-                
-                
-                
-                
-                String clave1 = v.jTextFieldClave.getText();
-                String clave2 = v.textFieldClave2.getText(); // Segundo campo de contraseña
+        // Obtener valores de los campos de preguntas y respuestas
+        String pregunta1 = v.jTextFieldPregunta1.getText();
+        String respuesta1 = v.jTextFieldRespuesta1.getText();
+        String pregunta2 = v.jTextFieldPregunta2.getText();
+        String respuesta2 = v.jTextFieldRespuesta2.getText();
+        String pregunta3 = v.jTextFieldPregunta3.getText();
+        String respuesta3 = v.jTextFieldRespuesta3.getText();
 
-                
-                
-                // Validar que todos los campos obligatorios estén llenos
-            if (nombre.isEmpty() || apellidoP.isEmpty() || apellidoM.isEmpty() || numeroDocumento == 0 || clave1.isEmpty() || clave2.isEmpty() ||
+        String clave1 = v.jTextFieldClave.getText();
+        String clave2 = v.textFieldClave2.getText(); // Segundo campo de contraseña
+
+        // Validar que todos los campos obligatorios estén llenos
+        if (nombre.isEmpty() || apellidoP.isEmpty() || apellidoM.isEmpty() || numeroDocumento == 0 || clave1.isEmpty() || clave2.isEmpty() ||
                 pregunta1.isEmpty() || respuesta1.isEmpty() || pregunta2.isEmpty() || respuesta2.isEmpty() || pregunta3.isEmpty() || respuesta3.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Todos los campos obligatorios deben estar llenos.");
-                return; // Salir del método si falta algún campo obligatorio
-            }
+            JOptionPane.showMessageDialog(null, "Todos los campos obligatorios deben estar llenos.");
+            return; // Salir del método si falta algún campo obligatorio
+        }
 
-                
-                 // Verificar si las contraseñas coinciden
-            if (!clave1.equals(clave2)) {
-                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden. Por favor, verifíquelas.");
-                return; // Salir del método si las contraseñas no coinciden
-            }
-                
-                
-                // Asignar valores al objeto Usuario
-                us.setNombre(nombre);
-                us.setApellidoP(apellidoP);
-                us.setApellidoM(apellidoM);
-                us.setNumDocumento(numeroDocumento);
-                us.setClave(clave1);
-                
-                // Configurar las preguntas y respuestas en los arreglos
-                String[] preguntas = {pregunta1, pregunta2, pregunta3};
-                String[] respuestas = {respuesta1, respuesta2, respuesta3};
-                us.setPreg(preguntas);
-                us.setResp(respuestas);
-        
+        // Verificar si las contraseñas coinciden
+        if (!clave1.equals(clave2)) {
+            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden. Por favor, verifíquelas.");
+            return; // Salir del método si las contraseñas no coinciden
+        }
+
+        // Asignar valores al objeto Usuario
+        us.setNombre(nombre);
+        us.setApellidoP(apellidoP);
+        us.setApellidoM(apellidoM);
+        us.setNumDocumento(numeroDocumento);
+        us.setClave(clave1);
+
+        // Configurar las preguntas y respuestas en los arreglos
+        String[] preguntas = {pregunta1, pregunta2, pregunta3};
+        String[] respuestas = {respuesta1, respuesta2, respuesta3};
+        us.setPreg(preguntas);
+        us.setResp(respuestas);
     }
 
     @Override
@@ -85,10 +78,20 @@ public class CRegistrarUs implements ActionListener {
             try {
                 ValidacionYregistro();
                 // Llamar al método para guardar el usuario en la base de datos
-                intd.guardarUsuario(us);
+                String codigoUsuario = intd.guardarUsuario(us);
+
+                // Obtener el nombre de usuario usando el método del DAO
+                String nombreUsuario = intd.obtenerNombreUsuario(codigoUsuario);
+
+                // Construir el mensaje para el JOptionPane
+                String mensaje = "Bienvenido/a profesor/a " + nombreUsuario + " a la I.E.P. Maria Reyna de la Paz\n" +
+                        "Su código institucional es: " + codigoUsuario + "\n" +
+                        "Su contraseña es: " + us.getClave() + "\n" +
+                        "Anoté su código institucional y su contraseña\n" +
+                        "Por favor, no comparta con nadie su código institucional o su contraseña a menos que un directivo se lo pida personalmente.";
 
                 // Mostrar un mensaje de éxito
-                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente"+" "+nombre);
+                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente\n" + mensaje);
             } catch (Exception ex) {
                 // Muestra un JOptionPane con el mensaje de error
                 JOptionPane.showMessageDialog(null, "Error SQL: " + ex.getMessage());
