@@ -105,7 +105,7 @@ if (e.getSource() == recocodi.btnActualizarz) {
     if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
         // Ambas contraseñas son iguales, procede con la actualización
         boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
-
+     
         if (actualizacionExitosa) {
                     // Mostrar el mensaje con la información del usuario
                     String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
@@ -116,7 +116,7 @@ if (e.getSource() == recocodi.btnActualizarz) {
 
                     JOptionPane.showMessageDialog(null, mensajeBienvenida);
                 } else {
-                    // Rsssss
+                    JOptionPane.showMessageDialog(null, "errror");
                 }
             }
         } 

@@ -6,66 +6,56 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class CLogin implements ActionListener{
+public class CLogin implements ActionListener {
     login vista;
     Usuario user;
     QueryLogin queryLogin;
-    
-    
-    public CLogin(login login){
-       vista=login;
+
+    public CLogin(login login) {
+       vista = login;
+       
        login.btnIngresar.addActionListener(this);
        login.btnCambiarClave.addActionListener(this);
        login.setTitle("LOGIN");
        login.setVisible(true);
     }
 
-    public void leerUser(){
-            String cod= vista.txtCod.getText();
-            String clave= String.valueOf(vista.txtClave.getPassword());
-            user = new Usuario(cod,clave);
+    // Método que lee los datos de usuario desde la vista
+    public void leerUser() {
+        String cod = vista.txtCod.getText();
+        String clave = String.valueOf(vista.txtClave.getPassword());
+        user = new Usuario(cod, clave);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==vista.btnIngresar){
-            //Validacion previa
+        if (e.getSource() == vista.btnIngresar) {
             leerUser();
             queryLogin = new QueryLogin();
-             boolean usuarioExiste = queryLogin.consultarUsuario(user);
-            
-            //se comprueba si existe el usuario
-            if(usuarioExiste){
-                
-                // se comprueba si el usuario es director o docente
+            boolean usuarioExiste = queryLogin.consultarUsuario(user);
+
+            if (usuarioExiste) {
                 String tipoUsuario = user.ValidarTipoUsuario(user.getCodigo());
-                
-                if(tipoUsuario.equals("DIRECTOR")){
+                if (tipoUsuario.equals("DIRECTOR")) {
                     vista.dispose();
-                    MenuDirec menuD=new MenuDirec();
-                    CMenuDirec cMenuD= new CMenuDirec(menuD);
-                    
-                }else{
+                    MenuDirec menuD = new MenuDirec();
+                    CMenuDirec cMenuD = new CMenuDirec(menuD);
+                } else {
                     vista.dispose();
-                    MenuDocente menuProfe=new MenuDocente();
-                    CMenuDocente cMenuProfe= new CMenuDocente(menuProfe);
+                    MenuDocente menuProfe = new MenuDocente();
+                    CMenuDocente cMenuProfe = new CMenuDocente(menuProfe);
                 }
-                
-            }else{
-                JOptionPane.showMessageDialog(null, ""
-                        + "Codigo/Contraseña incorrectos", "ERROR", 
-                        JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Código/Contraseña incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
-        if(e.getSource()==vista.btnCambiarClave){
-            recopilar_codigo_cambioContraseña RcopilarCodigoC = new recopilar_codigo_cambioContraseña();
-            RcopilarCodigoC.setVisible(true);
+
+        if (e.getSource() == vista.btnCambiarClave) {   
+            recopilar_codigo_cambioContraseña recopilarCodigo = new recopilar_codigo_cambioContraseña();
+            CCambioContraseñaYRecopilasCodigo CCRC = new CCambioContraseñaYRecopilasCodigo(recopilarCodigo);
+
             
         }
         
-            
-        
     }
-    
 }
