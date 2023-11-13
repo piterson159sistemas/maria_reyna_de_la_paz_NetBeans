@@ -1,4 +1,3 @@
-
 package DAO;
 
 import Modelo.Usuario;
@@ -13,41 +12,38 @@ import javax.swing.JOptionPane;
 
 public class IntoDocentes {
 
-    public void guardarUsuario(Usuario us)  {
+    public String guardarUsuario(Usuario us) {
         Conexion db = new Conexion();
         String nuevoCodigoUsuario = null;
         Connection conexion = db.conectar();
 
         try {
-
             // Obtener el último código de usuario registrado
             String consultaUltimoCodigoSQL = "SELECT MAX(Codigo_Usuario) FROM usuario";
             Statement stmt = conexion.createStatement();
             ResultSet resultSet = stmt.executeQuery(consultaUltimoCodigoSQL);
 
+            //extraer los 2 últimos dígitos del año
+            int dosdigitosaño = LocalDate.now().getYear() % 100;
 
-                    //extraer los 2 últimos digitos del año
-                    int dosdigitosaño = LocalDate.now().getYear() % 100;
+            //extraer el mes en número
+            String mesdosdigitos = String.format("%02d", LocalDate.now().getMonthValue());
 
-                    //extraer el mes en número
-                    String mesdosdigitos = String.format("%02d", LocalDate.now().getMonthValue());
+            //extraer el día en número
+            String diadosdigitos = String.format("%02d", LocalDate.now().getDayOfMonth());
 
-                    //extraer el día en número
-                    String diadosdigitos = String.format("%02d", LocalDate.now().getDayOfMonth());
-
-                    //crear el formato del codigo profesor
-                    String formatodocente =  "P" + dosdigitosaño + mesdosdigitos + diadosdigitos;
-
+            //crear el formato del código profesor
+            String formatodocente = "P" + dosdigitosaño + mesdosdigitos + diadosdigitos;
 
             if (resultSet.next()) {
                 String ultimoCodigo = resultSet.getString(1);
                 if (ultimoCodigo != null && ultimoCodigo.startsWith(formatodocente)) {
                     // Extraer el número y aumentarlo en 1
                     int numero = Integer.parseInt(ultimoCodigo.substring(7)) + 1;
-                     nuevoCodigoUsuario = formatodocente + numero;
+                    nuevoCodigoUsuario = formatodocente + numero;
                 } else {
                     // No hay ningún registro previo, generar el primer código
-                     nuevoCodigoUsuario = formatodocente + "1";
+                    nuevoCodigoUsuario = formatodocente + "1";
                 }
             }
 
@@ -91,7 +87,31 @@ public class IntoDocentes {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error SQL: " + e.getMessage());
             e.printStackTrace();
+            return null;
         }
+
+        return nuevoCodigoUsuario;
     }
-    
+
+    public String obtenerNombreUsuario(String codigoUsuario) {
+        Conexion db = new Conexion();
+        String nombreUsuario = "";
+
+        try (Connection conexion = db.conectar();
+             PreparedStatement stmt = conexion.prepareStatement("SELECT Nombres FROM usuario WHERE Codigo_Usuario = ?")) {
+
+            stmt.setString(1, codigoUsuario);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    // Obtener el nombre del resultado
+                    nombreUsuario = rs.getString("Nombres");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return nombreUsuario;
+    }
 }

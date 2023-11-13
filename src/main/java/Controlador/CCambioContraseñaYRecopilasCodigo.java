@@ -1,4 +1,3 @@
-
 package Controlador;
 
 import DAO.RecopilarCodigo;
@@ -24,22 +23,22 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
         // Desactivar los campos de contraseña al inicio
         desactivarCamposContraseña();
     }
-    
+
     private void desactivarCamposContraseña() {
         recocodi.jtxtNuevaContra.setEnabled(false);
         recocodi.jtxtNuevaContraRepitelo.setEnabled(false);
         recocodi.btnActualizarz.setEnabled(false);
     }
-    
+
     private void activarCamposContraseña() {
         recocodi.jtxtNuevaContra.setEnabled(true);
         recocodi.jtxtNuevaContraRepitelo.setEnabled(true);
         recocodi.btnActualizarz.setEnabled(true);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
+
             if (e.getSource() == recocodi.btn_RevisarCodigo) {
                 RC = new RecopilarCodigo();
                 us = new Usuario();
@@ -97,34 +96,34 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
                 }
             }
 
-            if (e.getSource() == recocodi.btnActualizarz) {
-                // Aquí deberías tener la lógica para obtener las contraseñas nuevas
-                /* 
-                Nota: obtener un dato de un JPasswordFiled con getText esa en desuso;
-                    Con getPassword() se obtiene un array de tipo char y luego con String.valueOf() 
-                    se convierte el String
-                */
-                String nuevaContraseña = String.valueOf(recocodi.jtxtNuevaContra.getPassword()) ;
-                String nuevaContraseñaRepitelo =  String.valueOf(recocodi.jtxtNuevaContraRepitelo.getPassword()); 
+if (e.getSource() == recocodi.btnActualizarz) {
+    // Aquí deberías tener la lógica para obtener las contraseñas nuevas
+    String nuevaContraseña = recocodi.jtxtNuevaContra.getText();
+    String nuevaContraseñaRepitelo = recocodi.jtxtNuevaContraRepitelo.getText();
 
-                // Verificar si ambas contraseñas son iguales
-                if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
-                    // Ambas contraseñas son iguales, procede con la actualización
-                    boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
+    // Verificar si ambas contraseñas son iguales
+    if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
+        // Ambas contraseñas son iguales, procede con la actualización
+        boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
 
-                    if (actualizacionExitosa) {
-                        JOptionPane.showMessageDialog(null, "Contraseña actualizada correctamente.");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error al actualizar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+        if (actualizacionExitosa) {
+                    // Mostrar el mensaje con la información del usuario
+                    String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
+                            + "Su código institucional es: " + us.getCodigo() + "\n"
+                            + "Su contraseña es: " + nuevaContraseña + "\n"
+                            + "Anoté su correo institucional y su contraseña\n"
+                            + "Por favor, no comparta con nadie su correo institucional o su contraseña a menos que un directivo se lo pida personalmente.";
+
+                    JOptionPane.showMessageDialog(null, mensajeBienvenida);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden o alguno de los campos está vacío. Intenta de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
+                    // Rsssss
                 }
             }
-            
-        } catch (Exception k) {
-            JOptionPane.showMessageDialog(null, "Error al ejecutar el botón actionPerformed en CCambioContraseña: " + k);
-        }
+        } 
     }
-
 }
+    
+
+
+     
+ 

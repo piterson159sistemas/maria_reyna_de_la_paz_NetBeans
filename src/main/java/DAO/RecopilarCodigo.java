@@ -1,4 +1,3 @@
-
 package DAO;
 
 import Modelo.Usuario;
@@ -8,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RecopilarCodigo {
-
     public String Rcodigo(Usuario us) {
         Conexion db = new Conexion();
         Connection conexion = db.conectar();
@@ -43,83 +41,80 @@ public class RecopilarCodigo {
 
         return codigoUsuarioEncontrado;
     }
-    
-    public String[] obtenerPreguntas(Usuario us) {
-        Conexion db = new Conexion();
-        Connection conexion = db.conectar();
+public String[] obtenerPreguntas(Usuario us) {
+    Conexion db = new Conexion();
+    Connection conexion = db.conectar();
 
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        String[] preguntas = new String[3];  // Asumimos que hay 3 preguntas por usuario
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    String[] preguntas = new String[3];  // Asumimos que hay 3 preguntas por usuario
 
-        try {
-            // Antes de la llamada a stmt.setString(1, us.getCodigo());
-            System.out.println("Código de usuario para la consulta: " + us.getCodigo());
+    try {
+        // Antes de la llamada a stmt.setString(1, us.getCodigo());
+        System.out.println("Código de usuario para la consulta: " + us.getCodigo());
 
-            // Ajuste en la consulta SQL
-            String sql = "SELECT Pregunta1, Pregunta2, Pregunta3 FROM preguntas WHERE Codigo_Preguntas = ?";
-            stmt = conexion.prepareStatement(sql);
-            stmt.setString(1, us.getCodigo());
+        // Ajuste en la consulta SQL
+        String sql = "SELECT Pregunta1, Pregunta2, Pregunta3 FROM preguntas WHERE Codigo_Preguntas = ?";
+        stmt = conexion.prepareStatement(sql);
+        stmt.setString(1, us.getCodigo());
 
-            rs = stmt.executeQuery();
+        rs = stmt.executeQuery();
 
-            if (rs.next()) {
-                // Obtener las preguntas del resultado de la consulta y asignarlas al usuario
-                us.getPreg()[0] = rs.getString("Pregunta1");
-                us.getPreg()[1] = rs.getString("Pregunta2");
-                us.getPreg()[2] = rs.getString("Pregunta3");
+        if (rs.next()) {
+            // Obtener las preguntas del resultado de la consulta y asignarlas al usuario
+            us.getPreg()[0] = rs.getString("Pregunta1");
+            us.getPreg()[1] = rs.getString("Pregunta2");
+            us.getPreg()[2] = rs.getString("Pregunta3");
 
-                // Obtener las preguntas del usuario
-                preguntas[0] = us.getPreg()[0];
-                preguntas[1] = us.getPreg()[1];
-                preguntas[2] = us.getPreg()[2];
+            // Obtener las preguntas del usuario
+            preguntas[0] = us.getPreg()[0];
+            preguntas[1] = us.getPreg()[1];
+            preguntas[2] = us.getPreg()[2];
 
-                // Dentro del bloque if (preguntas != null && preguntas.length == 3)
-                System.out.println("Pregunta 1: " + preguntas[0]);
-                System.out.println("Pregunta 2: " + preguntas[1]);
-                System.out.println("Pregunta 3: " + preguntas[2]);
-            } else {
-                // Si no se encuentran preguntas para el usuario, devolver un array nulo
-                preguntas = null;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            // Dentro del bloque if (preguntas != null && preguntas.length == 3)
+            System.out.println("Pregunta 1: " + preguntas[0]);
+            System.out.println("Pregunta 2: " + preguntas[1]);
+            System.out.println("Pregunta 3: " + preguntas[2]);
+        } else {
+            // Si no se encuentran preguntas para el usuario, devolver un array nulo
+            preguntas = null;
         }
-
-        return preguntas;
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
-    
-    public String[] obtenerRespuestas(Usuario us) {
-        Conexion db = new Conexion();
-        Connection conexion = db.conectar();
 
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        String[] respuestas = new String[3];  // Asumimos que hay 3 respuestas por usuario
+    return preguntas;
+}
+public String[] obtenerRespuestas(Usuario us) {
+    Conexion db = new Conexion();
+    Connection conexion = db.conectar();
 
-        try {
-            String sql = "SELECT Respuesta1, Respuesta2, Respuesta3 FROM preguntas WHERE Codigo_Preguntas = ?";
-            stmt = conexion.prepareStatement(sql);
-            stmt.setString(1, us.getCodigo());
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    String[] respuestas = new String[3];  // Asumimos que hay 3 respuestas por usuario
 
-            rs = stmt.executeQuery();
+    try {
+        String sql = "SELECT Respuesta1, Respuesta2, Respuesta3 FROM preguntas WHERE Codigo_Preguntas = ?";
+        stmt = conexion.prepareStatement(sql);
+        stmt.setString(1, us.getCodigo());
 
-            if (rs.next()) {
-                respuestas[0] = rs.getString("Respuesta1");
-                respuestas[1] = rs.getString("Respuesta2");
-                respuestas[2] = rs.getString("Respuesta3");
-            } else {
-                // Manejar el caso en el que no se encuentran respuestas
-                respuestas = null;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            respuestas[0] = rs.getString("Respuesta1");
+            respuestas[1] = rs.getString("Respuesta2");
+            respuestas[2] = rs.getString("Respuesta3");
+        } else {
+            // Manejar el caso en el que no se encuentran respuestas
+            respuestas = null;
         }
-
-        return respuestas;
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
-    
-    public boolean actualizarContraseña(Usuario us, String nuevaContraseña) {
+
+    return respuestas;
+}
+public boolean actualizarContraseña(Usuario us, String nuevaContraseña) {
         Conexion db = new Conexion();
         Connection conexion = db.conectar();
 
@@ -155,5 +150,5 @@ public class RecopilarCodigo {
 
         return actualizacionExitosa;
     }
-    
 }
+

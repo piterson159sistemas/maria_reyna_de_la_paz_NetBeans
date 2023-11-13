@@ -1,4 +1,3 @@
-
 package DAO;
 
 import Modelo.Usuario;
@@ -43,5 +42,4 @@ public class BuscarPYcambioC {
 
         return us;
     }
-
 }
