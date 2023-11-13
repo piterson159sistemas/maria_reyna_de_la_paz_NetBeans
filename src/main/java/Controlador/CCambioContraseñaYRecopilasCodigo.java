@@ -101,29 +101,28 @@ if (e.getSource() == recocodi.btnActualizarz) {
     String nuevaContraseña = recocodi.jtxtNuevaContra.getText();
     String nuevaContraseñaRepitelo = recocodi.jtxtNuevaContraRepitelo.getText();
 
-    // Verificar si ambas contraseñas son iguales
+    // Verificar si ambas contraseñas no están vacías y son iguales
     if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
         // Ambas contraseñas son iguales, procede con la actualización
         boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
-     
+
         if (actualizacionExitosa) {
-                    // Mostrar el mensaje con la información del usuario
-                    String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
-                            + "Su código institucional es: " + us.getCodigo() + "\n"
-                            + "Su contraseña es: " + nuevaContraseña + "\n"
-                            + "Anoté su correo institucional y su contraseña\n"
-                            + "Por favor, no comparta con nadie su correo institucional o su contraseña a menos que un directivo se lo pida personalmente.";
+            // Mostrar el mensaje con la información del usuario
+            String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
+                    + "Su código institucional es: " + us.getCodigo() + "\n"
+                    + "Su contraseña es: " + nuevaContraseña + "\n"
+                    + "Anoté su correo institucional y su contraseña\n"
+                    + "Por favor, no comparta con nadie su correo institucional o su contraseña a menos que un directivo se lo pida personalmente.";
 
-                    JOptionPane.showMessageDialog(null, mensajeBienvenida);
-                } else {
-                    JOptionPane.showMessageDialog(null, "errror");
-                }
-            }
-        } 
+            JOptionPane.showMessageDialog(null, mensajeBienvenida);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al actualizar la contraseña.");
+        }
+    } else {
+        // Mostrar un mensaje de error si las contraseñas no coinciden
+        JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden o están vacías. Por favor, intenta de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
     }
+
 }
-    
-
-
-     
- 
+}
+    }
