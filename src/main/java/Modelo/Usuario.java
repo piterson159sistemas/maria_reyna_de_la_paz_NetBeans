@@ -3,7 +3,7 @@ package Modelo;
 
 
 public class Usuario extends Persona implements Modificable, Registrable{
-    protected String codigo;
+    public String codigo;
     protected String clave;
     private String Preg[]=new String[3];
     private String Resp[]=new String[3];

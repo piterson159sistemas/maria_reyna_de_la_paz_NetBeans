@@ -30,10 +30,10 @@ public class MenuDirec extends javax.swing.JFrame {
         Panel = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAC = new javax.swing.JMenu();
-        jMIDocente = new javax.swing.JMenuItem();
+        GDC = new javax.swing.JMenuItem();
         jMIATutor = new javax.swing.JMenuItem();
         jMCCD = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        CD = new javax.swing.JMenuItem();
         jMReg = new javax.swing.JMenu();
         jMINotas = new javax.swing.JMenuItem();
         jMIAsistencia = new javax.swing.JMenuItem();
@@ -55,15 +55,15 @@ public class MenuDirec extends javax.swing.JFrame {
         jmAC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jmAC.setPreferredSize(new java.awt.Dimension(200, 50));
 
-        jMIDocente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMIDocente.setText("Docente");
-        jMIDocente.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMIDocente.addActionListener(new java.awt.event.ActionListener() {
+        GDC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        GDC.setText("Docente");
+        GDC.setPreferredSize(new java.awt.Dimension(180, 30));
+        GDC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMIDocenteActionPerformed(evt);
+                GDCActionPerformed(evt);
             }
         });
-        jmAC.add(jMIDocente);
+        jmAC.add(GDC);
 
         jMIATutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMIATutor.setText("Tutor");
@@ -83,15 +83,15 @@ public class MenuDirec extends javax.swing.JFrame {
         jMCCD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMCCD.setPreferredSize(new java.awt.Dimension(130, 50));
 
-        jMenuItem1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenuItem1.setText("Crear Cuenta");
-        jMenuItem1.setPreferredSize(new java.awt.Dimension(140, 30));
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CD.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CD.setText("Crear Cuenta");
+        CD.setPreferredSize(new java.awt.Dimension(140, 30));
+        CD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CDActionPerformed(evt);
             }
         });
-        jMCCD.add(jMenuItem1);
+        jMCCD.add(CD);
 
         jMenuBar1.add(jMCCD);
 
@@ -123,6 +123,11 @@ public class MenuDirec extends javax.swing.JFrame {
         jmiListaAlumnos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jmiListaAlumnos.setText("Lista ");
         jmiListaAlumnos.setPreferredSize(new java.awt.Dimension(180, 30));
+        jmiListaAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiListaAlumnosActionPerformed(evt);
+            }
+        });
         jMReg.add(jmiListaAlumnos);
 
         jMenuBar1.add(jMReg);
@@ -160,7 +165,7 @@ public class MenuDirec extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -191,36 +196,34 @@ public class MenuDirec extends javax.swing.JFrame {
         RegiNota.setVisible(true);
     }//GEN-LAST:event_jMINotasActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        crear_cuenta_docentes_directivo_1 CcuentDocente = new crear_cuenta_docentes_directivo_1();
-        Panel.add(CcuentDocente);
-        CcuentDocente.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void CDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDActionPerformed
+
+    }//GEN-LAST:event_CDActionPerformed
 
     private void jMIATutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIATutorActionPerformed
-        gestionar_tutor_directivo_1 gesTutor = new gestionar_tutor_directivo_1();//iniciar interfaz
-        Panel.add(gesTutor);//Poner dentro del espacio dado
-        gesTutor.setVisible(true);//para que la interfaz sea visible
+
     }//GEN-LAST:event_jMIATutorActionPerformed
 
-    private void jMIDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDocenteActionPerformed
-        gestionar_cuenta_docente_directivo_1 GesDoce = new gestionar_cuenta_docente_directivo_1();
-        Panel.add(GesDoce);
-        GesDoce.setVisible(true);
-    }//GEN-LAST:event_jMIDocenteActionPerformed
+    private void GDCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GDCActionPerformed
+
+    }//GEN-LAST:event_GDCActionPerformed
+
+    private void jmiListaAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListaAlumnosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiListaAlumnosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem CD;
+    public javax.swing.JMenuItem GDC;
     public javax.swing.JDesktopPane Panel;
     public javax.swing.JMenu jMAsig;
     private javax.swing.JMenu jMCCD;
     private javax.swing.JMenuItem jMIATutor;
     private javax.swing.JMenuItem jMIArea;
     private javax.swing.JMenuItem jMIAsistencia;
-    private javax.swing.JMenuItem jMIDocente;
     private javax.swing.JMenuItem jMINotas;
     private javax.swing.JMenu jMReg;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jmAC;
     public javax.swing.JMenuItem jmiListaAlumnos;
     public javax.swing.JMenuItem jmiTutoria;
