@@ -10,7 +10,10 @@ public class Docente extends Usuario implements Gestionable{
         this.codigo=codigo;
         this.clave=clave;
     }
-
+    
+    public Docente(String codigo){
+        this.codigo=codigo;
+    }
                   
     public void RegistrarDocente(){}
     

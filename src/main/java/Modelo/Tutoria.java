@@ -1,22 +1,22 @@
 
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
 public class Tutoria {
+    private int anio;
     private Docente docente;
     private GradoAlumno grado;
-    private Date anio;
 
-    public Tutoria(Docente docente, GradoAlumno grado, Date anio) {
+    public Tutoria(int anio,Docente docente, GradoAlumno grado) {
+        this.anio = anio;
         this.docente = docente;
         this.grado = grado;
-        this.anio = anio;
     }
 
-    
-    
+
     public Docente getDocente() {
         return docente;
     }
@@ -33,11 +33,11 @@ public class Tutoria {
         this.grado = grado;
     }
 
-    public Date getAnio() {
+    public int getAnio() {
         return anio;
     }
 
-    public void setAnio(Date anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
     

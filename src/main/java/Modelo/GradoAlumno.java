@@ -14,6 +14,10 @@ public class GradoAlumno {
         this.nivel = nivel;
         this.estado=estado;
     }
+    
+    public GradoAlumno(String grado){
+        this.grado = grado;
+    }
 
     public int getAnio() {
         return anio;
