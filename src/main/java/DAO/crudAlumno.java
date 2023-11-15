@@ -1,6 +1,5 @@
 
 package DAO;
-//PAQUETES PRUEBA 
 import Procesos.ProcesosAlumnos;
 import Modelo.Alumno;
 import Modelo.GradoAlumno;
@@ -58,7 +57,7 @@ public class crudAlumno {
     
     public Queue<String> BuscarGrados(String nivel){
         Queue<String> grados = new LinkedList<>();
-        String sqlST="select Grado from grado where Nivel=\""+nivel+"\";";
+        String sqlST="select Grado from grado where Nivel='"+nivel+"';";
         try {
             Connection cn = con.conectar();
             con.st = cn.createStatement();

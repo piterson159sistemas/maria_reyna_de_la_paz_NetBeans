@@ -19,7 +19,7 @@ import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 
 public class ProcesosAlumnos {
     crudAlumno crudA=new crudAlumno();
-    String all="..."; // los "..." indica filtrar todo
+    String none="..."; // los "..." indica ningun elemento seleccionado
     
     public ArrayList<String> leerAlumno(lista_estudiantes_directivo_1 led){
         
@@ -96,7 +96,7 @@ public class ProcesosAlumnos {
     
     public void cargarGrados(JComboBox cbxGrados,String nivel){
         Queue<String> grados = crudA.BuscarGrados(nivel);
-        cbxGrados.addItem(all);
+        cbxGrados.addItem(none);
         while(!grados.isEmpty()){
             cbxGrados.addItem(grados.poll());   
         }        
@@ -118,8 +118,8 @@ public class ProcesosAlumnos {
     }
     
     public void cargaInicialCombos(JComboBox cbxNiveles,JComboBox cbxGrados){
-        cbxNiveles.addItem(all);
-        cbxGrados.addItem(all);
+        cbxNiveles.addItem(none);
+        cbxGrados.addItem(none);
     }
     
     public void Limpiarcampos(lista_estudiantes_directivo_1 led){
