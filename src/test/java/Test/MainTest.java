@@ -2,59 +2,57 @@
 package Test;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class MainTest {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Limitar JCheckBox en Paneles");
+         SwingUtilities.invokeLater(() -> new MainTest().createAndShowGUI());
+    }
+
+    private void createAndShowGUI() {
+        JFrame frame = new JFrame("Deseleccionar Fila en JTable");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout());
 
-        int maxCheckBoxesPerPanel = 3; // Número máximo de JCheckBox permitidos por panel
+        // Crear datos de ejemplo para el modelo de tabla
+        Object[][] data = {
+                {"1", "Nombre1", "Apellido1"},
+                {"2", "Nombre2", "Apellido2"},
+                {"3", "Nombre3", "Apellido3"}
+        };
 
-        JPanel[] panels = new JPanel[3]; // Tres paneles
-        for (int i = 0; i < panels.length; i++) {
-            panels[i] = new JPanel();
-            panels[i].setLayout(new BoxLayout(panels[i], BoxLayout.Y_AXIS));
-            frame.add(panels[i]);
-        }
+        // Crear nombres de columnas para el modelo de tabla
+        String[] columnNames = {"ID", "Nombre", "Apellido"};
 
-        for (int panelIndex = 0; panelIndex < panels.length; panelIndex++) {
-            JCheckBox[] checkBoxes = new JCheckBox[5]; // Supongamos que hay 5 JCheckBox por panel
-            for (int i = 0; i < checkBoxes.length; i++) {
-                checkBoxes[i] = new JCheckBox("Panel " + (panelIndex + 1) + " - CheckBox " + (i + 1));
-                panels[panelIndex].add(checkBoxes[i]);
+        // Crear el modelo de tabla
+        DefaultTableModel model = new DefaultTableModel(data, columnNames);
 
-                int finalPanelIndex = panelIndex; // Variable final para ActionListener
-                checkBoxes[i].addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int checkedCount = 0;
-                        for (JCheckBox checkBox : checkBoxes) {
-                            if (checkBox.isSelected()) {
-                                checkedCount++;
-                            }
-                        }
-                        if (checkedCount >= maxCheckBoxesPerPanel) {
-                            for (JCheckBox checkBox : checkBoxes) {
-                                if (!checkBox.isSelected()) {
-                                    checkBox.setEnabled(false);
-                                }
-                            }
-                        } else {
-                            for (JCheckBox checkBox : checkBoxes) {
-                                checkBox.setEnabled(true);
-                            }
-                        }
-                    }
-                });
+        // Crear la tabla con el modelo
+        JTable table = new JTable(model);
+
+        // Botón para deseleccionar la fila
+        JButton deseleccionarButton = new JButton("Deseleccionar Fila");
+        deseleccionarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deseleccionarFila(table);
             }
-        }
+        });
+
+        // Agregar la tabla y el botón al marco
+        frame.add(new JScrollPane(table), BorderLayout.CENTER);
+        frame.add(deseleccionarButton, BorderLayout.SOUTH);
 
         frame.setSize(400, 300);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-    
+
+    private void deseleccionarFila(JTable table) {
+        // Utilizar clearSelection() para deseleccionar la fila
+        table.clearSelection();
+    }
 }
