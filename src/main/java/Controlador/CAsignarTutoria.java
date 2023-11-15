@@ -224,7 +224,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
             procesos.limpiarCampos(vista);
             registroaModificar[0]="0";
             registroaModificar[1]="0";
-            //vista.tblProfes.remove
+            vista.tblProfes.clearSelection();
         }
         
         if(e.getSource()==vista.btnBorrar){
