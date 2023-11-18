@@ -30,7 +30,10 @@ public class Principal extends javax.swing.JPanel {
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
         rSButtonIcon_new2 = new newscomponents.RSButtonIcon_new();
-        tabContent1 = new Vista.AdministrarCuenta.tabContent1();
+        pnlSlider = new newscomponents.RSPanelEffect();
+        pnlDocente = new Vista.AdministrarCuenta.tabContent1();
+        pnlTutor = new Vista.AdministrarCuenta.tabContent2();
+        pnlAdmiCuentaPortada = new Vista.AdministrarCuenta.tabContent3();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -69,7 +72,7 @@ public class Principal extends javax.swing.JPanel {
                 .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 935, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,14 +86,24 @@ public class Principal extends javax.swing.JPanel {
                 .addGap(266, 266, 266))
         );
 
+        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+
+        pnlDocente.setName("pnlDocente"); // NOI18N
+        pnlSlider.add(pnlDocente, "card2");
+
+        pnlTutor.setName("pnlTutor"); // NOI18N
+        pnlSlider.add(pnlTutor, "card3");
+
+        pnlAdmiCuentaPortada.setName("pnlAdmiCuentaPortada"); // NOI18N
+        pnlSlider.add(pnlAdmiCuentaPortada, "card4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabContent1, javax.swing.GroupLayout.DEFAULT_SIZE, 1207, Short.MAX_VALUE)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -98,17 +111,20 @@ public class Principal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabContent1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private Vista.AdministrarCuenta.tabContent3 pnlAdmiCuentaPortada;
+    private Vista.AdministrarCuenta.tabContent1 pnlDocente;
+    private newscomponents.RSPanelEffect pnlSlider;
+    private Vista.AdministrarCuenta.tabContent2 pnlTutor;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new2;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private Vista.AdministrarCuenta.tabContent1 tabContent1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,7 @@ package Controlador;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Animacion.Animacion;
+//import Animacion.Animacion;
 import RSMaterialComponent.*;
 import rsbuttom.RSButtonMetro;
 import Modelo.*;
