@@ -40,10 +40,12 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lblAprobado = new javax.swing.JLabel();
+        lblEnCurso = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        lblDesaprobado = new javax.swing.JLabel();
+        lblDesaprobado1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         btnFiltrar = new javax.swing.JButton();
         lblNumAlumnos = new javax.swing.JLabel();
@@ -230,15 +232,15 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         jLabel12.setText("Aprobado");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel13.setText("0  ");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 30));
+        lblAprobado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblAprobado.setForeground(new java.awt.Color(0, 153, 0));
+        lblAprobado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Aprobado.png"))); // NOI18N
+        jPanel2.add(lblAprobado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 20, 30));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("0  ");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 20, 30));
+        lblEnCurso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblEnCurso.setForeground(new java.awt.Color(102, 102, 102));
+        lblEnCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/EnCurso.png"))); // NOI18N
+        jPanel2.add(lblEnCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 20, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
@@ -247,15 +249,25 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("Pendiente");
+        jLabel17.setText("Desaprobado");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, 30));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel18.setText("0  ");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 20, 30));
+        lblDesaprobado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDesaprobado.setForeground(new java.awt.Color(0, 51, 255));
+        lblDesaprobado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Desaprobado.png"))); // NOI18N
+        jPanel2.add(lblDesaprobado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 20, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 200, 120));
+        lblDesaprobado1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDesaprobado1.setForeground(new java.awt.Color(0, 51, 255));
+        lblDesaprobado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Retirado.png"))); // NOI18N
+        jPanel2.add(lblDesaprobado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 20, 30));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Retirado");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, 30));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 200, 150));
 
         btnFiltrar.setBackground(new java.awt.Color(133, 164, 199));
         btnFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -390,8 +402,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -404,6 +414,10 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblApellidoM;
     private javax.swing.JLabel lblApellidoP;
+    private javax.swing.JLabel lblAprobado;
+    private javax.swing.JLabel lblDesaprobado;
+    private javax.swing.JLabel lblDesaprobado1;
+    private javax.swing.JLabel lblEnCurso;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblGradro;
     private javax.swing.JLabel lblNivel;
