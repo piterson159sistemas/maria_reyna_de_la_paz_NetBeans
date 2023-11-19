@@ -40,6 +40,10 @@ public class CLogin implements ActionListener {
                     vista.dispose();
                     MenuDirec2 menuD = new MenuDirec2();
                     CMenuDirec2 cMenuD = new CMenuDirec2(menuD);
+                    
+                    //Menu anterior para mostrar luego la funcionalidad
+                    //MenuDirec menuD1 = new MenuDirec();
+                    //CMenuDirec cMenuD1 = new CMenuDirec(menuD1);
                 } else {
                     vista.dispose();
                     MenuDocente menuProfe = new MenuDocente();
