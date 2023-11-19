@@ -19,6 +19,60 @@ import javax.swing.table.DefaultTableModel;
 public class crudAlumno {
     Conexion con= new Conexion();
     ResultSet rs;
+   
+    public boolean buscarRegistroGradoAlumno(int[] data){
+        
+        String sqlST="select Codigo_Grado_Alumno from grado_alumno where Año="+data[0]
+            + " and CodigoA="+data[1]+" and Codigo_Grado="+data[2]+" and"
+            + " Codigo_EstadoGA="+data[3]+";";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+
+            if(con.rs.next()){
+                return true;
+            }
+            } catch (SQLException e) {}
+        return false;
+   }
+    
+   public int obtenerCodGrado(String Nivel,String Grado){
+        int codGrado=0;
+        String sqlST="select Codigo_Grado from grado where Grado like '"+Grado+"'"
+                + " and Nivel like '"+Nivel+"';";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            
+            if(con.rs.next()){
+                codGrado= con.rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            
+        }
+        return codGrado;
+   } 
+   
+   public int obtenerCodEstado(String Estado){
+       int codEstado=0;
+        String sqlST="select Codigo_EstadoGA from estado_grado_alumno where "
+                + "Estado like '"+Estado+"';";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            
+            if(con.rs.next()){
+                codEstado= con.rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            
+        }
+        return codEstado; 
+   } 
+    
     
     public boolean BuscarCodigo(String codigo){
         boolean codigoExiste=true;
@@ -87,6 +141,48 @@ public class crudAlumno {
         return niveles;
     }
     
+    public String[] BuscarAlumno(int numDoc){
+        String data[]= new String[5];
+        String sqlST="Select N_DocumentoA,Tipo_Documento,Nombres,Apellido_P,Apellido_M"
+                + " from alumno where N_DocumentoA="+numDoc+";";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                data[0]=String.valueOf(con.rs.getInt(1));
+                for(int i=1;i<5;i++){
+                    data[i]=con.rs.getString(i+1);
+                }
+            }
+        } catch (Exception e) {
+        }
+        return data;
+    }
+    
+    public String[] buscarGradoAlumno(int codGradoAlumno){
+        String[] data=new String[4];
+        String sqlST="select  ga.Año, g.Nivel,g.Grado,ega.Estado from grado_alumno ga"
+                +" inner join grado g on (ga.Codigo_Grado=g.Codigo_Grado)" 
+                + " inner join estado_grado_alumno ega on "
+                + " (ga.Codigo_EstadoGA=ega.Codigo_EstadoGA)" 
+                + " where Codigo_Grado_Alumno="+codGradoAlumno+";";
+        try {
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                data[0]=(con.rs.getString(1)).substring(0, 4);;
+                for(int i=1;i<4;i++){
+                    data[i]=con.rs.getString(i+1);    
+                }
+            }
+        }catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al buscar GradoAlumno "+e);
+        }
+        return data;
+        
+    }
     
     //Busca un alumno de la tabla de alumnos
     public String[] Buscar(String numDoc,String estado){
@@ -182,7 +278,7 @@ public class crudAlumno {
     //Lista los alumnos en una tabla
     public void Listar(JTable tabla, JLabel cantAulmnos,String filtroCompleto){
         //Definimos un modelo de encabezados para la tabla 
-        String[] Titulos= {"Cod","Alumno","Estado","Estado"};
+        String[] Titulos= {"Cod","Alumno","Estado","Estado","codGradoAlumno"};
         DefaultTableModel tableModel = new DefaultTableModel(null,Titulos);
         tabla.setModel(tableModel);
         
@@ -193,13 +289,13 @@ public class crudAlumno {
          de todos los alumnos del colegio */
         String sqlStatement="select a.N_DocumentoA as cod,"
                 +" concat(Nombres,' ',Apellido_P,' ',Apellido_M)"
-                +" as Alumno, e.Estado from grado_alumno g" 
+                +" as Alumno, e.Estado,g.Codigo_Grado_Alumno from grado_alumno g" 
                 +" inner join alumno a on (g.CodigoA = a.N_DocumentoA)" 
                 +" inner join estado_grado_alumno e on"
                 +" (g.Codigo_EstadoGA = e.Codigo_EstadoGA) "
                 +filtroCompleto+" ;";
         
-        Object[] dataAlumno = new Object[4];
+        Object[] dataAlumno = new Object[5];
         int cantRegisttros=0;
         try {
             Connection cn = con.conectar();
@@ -212,6 +308,8 @@ public class crudAlumno {
                 dataAlumno[1]= con.rs.getString(2);
                 dataAlumno[2]= con.rs.getString(3);
                 dataAlumno[3]= con.rs.getString(3);
+                //codGrado_Alumno
+                dataAlumno[4]= con.rs.getInt(4);
                 tableModel.addRow(dataAlumno);
                 
             }
@@ -228,6 +326,25 @@ public class crudAlumno {
             ****************************************************
     */
     
+    
+    public void insertarAlumno(Alumno a){
+        String sqlST="INSERT INTO alumno (?,?,?,?,?)";
+        try{
+            Connection cn = con.conectar();
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setInt(1, a.getNumDocumento());
+            con.pst.setString(2, a.getTipoDocumento());
+            con.pst.setString(3, a.getNombre());
+            con.pst.setString(4, a.getApellidoP());
+            con.pst.setString(5, a.getApellidoM());
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Alumno registrado  exitosamente");
+            cn.close();
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al registrar alumno "+e);
+        }
+    }
+    
     public void InsertarAlumno(Alumno a,Connection cn)throws SQLException{
         String sqlST="INSERT INTO Alumno(N_DocumentoA,Tipo_Documento,Nombres,"
                 + "Apellido_P,Apellido_M) values(?,?,?,?,?);";
@@ -242,38 +359,39 @@ public class crudAlumno {
         
     }
     
-    
-    public int obtenerCodGrado(String grado,String nivel){
-        int codGrado=0;
-        String sqlST="select Codigo_Grado from grado"
-        +" where Grado like '"+grado+"' and Nivel like '"+nivel+"';";
-        try{
+    public void actualizarAlumno( ArrayList<String> data,int codAlumno){
+        String sqlST="UPDATE alumno set Nombres=(?),Apellido_P=(?),Apellido_M=(?)"
+                + " where N_DocumentoA="+codAlumno+";";
+        try {
             Connection cn = con.conectar();
-            con.st = cn.createStatement();
-            con.rs = con.st.executeQuery(sqlST);
-            if(con.rs.next()){
-                codGrado=con.rs.getInt(1);
-            }
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setString(1, data.get(2));
+            con.pst.setString(2, data.get(3));
+            con.pst.setString(3, data.get(4));
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Alumno actualizado exitosamente");
             cn.close();
-        }catch(SQLException e){}
-        
-        return codGrado;
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al actualizar registro "+e);
+        }
     }
     
-    public int obtenerCodEstado(String estado){
-        int codEstado=0;
-        String sqlST="select Codigo_EstadoGA from"
-                +" estado_grado_alumno WHERE Estado like '"+estado+"';";
-        try{
+    public void actualizarGradoAlumno(int[] data,int codGradoAlumno){
+        String sqlST="UPDATE grado_alumno set Año=(?),Codigo_Grado=(?),Codigo_EstadoGA=(?)"
+            + " where Codigo_Grado_Alumno="+codGradoAlumno+";";
+    
+        try {
             Connection cn = con.conectar();
-            con.st = cn.createStatement();
-            con.rs = con.st.executeQuery(sqlST);       
-            if(con.rs.next()){
-                codEstado=con.rs.getInt(1);
-            }
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setInt(1, data[0]);
+            con.pst.setInt(2, data[1]);
+            con.pst.setInt(3, data[2]);
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Informacion de Grado actualizada exitosamente");
             cn.close();
-        }catch(Exception e){} 
-        return codEstado;
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al actualizar informacion de grado "+e);
+        }
     }
     
     public void InsertarGradoAlumno(int anio,int codAlum,int codGrado, int codEstado,
@@ -330,6 +448,25 @@ public class crudAlumno {
         }
     }
     
+    public void insertarGradoAlumno(int[] data){
+        String sqlST="insert into grado_alumno(Año,CodigoA,Codigo_Grado,Codigo_EstadoGA)"
+                + " values (?,?,?,?);";
+                
+        try {
+            Connection cn = con.conectar();
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setInt(1, data[0]);
+            con.pst.setInt(2,  data[1]);
+            con.pst.setInt(3,  data[2]);
+            con.pst.setInt(4,  data[3]);
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Informacion de grado ingresada exitosamente");
+            cn.close();
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al ingresar informaci+on de grado "+e);
+        }
+    }
+    
         /*
             ****************************************************
             *                     ELIMINAR                     *
@@ -337,8 +474,7 @@ public class crudAlumno {
         */
     
     public void Eliminar(int NumDoc){
-        String sqlStatement="DELETE FROM Alumno WHERE N_DocumentoA=(?);";
-        
+        String sqlStatement="DELETE FROM Alumno WHERE N_DocumentoA=(?);";    
         try {
             Connection cn = con.conectar();
             con.pst =cn.prepareStatement(sqlStatement);
@@ -350,6 +486,21 @@ public class crudAlumno {
             ProcesosAlumnos.msjDialog("ERROR al eliminar registro "+e);
         }
         
+    }
+    
+    public void eliminarGradoAlumno(int codGradoAlumno){
+        String sqlST="DELETE from grado_alumno where Codigo_Grado_Alumno=(?);";
+        
+        try {
+            Connection cn = con.conectar();
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setInt(1, codGradoAlumno);
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Registro eliminado exitosamente");
+            cn.close();
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al eliminar registro "+e);
+        }
     }
     
         /*
