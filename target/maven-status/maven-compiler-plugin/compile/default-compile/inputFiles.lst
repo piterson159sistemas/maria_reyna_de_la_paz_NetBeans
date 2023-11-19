@@ -5,12 +5,14 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Gra
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\crudTutoria.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\Conexion.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Usuario.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\crudAreasGrados.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Alumno.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Procesos\ImgRender.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\RecopilarCodigo.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Calificacion.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CAsignarTutoria.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\IntoDocentes.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CGestionarD.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Main\Main.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Directivo.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Modificable.java
@@ -18,6 +20,7 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Est
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\GradoDocencia.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CLogin.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Competencia.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\DAO\GestionarDocente.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Area.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Docente.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\gestionar_tutor_directivo_1.java
@@ -26,6 +29,7 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Ver_
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Rol.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Evaluacion.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\crear_cuenta_docentes_directivo_1.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CAsignarArea.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Persona.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\GradoAlumno.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\Asistencia.java
@@ -54,6 +58,7 @@ D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Procesos\P
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\rsbuttom\RSButtonMetro.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\MenuDirec.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Modelo\CompTransversal.java
+D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Procesos\procesosAreasGrados.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\asignar_area_directivo_1.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Vista\Registrar_TIC.java
 D:\Raul\UTP\Proyecto AED\maria_reyna_de_la_paz_NetBeans\src\main\java\Controlador\CRegistrarUs.java

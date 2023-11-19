@@ -30,7 +30,6 @@ Controlador\CListadoAlumDirec$2.class
 DAO\BuscarPYcambioC.class
 Vista\recopilar_codigo_cambioContraseña$6.class
 Vista\Registrar_Notas$3.class
-Vista\MenuDirec$7.class
 Vista\MenuDocente$7.class
 DAO\QueryLogin.class
 Modelo\GradoAlumno.class
@@ -107,10 +106,8 @@ Vista\Registrar_Notas$1.class
 Vista\recopilar_codigo_cambioContraseña$4.class
 Modelo\AreaDocencia.class
 Modelo\Periodo.class
-Vista\gestionar_cuenta_docente_directivo_1$3.class
 Vista\Ver_Asistencias$1.class
 Modelo\GradoDocencia.class
-Vista\asignar_area_directivo_1$3.class
 Vista\MenuDocente$5.class
 DAO\crudTutoria.class
 Modelo\Alumno.class
