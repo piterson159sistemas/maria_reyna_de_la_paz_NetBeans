@@ -29,34 +29,34 @@ public class tabContent1 extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_AsignarArea_registro = new RSMaterialComponent.RSTableMetroCustom();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
-        rSTextFieldMaterialIcon1 = new RSMaterialComponent.RSTextFieldMaterialIcon();
-        rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
-        rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
-        rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
-        rSDateYear1 = new newscomponents.RSDateYear();
-        rSComboBox1 = new RSMaterialComponent.RSComboBox();
-        rSComboBox2 = new RSMaterialComponent.RSComboBox();
+        jtxtBuscar = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        btn_AsignarArea_borrar = new RSMaterialComponent.RSButtonIconShadow();
+        btn_AsignarArea_actualizar = new RSMaterialComponent.RSButtonIconShadow();
+        jbtnFiltrar = new RSMaterialComponent.RSButtonIconShadow();
+        cb_AsignarArea_areas = new RSMaterialComponent.RSComboBox();
+        cb_AsignarArea_docente = new RSMaterialComponent.RSComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        rSCheckBoxMaterial1 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial3 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial4 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial5 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial6 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial7 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial8 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial9 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial10 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial11 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial12 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial13 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial14 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSCheckBoxMaterial2 = new RSMaterialComponent.RSCheckBoxMaterial();
-        rSButtonIconShadow4 = new RSMaterialComponent.RSButtonIconShadow();
+        ckb_AsignarArea_TresAñitos = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CincoAñitos = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_UnoPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_DosPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_TresPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CuatroPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CincoPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_SeisPrimaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_UnoSecundaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_DosSecundaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_TresSecundaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CuatroSecundaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CincoSecundaria = new RSMaterialComponent.RSCheckBoxMaterial();
+        ckb_AsignarArea_CuatroAñitos = new RSMaterialComponent.RSCheckBoxMaterial();
+        btn_AsignarArea_crear = new RSMaterialComponent.RSButtonIconShadow();
+        txt_AsignarAreaDirectivo_año = new RSMaterialComponent.RSTextFieldTwo();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -82,6 +82,7 @@ public class tabContent1 extends javax.swing.JPanel {
         });
         tbl_AsignarArea_registro.setBackgoundHead(new java.awt.Color(102, 102, 255));
         tbl_AsignarArea_registro.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        tbl_AsignarArea_registro.setName("tbl_AsignarArea_registro"); // NOI18N
         jScrollPane1.setViewportView(tbl_AsignarArea_registro);
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
@@ -89,44 +90,43 @@ public class tabContent1 extends javax.swing.JPanel {
         rSLabelTextIcon1.setText("Area");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER);
 
-        rSTextFieldMaterialIcon1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        rSTextFieldMaterialIcon1.setForeground(new java.awt.Color(153, 153, 153));
-        rSTextFieldMaterialIcon1.setColorIcon(new java.awt.Color(51, 51, 51));
-        rSTextFieldMaterialIcon1.setColorMaterial(new java.awt.Color(153, 153, 153));
-        rSTextFieldMaterialIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldMaterialIcon1.setPlaceholder("Buscar");
+        jtxtBuscar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jtxtBuscar.setForeground(new java.awt.Color(153, 153, 153));
+        jtxtBuscar.setColorIcon(new java.awt.Color(51, 51, 51));
+        jtxtBuscar.setColorMaterial(new java.awt.Color(153, 153, 153));
+        jtxtBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        jtxtBuscar.setName("jtxtBuscar"); // NOI18N
+        jtxtBuscar.setPlaceholder("Buscar");
 
-        rSButtonIconShadow3.setBackground(new java.awt.Color(255, 102, 102));
-        rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(204, 0, 0));
-        rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
+        btn_AsignarArea_borrar.setBackground(new java.awt.Color(255, 102, 102));
+        btn_AsignarArea_borrar.setBackgroundHover(new java.awt.Color(204, 0, 0));
+        btn_AsignarArea_borrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
+        btn_AsignarArea_borrar.setName("btn_AsignarArea_borrar"); // NOI18N
 
-        rSButtonIconShadow2.setBackground(new java.awt.Color(255, 204, 0));
-        rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(153, 102, 0));
-        rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
+        btn_AsignarArea_actualizar.setBackground(new java.awt.Color(255, 204, 0));
+        btn_AsignarArea_actualizar.setBackgroundHover(new java.awt.Color(153, 102, 0));
+        btn_AsignarArea_actualizar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
+        btn_AsignarArea_actualizar.setName("btn_AsignarArea_actualizar"); // NOI18N
 
-        rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
-        rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
-        rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
+        jbtnFiltrar.setBackground(new java.awt.Color(0, 102, 204));
+        jbtnFiltrar.setBackgroundHover(new java.awt.Color(0, 51, 102));
+        jbtnFiltrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
 
-        rSDateYear1.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSDateYear1.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSDateYear1.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSDateYear1.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSDateYear1.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_areas.setColorArrow(new java.awt.Color(153, 153, 255));
+        cb_AsignarArea_areas.setColorBorde(new java.awt.Color(58, 66, 225));
+        cb_AsignarArea_areas.setColorBoton(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_areas.setColorFondo(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_areas.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cb_AsignarArea_areas.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_areas.setName("cb_AsignarArea_areas"); // NOI18N
 
-        rSComboBox1.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox1.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox1.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox1.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox1.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox1.setColorSeleccion(new java.awt.Color(102, 102, 255));
-
-        rSComboBox2.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox2.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox2.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox2.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox2.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox2.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_docente.setColorArrow(new java.awt.Color(153, 153, 255));
+        cb_AsignarArea_docente.setColorBorde(new java.awt.Color(58, 66, 225));
+        cb_AsignarArea_docente.setColorBoton(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_docente.setColorFondo(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_docente.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cb_AsignarArea_docente.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cb_AsignarArea_docente.setName("cb_AsignarArea_docente"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -152,79 +152,104 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Secundaria:");
 
-        rSCheckBoxMaterial1.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial1.setText("1er Nivel");
-        rSCheckBoxMaterial1.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresAñitos.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_TresAñitos.setText("3 Añitos");
+        ckb_AsignarArea_TresAñitos.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_TresAñitos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresAñitos.setName("ckb_AsignarArea_TresAñitos"); // NOI18N
+        ckb_AsignarArea_TresAñitos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckb_AsignarArea_TresAñitosActionPerformed(evt);
+            }
+        });
 
-        rSCheckBoxMaterial3.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial3.setText("3er Nivel");
-        rSCheckBoxMaterial3.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoAñitos.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CincoAñitos.setText("5 Añitos");
+        ckb_AsignarArea_CincoAñitos.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CincoAñitos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoAñitos.setName("ckb_AsignarArea_CincoAñitos"); // NOI18N
 
-        rSCheckBoxMaterial4.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial4.setText("1er Grado");
-        rSCheckBoxMaterial4.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_UnoPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_UnoPrimaria.setText("1er Grado");
+        ckb_AsignarArea_UnoPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_UnoPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_UnoPrimaria.setName("ckb_AsignarArea_UnoPrimaria"); // NOI18N
 
-        rSCheckBoxMaterial5.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial5.setText("2do Grado");
-        rSCheckBoxMaterial5.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_DosPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_DosPrimaria.setText("2do Grado");
+        ckb_AsignarArea_DosPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_DosPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
-        rSCheckBoxMaterial6.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial6.setText("3er Grado");
-        rSCheckBoxMaterial6.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_TresPrimaria.setText("3er Grado");
+        ckb_AsignarArea_TresPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_TresPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresPrimaria.setName("ckb_AsignarArea_TresPrimaria"); // NOI18N
 
-        rSCheckBoxMaterial7.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial7.setText("4to Grado");
-        rSCheckBoxMaterial7.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CuatroPrimaria.setText("4to Grado");
+        ckb_AsignarArea_CuatroPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CuatroPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroPrimaria.setName("ckb_AsignarArea_CuatroPrimaria"); // NOI18N
 
-        rSCheckBoxMaterial8.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial8.setText("5to Grado");
-        rSCheckBoxMaterial8.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CincoPrimaria.setText("5to Grado");
+        ckb_AsignarArea_CincoPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CincoPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoPrimaria.setName("ckb_AsignarArea_CincoPrimaria"); // NOI18N
 
-        rSCheckBoxMaterial9.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial9.setText("6to Grado");
-        rSCheckBoxMaterial9.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_SeisPrimaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_SeisPrimaria.setText("6to Grado");
+        ckb_AsignarArea_SeisPrimaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_SeisPrimaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_SeisPrimaria.setName("ckb_AsignarArea_SeisPrimaria"); // NOI18N
 
-        rSCheckBoxMaterial10.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial10.setText("1er Año");
-        rSCheckBoxMaterial10.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_UnoSecundaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_UnoSecundaria.setText("1er Año");
+        ckb_AsignarArea_UnoSecundaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_UnoSecundaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_UnoSecundaria.setName("ckb_AsignarArea_UnoSecundaria"); // NOI18N
 
-        rSCheckBoxMaterial11.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial11.setText("2do Año");
-        rSCheckBoxMaterial11.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_DosSecundaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_DosSecundaria.setText("2do Año");
+        ckb_AsignarArea_DosSecundaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_DosSecundaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_DosSecundaria.setName("ckb_AsignarArea_DosSecundaria"); // NOI18N
 
-        rSCheckBoxMaterial12.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial12.setText("3er Año");
-        rSCheckBoxMaterial12.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresSecundaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_TresSecundaria.setText("3er Año");
+        ckb_AsignarArea_TresSecundaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_TresSecundaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_TresSecundaria.setName("ckb_AsignarArea_TresSecundaria"); // NOI18N
 
-        rSCheckBoxMaterial13.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial13.setText("4to Año");
-        rSCheckBoxMaterial13.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroSecundaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CuatroSecundaria.setText("4to Año");
+        ckb_AsignarArea_CuatroSecundaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CuatroSecundaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroSecundaria.setName("ckb_AsignarArea_CuatroSecundaria"); // NOI18N
 
-        rSCheckBoxMaterial14.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial14.setText("5to Año");
-        rSCheckBoxMaterial14.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoSecundaria.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CincoSecundaria.setText("5to Año");
+        ckb_AsignarArea_CincoSecundaria.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CincoSecundaria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CincoSecundaria.setName("ckb_AsignarArea_CincoSecundaria"); // NOI18N
 
-        rSCheckBoxMaterial2.setForeground(new java.awt.Color(0, 51, 102));
-        rSCheckBoxMaterial2.setText("2do Nivel");
-        rSCheckBoxMaterial2.setColorCheck(new java.awt.Color(102, 102, 255));
-        rSCheckBoxMaterial2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroAñitos.setForeground(new java.awt.Color(0, 51, 102));
+        ckb_AsignarArea_CuatroAñitos.setText("4 Añitos");
+        ckb_AsignarArea_CuatroAñitos.setColorCheck(new java.awt.Color(102, 102, 255));
+        ckb_AsignarArea_CuatroAñitos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ckb_AsignarArea_CuatroAñitos.setName("ckb_AsignarArea_CuatroAñitos"); // NOI18N
 
-        rSButtonIconShadow4.setBackground(new java.awt.Color(0, 204, 102));
-        rSButtonIconShadow4.setBackgroundHover(new java.awt.Color(0, 102, 51));
-        rSButtonIconShadow4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
+        btn_AsignarArea_crear.setBackground(new java.awt.Color(0, 204, 102));
+        btn_AsignarArea_crear.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btn_AsignarArea_crear.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
+        btn_AsignarArea_crear.setName("btn_AsignarArea_crear"); // NOI18N
+
+        txt_AsignarAreaDirectivo_año.setForeground(new java.awt.Color(0, 51, 102));
+        txt_AsignarAreaDirectivo_año.setBorderColor(new java.awt.Color(0, 51, 102));
+        txt_AsignarAreaDirectivo_año.setName("txt_AsignarAreaDirectivo_año"); // NOI18N
+        txt_AsignarAreaDirectivo_año.setPhColor(new java.awt.Color(102, 102, 102));
+        txt_AsignarAreaDirectivo_año.setPlaceholder("Año");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -239,129 +264,159 @@ public class tabContent1 extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(rSDateYear1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cb_AsignarArea_docente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(cb_AsignarArea_areas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbtnFiltrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_AsignarAreaDirectivo_año, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(rSCheckBoxMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSCheckBoxMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSCheckBoxMaterial3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSCheckBoxMaterial9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(rSCheckBoxMaterial4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(btn_AsignarArea_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_AsignarArea_borrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(23, 23, 23))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(btn_AsignarArea_crear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(115, 115, 115))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(ckb_AsignarArea_TresAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ckb_AsignarArea_CuatroAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ckb_AsignarArea_CincoAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(rSCheckBoxMaterial10, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial13, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSCheckBoxMaterial14, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(rSButtonIconShadow4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(115, 115, 115))))))
+                                    .addComponent(ckb_AsignarArea_SeisPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(ckb_AsignarArea_UnoPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_TresPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_DosPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_CuatroPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_CincoPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(ckb_AsignarArea_UnoSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_DosSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_TresSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_CuatroSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ckb_AsignarArea_CincoSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSCheckBoxMaterial10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(57, 57, 57)
-                            .addComponent(rSCheckBoxMaterial11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSCheckBoxMaterial12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSCheckBoxMaterial13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSCheckBoxMaterial14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSDateYear1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rSCheckBoxMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSCheckBoxMaterial4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_AsignarArea_crear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_AsignarArea_actualizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_AsignarArea_borrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckb_AsignarArea_UnoSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(57, 57, 57)
+                                    .addComponent(ckb_AsignarArea_DosSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckb_AsignarArea_TresSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckb_AsignarArea_CuatroSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ckb_AsignarArea_CincoSecundaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(rSCheckBoxMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSCheckBoxMaterial3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ckb_AsignarArea_TresAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ckb_AsignarArea_UnoPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ckb_AsignarArea_CuatroAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb_AsignarArea_CincoAñitos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ckb_AsignarArea_DosPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb_AsignarArea_TresPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb_AsignarArea_CuatroPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb_AsignarArea_CincoPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ckb_AsignarArea_SeisPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(rSCheckBoxMaterial5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSCheckBoxMaterial6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_AsignarAreaDirectivo_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSCheckBoxMaterial7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSCheckBoxMaterial8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cb_AsignarArea_areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSCheckBoxMaterial9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonIconShadow4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_AsignarArea_docente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 40, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ckb_AsignarArea_TresAñitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb_AsignarArea_TresAñitosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ckb_AsignarArea_TresAñitosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public RSMaterialComponent.RSButtonIconShadow btn_AsignarArea_actualizar;
+    public RSMaterialComponent.RSButtonIconShadow btn_AsignarArea_borrar;
+    public RSMaterialComponent.RSButtonIconShadow btn_AsignarArea_crear;
+    public RSMaterialComponent.RSComboBox cb_AsignarArea_areas;
+    public RSMaterialComponent.RSComboBox cb_AsignarArea_docente;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CincoAñitos;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CincoPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CincoSecundaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CuatroAñitos;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CuatroPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_CuatroSecundaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_DosPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_DosSecundaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_SeisPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_TresAñitos;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_TresPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_TresSecundaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_UnoPrimaria;
+    public RSMaterialComponent.RSCheckBoxMaterial ckb_AsignarArea_UnoSecundaria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -369,29 +424,10 @@ public class tabContent1 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow4;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial1;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial10;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial11;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial12;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial13;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial14;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial2;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial3;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial4;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial5;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial6;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial7;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial8;
-    private RSMaterialComponent.RSCheckBoxMaterial rSCheckBoxMaterial9;
-    private RSMaterialComponent.RSComboBox rSComboBox1;
-    private RSMaterialComponent.RSComboBox rSComboBox2;
-    private newscomponents.RSDateYear rSDateYear1;
+    public RSMaterialComponent.RSButtonIconShadow jbtnFiltrar;
+    public RSMaterialComponent.RSTextFieldMaterialIcon jtxtBuscar;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private RSMaterialComponent.RSTextFieldMaterialIcon rSTextFieldMaterialIcon1;
-    private RSMaterialComponent.RSTableMetroCustom tbl_AsignarArea_registro;
+    public RSMaterialComponent.RSTableMetroCustom tbl_AsignarArea_registro;
+    public RSMaterialComponent.RSTextFieldTwo txt_AsignarAreaDirectivo_año;
     // End of variables declaration//GEN-END:variables
 }

@@ -124,6 +124,7 @@
             <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
               <Value id="FOLDER"/>
             </Property>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab1ActionPerformed"/>
@@ -171,19 +172,19 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="Vista.Asignar.tabContent1" name="pnlArea">
+        <Component class="Vista.Asignar.tabContent3" name="pnlAsignaPortada">
           <Properties>
-            <Property name="name" type="java.lang.String" value="pnlArea" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="pnlAsignaPortada" noResource="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card2"/>
+              <CardConstraints cardName="card4"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="Vista.Asignar.tabContent2" name="pnlTutor">
+        <Component class="Vista.Asignar.tabContent1" name="pnlAsignarArea">
           <Properties>
-            <Property name="name" type="java.lang.String" value="pnlTutor" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="pnlAsignarArea" noResource="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -191,9 +192,9 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="Vista.Asignar.tabContent3" name="pnlAsignaPortada">
+        <Component class="Vista.Asignar.tabContent2" name="pnlAsignarTutor">
           <Properties>
-            <Property name="name" type="java.lang.String" value="pnlAsignaPortada" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="pnlAsignarTutor" noResource="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">

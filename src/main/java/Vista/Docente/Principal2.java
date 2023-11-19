@@ -4,18 +4,16 @@
  */
 package Vista.Docente;
 
-import java.awt.Color;
-
 /**
  *
  * @author SARA
  */
-public class Principal extends javax.swing.JPanel {
+public class Principal2 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Principal
+     * Creates new form Principal2
      */
-    public Principal() {
+    public Principal2() {
         initComponents();
         this.pnlSlider.setPanelNormal(this.pnlCrearCuentaPortada);
     }
@@ -48,7 +46,6 @@ public class Principal extends javax.swing.JPanel {
 
         tab1.setBackground(new java.awt.Color(187, 187, 187));
         tab1.setText("Docente");
-        tab1.setBackgroundHover(new java.awt.Color(102, 102, 255));
         tab1.setForegroundHover(new java.awt.Color(204, 204, 255));
         tab1.setForegroundIcon(new java.awt.Color(102, 102, 102));
         tab1.setForegroundIconHover(new java.awt.Color(204, 204, 255));
@@ -65,28 +62,24 @@ public class Principal extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(266, 266, 266))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        rSLabelTextIcon1.getAccessibleContext().setAccessibleName("Crear Docente");
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
         pnlCrearDocente.setName("pnlCrearDocente"); // NOI18N
         pnlSlider.add(pnlCrearDocente, "card2");
+
+        pnlCrearCuentaPortada.setName("pnlCrearCuentaPortada"); // NOI18N
         pnlSlider.add(pnlCrearCuentaPortada, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -94,29 +87,20 @@ public class Principal extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1105, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 563, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void tab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab1ActionPerformed
         if(this.tab1.isSelected()){
             this.tab1.setSelected(true);
-            
-            //colores
-           /* this.tab1.setBackground(new Color(102,102,255));        //tab1
-            this.tab1.setForeground(new Color(204,204,255));
-            this.tab1.setForegroundIcon(new Color(204,204,255));*/
-           
         }
         this.pnlSlider.setPanelNormal(this.pnlCrearDocente);
     }//GEN-LAST:event_tab1ActionPerformed

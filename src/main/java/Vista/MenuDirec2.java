@@ -48,10 +48,11 @@ public class MenuDirec2 extends javax.swing.JFrame {
         btnAsignar = new rsbuttom.RSButtonMetro();
         rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlAdministrar = new Vista.AdministrarCuenta.Principal();
-        pnlCrearCuentaDocente = new Vista.Docente.Principal();
+        pnlCrearCuentaDocente = new Vista.Docente.Principal2();
         pnlAsignar = new Vista.Asignar.Principal();
+        pnlAdministrar = new Vista.AdministrarCuenta.Principal();
         bienvenida = new Vista.Bienvenida();
+        pnlEstudiantes = new Vista.Estudiantes.Principal2();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,7 +223,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -231,11 +232,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
         rSPanelMaterial1.setIntensity(5);
         rSPanelMaterial1.setRound(15);
 
-        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
-        pnlSlider.setName("pnlSlider"); // NOI18N
-
-        pnlAdministrar.setName("pnlAdministrar"); // NOI18N
-        pnlSlider.add(pnlAdministrar, "card2");
+        pnlSlider.setBackground(new java.awt.Color(153, 153, 255));
 
         pnlCrearCuentaDocente.setName("pnlCrearCuentaDocente"); // NOI18N
         pnlSlider.add(pnlCrearCuentaDocente, "card3");
@@ -243,24 +240,30 @@ public class MenuDirec2 extends javax.swing.JFrame {
         pnlAsignar.setName("pnlAsignar"); // NOI18N
         pnlSlider.add(pnlAsignar, "card4");
 
+        pnlAdministrar.setName("pnlAdministrar"); // NOI18N
+        pnlSlider.add(pnlAdministrar, "card5");
+
         bienvenida.setName("bienvenida"); // NOI18N
-        pnlSlider.add(bienvenida, "card5");
+        pnlSlider.add(bienvenida, "card6");
+
+        pnlEstudiantes.setName("pnlEstudiantes"); // NOI18N
+        pnlSlider.add(pnlEstudiantes, "card6");
 
         javax.swing.GroupLayout rSPanelMaterial1Layout = new javax.swing.GroupLayout(rSPanelMaterial1);
         rSPanelMaterial1.setLayout(rSPanelMaterial1Layout);
         rSPanelMaterial1Layout.setHorizontalGroup(
             rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 1153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 1187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         rSPanelMaterial1Layout.setVerticalGroup(
             rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -367,11 +370,13 @@ public class MenuDirec2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDocenteActionPerformed
 
     private void btnEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudiantesActionPerformed
-        if(!this.btnEstudiantes.isSelected()){
+        if(this.btnEstudiantes.isSelected()){
             this.btnAdministrarCuentas.setSelected(false);
             this.btnDocente.setSelected(false);
             this.btnEstudiantes.setSelected(true);
             this.btnAsignar.setSelected(false);
+            
+            this.pnlSlider.setPanelNormal(this.pnlEstudiantes);
         }
         
         if(this.btnEstudiantes.isSelected()){
@@ -514,7 +519,8 @@ public class MenuDirec2 extends javax.swing.JFrame {
     public javax.swing.JLabel jlblUsuario;
     private Vista.AdministrarCuenta.Principal pnlAdministrar;
     private Vista.Asignar.Principal pnlAsignar;
-    private Vista.Docente.Principal pnlCrearCuentaDocente;
+    private Vista.Docente.Principal2 pnlCrearCuentaDocente;
+    private Vista.Estudiantes.Principal2 pnlEstudiantes;
     public javax.swing.JPanel pnlMenu;
     private newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;

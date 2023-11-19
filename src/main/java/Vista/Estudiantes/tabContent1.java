@@ -30,11 +30,10 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        rSPanelBorderImage1 = new RSMaterialComponent.RSPanelBorderImage();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         rSPanelMaterial2 = new RSMaterialComponent.RSPanelMaterial();
         jLabel4 = new javax.swing.JLabel();
-        rSComboBox1 = new RSMaterialComponent.RSComboBox();
+        jComboBox6 = new RSMaterialComponent.RSComboBox();
         rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
@@ -43,7 +42,7 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        rSComboBox2 = new RSMaterialComponent.RSComboBox();
+        jComboBox5 = new RSMaterialComponent.RSComboBox();
         rSComboBox3 = new RSMaterialComponent.RSComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
@@ -59,41 +58,23 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Institución Educativa Privada");
-        rSPanelMaterial1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 800, -1));
+        rSPanelMaterial1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 600, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("MARIA REYNA DE LA PAZ");
-        rSPanelMaterial1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, -1));
+        rSPanelMaterial1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 600, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("FILTRAR EL NOMBRE DEL CURSO Y EL BIMESTRE");
-        rSPanelMaterial1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 800, -1));
-
-        rSPanelBorderImage1.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setForeground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setBgBorder(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logo-removebg-preview.png"))); // NOI18N
-
-        javax.swing.GroupLayout rSPanelBorderImage1Layout = new javax.swing.GroupLayout(rSPanelBorderImage1);
-        rSPanelBorderImage1.setLayout(rSPanelBorderImage1Layout);
-        rSPanelBorderImage1Layout.setHorizontalGroup(
-            rSPanelBorderImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        rSPanelBorderImage1Layout.setVerticalGroup(
-            rSPanelBorderImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        rSPanelMaterial1.add(rSPanelBorderImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
+        rSPanelMaterial1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 600, -1));
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rSLabelTextIcon1.setText("Registro de Notas");
+        rSLabelTextIcon1.setText("Ver Registro de Notas");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
         rSPanelMaterial1.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
@@ -106,12 +87,12 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Grado");
 
-        rSComboBox1.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox1.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox1.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox1.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox1.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox1.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        jComboBox6.setColorArrow(new java.awt.Color(153, 153, 255));
+        jComboBox6.setColorBorde(new java.awt.Color(58, 66, 225));
+        jComboBox6.setColorBoton(new java.awt.Color(102, 102, 255));
+        jComboBox6.setColorFondo(new java.awt.Color(102, 102, 255));
+        jComboBox6.setColorListaItems(new java.awt.Color(204, 204, 204));
+        jComboBox6.setColorSeleccion(new java.awt.Color(102, 102, 255));
 
         rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
         rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
@@ -146,12 +127,12 @@ public class tabContent1 extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Filtro");
 
-        rSComboBox2.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox2.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox2.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox2.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox2.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox2.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        jComboBox5.setColorArrow(new java.awt.Color(153, 153, 255));
+        jComboBox5.setColorBorde(new java.awt.Color(58, 66, 225));
+        jComboBox5.setColorBoton(new java.awt.Color(102, 102, 255));
+        jComboBox5.setColorFondo(new java.awt.Color(102, 102, 255));
+        jComboBox5.setColorListaItems(new java.awt.Color(204, 204, 204));
+        jComboBox5.setColorSeleccion(new java.awt.Color(102, 102, 255));
 
         rSComboBox3.setColorArrow(new java.awt.Color(153, 153, 255));
         rSComboBox3.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -169,10 +150,10 @@ public class tabContent1 extends javax.swing.JPanel {
                 .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
                         .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -199,11 +180,11 @@ public class tabContent1 extends javax.swing.JPanel {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -248,11 +229,13 @@ public class tabContent1 extends javax.swing.JPanel {
         rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(rSTableMetroCustom1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 990, 410));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 730, 410));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public RSMaterialComponent.RSComboBox jComboBox5;
+    public RSMaterialComponent.RSComboBox jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -263,16 +246,13 @@ public class tabContent1 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
-    private RSMaterialComponent.RSComboBox rSComboBox1;
-    private RSMaterialComponent.RSComboBox rSComboBox2;
-    private RSMaterialComponent.RSComboBox rSComboBox3;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
+    public RSMaterialComponent.RSComboBox rSComboBox3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
-    private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
+    public RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
     // End of variables declaration//GEN-END:variables
 }

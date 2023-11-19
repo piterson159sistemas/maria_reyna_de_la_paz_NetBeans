@@ -29,7 +29,6 @@ public class tabContent2 extends javax.swing.JPanel {
         rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        rSPanelBorderImage1 = new RSMaterialComponent.RSPanelBorderImage();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         rSPanelMaterial2 = new RSMaterialComponent.RSPanelMaterial();
         jLabel4 = new javax.swing.JLabel();
@@ -58,37 +57,19 @@ public class tabContent2 extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Institución Educativa Privada");
-        rSPanelMaterial1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, -1));
+        rSPanelMaterial1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 600, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("MARIA REYNA DE LA PAZ");
-        rSPanelMaterial1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 800, -1));
-
-        rSPanelBorderImage1.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setForeground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setBgBorder(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logo-removebg-preview.png"))); // NOI18N
-
-        javax.swing.GroupLayout rSPanelBorderImage1Layout = new javax.swing.GroupLayout(rSPanelBorderImage1);
-        rSPanelBorderImage1.setLayout(rSPanelBorderImage1Layout);
-        rSPanelBorderImage1Layout.setHorizontalGroup(
-            rSPanelBorderImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        rSPanelBorderImage1Layout.setVerticalGroup(
-            rSPanelBorderImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        rSPanelMaterial1.add(rSPanelBorderImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
+        rSPanelMaterial1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 600, -1));
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rSLabelTextIcon1.setText("Registro de Asistencia");
+        rSLabelTextIcon1.setText("Ver Registro de Asistencia");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK_BOX);
-        rSPanelMaterial1.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        rSPanelMaterial1.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 260, -1));
 
         add(rSPanelMaterial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 120));
 
@@ -158,38 +139,37 @@ public class tabContent2 extends javax.swing.JPanel {
         rSPanelMaterial2Layout.setHorizontalGroup(
             rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(177, 177, 177))
+            .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
-                        .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                    .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
+                            .addComponent(jLabel9)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rSPanelMaterial2Layout.setVerticalGroup(
             rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,11 +177,11 @@ public class tabContent2 extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(rSPanelMaterial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
@@ -221,10 +201,10 @@ public class tabContent2 extends javax.swing.JPanel {
                     .addGroup(rSPanelMaterial2Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jLabel8)))
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
 
-        add(rSPanelMaterial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 210, 420));
+        add(rSPanelMaterial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 420));
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -257,7 +237,7 @@ public class tabContent2 extends javax.swing.JPanel {
             rSTableMetroCustom1.getColumnModel().getColumn(7).setPreferredWidth(10);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 990, 410));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 750, 410));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -271,16 +251,15 @@ public class tabContent2 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
-    private RSMaterialComponent.RSComboBox rSComboBox1;
-    private RSMaterialComponent.RSComboBox rSComboBox2;
-    private RSMaterialComponent.RSComboBox rSComboBox3;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
+    public RSMaterialComponent.RSComboBox rSComboBox1;
+    public RSMaterialComponent.RSComboBox rSComboBox2;
+    public RSMaterialComponent.RSComboBox rSComboBox3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
-    private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
+    public RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
     // End of variables declaration//GEN-END:variables
 }

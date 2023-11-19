@@ -4,7 +4,7 @@
  */
 package Vista.Estudiantes;
 
-import Vista.Docente.*;
+import Vista.Asignar.*;
 
 /**
  *
@@ -17,6 +17,7 @@ public class Principal extends javax.swing.JPanel {
      */
     public Principal() {
         initComponents();
+        this.pnlSlider.setPanelNormal(this.pnlEstudiantePortada);
     }
 
     /**
@@ -30,9 +31,14 @@ public class Principal extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
-        rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
-        rSButtonIcon_new2 = new newscomponents.RSButtonIcon_new();
-        rSButtonIcon_new3 = new newscomponents.RSButtonIcon_new();
+        tab1 = new newscomponents.RSButtonIcon_new();
+        tab2 = new newscomponents.RSButtonIcon_new();
+        tab3 = new newscomponents.RSButtonIcon_new();
+        pnlSlider = new newscomponents.RSPanelEffect();
+        pnlEstudianteNotas = new Vista.Estudiantes.tabContent1();
+        pnlEstudianteAsistencia = new Vista.Estudiantes.tabContent2();
+        pnlEstudianteLista = new Vista.Estudiantes.tabContent3();
+        pnlEstudiantePortada = new Vista.Estudiantes.tabContent4();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -44,52 +50,62 @@ public class Principal extends javax.swing.JPanel {
         rSLabelTextIcon1.setText("Estudiantes");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.BRUSH);
 
-        rSButtonIcon_new1.setBackground(new java.awt.Color(187, 187, 187));
-        rSButtonIcon_new1.setText("Registro de Notas");
-        rSButtonIcon_new1.setBackgroundHover(new java.awt.Color(102, 102, 255));
-        rSButtonIcon_new1.setForegroundHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new1.setForegroundIcon(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new1.setForegroundIconHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new1.setForegroundText(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
-        rSButtonIcon_new1.setName("Registro de Notas"); // NOI18N
+        tab1.setBackground(new java.awt.Color(187, 187, 187));
+        tab1.setText("Ver Registro de Notas");
+        tab1.setBackgroundHover(new java.awt.Color(102, 102, 255));
+        tab1.setForegroundHover(new java.awt.Color(204, 204, 255));
+        tab1.setForegroundIcon(new java.awt.Color(102, 102, 102));
+        tab1.setForegroundIconHover(new java.awt.Color(204, 204, 255));
+        tab1.setForegroundText(new java.awt.Color(102, 102, 102));
+        tab1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
+        tab1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab1ActionPerformed(evt);
+            }
+        });
 
-        rSButtonIcon_new2.setBackground(new java.awt.Color(187, 187, 187));
-        rSButtonIcon_new2.setText("Registro de Asistencia");
-        rSButtonIcon_new2.setBackgroundHover(new java.awt.Color(102, 102, 255));
-        rSButtonIcon_new2.setForegroundHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new2.setForegroundIcon(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new2.setForegroundIconHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new2.setForegroundText(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK_BOX);
-        rSButtonIcon_new2.setName("Registro de Asistencia"); // NOI18N
+        tab2.setBackground(new java.awt.Color(187, 187, 187));
+        tab2.setText("Ver Registro de Asistencia");
+        tab2.setBackgroundHover(new java.awt.Color(102, 102, 255));
+        tab2.setForegroundHover(new java.awt.Color(204, 204, 255));
+        tab2.setForegroundIcon(new java.awt.Color(102, 102, 102));
+        tab2.setForegroundIconHover(new java.awt.Color(204, 204, 255));
+        tab2.setForegroundText(new java.awt.Color(102, 102, 102));
+        tab2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK_BOX);
+        tab2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab2ActionPerformed(evt);
+            }
+        });
 
-        rSButtonIcon_new3.setBackground(new java.awt.Color(187, 187, 187));
-        rSButtonIcon_new3.setText("Lista");
-        rSButtonIcon_new3.setBackgroundHover(new java.awt.Color(102, 102, 255));
-        rSButtonIcon_new3.setForegroundHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new3.setForegroundIcon(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new3.setForegroundIconHover(new java.awt.Color(204, 204, 255));
-        rSButtonIcon_new3.setForegroundText(new java.awt.Color(102, 102, 102));
-        rSButtonIcon_new3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LIST);
-        rSButtonIcon_new3.setName("Lista"); // NOI18N
+        tab3.setBackground(new java.awt.Color(187, 187, 187));
+        tab3.setText("Lista");
+        tab3.setBackgroundHover(new java.awt.Color(102, 102, 255));
+        tab3.setForegroundHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundIcon(new java.awt.Color(102, 102, 102));
+        tab3.setForegroundIconHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundText(new java.awt.Color(102, 102, 102));
+        tab3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LIST);
+        tab3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIcon_new3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 680, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,34 +114,91 @@ public class Principal extends javax.swing.JPanel {
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIcon_new3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(266, 266, 266))
+                    .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(329, 329, 329))
         );
 
-        rSLabelTextIcon1.getAccessibleContext().setAccessibleName("Crear Docente");
+        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSlider.setToolTipText("");
+        pnlSlider.setName("pnlSlider"); // NOI18N
+
+        pnlEstudianteNotas.setName("pnlEstudianteNotas"); // NOI18N
+        pnlSlider.add(pnlEstudianteNotas, "card2");
+
+        pnlEstudianteAsistencia.setName("pnlEstudianteAsistencia"); // NOI18N
+        pnlSlider.add(pnlEstudianteAsistencia, "card3");
+
+        pnlEstudianteLista.setName("pnlEstudianteLista"); // NOI18N
+        pnlSlider.add(pnlEstudianteLista, "card4");
+
+        pnlEstudiantePortada.setName("pnlEstudiantePortada"); // NOI18N
+        pnlSlider.add(pnlEstudiantePortada, "card5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(560, 560, 560))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tab2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab2ActionPerformed
+        if(this.tab2.isSelected()){
+            this.tab2.setSelected(true);
+            this.tab1.setSelected(false);
+            this.tab3.setSelected(false);
+            
+            
+        }
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteAsistencia);
+    }//GEN-LAST:event_tab2ActionPerformed
+
+    private void tab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab1ActionPerformed
+        if(this.tab1.isSelected()){
+            this.tab1.setSelected(true);
+            this.tab2.setSelected(false);
+            this.tab3.setSelected(false);
+            
+            
+        }
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteNotas);
+    }//GEN-LAST:event_tab1ActionPerformed
+
+    private void tab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab3ActionPerformed
+        if(this.tab1.isSelected()){
+            this.tab1.setSelected(false);
+            this.tab2.setSelected(false);
+            this.tab3.setSelected(true);
+            
+            
+        }
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteLista);
+    }//GEN-LAST:event_tab3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
-    private newscomponents.RSButtonIcon_new rSButtonIcon_new2;
-    private newscomponents.RSButtonIcon_new rSButtonIcon_new3;
+    private Vista.Estudiantes.tabContent2 pnlEstudianteAsistencia;
+    private Vista.Estudiantes.tabContent3 pnlEstudianteLista;
+    private Vista.Estudiantes.tabContent1 pnlEstudianteNotas;
+    private Vista.Estudiantes.tabContent4 pnlEstudiantePortada;
+    private newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
+    private newscomponents.RSButtonIcon_new tab1;
+    private newscomponents.RSButtonIcon_new tab2;
+    private newscomponents.RSButtonIcon_new tab3;
     // End of variables declaration//GEN-END:variables
 }

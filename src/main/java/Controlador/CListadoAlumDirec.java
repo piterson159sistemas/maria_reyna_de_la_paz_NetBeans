@@ -81,7 +81,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         String filtro = definirFiltros(null);
         crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
         procesos.formatoColumnasTabla(vista.tblListaAlumnos);
-        procesos.CargarIconoEstado(vista.tblListaAlumnos);
+        //procesos.CargarIconoEstado(vista.tblListaAlumnos);
     }
     
     public String definirFiltros(String nombreAlumno){

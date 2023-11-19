@@ -28,6 +28,10 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_GD = new javax.swing.JTable();
+        jbtnBorrarGD = new javax.swing.JButton();
+        JbtnListarDocentes = new javax.swing.JButton();
+        jbtnActualizarD = new javax.swing.JButton();
+        jbtnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -43,15 +47,15 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jtxtAP = new javax.swing.JTextField();
-        jtxtPregunta3 = new javax.swing.JTextField();
-        jbtnBorrarGD = new javax.swing.JButton();
-        jbtnActualizarGDG = new javax.swing.JButton();
+        jtxtCod = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jtxtRespuesta1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jtxtRespuesta2 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jtxtRespuesta3 = new javax.swing.JTextField();
+        jtxtPregunta3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -61,10 +65,7 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
 
         tbl_GD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "", "", "", null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Nombre", "Apellido Paterno", "Apellido Materno", "Codigo", "N° Documento", "Contraseña", "Pregunta1", "Respuesta1", "Pregunta2", "Respuesta2", "Pregunta3", "Respuesta3"
@@ -81,6 +82,23 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
         jScrollPane1.setViewportView(tbl_GD);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 200));
+
+        jbtnBorrarGD.setText("Borrar");
+        getContentPane().add(jbtnBorrarGD, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 260, 150, 40));
+
+        JbtnListarDocentes.setText("Listar");
+        JbtnListarDocentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JbtnListarDocentesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JbtnListarDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, 150, 40));
+
+        jbtnActualizarD.setText("Actualizar");
+        getContentPane().add(jbtnActualizarD, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 210, 150, 40));
+
+        jbtnEditar.setText("Editar");
+        getContentPane().add(jbtnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 360, 150, 40));
 
         jLabel1.setText("N° de Documento:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
@@ -112,18 +130,9 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
         jLabel9.setText("Pregunta 3");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
         getContentPane().add(jtxtAP, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 120, 30));
-        getContentPane().add(jtxtPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 120, 30));
 
-        jbtnBorrarGD.setText("Borrar");
-        getContentPane().add(jbtnBorrarGD, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 150, 40));
-
-        jbtnActualizarGDG.setText("Actualizar");
-        jbtnActualizarGDG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnActualizarGDGActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jbtnActualizarGDG, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, 150, 40));
+        jtxtCod.setEditable(false);
+        getContentPane().add(jtxtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 120, 30));
 
         jLabel12.setText("Respuesta 1");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
@@ -136,20 +145,26 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
         jLabel16.setText("Respuesta 3");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
         getContentPane().add(jtxtRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 120, 30));
+        getContentPane().add(jtxtPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 120, 30));
+
+        jLabel2.setText("Codigo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnActualizarGDGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnActualizarGDGActionPerformed
+    private void JbtnListarDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnListarDocentesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnActualizarGDGActionPerformed
+    }//GEN-LAST:event_JbtnListarDocentesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton JbtnListarDocentes;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel14;
     public javax.swing.JLabel jLabel16;
+    public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
@@ -158,10 +173,12 @@ public class gestionar_cuenta_docente_directivo_1 extends javax.swing.JInternalF
     public javax.swing.JLabel jLabel8;
     public javax.swing.JLabel jLabel9;
     public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JButton jbtnActualizarGDG;
+    public javax.swing.JButton jbtnActualizarD;
     public javax.swing.JButton jbtnBorrarGD;
+    public javax.swing.JButton jbtnEditar;
     public javax.swing.JTextField jtxtAM;
     public javax.swing.JTextField jtxtAP;
+    public javax.swing.JTextField jtxtCod;
     public javax.swing.JTextField jtxtContrass;
     public javax.swing.JTextField jtxtNDocumento;
     public javax.swing.JTextField jtxtNombre;
