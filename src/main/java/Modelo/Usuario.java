@@ -17,6 +17,10 @@ public class Usuario extends Persona implements Modificable, Registrable{
             String Nombre, String ApellidoP, String ApellidoM) {
         super(NumDocumento, Nombre, ApellidoP, ApellidoM);
     }
+    
+    public Usuario(String Nombre){
+        super(Nombre);
+    }
 
        // Constructor sin argumentos
     public Usuario() {

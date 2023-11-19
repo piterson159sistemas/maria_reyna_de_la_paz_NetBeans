@@ -26,6 +26,10 @@ public abstract class Persona {
         this.ApellidoP = data.get(3);
         this.ApellidoM = data.get(4);
     }
+    
+    public Persona(String Nombre){
+        this.Nombre = Nombre;
+    }
 
     public int getNumDocumento() {
         return NumDocumento;
