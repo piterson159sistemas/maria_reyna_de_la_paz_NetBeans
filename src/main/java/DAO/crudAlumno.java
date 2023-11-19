@@ -182,45 +182,7 @@ public class crudAlumno {
         }
         return data;
         
-    }
-    
-    //Busca un alumno de la tabla de alumnos
-    public String[] Buscar(String numDoc,String estado){
-        String sqlST="Select a.N_DocumentoA, a.Tipo_Documento, a.Nombres,"
-                +" a.Apellido_P, a.Apellido_M, g.Nivel, g.Grado, e.Estado,"
-                +" ga.Año, ga.Codigo_Grado_Alumno"
-                +" from grado_alumno ga" 
-                +" inner join alumno a on (ga.CodigoA = a.N_DocumentoA)" 
-                +" inner join grado g on (ga.Codigo_Grado = g.Codigo_Grado)" 
-                +" inner join estado_grado_alumno e on (ga.Codigo_EstadoGA = e.Codigo_EstadoGA)"
-                +" where a.N_DocumentoA='"+numDoc+"'"
-                +" and e.Estado='"+estado+"';";
-        String[] dataAlumno=new String[10];
-        int longitud=dataAlumno.length;
-        try {
-            Connection cn = con.conectar();
-            con.st = cn.createStatement();
-            con.rs = con.st.executeQuery(sqlST);
-            if(con.rs.next()){
-                //1° dato es dni del alumno
-                dataAlumno[0]= Integer.toString(con.rs.getInt(1));
-                
-                // este campo devuelve una fecha, lo convertimos a Año "YYYY"
-                dataAlumno[8]= (con.rs.getString(9)).substring(0, 4);
-                
-                /* este campo devuelve el cod del registro exacto encontrado
-                en la tabla GradoAlumno */
-                dataAlumno[9]= String.valueOf(con.rs.getInt(10));
-                for (int i = 1; i < longitud-2; i++) {
-                    dataAlumno[i]= con.rs.getString(i+1);
-                }
-            }
-            cn.close();
-        } catch (SQLException e) {
-            ProcesosAlumnos.msjDialog("ERROR al buscar alumno de la Tabla "+e);
-        }
-        return dataAlumno;
-    }
+    }  
     
     //Filra a los alumnos en la tabla segun nivel,grado y estadoGrado
     public String Filtrar(String nivel, String grado,String estadoGrado,
@@ -326,7 +288,6 @@ public class crudAlumno {
             ****************************************************
     */
     
-    
     public void insertarAlumno(Alumno a){
         String sqlST="INSERT INTO alumno (?,?,?,?,?)";
         try{
@@ -344,110 +305,7 @@ public class crudAlumno {
             ProcesosAlumnos.msjDialog("ERROR al registrar alumno "+e);
         }
     }
-    
-    public void InsertarAlumno(Alumno a,Connection cn)throws SQLException{
-        String sqlST="INSERT INTO Alumno(N_DocumentoA,Tipo_Documento,Nombres,"
-                + "Apellido_P,Apellido_M) values(?,?,?,?,?);";
-        try( PreparedStatement st=cn.prepareStatement(sqlST)){
-            st.setInt(1, a.getNumDocumento());
-            st.setString(2, a.getTipoDocumento());
-            st.setString(3, a.getNombre());
-            st.setString(4, a.getApellidoP());
-            st.setString(5, a.getApellidoM());
-            st.executeUpdate();
-        }
-        
-    }
-    
-    public void actualizarAlumno( ArrayList<String> data,int codAlumno){
-        String sqlST="UPDATE alumno set Nombres=(?),Apellido_P=(?),Apellido_M=(?)"
-                + " where N_DocumentoA="+codAlumno+";";
-        try {
-            Connection cn = con.conectar();
-            con.pst =cn.prepareStatement(sqlST);
-            con.pst.setString(1, data.get(2));
-            con.pst.setString(2, data.get(3));
-            con.pst.setString(3, data.get(4));
-            con.pst.executeUpdate();
-            ProcesosAlumnos.msjDialog("Alumno actualizado exitosamente");
-            cn.close();
-        } catch (SQLException e) {
-            ProcesosAlumnos.msjDialog("ERROR al actualizar registro "+e);
-        }
-    }
-    
-    public void actualizarGradoAlumno(int[] data,int codGradoAlumno){
-        String sqlST="UPDATE grado_alumno set Año=(?),Codigo_Grado=(?),Codigo_EstadoGA=(?)"
-            + " where Codigo_Grado_Alumno="+codGradoAlumno+";";
-    
-        try {
-            Connection cn = con.conectar();
-            con.pst =cn.prepareStatement(sqlST);
-            con.pst.setInt(1, data[0]);
-            con.pst.setInt(2, data[1]);
-            con.pst.setInt(3, data[2]);
-            con.pst.executeUpdate();
-            ProcesosAlumnos.msjDialog("Informacion de Grado actualizada exitosamente");
-            cn.close();
-        } catch (SQLException e) {
-            ProcesosAlumnos.msjDialog("ERROR al actualizar informacion de grado "+e);
-        }
-    }
-    
-    public void InsertarGradoAlumno(int anio,int codAlum,int codGrado, int codEstado,
-            Connection cn) throws SQLException{
-        String sqlST="INSERT INTO grado_alumno"
-                + " (Año,CodigoA,Codigo_Grado,Codigo_EstadoGA)"
-                + " values ( (?),?,?,?);";
-        try( PreparedStatement st=cn.prepareStatement(sqlST) ){
-            st.setInt(1, anio);
-            st.setInt(2, codAlum);
-            st.setInt(3, codGrado);
-            st.setInt(4, codEstado);
-            st.executeUpdate(); 
-         
-        }
-    }
-    
-    public void Insertar(Alumno a,int codGrado, int codEstado){
-        Connection cn=null;
-        try{
-           cn = con.conectar(); //establece conexion
-           /* Deshabilita la confirmación automática(autocommit) para
-           inicar la transacción */
-           cn.setAutoCommit(false);
-           //Realizamos las operaciones de insercion en la bd
-            InsertarAlumno(a, cn); // 1° op
 
-            int codAlum = a.getNumDocumento();
-            int anio=a.getGradoAlumno().getAnio();
-            
-            InsertarGradoAlumno(anio, codAlum,codGrado,codEstado, cn); // 2° op
-            
-            cn.commit(); //confirma la transacción
-            
-            ProcesosAlumnos.msjDialog("Alumno registrado correctamente");
-           
-        }catch (SQLException e){
-            //si ocurre un error deshace la transacción(rollback)
-            if (cn != null) {
-                try { cn.rollback(); } 
-                catch (SQLException ex) {
-                    ProcesosAlumnos.msjDialog("ERROR al registrar al alumno");
-                    ex.printStackTrace(System.out);
-                }
-            }
-            e.printStackTrace(System.out);
-        }finally{
-            if (cn != null) {
-                try { 
-                    cn.setAutoCommit(true);
-                    cn.close(); } 
-                catch (SQLException e) {e.printStackTrace(System.out);}
-            }
-        }
-    }
-    
     public void insertarGradoAlumno(int[] data){
         String sqlST="insert into grado_alumno(Año,CodigoA,Codigo_Grado,Codigo_EstadoGA)"
                 + " values (?,?,?,?);";
@@ -485,7 +343,6 @@ public class crudAlumno {
         } catch (SQLException e) {
             ProcesosAlumnos.msjDialog("ERROR al eliminar registro "+e);
         }
-        
     }
     
     public void eliminarGradoAlumno(int codGradoAlumno){
@@ -509,68 +366,39 @@ public class crudAlumno {
             ****************************************************
         */
     
-    public void Actualizar(Alumno a,int codGrado, int codEstado,int codGradoAlumno){
-        Connection cn=null;
-        try{
-           cn = con.conectar(); //establece conexion
-           cn.setAutoCommit(false);
-           //Realizamos las operaciones de actualizacion en la bd
-            ActualizarAlumno(a, cn); // 1° op
-
-            int anio=a.getGradoAlumno().getAnio();
-
-            ActualizarGradoAlumno(anio, codGrado,codEstado,codGradoAlumno, cn); // 2° op
-
-            cn.commit(); //confirma la transacción
-
-            ProcesosAlumnos.msjDialog("Datos del Alumno actualizados correctamente");
-
-        }catch (SQLException e){
-            //si ocurre un error deshace la transacción(rollback)
-            if (cn != null) {
-                try { cn.rollback(); } 
-                catch (SQLException ex) {
-                    ProcesosAlumnos.msjDialog("ERROR al actualizar datos del alumno");
-                    ex.printStackTrace(System.out);
-                }
-            }
-            e.printStackTrace(System.out);
-        }finally{
-            if (cn != null) {
-                try { 
-                    cn.setAutoCommit(true);
-                    cn.close(); } 
-                catch (SQLException e) {e.printStackTrace(System.out);}
-            }
+    public void actualizarAlumno( ArrayList<String> data,int codAlumno){
+        String sqlST="UPDATE alumno set Nombres=(?),Apellido_P=(?),Apellido_M=(?)"
+                + " where N_DocumentoA="+codAlumno+";";
+        try {
+            Connection cn = con.conectar();
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setString(1, data.get(2));
+            con.pst.setString(2, data.get(3));
+            con.pst.setString(3, data.get(4));
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Alumno actualizado exitosamente");
+            cn.close();
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al actualizar registro "+e);
         }
-        
     }
     
-    public void ActualizarAlumno(Alumno a,Connection cn) throws SQLException{
-        String sqlST="UPDATE Alumno SET Nombres=(?), Apellido_P=(?),"
-                + " Apellido_M=(?) WHERE N_DocumentoA=(?);";
-        try(PreparedStatement st=cn.prepareStatement(sqlST)) {
-            st.setString(1, a.getNombre());
-            st.setString(2, a.getApellidoP());
-            st.setString(3, a.getApellidoM());
-            st.setInt(4, a.getNumDocumento());
-            st.executeUpdate();
-        } 
-        
-    }
+    public void actualizarGradoAlumno(int[] data,int codGradoAlumno){
+        String sqlST="UPDATE grado_alumno set Año=(?),Codigo_Grado=(?),Codigo_EstadoGA=(?)"
+            + " where Codigo_Grado_Alumno="+codGradoAlumno+";";
     
-    public void ActualizarGradoAlumno(int anio,int codGrado, int codEstado,
-            int codGradoAlumno,Connection cn) throws SQLException{
-        String sqlST="UPDATE grado_alumno SET Año=(?), Codigo_Grado=(?),"
-                + " Codigo_EstadoGA=(?) WHERE Codigo_Grado_Alumno=(?);";
-        try(PreparedStatement st=cn.prepareStatement(sqlST)) {
-            st.setInt(1, anio );
-            st.setInt(2, codGrado);
-            st.setInt(3, codEstado);
-            st.setInt(4, codGradoAlumno);
-            st.executeUpdate();
-        } 
-        
+        try {
+            Connection cn = con.conectar();
+            con.pst =cn.prepareStatement(sqlST);
+            con.pst.setInt(1, data[0]);
+            con.pst.setInt(2, data[1]);
+            con.pst.setInt(3, data[2]);
+            con.pst.executeUpdate();
+            ProcesosAlumnos.msjDialog("Informacion de Grado actualizada exitosamente");
+            cn.close();
+        } catch (SQLException e) {
+            ProcesosAlumnos.msjDialog("ERROR al actualizar informacion de grado "+e);
+        }
     }
-      
+     
 }
