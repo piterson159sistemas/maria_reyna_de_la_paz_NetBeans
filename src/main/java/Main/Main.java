@@ -13,7 +13,12 @@ public class Main {
         
         login = new login();
         cLogin = new CLogin(login);
-        System.out.println("hola mundo");
+        
+        /* Para inicar sesion rapido cuando hago pruebas
+        login.txtCod.setText("D0101232");
+        login.txtClave.setText("raul");
+        login.btnIngresar.doClick();
+        */
     }
     
 }
