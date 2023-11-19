@@ -3,9 +3,9 @@ package Modelo;
 
 public class Competencia {
     private String nombre;
-    private Area area;
+    private String area;
 
-    public Competencia(String nombre, Area area) {
+    public Competencia(String nombre, String area) {
         this.nombre = nombre;
         this.area = area;
     }
@@ -19,12 +19,14 @@ public class Competencia {
         this.nombre = nombre;
     }
 
-    public Area getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(Area area) {
+    public void setArea(String area) {
         this.area = area;
     }
+
+
     
 }

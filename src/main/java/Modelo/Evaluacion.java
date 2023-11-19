@@ -3,24 +3,20 @@ package Modelo;
 
 
 public class Evaluacion {
-    private Periodo periodo;
+    private String periodo;
     private Competencia comp;
-    private AreaDocencia areaDoce;
     private String comentarios[] = new String[8];
 
-    public Evaluacion(Periodo periodo, Competencia comp, AreaDocencia areaDoce) {
+    public Evaluacion(String periodo, Competencia comp) {
         this.periodo = periodo;
         this.comp = comp;
-        this.areaDoce = areaDoce;
     }
 
-    
-    
-    public Periodo getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(Periodo periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
 
@@ -30,14 +26,6 @@ public class Evaluacion {
 
     public void setComp(Competencia comp) {
         this.comp = comp;
-    }
-
-    public AreaDocencia getAreaDoce() {
-        return areaDoce;
-    }
-
-    public void setAreaDoce(AreaDocencia areaDoce) {
-        this.areaDoce = areaDoce;
     }
 
     public String[] getComentarios() {

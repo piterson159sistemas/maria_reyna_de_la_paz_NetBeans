@@ -3,18 +3,16 @@ package Modelo;
 public class Calificacion {
     private Alumno alumno;
     private AreaDocencia areaDoce;
-    private Periodo periodo;
-    private Competencia comp;
+    private String periodo;
     private Evaluacion  eval;
     private int notas[]= new int[8];
     private float promedio;
 
-    public Calificacion(Alumno alumno, AreaDocencia areaDoce, Periodo periodo, 
-            Competencia comp, Evaluacion eval, float promedio) {
+    public Calificacion(Alumno alumno, AreaDocencia areaDoce, String periodo, 
+            Evaluacion eval, float promedio) {
         this.alumno = alumno;
         this.areaDoce = areaDoce;
         this.periodo = periodo;
-        this.comp = comp;
         this.eval = eval;
         this.promedio = promedio;
     }
@@ -37,20 +35,12 @@ public class Calificacion {
         this.areaDoce = areaDoce;
     }
 
-    public Periodo getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(Periodo periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
-    }
-
-    public Competencia getComp() {
-        return comp;
-    }
-
-    public void setComp(Competencia comp) {
-        this.comp = comp;
     }
 
     public Evaluacion getEval() {

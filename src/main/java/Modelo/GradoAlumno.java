@@ -50,10 +50,7 @@ public class GradoAlumno {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
 
-    
     public void RegistrarGrado(){}
     public void CrearCodigo(){}
     public void HacerReporte(){}

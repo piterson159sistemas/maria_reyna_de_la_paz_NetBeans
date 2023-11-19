@@ -5,12 +5,12 @@ package Modelo;
 public class CompTransversal {
     private Alumno alumno;
     private AreaDocencia areaDoce;
-    private Periodo periodo;
+    private String periodo;
     private int tic;
     private int conducta;
     private int gestioAprendizaje;
 
-    public CompTransversal(Alumno alumno, AreaDocencia areaDoce, Periodo periodo, int tic, int conducta, int gestioAprendizaje) {
+    public CompTransversal(Alumno alumno, AreaDocencia areaDoce, String periodo, int tic, int conducta, int gestioAprendizaje) {
         this.alumno = alumno;
         this.areaDoce = areaDoce;
         this.periodo = periodo;
@@ -36,11 +36,11 @@ public class CompTransversal {
         this.areaDoce = areaDoce;
     }
 
-    public Periodo getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(Periodo periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
 
