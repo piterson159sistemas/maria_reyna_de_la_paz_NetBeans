@@ -96,6 +96,7 @@ public class asignar_area_directivo_1 extends javax.swing.JInternalFrame {
         jPanel2.add(ckb_AsignarArea_UnoPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         ckb_AsignarArea_DosPrimaria.setText("2° Prim.");
+        ckb_AsignarArea_DosPrimaria.setName("ckb_AsignarArea_DosPrimaria"); // NOI18N
         ckb_AsignarArea_DosPrimaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ckb_AsignarArea_DosPrimariaActionPerformed(evt);

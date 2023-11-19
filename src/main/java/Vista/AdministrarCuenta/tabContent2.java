@@ -27,27 +27,29 @@ public class tabContent2 extends javax.swing.JPanel {
     private void initComponents() {
 
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
-        rSTextFieldMaterialIcon1 = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        jtxtBuscar = new RSMaterialComponent.RSTextFieldMaterialIcon();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
-        rSTextFieldTwo1 = new RSMaterialComponent.RSTextFieldTwo();
-        rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
+        tbl_AsignarTutor_registro_1 = new RSMaterialComponent.RSTableMetroCustom();
+        txt_GestionarTutor_grado_1 = new RSMaterialComponent.RSTextFieldTwo();
+        btn_GestionarTutor_borrar_1 = new RSMaterialComponent.RSButtonIconShadow();
         jLabel1 = new javax.swing.JLabel();
-        rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
+        btn_GestionarTutor_actualizar_1 = new RSMaterialComponent.RSButtonIconShadow();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rSLabelTextIcon1.setText("Tutor");
+        rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER_SHARED);
 
-        rSTextFieldMaterialIcon1.setForeground(new java.awt.Color(153, 153, 153));
-        rSTextFieldMaterialIcon1.setColorIcon(new java.awt.Color(51, 51, 51));
-        rSTextFieldMaterialIcon1.setColorMaterial(new java.awt.Color(153, 153, 153));
-        rSTextFieldMaterialIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldMaterialIcon1.setPlaceholder("Buscar");
+        jtxtBuscar.setForeground(new java.awt.Color(153, 153, 153));
+        jtxtBuscar.setColorIcon(new java.awt.Color(51, 51, 51));
+        jtxtBuscar.setColorMaterial(new java.awt.Color(153, 153, 153));
+        jtxtBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        jtxtBuscar.setName("jtxtBuscar"); // NOI18N
+        jtxtBuscar.setPlaceholder("Buscar");
 
-        rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_AsignarTutor_registro_1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -66,27 +68,31 @@ public class tabContent2 extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        rSTableMetroCustom1.setBackgoundHead(new java.awt.Color(102, 102, 255));
-        rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
-        jScrollPane1.setViewportView(rSTableMetroCustom1);
+        tbl_AsignarTutor_registro_1.setBackgoundHead(new java.awt.Color(102, 102, 255));
+        tbl_AsignarTutor_registro_1.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        tbl_AsignarTutor_registro_1.setName("tbl_AsignarTutor_registro_1"); // NOI18N
+        jScrollPane1.setViewportView(tbl_AsignarTutor_registro_1);
 
-        rSTextFieldTwo1.setForeground(new java.awt.Color(0, 51, 102));
-        rSTextFieldTwo1.setBorderColor(new java.awt.Color(0, 51, 102));
-        rSTextFieldTwo1.setPhColor(new java.awt.Color(102, 102, 102));
-        rSTextFieldTwo1.setPlaceholder("Grado");
+        txt_GestionarTutor_grado_1.setForeground(new java.awt.Color(0, 51, 102));
+        txt_GestionarTutor_grado_1.setBorderColor(new java.awt.Color(0, 51, 102));
+        txt_GestionarTutor_grado_1.setName("txt_GestionarTutor_grado_1"); // NOI18N
+        txt_GestionarTutor_grado_1.setPhColor(new java.awt.Color(102, 102, 102));
+        txt_GestionarTutor_grado_1.setPlaceholder("Grado");
 
-        rSButtonIconShadow1.setBackground(new java.awt.Color(255, 102, 102));
-        rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(204, 0, 0));
-        rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
+        btn_GestionarTutor_borrar_1.setBackground(new java.awt.Color(255, 102, 102));
+        btn_GestionarTutor_borrar_1.setBackgroundHover(new java.awt.Color(204, 0, 0));
+        btn_GestionarTutor_borrar_1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
+        btn_GestionarTutor_borrar_1.setName("btn_GestionarTutor_borrar_1"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Grado");
 
-        rSButtonIconShadow2.setBackground(new java.awt.Color(255, 204, 0));
-        rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(153, 102, 0));
-        rSButtonIconShadow2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
+        btn_GestionarTutor_actualizar_1.setBackground(new java.awt.Color(255, 204, 0));
+        btn_GestionarTutor_actualizar_1.setBackgroundHover(new java.awt.Color(153, 102, 0));
+        btn_GestionarTutor_actualizar_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_GestionarTutor_actualizar_1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
+        btn_GestionarTutor_actualizar_1.setName("btn_GestionarTutor_actualizar_1"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -99,16 +105,16 @@ public class tabContent2 extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(rSTextFieldTwo1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_GestionarTutor_grado_1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btn_GestionarTutor_actualizar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_GestionarTutor_borrar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -117,30 +123,30 @@ public class tabContent2 extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSTextFieldMaterialIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_GestionarTutor_actualizar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldTwo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_GestionarTutor_grado_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_GestionarTutor_borrar_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public RSMaterialComponent.RSButtonIconShadow btn_GestionarTutor_actualizar_1;
+    public RSMaterialComponent.RSButtonIconShadow btn_GestionarTutor_borrar_1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
-    private RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
+    public RSMaterialComponent.RSTextFieldMaterialIcon jtxtBuscar;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
-    private RSMaterialComponent.RSTextFieldMaterialIcon rSTextFieldMaterialIcon1;
-    private RSMaterialComponent.RSTextFieldTwo rSTextFieldTwo1;
+    public RSMaterialComponent.RSTableMetroCustom tbl_AsignarTutor_registro_1;
+    public RSMaterialComponent.RSTextFieldTwo txt_GestionarTutor_grado_1;
     // End of variables declaration//GEN-END:variables
 }

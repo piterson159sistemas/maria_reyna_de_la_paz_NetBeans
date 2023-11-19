@@ -33,9 +33,9 @@ public class Principal extends javax.swing.JPanel {
         tab1 = new newscomponents.RSButtonIcon_new();
         tab2 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlArea = new Vista.Asignar.tabContent1();
-        pnlTutor = new Vista.Asignar.tabContent2();
         pnlAsignaPortada = new Vista.Asignar.tabContent3();
+        pnlAsignarArea = new Vista.Asignar.tabContent1();
+        pnlAsignarTutor = new Vista.Asignar.tabContent2();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -57,6 +57,7 @@ public class Principal extends javax.swing.JPanel {
         tab1.setForegroundIconHover(new java.awt.Color(204, 204, 255));
         tab1.setForegroundText(new java.awt.Color(102, 102, 102));
         tab1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER);
+        tab1.setName(""); // NOI18N
         tab1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tab1ActionPerformed(evt);
@@ -106,14 +107,14 @@ public class Principal extends javax.swing.JPanel {
         pnlSlider.setToolTipText("");
         pnlSlider.setName("pnlSlider"); // NOI18N
 
-        pnlArea.setName("pnlArea"); // NOI18N
-        pnlSlider.add(pnlArea, "card2");
-
-        pnlTutor.setName("pnlTutor"); // NOI18N
-        pnlSlider.add(pnlTutor, "card3");
-
         pnlAsignaPortada.setName("pnlAsignaPortada"); // NOI18N
         pnlSlider.add(pnlAsignaPortada, "card4");
+
+        pnlAsignarArea.setName("pnlAsignarArea"); // NOI18N
+        pnlSlider.add(pnlAsignarArea, "card3");
+
+        pnlAsignarTutor.setName("pnlAsignarTutor"); // NOI18N
+        pnlSlider.add(pnlAsignarTutor, "card4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,14 +138,14 @@ public class Principal extends javax.swing.JPanel {
             this.tab2.setSelected(true);
             this.tab1.setSelected(false);
             
-            this.tab2.setBackground(new Color(102,102,255));        //tab2
+            /*this.tab2.setBackground(new Color(102,102,255));        //tab2
             this.tab2.setForeground(new Color(204,204,255));
             this.tab2.setForegroundIcon(new Color(204,204,255));
             this.tab1.setBackground(new Color(255,255,255));        //tab1
             this.tab1.setForeground(new Color(153,153,153));//si no funciona pon setForegroundText
-            this.tab1.setForegroundIcon(new Color(102,102,102));
+            this.tab1.setForegroundIcon(new Color(102,102,102));*/
         }
-        this.pnlSlider.setPanelNormal(this.pnlTutor);
+        this.pnlSlider.setPanelNormal(this.pnlAsignarTutor);
     }//GEN-LAST:event_tab2ActionPerformed
 
     private void tab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab1ActionPerformed
@@ -152,23 +153,23 @@ public class Principal extends javax.swing.JPanel {
             this.tab1.setSelected(true);
             this.tab2.setSelected(false);
             //colores
-            this.tab1.setBackground(new Color(102,102,255));        //tab1
+            /*this.tab1.setBackground(new Color(102,102,255));        //tab1
             this.tab1.setForeground(new Color(204,204,255));
             this.tab1.setForegroundIcon(new Color(204,204,255));
             this.tab2.setBackground(new Color(255,255,255));        //tab2
             this.tab2.setForeground(new Color(153,153,153));//si no funciona pon setForegroundText
-            this.tab2.setForegroundIcon(new Color(102,102,102));
+            this.tab2.setForegroundIcon(new Color(102,102,102));*/
         }
-        this.pnlSlider.setPanelNormal(this.pnlArea);
+        this.pnlSlider.setPanelNormal(this.pnlAsignarArea);
     }//GEN-LAST:event_tab1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private Vista.Asignar.tabContent1 pnlArea;
     private Vista.Asignar.tabContent3 pnlAsignaPortada;
+    private Vista.Asignar.tabContent1 pnlAsignarArea;
+    private Vista.Asignar.tabContent2 pnlAsignarTutor;
     private newscomponents.RSPanelEffect pnlSlider;
-    private Vista.Asignar.tabContent2 pnlTutor;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private newscomponents.RSButtonIcon_new tab1;
     private newscomponents.RSButtonIcon_new tab2;

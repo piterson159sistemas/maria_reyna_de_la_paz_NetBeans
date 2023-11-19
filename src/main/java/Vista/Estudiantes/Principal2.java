@@ -2,22 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Vista.AdministrarCuenta;
-
-import java.awt.Color;
+package Vista.Estudiantes;
 
 /**
  *
  * @author SARA
  */
-public class Principal extends javax.swing.JPanel {
+public class Principal2 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Principal
+     * Creates new form Principal2
      */
-    public Principal() {
+    public Principal2() {
         initComponents();
-        this.pnlSlider.setPanelNormal(this.pnlAdmiCuentaPortada);
+        this.pnlSlider.setPanelNormal(this.pnlEstudiantePortada);
     }
 
     /**
@@ -33,29 +31,29 @@ public class Principal extends javax.swing.JPanel {
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         tab1 = new newscomponents.RSButtonIcon_new();
         tab2 = new newscomponents.RSButtonIcon_new();
+        tab3 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlAdmiCuentaPortada = new Vista.AdministrarCuenta.tabContent3();
-        pnlAdminDocente = new Vista.AdministrarCuenta.tabContent1();
-        pnlAdminTutor = new Vista.AdministrarCuenta.tabContent2();
-
-        setBackground(new java.awt.Color(255, 255, 255));
+        pnlEstudiantePortada = new Vista.Estudiantes.tabContent4();
+        pnlEstudianteNotas = new Vista.Estudiantes.tabContent1();
+        pnlEstudianteAsistencia = new Vista.Estudiantes.tabContent2();
+        pnlEstudianteLista = new Vista.Estudiantes.tabContent3();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(102, 102, 102)));
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rSLabelTextIcon1.setText("Administrar Cuentas");
-        rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER);
+        rSLabelTextIcon1.setText("Estudiantes");
+        rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.BRUSH);
 
         tab1.setBackground(new java.awt.Color(187, 187, 187));
-        tab1.setText("Docente");
+        tab1.setText("Ver Registro de Notas");
         tab1.setBackgroundHover(new java.awt.Color(102, 102, 255));
         tab1.setForegroundHover(new java.awt.Color(204, 204, 255));
         tab1.setForegroundIcon(new java.awt.Color(102, 102, 102));
         tab1.setForegroundIconHover(new java.awt.Color(204, 204, 255));
         tab1.setForegroundText(new java.awt.Color(102, 102, 102));
-        tab1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ACCOUNT_BOX);
+        tab1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
         tab1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tab1ActionPerformed(evt);
@@ -63,16 +61,30 @@ public class Principal extends javax.swing.JPanel {
         });
 
         tab2.setBackground(new java.awt.Color(187, 187, 187));
-        tab2.setText("Tutor");
+        tab2.setText("Ver Registro de Asistencia");
         tab2.setBackgroundHover(new java.awt.Color(102, 102, 255));
         tab2.setForegroundHover(new java.awt.Color(204, 204, 255));
         tab2.setForegroundIcon(new java.awt.Color(102, 102, 102));
         tab2.setForegroundIconHover(new java.awt.Color(204, 204, 255));
         tab2.setForegroundText(new java.awt.Color(102, 102, 102));
-        tab2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER_SHARED);
+        tab2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK_BOX);
         tab2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tab2ActionPerformed(evt);
+            }
+        });
+
+        tab3.setBackground(new java.awt.Color(187, 187, 187));
+        tab3.setText("Lista");
+        tab3.setBackgroundHover(new java.awt.Color(102, 102, 255));
+        tab3.setForegroundHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundIcon(new java.awt.Color(102, 102, 102));
+        tab3.setForegroundIconHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundText(new java.awt.Color(102, 102, 102));
+        tab3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LIST);
+        tab3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab3ActionPerformed(evt);
             }
         });
 
@@ -81,53 +93,55 @@ public class Principal extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 935, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(266, 266, 266))
+                    .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlAdmiCuentaPortada.setName("pnlAdmiCuentaPortada"); // NOI18N
-        pnlSlider.add(pnlAdmiCuentaPortada, "card4");
+        pnlEstudiantePortada.setName("pnlEstudiantePortada"); // NOI18N
+        pnlSlider.add(pnlEstudiantePortada, "card5");
 
-        pnlAdminDocente.setName("pnlAdminDocente"); // NOI18N
-        pnlSlider.add(pnlAdminDocente, "card3");
+        pnlEstudianteNotas.setName("pnlEstudianteNotas"); // NOI18N
+        pnlSlider.add(pnlEstudianteNotas, "card6");
 
-        pnlAdminTutor.setName("pnlAdminTutor"); // NOI18N
-        pnlSlider.add(pnlAdminTutor, "card4");
+        pnlEstudianteAsistencia.setName("pnlEstudianteAsistencia"); // NOI18N
+        pnlSlider.add(pnlEstudianteAsistencia, "card7");
+
+        pnlEstudianteLista.setName("pnlEstudianteLista"); // NOI18N
+        pnlSlider.add(pnlEstudianteLista, "card8");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,41 +149,40 @@ public class Principal extends javax.swing.JPanel {
         if(this.tab1.isSelected()){
             this.tab1.setSelected(true);
             this.tab2.setSelected(false);
-            //colores
-            /*this.tab1.setBackground(new Color(102,102,255));        //tab1
-            this.tab1.setForeground(new Color(204,204,255));
-            this.tab1.setForegroundIcon(new Color(204,204,255));
-            this.tab2.setBackground(new Color(255,255,255));        //tab2
-            this.tab2.setForeground(new Color(153,153,153));//si no funciona pon setForegroundText
-            this.tab2.setForegroundIcon(new Color(102,102,102));*/
+            this.tab3.setSelected(false);
         }
-        this.pnlSlider.setPanelNormal(this.pnlAdminDocente);
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteNotas);
     }//GEN-LAST:event_tab1ActionPerformed
 
     private void tab2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab2ActionPerformed
         if(this.tab2.isSelected()){
-            this.tab2.setSelected(true);
             this.tab1.setSelected(false);
-            
-            /*this.tab2.setBackground(new Color(102,102,255));        //tab2
-            this.tab2.setForeground(new Color(204,204,255));
-            this.tab2.setForegroundIcon(new Color(204,204,255));
-            this.tab1.setBackground(new Color(255,255,255));        //tab1
-            this.tab1.setForeground(new Color(153,153,153));//si no funciona pon setForegroundText
-            this.tab1.setForegroundIcon(new Color(102,102,102));*/
+            this.tab2.setSelected(true);
+            this.tab3.setSelected(false);
         }
-        this.pnlSlider.setPanelNormal(this.pnlAdminTutor);
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteAsistencia);
     }//GEN-LAST:event_tab2ActionPerformed
+
+    private void tab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab3ActionPerformed
+        if(this.tab3.isSelected()){
+            this.tab1.setSelected(false);
+            this.tab2.setSelected(false);
+            this.tab3.setSelected(true);
+        }
+        this.pnlSlider.setPanelNormal(this.pnlEstudianteLista);
+    }//GEN-LAST:event_tab3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private Vista.AdministrarCuenta.tabContent3 pnlAdmiCuentaPortada;
-    private Vista.AdministrarCuenta.tabContent1 pnlAdminDocente;
-    private Vista.AdministrarCuenta.tabContent2 pnlAdminTutor;
+    private Vista.Estudiantes.tabContent2 pnlEstudianteAsistencia;
+    private Vista.Estudiantes.tabContent3 pnlEstudianteLista;
+    private Vista.Estudiantes.tabContent1 pnlEstudianteNotas;
+    private Vista.Estudiantes.tabContent4 pnlEstudiantePortada;
     private newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private newscomponents.RSButtonIcon_new tab1;
     private newscomponents.RSButtonIcon_new tab2;
+    private newscomponents.RSButtonIcon_new tab3;
     // End of variables declaration//GEN-END:variables
 }

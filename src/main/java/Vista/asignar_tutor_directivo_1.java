@@ -153,6 +153,7 @@ public class asignar_tutor_directivo_1 extends javax.swing.JInternalFrame {
 
         txtAnio.setBackground(new java.awt.Color(204, 204, 204));
         txtAnio.setForeground(new java.awt.Color(0, 0, 0));
+        txtAnio.setName("cbxTutor"); // NOI18N
         getContentPane().add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 80, 40));
 
         btnBorrar.setBackground(new java.awt.Color(133, 164, 199));

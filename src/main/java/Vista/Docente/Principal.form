@@ -23,8 +23,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="tabContent2" max="32767" attributes="0"/>
+              <Component id="pnlSlider" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -34,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" pref="96" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tabContent2" min="-2" max="-2" attributes="0"/>
+              <Component id="pnlSlider" pref="563" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -64,7 +63,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="rSLabelTextIcon1" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="rSButtonIcon_new1" min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="tab1" min="-2" pref="139" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -76,7 +75,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rSLabelTextIcon1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="rSButtonIcon_new1" min="-2" max="-2" attributes="0"/>
+                  <Component id="tab1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -98,7 +97,7 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Crear Docente"/>
           </AccessibilityProperties>
         </Component>
-        <Component class="newscomponents.RSButtonIcon_new" name="rSButtonIcon_new1">
+        <Component class="newscomponents.RSButtonIcon_new" name="tab1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bb" green="bb" red="bb" type="rgb"/>
@@ -120,10 +119,39 @@
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="Vista.Docente.tabContent" name="tabContent2">
-    </Component>
+    <Container class="newscomponents.RSPanelEffect" name="pnlSlider">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Component class="Vista.Docente.tabContent" name="pnlCrearDocente">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="pnlCrearDocente" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card2"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="Vista.Docente.tabContent2" name="pnlCrearCuentaPortada">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card3"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

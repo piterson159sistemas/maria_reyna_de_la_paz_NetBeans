@@ -22,13 +22,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="pnlSlider" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="96" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="560" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="101" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlSlider" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,21 +57,17 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="rSLabelTextIcon1" max="32767" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSLabelTextIcon1" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="rSButtonIcon_new1" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSButtonIcon_new2" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSButtonIcon_new3" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="0" pref="680" max="32767" attributes="0"/>
+                  <Component id="tab1" min="-2" pref="190" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tab2" min="-2" pref="223" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tab3" min="-2" pref="176" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -76,11 +78,11 @@
                   <Component id="rSLabelTextIcon1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rSButtonIcon_new1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rSButtonIcon_new2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rSButtonIcon_new3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tab1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tab2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tab3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,16 +99,13 @@
               <Value id="BRUSH"/>
             </Property>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Crear Docente"/>
-          </AccessibilityProperties>
         </Component>
-        <Component class="newscomponents.RSButtonIcon_new" name="rSButtonIcon_new1">
+        <Component class="newscomponents.RSButtonIcon_new" name="tab1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bb" green="bb" red="bb" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registro de Notas"/>
+            <Property name="text" type="java.lang.String" value="Ver Registro de Notas"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="66" type="rgb"/>
             </Property>
@@ -125,15 +124,17 @@
             <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
               <Value id="EXTENSION"/>
             </Property>
-            <Property name="name" type="java.lang.String" value="Registro de Notas" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab1ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="newscomponents.RSButtonIcon_new" name="rSButtonIcon_new2">
+        <Component class="newscomponents.RSButtonIcon_new" name="tab2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bb" green="bb" red="bb" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registro de Asistencia"/>
+            <Property name="text" type="java.lang.String" value="Ver Registro de Asistencia"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="66" type="rgb"/>
             </Property>
@@ -152,10 +153,12 @@
             <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
               <Value id="CHECK_BOX"/>
             </Property>
-            <Property name="name" type="java.lang.String" value="Registro de Asistencia" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab2ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="newscomponents.RSButtonIcon_new" name="rSButtonIcon_new3">
+        <Component class="newscomponents.RSButtonIcon_new" name="tab3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bb" green="bb" red="bb" type="rgb"/>
@@ -179,8 +182,63 @@
             <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
               <Value id="LIST"/>
             </Property>
-            <Property name="name" type="java.lang.String" value="Lista" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab3ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="newscomponents.RSPanelEffect" name="pnlSlider">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="name" type="java.lang.String" value="pnlSlider" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Component class="Vista.Estudiantes.tabContent1" name="pnlEstudianteNotas">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="pnlEstudianteNotas" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card2"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="Vista.Estudiantes.tabContent2" name="pnlEstudianteAsistencia">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="pnlEstudianteAsistencia" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card3"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="Vista.Estudiantes.tabContent3" name="pnlEstudianteLista">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="pnlEstudianteLista" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="Vista.Estudiantes.tabContent4" name="pnlEstudiantePortada">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="pnlEstudiantePortada" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card5"/>
+            </Constraint>
+          </Constraints>
         </Component>
       </SubComponents>
     </Container>

@@ -128,20 +128,17 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnInsertar.setBackground(new java.awt.Color(133, 164, 199));
         btnInsertar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnInsertar.setForeground(new java.awt.Color(0, 0, 0));
-        btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add-student.png"))); // NOI18N
         btnInsertar.setText(" Agregar");
         jPanel1.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 130, 40));
 
         btnModificar.setBackground(new java.awt.Color(133, 164, 199));
         btnModificar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnModificar.setForeground(new java.awt.Color(0, 0, 0));
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update-student.png"))); // NOI18N
         btnModificar.setText("Modificar");
         jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 140, 40));
 
         btnLimpiar.setBackground(new java.awt.Color(133, 164, 199));
         btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Limpiar.png"))); // NOI18N
         jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 40, 40));
 
         cbxTipoDoc.setBackground(new java.awt.Color(204, 204, 204));
@@ -184,7 +181,8 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         lblEstado.setText("Estado");
         jPanel1.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 50, -1));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondooooooo.jpg"))); // NOI18N
+        Fondo.setBackground(new java.awt.Color(0, 102, 102));
+        Fondo.setForeground(new java.awt.Color(0, 102, 102));
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 330));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
@@ -219,7 +217,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnBuscar.setBackground(new java.awt.Color(133, 164, 199));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search-student.png"))); // NOI18N
         getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 40, 30));
 
         txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
@@ -281,7 +278,6 @@ public class lista_estudiantes_directivo_1 extends javax.swing.JInternalFrame {
         btnFiltrar.setBackground(new java.awt.Color(133, 164, 199));
         btnFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnFiltrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Filtrar.png"))); // NOI18N
         btnFiltrar.setText("Filtrar");
         getContentPane().add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
