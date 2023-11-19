@@ -28,11 +28,9 @@ public class login extends javax.swing.JFrame {
         rSAnimation1 = new rojeru_san.complementos.RSAnimation();
         rSPanelMaterialGradient1 = new RSMaterialComponent.RSPanelMaterialGradient();
         rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
-        rSPanelBorderImage1 = new RSMaterialComponent.RSPanelBorderImage();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        rSPanelBorderImage2 = new RSMaterialComponent.RSPanelBorderImage();
         txtCod = new RSMaterialComponent.RSTextFieldIconOne();
         txtClave = new RSMaterialComponent.RSPasswordIconOne();
         jLabel2 = new javax.swing.JLabel();
@@ -55,11 +53,6 @@ public class login extends javax.swing.JFrame {
         rSPanelMaterial1.setBgShade(new java.awt.Color(0, 102, 153));
         rSPanelMaterial1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSPanelBorderImage1.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setBgBorder(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/logo-removebg-preview.png"))); // NOI18N
-        rSPanelMaterial1.add(rSPanelBorderImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 100));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Institucion Educativa Privada");
@@ -74,12 +67,6 @@ public class login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("DE LA PAZ");
         rSPanelMaterial1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, 20));
-
-        rSPanelBorderImage2.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage2.setForeground(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage2.setBgBorder(new java.awt.Color(255, 255, 255));
-        rSPanelBorderImage2.setImagen(new javax.swing.ImageIcon(getClass().getResource("/img/librosApilados-removebg-preview.png"))); // NOI18N
-        rSPanelMaterial1.add(rSPanelBorderImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 80, 80));
 
         rSPanelMaterialGradient1.add(rSPanelMaterial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 440, 120));
 
@@ -139,8 +126,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private rojeru_san.complementos.RSAnimation rSAnimation1;
-    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
-    private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage2;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
     public RSMaterialComponent.RSPasswordIconOne txtClave;
