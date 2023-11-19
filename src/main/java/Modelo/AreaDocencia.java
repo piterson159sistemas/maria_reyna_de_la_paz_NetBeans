@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class AreaDocencia {
     private Docente docente;
-    private ArrayList<String> areas; 
+    private String area; 
     
-    public AreaDocencia(Docente docente, ArrayList<String> area ) {
+    public AreaDocencia(Docente docente, String area ) {
         this.docente = docente;
-        this.areas = area;
+        this.area = area;
     }
 
     public Docente getDocente() {
@@ -21,12 +21,12 @@ public class AreaDocencia {
         this.docente = docente;
     }
 
-    public ArrayList<String> getArea() {
-        return areas;
+    public String getArea() {
+        return area;
     }
 
-    public void setArea(ArrayList<String> area) {
-        this.areas = area;
+    public void setArea(String area) {
+        this.area = area;
     }
 
 

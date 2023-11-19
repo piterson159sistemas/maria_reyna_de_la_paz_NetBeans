@@ -2,6 +2,7 @@
 package DAO;
 
 import Modelo.Tutoria;
+import Procesos.ProcesosAlumnos;
 import Procesos.ProcesosTutoria;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class crudTutoria {
     Conexion con= new Conexion();
     ProcesosTutoria procesos = new ProcesosTutoria();
+    ProcesosAlumnos procesosAux = new ProcesosAlumnos();
     
     public ArrayList<String> BuscarGrados(int anio,String codDocente){
         ArrayList<String> grados = new ArrayList<>();
@@ -161,7 +163,7 @@ public class crudTutoria {
             }
             cn.close();
         } catch (SQLException e) {
-            procesos.msjDialog("ERROR al mostrar la lista de tutorias"+e);
+            procesosAux.msjDialog("ERROR al mostrar la lista de tutorias"+e);
         }
         
     }
@@ -189,7 +191,7 @@ public class crudTutoria {
             }
             cn.close();
         } catch (SQLException e) {
-            procesos.msjDialog("ERROR al mostrar la lista de tutorias"+e);
+            procesosAux.msjDialog("ERROR al mostrar la lista de tutorias"+e);
         }    
     }
     
@@ -206,7 +208,7 @@ public class crudTutoria {
             con.pst.executeUpdate();
             cn.close();
         } catch (SQLException e) {
-            procesos.msjDialog("ERROR al insertar registro "+e);
+            procesosAux.msjDialog("ERROR al insertar registro "+e);
         }
     }
     
@@ -221,7 +223,7 @@ public class crudTutoria {
             cn.close();
             
         } catch (SQLException e) {
-            procesos.msjDialog("ERROR al eliminar registros "+e);
+            procesosAux.msjDialog("ERROR al eliminar registros "+e);
         }
     }
     

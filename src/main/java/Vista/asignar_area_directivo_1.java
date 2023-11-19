@@ -26,225 +26,652 @@ public class asignar_area_directivo_1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        ckb_AsignarArea_TresAñitos = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CuatroAñitos = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CincoAñitos = new javax.swing.JCheckBox();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        ckb_AsignarArea_UnoPrimaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_DosPrimaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_TresPrimaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CuatroPrimaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CincoPrimaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_SeisPrimaria = new javax.swing.JCheckBox();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        ckb_AsignarArea_UnoSecundaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_DosSecundaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_TresSecundaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CuatroSecundaria = new javax.swing.JCheckBox();
-        ckb_AsignarArea_CincoSecundaria = new javax.swing.JCheckBox();
-        btn_AsignarArea_borrar = new javax.swing.JButton();
-        btn_AsignarArea_crear = new javax.swing.JButton();
-        cb_AsignarArea_docente = new javax.swing.JComboBox<>();
-        cb_AsignarArea_areas = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnBorrar = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txt_AsignarAreaDirectivo_año = new javax.swing.JTextField();
+        txtAnio = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_AsignarArea_registro = new javax.swing.JTable();
+        tblAreas = new javax.swing.JTable();
+        btnActualizar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Contenedor = new javax.swing.JTabbedPane();
+        Inicial = new javax.swing.JPanel();
+        cbxGradoI = new javax.swing.JComboBox<>();
+        cbxDocenteI = new javax.swing.JComboBox<>();
+        cbxComputacionI = new javax.swing.JComboBox<>();
+        lblDocenteI = new javax.swing.JLabel();
+        lblAreaI = new javax.swing.JLabel();
+        lblGradoI = new javax.swing.JLabel();
+        lblContenedorI = new javax.swing.JLabel();
+        lblIni1 = new javax.swing.JLabel();
+        lblIni2 = new javax.swing.JLabel();
+        lblIni3 = new javax.swing.JLabel();
+        lblIni4 = new javax.swing.JLabel();
+        lblIni5 = new javax.swing.JLabel();
+        lblIni6 = new javax.swing.JLabel();
+        lblIni7 = new javax.swing.JLabel();
+        lblIni8 = new javax.swing.JLabel();
+        lblIni9 = new javax.swing.JLabel();
+        Primaria = new javax.swing.JPanel();
+        cbxGradoP = new javax.swing.JComboBox<>();
+        cbxPSocialP = new javax.swing.JComboBox<>();
+        cbxReligionP = new javax.swing.JComboBox<>();
+        cbxComunicacionP = new javax.swing.JComboBox<>();
+        cbxArteComodinP = new javax.swing.JComboBox<>();
+        cbxMatematicaP = new javax.swing.JComboBox<>();
+        cbxCienciaP = new javax.swing.JComboBox<>();
+        cbxEdFisicaP = new javax.swing.JComboBox<>();
+        cbxInglesP = new javax.swing.JComboBox<>();
+        cbxComputacionP = new javax.swing.JComboBox<>();
+        lblDocenteP = new javax.swing.JLabel();
+        lblAreaP = new javax.swing.JLabel();
+        lblGradoP = new javax.swing.JLabel();
+        lblContenedorP = new javax.swing.JLabel();
+        lblPri1 = new javax.swing.JLabel();
+        lblPri2 = new javax.swing.JLabel();
+        lblPri3 = new javax.swing.JLabel();
+        lblPri4 = new javax.swing.JLabel();
+        lblPri5 = new javax.swing.JLabel();
+        lblPri6 = new javax.swing.JLabel();
+        lblPri7 = new javax.swing.JLabel();
+        lblPri8 = new javax.swing.JLabel();
+        lblPri9 = new javax.swing.JLabel();
+        Secundaria = new javax.swing.JPanel();
+        cbxGradoS = new javax.swing.JComboBox<>();
+        CbxComputacionS = new javax.swing.JComboBox<>();
+        cbxCSocialesS = new javax.swing.JComboBox<>();
+        cbxDesarrolloPCCS = new javax.swing.JComboBox<>();
+        cbxEdFisicaS = new javax.swing.JComboBox<>();
+        cbxCienciaS = new javax.swing.JComboBox<>();
+        cbxInglesS = new javax.swing.JComboBox<>();
+        cbxMatematicaS = new javax.swing.JComboBox<>();
+        cbxArteS = new javax.swing.JComboBox<>();
+        cbxComunicacionS = new javax.swing.JComboBox<>();
+        cbxReligionS = new javax.swing.JComboBox<>();
+        lblContenedorS = new javax.swing.JLabel();
+        lblGradoS = new javax.swing.JLabel();
+        lblAreaS = new javax.swing.JLabel();
+        lblDocenteS = new javax.swing.JLabel();
+        lblSec1 = new javax.swing.JLabel();
+        lblSec2 = new javax.swing.JLabel();
+        lblSec3 = new javax.swing.JLabel();
+        lblSec4 = new javax.swing.JLabel();
+        lblSec5 = new javax.swing.JLabel();
+        lblSec6 = new javax.swing.JLabel();
+        lblSec7 = new javax.swing.JLabel();
+        lblSec8 = new javax.swing.JLabel();
+        lblSec9 = new javax.swing.JLabel();
+        lblSec10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblGrados = new javax.swing.JTable();
 
         setClosable(true);
         setMaximizable(true);
         setAutoscrolls(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 0, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnBorrar.setBackground(new java.awt.Color(133, 164, 199));
+        btnBorrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBorrar.setText("Borrar");
+        getContentPane().add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 90, 30));
 
-        jLabel4.setText("Inicial:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, -1));
-
-        ckb_AsignarArea_TresAñitos.setText("3 Añitos");
-        ckb_AsignarArea_TresAñitos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckb_AsignarArea_TresAñitosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(ckb_AsignarArea_TresAñitos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        ckb_AsignarArea_CuatroAñitos.setText("4 Añitos");
-        jPanel1.add(ckb_AsignarArea_CuatroAñitos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        ckb_AsignarArea_CincoAñitos.setText("5 Añitos");
-        jPanel1.add(ckb_AsignarArea_CincoAñitos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 115, 280));
-
-        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("Primaria:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 60, -1));
-
-        ckb_AsignarArea_UnoPrimaria.setText("1° Prim.");
-        jPanel2.add(ckb_AsignarArea_UnoPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        ckb_AsignarArea_DosPrimaria.setText("2° Prim.");
-        ckb_AsignarArea_DosPrimaria.setName("ckb_AsignarArea_DosPrimaria"); // NOI18N
-        ckb_AsignarArea_DosPrimaria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckb_AsignarArea_DosPrimariaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(ckb_AsignarArea_DosPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
-
-        ckb_AsignarArea_TresPrimaria.setText("3° Prim.");
-        jPanel2.add(ckb_AsignarArea_TresPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
-
-        ckb_AsignarArea_CuatroPrimaria.setText("4° Prim.");
-        jPanel2.add(ckb_AsignarArea_CuatroPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-
-        ckb_AsignarArea_CincoPrimaria.setText("5° Prim.");
-        jPanel2.add(ckb_AsignarArea_CincoPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
-
-        ckb_AsignarArea_SeisPrimaria.setText("6° Prim.");
-        jPanel2.add(ckb_AsignarArea_SeisPrimaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 115, 280));
-
-        jPanel3.setBackground(new java.awt.Color(102, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setText("Secundaria:");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 70, -1));
-
-        ckb_AsignarArea_UnoSecundaria.setText("1° Sec.");
-        jPanel3.add(ckb_AsignarArea_UnoSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-
-        ckb_AsignarArea_DosSecundaria.setText("2° Sec.");
-        jPanel3.add(ckb_AsignarArea_DosSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        ckb_AsignarArea_TresSecundaria.setText("3° Sec.");
-        jPanel3.add(ckb_AsignarArea_TresSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-
-        ckb_AsignarArea_CuatroSecundaria.setText("4° Sec.");
-        jPanel3.add(ckb_AsignarArea_CuatroSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-
-        ckb_AsignarArea_CincoSecundaria.setText("5° Sec.");
-        jPanel3.add(ckb_AsignarArea_CincoSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 116, 280));
-
-        btn_AsignarArea_borrar.setText("Borrar");
-        getContentPane().add(btn_AsignarArea_borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 120, 50));
-
-        btn_AsignarArea_crear.setText("Crear");
-        getContentPane().add(btn_AsignarArea_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 120, 50));
-
-        cb_AsignarArea_docente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "jessy peter son alcoser heredia" }));
-        getContentPane().add(cb_AsignarArea_docente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-
-        cb_AsignarArea_areas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "uno", "dos", "tres", "cuatro" }));
-        getContentPane().add(cb_AsignarArea_areas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 150, -1));
-
-        jLabel3.setText("Docentes:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 65, -1));
-
-        jLabel2.setText("Areas:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 49, -1));
+        btnCrear.setBackground(new java.awt.Color(133, 164, 199));
+        btnCrear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCrear.setForeground(new java.awt.Color(0, 0, 0));
+        btnCrear.setText("Crear");
+        getContentPane().add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 80, 30));
 
         jLabel1.setText("Año :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 37, -1));
-        getContentPane().add(txt_AsignarAreaDirectivo_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 71, -1));
 
-        tbl_AsignarArea_registro.setModel(new javax.swing.table.DefaultTableModel(
+        txtAnio.setBackground(new java.awt.Color(204, 204, 204));
+        txtAnio.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, 30));
+
+        tblAreas.setBackground(new java.awt.Color(204, 204, 204));
+        tblAreas.setForeground(new java.awt.Color(0, 0, 0));
+        tblAreas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"", "", ""},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Año", "Area", "Docente", "Grados", "Código"
+                "Area", "Código", "Docente"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbl_AsignarArea_registro);
+        jScrollPane1.setViewportView(tblAreas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 470, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 360, 240));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        btnActualizar.setBackground(new java.awt.Color(133, 164, 199));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(0, 0, 0));
+        btnActualizar.setText("Actualizar");
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 110, 30));
+
+        btnLimpiar.setBackground(new java.awt.Color(133, 164, 199));
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Limpiar.png"))); // NOI18N
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 40, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel7.setText("Areas Curriculares");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 130, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel9.setText("Grados");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 60, 20));
+
+        Contenedor.setBackground(new java.awt.Color(133, 164, 199));
+        Contenedor.setForeground(new java.awt.Color(0, 0, 0));
+        Contenedor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        Inicial.setBackground(new java.awt.Color(204, 204, 204));
+        Inicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cbxGradoI.setBackground(new java.awt.Color(204, 204, 204));
+        cbxGradoI.setForeground(new java.awt.Color(0, 0, 0));
+        cbxGradoI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Inicial.add(cbxGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 100, 30));
+
+        cbxDocenteI.setBackground(new java.awt.Color(204, 204, 204));
+        cbxDocenteI.setForeground(new java.awt.Color(0, 0, 0));
+        cbxDocenteI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)));
+        Inicial.add(cbxDocenteI, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 180, 30));
+
+        cbxComputacionI.setBackground(new java.awt.Color(204, 204, 204));
+        cbxComputacionI.setForeground(new java.awt.Color(0, 0, 0));
+        cbxComputacionI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Inicial.add(cbxComputacionI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 200, 30));
+
+        lblDocenteI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteI.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDocenteI.setText("Docente");
+        lblDocenteI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblDocenteI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 40));
+
+        lblAreaI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaI.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAreaI.setText("Area");
+        lblAreaI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblAreaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 40));
+
+        lblGradoI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblGradoI.setForeground(new java.awt.Color(0, 0, 0));
+        lblGradoI.setText("Grado");
+        Inicial.add(lblGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 30));
+
+        lblContenedorI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContenedorI.setForeground(new java.awt.Color(0, 0, 0));
+        lblContenedorI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContenedorI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblContenedorI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 200, 240));
+
+        lblIni1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni1.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 130, 30));
+
+        lblIni2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni2.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 130, 30));
+
+        lblIni3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni3.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, 30));
+
+        lblIni4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni4.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 30));
+
+        lblIni5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni5.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 130, 30));
+
+        lblIni6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni6.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, 30));
+
+        lblIni7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni7.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, 30));
+
+        lblIni8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni8.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 130, 30));
+
+        lblIni9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIni9.setForeground(new java.awt.Color(0, 0, 0));
+        lblIni9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIni9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
+        Inicial.add(lblIni9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 130, 30));
+
+        Contenedor.addTab("Inicial", Inicial);
+
+        Primaria.setBackground(new java.awt.Color(204, 204, 204));
+        Primaria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cbxGradoP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxGradoP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxGradoP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxGradoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 100, 30));
+
+        cbxPSocialP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxPSocialP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxPSocialP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxPSocialP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 160, 30));
+
+        cbxReligionP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxReligionP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxReligionP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxReligionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 160, 30));
+
+        cbxComunicacionP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxComunicacionP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxComunicacionP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxComunicacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 160, 30));
+
+        cbxArteComodinP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxArteComodinP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxArteComodinP.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxArteComodinP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 160, 30));
+
+        cbxMatematicaP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxMatematicaP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxMatematicaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxMatematicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 160, 30));
+
+        cbxCienciaP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxCienciaP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxCienciaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxCienciaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 160, 30));
+
+        cbxEdFisicaP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxEdFisicaP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxEdFisicaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxEdFisicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 160, 30));
+
+        cbxInglesP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxInglesP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxInglesP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxInglesP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 190, 30));
+
+        cbxComputacionP.setBackground(new java.awt.Color(204, 204, 204));
+        cbxComputacionP.setForeground(new java.awt.Color(0, 0, 0));
+        cbxComputacionP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Primaria.add(cbxComputacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 190, 30));
+
+        lblDocenteP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteP.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDocenteP.setText("Docente");
+        lblDocenteP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblDocenteP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 190, 40));
+
+        lblAreaP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaP.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAreaP.setText("Area");
+        lblAreaP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblAreaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 40));
+
+        lblGradoP.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblGradoP.setForeground(new java.awt.Color(0, 0, 0));
+        lblGradoP.setText("Grado");
+        Primaria.add(lblGradoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 30));
+
+        lblContenedorP.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContenedorP.setForeground(new java.awt.Color(0, 0, 0));
+        lblContenedorP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContenedorP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblContenedorP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 190, 210));
+
+        lblPri1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri1.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 130, 30));
+
+        lblPri2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri2.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 130, 30));
+
+        lblPri3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri3.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, 30));
+
+        lblPri4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri4.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 30));
+
+        lblPri5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri5.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 130, 30));
+
+        lblPri6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri6.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, 30));
+
+        lblPri7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri7.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, 30));
+
+        lblPri8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri8.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 130, 30));
+
+        lblPri9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPri9.setForeground(new java.awt.Color(0, 0, 0));
+        lblPri9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPri9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblPri9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 130, 30));
+
+        Contenedor.addTab("Primaria", Primaria);
+
+        Secundaria.setBackground(new java.awt.Color(204, 204, 204));
+        Secundaria.setForeground(new java.awt.Color(0, 0, 0));
+        Secundaria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cbxGradoS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxGradoS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxGradoS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxGradoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 100, 30));
+
+        CbxComputacionS.setBackground(new java.awt.Color(204, 204, 204));
+        CbxComputacionS.setForeground(new java.awt.Color(0, 0, 0));
+        CbxComputacionS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(CbxComputacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 190, 50));
+
+        cbxCSocialesS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxCSocialesS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxCSocialesS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxCSocialesS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 190, 30));
+
+        cbxDesarrolloPCCS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxDesarrolloPCCS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxDesarrolloPCCS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxDesarrolloPCCS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 190, 40));
+
+        cbxEdFisicaS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxEdFisicaS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxEdFisicaS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxEdFisicaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 190, 30));
+
+        cbxCienciaS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxCienciaS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxCienciaS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxCienciaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 190, 30));
+
+        cbxInglesS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxInglesS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxInglesS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxInglesS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 190, 30));
+
+        cbxMatematicaS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxMatematicaS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxMatematicaS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxMatematicaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 190, 30));
+
+        cbxArteS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxArteS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxArteS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxArteS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 190, 30));
+
+        cbxComunicacionS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxComunicacionS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxComunicacionS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxComunicacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 190, 30));
+
+        cbxReligionS.setBackground(new java.awt.Color(204, 204, 204));
+        cbxReligionS.setForeground(new java.awt.Color(0, 0, 0));
+        cbxReligionS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Secundaria.add(cbxReligionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 190, 30));
+
+        lblContenedorS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContenedorS.setForeground(new java.awt.Color(0, 0, 0));
+        lblContenedorS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContenedorS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblContenedorS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 190, 330));
+
+        lblGradoS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblGradoS.setForeground(new java.awt.Color(0, 0, 0));
+        lblGradoS.setText("Grado");
+        Secundaria.add(lblGradoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 30));
+
+        lblAreaS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaS.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAreaS.setText("Area");
+        lblAreaS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblAreaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, 30));
+
+        lblDocenteS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteS.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDocenteS.setText("Docente");
+        lblDocenteS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblDocenteS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 190, 30));
+
+        lblSec1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec1.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, 50));
+
+        lblSec2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec2.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 30));
+
+        lblSec3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec3.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 130, 40));
+
+        lblSec4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec4.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, 30));
+
+        lblSec5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec5.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, 30));
+
+        lblSec6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec6.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, 30));
+
+        lblSec7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec7.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 130, 30));
+
+        lblSec8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec8.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
+
+        lblSec9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec9.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 130, 30));
+
+        lblSec10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSec10.setForeground(new java.awt.Color(0, 0, 0));
+        lblSec10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSec10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblSec10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 130, 30));
+
+        Contenedor.addTab("Secundaria", Secundaria);
+
+        getContentPane().add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 380, 450));
+
+        tblGrados.setBackground(new java.awt.Color(204, 204, 204));
+        tblGrados.setForeground(new java.awt.Color(0, 0, 0));
+        tblGrados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, "", null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Año", "Grado", "Nivel"
             }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, 150));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblGrados);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 200, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ckb_AsignarArea_TresAñitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb_AsignarArea_TresAñitosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ckb_AsignarArea_TresAñitosActionPerformed
-
-    private void ckb_AsignarArea_DosPrimariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb_AsignarArea_DosPrimariaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ckb_AsignarArea_DosPrimariaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_AsignarArea_borrar;
-    private javax.swing.JButton btn_AsignarArea_crear;
-    private javax.swing.JComboBox<String> cb_AsignarArea_areas;
-    private javax.swing.JComboBox<String> cb_AsignarArea_docente;
-    private javax.swing.JCheckBox ckb_AsignarArea_CincoAñitos;
-    private javax.swing.JCheckBox ckb_AsignarArea_CincoPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_CincoSecundaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_CuatroAñitos;
-    private javax.swing.JCheckBox ckb_AsignarArea_CuatroPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_CuatroSecundaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_DosPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_DosSecundaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_SeisPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_TresAñitos;
-    private javax.swing.JCheckBox ckb_AsignarArea_TresPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_TresSecundaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_UnoPrimaria;
-    private javax.swing.JCheckBox ckb_AsignarArea_UnoSecundaria;
+    public javax.swing.JComboBox<String> CbxComputacionS;
+    public javax.swing.JTabbedPane Contenedor;
+    public javax.swing.JPanel Inicial;
+    public javax.swing.JPanel Primaria;
+    public javax.swing.JPanel Secundaria;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnBorrar;
+    public javax.swing.JButton btnCrear;
+    public javax.swing.JButton btnLimpiar;
+    public javax.swing.JComboBox<String> cbxArteComodinP;
+    public javax.swing.JComboBox<String> cbxArteS;
+    public javax.swing.JComboBox<String> cbxCSocialesS;
+    public javax.swing.JComboBox<String> cbxCienciaP;
+    public javax.swing.JComboBox<String> cbxCienciaS;
+    public javax.swing.JComboBox<String> cbxComputacionI;
+    public javax.swing.JComboBox<String> cbxComputacionP;
+    public javax.swing.JComboBox<String> cbxComunicacionP;
+    public javax.swing.JComboBox<String> cbxComunicacionS;
+    public javax.swing.JComboBox<String> cbxDesarrolloPCCS;
+    public javax.swing.JComboBox<String> cbxDocenteI;
+    public javax.swing.JComboBox<String> cbxEdFisicaP;
+    public javax.swing.JComboBox<String> cbxEdFisicaS;
+    public javax.swing.JComboBox<String> cbxGradoI;
+    public javax.swing.JComboBox<String> cbxGradoP;
+    public javax.swing.JComboBox<String> cbxGradoS;
+    public javax.swing.JComboBox<String> cbxInglesP;
+    public javax.swing.JComboBox<String> cbxInglesS;
+    public javax.swing.JComboBox<String> cbxMatematicaP;
+    public javax.swing.JComboBox<String> cbxMatematicaS;
+    public javax.swing.JComboBox<String> cbxPSocialP;
+    public javax.swing.JComboBox<String> cbxReligionP;
+    public javax.swing.JComboBox<String> cbxReligionS;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable tbl_AsignarArea_registro;
-    private javax.swing.JTextField txt_AsignarAreaDirectivo_año;
+    private javax.swing.JLabel lblAreaI;
+    private javax.swing.JLabel lblAreaP;
+    private javax.swing.JLabel lblAreaS;
+    private javax.swing.JLabel lblContenedorI;
+    private javax.swing.JLabel lblContenedorP;
+    private javax.swing.JLabel lblContenedorS;
+    private javax.swing.JLabel lblDocenteI;
+    private javax.swing.JLabel lblDocenteP;
+    private javax.swing.JLabel lblDocenteS;
+    private javax.swing.JLabel lblGradoI;
+    private javax.swing.JLabel lblGradoP;
+    private javax.swing.JLabel lblGradoS;
+    public javax.swing.JLabel lblIni1;
+    public javax.swing.JLabel lblIni2;
+    public javax.swing.JLabel lblIni3;
+    public javax.swing.JLabel lblIni4;
+    public javax.swing.JLabel lblIni5;
+    public javax.swing.JLabel lblIni6;
+    public javax.swing.JLabel lblIni7;
+    public javax.swing.JLabel lblIni8;
+    public javax.swing.JLabel lblIni9;
+    public javax.swing.JLabel lblPri1;
+    public javax.swing.JLabel lblPri2;
+    public javax.swing.JLabel lblPri3;
+    public javax.swing.JLabel lblPri4;
+    public javax.swing.JLabel lblPri5;
+    public javax.swing.JLabel lblPri6;
+    public javax.swing.JLabel lblPri7;
+    public javax.swing.JLabel lblPri8;
+    public javax.swing.JLabel lblPri9;
+    public javax.swing.JLabel lblSec1;
+    public javax.swing.JLabel lblSec10;
+    public javax.swing.JLabel lblSec2;
+    public javax.swing.JLabel lblSec3;
+    public javax.swing.JLabel lblSec4;
+    public javax.swing.JLabel lblSec5;
+    public javax.swing.JLabel lblSec6;
+    public javax.swing.JLabel lblSec7;
+    public javax.swing.JLabel lblSec8;
+    public javax.swing.JLabel lblSec9;
+    public javax.swing.JTable tblAreas;
+    public javax.swing.JTable tblGrados;
+    public javax.swing.JTextField txtAnio;
     // End of variables declaration//GEN-END:variables
 }

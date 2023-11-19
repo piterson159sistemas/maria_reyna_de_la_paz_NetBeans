@@ -2,57 +2,61 @@
 package Test;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class MainTest {
 
     public static void main(String[] args) {
-         SwingUtilities.invokeLater(() -> new MainTest().createAndShowGUI());
+        SwingUtilities.invokeLater(() -> new MainTest().createAndShowGUI());
     }
 
     private void createAndShowGUI() {
-        JFrame frame = new JFrame("Deseleccionar Fila en JTable");
+        JFrame frame = new JFrame("JLabel Encima de JComboBox");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Crear datos de ejemplo para el modelo de tabla
-        Object[][] data = {
-                {"1", "Nombre1", "Apellido1"},
-                {"2", "Nombre2", "Apellido2"},
-                {"3", "Nombre3", "Apellido3"}
-        };
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
 
-        // Crear nombres de columnas para el modelo de tabla
-        String[] columnNames = {"ID", "Nombre", "Apellido"};
+        JComboBox<String> comboBox1 = new JComboBox<>(new String[]{"Mayor", "Menor"});
+        JComboBox<String> comboBox2 = new JComboBox<>(new String[]{"Opción 1", "Opción 2", "Opción 3"});
 
-        // Crear el modelo de tabla
-        DefaultTableModel model = new DefaultTableModel(data, columnNames);
+        JLabel label = new JLabel("Etiqueta sobre JComboBox");
+        label.setForeground(Color.RED);
 
-        // Crear la tabla con el modelo
-        JTable table = new JTable(model);
+        // Configurar la posición y el tamaño del JComboBox y JLabel
+        comboBox1.setPreferredSize(new Dimension(100, 30));
+        comboBox2.setPreferredSize(new Dimension(100, 30));
 
-        // Botón para deseleccionar la fila
-        JButton deseleccionarButton = new JButton("Deseleccionar Fila");
-        deseleccionarButton.addActionListener(new ActionListener() {
+        // Agregar ActionListener al JComboBox para ajustar la visibilidad del otro JComboBox
+        comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                deseleccionarFila(table);
+                String selectedOption = (String) comboBox1.getSelectedItem();
+                ajustarVisibilidadComboBox(selectedOption, comboBox2);
             }
         });
 
-        // Agregar la tabla y el botón al marco
-        frame.add(new JScrollPane(table), BorderLayout.CENTER);
-        frame.add(deseleccionarButton, BorderLayout.SOUTH);
+        panel.add(comboBox1);
+        panel.add(comboBox2);
+        panel.add(label);
 
-        frame.setSize(400, 300);
+        frame.getContentPane().add(panel);
+        frame.setSize(250, 180);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    private void deseleccionarFila(JTable table) {
-        // Utilizar clearSelection() para deseleccionar la fila
-        table.clearSelection();
+    private void ajustarVisibilidadComboBox(String selectedOption, JComboBox<String> comboBox) {
+        if ("Mayor".equals(selectedOption)) {
+            // Ocultar el JComboBox
+            comboBox.setVisible(false);
+        } else if ("Menor".equals(selectedOption)) {
+            // Mostrar el JComboBox
+            comboBox.setVisible(true);
+        }
     }
 }

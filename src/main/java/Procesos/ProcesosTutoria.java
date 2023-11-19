@@ -98,7 +98,4 @@ public class ProcesosTutoria {
     }
     
     
-    public static void msjDialog(String mensaje){
-        JOptionPane.showMessageDialog(null,mensaje);
-    } 
 }

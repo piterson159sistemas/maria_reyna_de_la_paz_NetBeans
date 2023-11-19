@@ -14,6 +14,7 @@ public class Docente extends Usuario implements Gestionable{
     public Docente(String codigo){
         this.codigo=codigo;
     }
+    
                   
     public void RegistrarDocente(){}
     

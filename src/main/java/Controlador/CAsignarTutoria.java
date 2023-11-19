@@ -4,6 +4,7 @@ import DAO.crudTutoria;
 import Modelo.Docente;
 import Modelo.GradoAlumno;
 import Modelo.Tutoria;
+import Procesos.ProcesosAlumnos;
 import Procesos.ProcesosTutoria;
 import Vista.asignar_tutor_directivo_1;
 import java.awt.Color;
@@ -13,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import javax.crypto.spec.ChaCha20ParameterSpec;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -28,6 +28,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
     asignar_tutor_directivo_1 vista;
     crudTutoria crudTutoria = new crudTutoria();
     ProcesosTutoria procesos = new ProcesosTutoria();
+    ProcesosAlumnos procesosAux = new ProcesosAlumnos();
     String[] registroaModificar={"0","0"};
     
     public CAsignarTutoria(asignar_tutor_directivo_1 tutoria){
@@ -57,8 +58,9 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
     }
     
     public void actualizarGrados(int anio,String codDocente){
-        /*se inhabilita los grados(checkbox) a los cuales ya se les asignó 
-        una tutoria en ese año */
+        /*Se colorea de verde aquellos grados que ya están tomados(tienen un tutor asignado)
+          en un determinado año sin contar los tomados por el propio docente
+        */
         ArrayList<String> gradosTomados = crudTutoria.BuscarGrados(anio,codDocente);
         JPanel[] paneles={vista.panelInicial,vista.panelPrimaria,vista.panelSecundaria};
         for(JPanel panel: paneles){
@@ -75,8 +77,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
     }
     
     public void actualizarGrados(int anio){
-        /*se inhabilita los grados(checkbox) a los cuales ya se les asignó 
-        una tutoria en ese año */
+        /*se colorea de verde aquellos grados tomados en un determinado año de forma general */
         ArrayList<String> gradosTomados = crudTutoria.BuscarGrados(anio);
         JPanel[] paneles={vista.panelInicial,vista.panelPrimaria,vista.panelSecundaria};
         for(JPanel panel: paneles){
@@ -134,7 +135,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
         }
         
         if(!(msjError.isBlank())){
-            procesos.msjDialog(msjError);
+            procesosAux.msjDialog(msjError);
             return false;
         }else {
             return true;
@@ -151,6 +152,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
         for(int i=2;i<=lastIndex;i++){
             bucle:
             for(String grado: gradosTomados){
+                // le quitamos la ultima letra que era para indetificar de que nivel es el grado
                 String Seleccionado= data.get(i).substring(0,
                                                data.get(i).length()-1);
                 if(Seleccionado.equals(grado)){
@@ -159,7 +161,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
             }
         }
         if(!(msjError.isBlank())){
-            procesos.msjDialog(msjError);
+            procesosAux.msjDialog(msjError);
             return false;
         }else {
             return true;
@@ -230,12 +232,12 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
         if(e.getSource()==vista.btnBorrar){
             if(registroaModificar[0].equals("0") || 
                registroaModificar[1].equals("0")){
-                procesos.msjDialog("Ningun resgistro se ha seleccionado para eliminar");
+                procesosAux.msjDialog("Ningun resgistro se ha seleccionado para eliminar");
             }else{
                 crudTutoria.eliminar(
                         Integer.parseInt(registroaModificar[0]), 
                             registroaModificar[1]);
-                procesos.msjDialog("Registro eliminado exitosamente");
+                procesosAux.msjDialog("Registro eliminado exitosamente");
                 actualizarDatos();
                 procesos.limpiarCampos(vista);
                 
@@ -249,7 +251,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
             ArrayList<String> data=procesos.leerDatos(vista);
             boolean datosValidos=verificarDatos(data);
             if(registroaModificar[0].equals("0") || registroaModificar[1].equals("0")){
-                procesos.msjDialog("Ningun resgistro se ha seleccionado para actualizar");
+                procesosAux.msjDialog("Ningun resgistro se ha seleccionado para actualizar");
             }else{
                 if(datosValidos){
                     boolean SeleccionCorrecta=VerificarGrados(data);
@@ -277,7 +279,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
                                 codDocente, 
                                 Integer.parseInt(data.get(0)));
 
-                        procesos.msjDialog("Se ha actualizado el registro exitosamente");
+                        procesosAux.msjDialog("Se ha actualizado el registro exitosamente");
                         
                     }
                 }
@@ -295,7 +297,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
                 boolean registroExiste=crudTutoria.BuscarTutoria(
                           Integer.parseInt(data.get(0)),codDocente);
                 if(registroExiste){
-                    procesos.msjDialog("Ese registro ya existe");
+                    procesosAux.msjDialog("Ese registro ya existe");
                 }else{
                     boolean SeleccionCorrecta=VerificarGrados(data);
                     if(SeleccionCorrecta){
@@ -315,7 +317,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
                             crudTutoria.insertar(t, codGrado);
                             cantRegistrosInsertados++;
                         }
-                        procesos.msjDialog(cantRegistrosInsertados+" Registros ingresados exitosamente");
+                        procesosAux.msjDialog(cantRegistrosInsertados+" Registros ingresados exitosamente");
                         actualizarDatos();
 
                     }

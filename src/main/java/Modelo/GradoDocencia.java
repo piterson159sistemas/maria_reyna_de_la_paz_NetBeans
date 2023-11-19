@@ -4,14 +4,30 @@ import java.util.ArrayList;
 
 
 public class GradoDocencia {
+    private int anio;
+    private GradoAlumno grado;
     private AreaDocencia areDocencia;
-    private int grado;
-    private ArrayList<GradoAlumno> grados; 
 
-    public GradoDocencia(AreaDocencia areDocencia, int grado, ArrayList<GradoAlumno> grados) {
-        this.areDocencia = areDocencia;
+    public GradoDocencia(int anio, GradoAlumno grado, AreaDocencia areDocencia) {
+        this.anio = anio;
         this.grado = grado;
-        this.grados = grados;
+        this.areDocencia = areDocencia;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public GradoAlumno getGrado() {
+        return grado;
+    }
+
+    public void setGrado(GradoAlumno grado) {
+        this.grado = grado;
     }
 
     public AreaDocencia getAreDocencia() {
@@ -22,23 +38,11 @@ public class GradoDocencia {
         this.areDocencia = areDocencia;
     }
 
-    public int getGrado() {
-        return grado;
+    @Override
+    public String toString() {
+        return anio+" "+getGrado().getGrado()+" "+getAreDocencia().getDocente().getCodigo()
+                +" "+getAreDocencia().getArea();
     }
-
-    public void setGrado(int grado) {
-        this.grado = grado;
-    }
-
-    public ArrayList<GradoAlumno> getGrados() {
-        return grados;
-    }
-
-    public void setGrados(ArrayList<GradoAlumno> grados) {
-        this.grados = grados;
-    }
-    
-    
-    
+ 
     
 }

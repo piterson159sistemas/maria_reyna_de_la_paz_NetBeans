@@ -27,18 +27,22 @@ import java.awt.event.KeyEvent;
 public class CListadoAlumDirec implements ActionListener,MouseListener{
     lista_estudiantes_directivo_1 vista;
     Alumno alumno;
-    String[] dataAlumno;
     crudAlumno crudAlumno = new crudAlumno();
     ProcesosAlumnos procesos=new ProcesosAlumnos();
     String msjError="";
+    String numDocAlumno="0";
+    int codGradoAlumno=0;
 
     public CListadoAlumDirec(lista_estudiantes_directivo_1 listaEst) {
         vista=listaEst;
+        vista.btnCrearAlumno.addActionListener(this);
+        vista.btnModificarAlumno.addActionListener(this);
+        vista.btnLimpiar.addActionListener(this);
+        vista.btnModificar.addActionListener(this);
+        vista.btnBorrar.addActionListener(this);
+        vista.btnInsertar.addActionListener(this);
         vista.btnFiltrar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
-        vista.btnModificar.addActionListener(this);
-        vista.btnInsertar.addActionListener(this);
-        vista.btnLimpiar.addActionListener(this);
         vista.tblListaAlumnos.addMouseListener(this);
         listaEst.setTitle("Gestion de Estudiantes");
         listaEst.setVisible(true);
@@ -89,6 +93,56 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         
         String filtro = crudAlumno.Filtrar(nivel, grado,estado,nombre,anio);
         return filtro;
+    }
+    
+    public boolean VerificarAlumno(ArrayList<String> data){
+        msjError="";
+        bucle:
+        for(String dato:data){
+            if(dato.equals("0") || dato.equals("...")){
+                msjError+="Ningun dato del alunmno puede estar vacio o ser igual a 0\n";
+                break bucle;
+            }
+        }
+        String tipoDoc = data.get(1);
+        if(!(tipoDoc.equals("..."))){
+            String numDoc = data.get(0);
+            int LimitMin;
+            if(tipoDoc.equals("DNI") && numDoc.length()<8){
+                msjError+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
+                    + " de 8 digitos\n";    
+                
+            }else if((!tipoDoc.equals("DNI")) && numDoc.length()<9){
+                msjError+="Numero de Documento incorrecto: "+tipoDoc+" con menos"
+                    + " de 9 digitos\n";    
+            }
+        }
+        
+        if(!(msjError.isBlank())){
+            procesos.msjDialog(msjError);
+            return false;
+        }else {
+            return true;
+        }
+        
+    }
+    
+    public boolean verificarGradoAlumno(ArrayList<String> dataAlumno,ArrayList<String> dataGrado){
+        msjError="";
+        VerificarAlumno(dataAlumno);
+        bucle:
+        for(String dato:dataGrado){
+            if(dato.equals("0") || dato.equals("...")){
+                msjError+="No puede haber campos vacios o igual a 0 en la información de grado\n";
+                break bucle;
+            }
+        }
+        if(!(msjError.isBlank())){
+            procesos.msjDialog(msjError);
+            return false;
+        }else {
+            return true;
+        }
     }
      
     public boolean VerificarDatos( ArrayList<String> dataAlumno){
@@ -263,12 +317,48 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     // FUNCIONALIDAD BOTONES
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==vista.btnCrearAlumno){
+             ArrayList<String> data= procesos.leerAlumno(vista);
+             boolean AlumnoValido=VerificarAlumno(data);
+             if(AlumnoValido){
+                 boolean registroExiste=crudAlumno.BuscarCodigo(data.get(0));
+                 if(registroExiste){
+                  procesos.msjDialog("El alumno con codigo: "+data.get(0)+" ya existe");
+                 }else{
+                     Alumno a = new Alumno(data);
+                     crudAlumno.insertarAlumno(alumno);
+                 }
+             }
+        }
+        
+        if(e.getSource()==vista.btnModificarAlumno){
+            if(numDocAlumno.equals("0")){
+                procesos.msjDialog("No se ha seleccionado ningun alumno");
+            }else{
+                ArrayList<String> data= procesos.leerAlumno(vista);
+                 boolean AlumnoValido=VerificarAlumno(data);
+                 if(AlumnoValido){
+                    boolean registroExiste=crudAlumno.BuscarCodigo(data.get(0));
+                     if(!registroExiste){
+                         procesos.msjDialog("El alumno con codigo: "+data.get(0)+" aun no existe");
+                     }else{
+                         crudAlumno.actualizarAlumno(data, 
+                                 Integer.parseInt(data.get(0)));
+                     }
+                 }
+            }
+        }
+        
         if(e.getSource()==vista.btnFiltrar){
             ActualizarLista();         
         }
         
         if(e.getSource()==vista.btnLimpiar){
             procesos.Limpiarcampos(vista);
+            vista.tblListaAlumnos.clearSelection();
+            numDocAlumno="0";
+            codGradoAlumno=0;
+            
         }
         
         if(e.getSource()==vista.btnBuscar){
@@ -290,55 +380,57 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         }
         
         if(e.getSource()==vista.btnModificar){
-            ArrayList<String>data = procesos.leerAlumno(vista);
-            boolean alumnoValido=VerificarDatos(data);
-            boolean codigoExiste=crudAlumno.BuscarCodigo(data.get(0));
-            if(alumnoValido && codigoExiste){
-                alumno=new Alumno(data);
-                //actualizamos
-                int codGrado= crudAlumno.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
-                                                       ,alumno.getGradoAlumno().getNivel());
-                
-                int codEstado= crudAlumno.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
-                
-                int codGradoAlumno=Integer.parseInt(dataAlumno[9]);
-                crudAlumno.Actualizar(alumno, codGrado, codEstado, codGradoAlumno);
-                ActualizarLista();
-                
+            if(codGradoAlumno==0){
+                procesos.msjDialog("No se ha seleccionado ningun registro");
             }else{
-                if( !(codigoExiste) ){
-                    msjError+="El Alumno con Numero de Documento "
-                            +data.get(0)+ " aun no está registrado\n";
+                ArrayList<String>dataAlumno = procesos.leerAlumno(vista);
+                ArrayList<String>dataGrado = procesos.leerGradoAlumno(vista);
+                boolean dataValida=verificarGradoAlumno(dataAlumno,dataGrado);
+                
+                if(dataValida){
+                    //led.txtAnio,led.cbxNivel,led.cbxGrado,led.cbxEstadoGrado
+                    int codGrado=crudAlumno.obtenerCodGrado(dataGrado.get(1),
+                            dataGrado.get(2));
+                    int codEstado=crudAlumno.obtenerCodEstado(dataGrado.get(3));
+                    int[] valores={Integer.parseInt(dataGrado.get(0)),//1°Año
+                                  codGrado,codEstado};  //2°codGrado, 3°codEstado
+                    crudAlumno.actualizarGradoAlumno(valores, codGradoAlumno);
+                    ActualizarLista();    
                 }
-                procesos.msjDialog(msjError);
-                msjError="";
-            }        
+            }
         }
         
-        
-        if(e.getSource()==vista.btnInsertar){
-            ArrayList<String>data = procesos.leerAlumno(vista);
-            boolean alumnoValido=VerificarDatos(data);
-            boolean codigoExiste=crudAlumno.BuscarCodigo(data.get(0));
-
-            if(alumnoValido && !(codigoExiste)){
-                alumno=new Alumno(data);
-                int codGrado= crudAlumno.obtenerCodGrado(alumno.getGradoAlumno().getGrado()
-                                                       ,alumno.getGradoAlumno().getNivel());
-                
-                int codEstado= crudAlumno.obtenerCodEstado(alumno.getGradoAlumno().getEstado());
-                crudAlumno.Insertar(alumno,codGrado,codEstado);
-                ActualizarLista();
-
+        if(e.getSource()==vista.btnBorrar){
+            if(codGradoAlumno==0){
+                procesos.msjDialog("No se ha seleccionado ningun registro");
             }else{
-                if(codigoExiste){
-                    msjError+="El Numero de Documento "+data.get(0)
-                            + " ya existe, introduzca uno nuevo\n";
-                }
-                procesos.msjDialog(msjError);
-                msjError="";
+                crudAlumno.eliminarGradoAlumno(codGradoAlumno);
+                ActualizarLista();
             }
-            
+        }
+
+        if(e.getSource()==vista.btnInsertar){
+            ArrayList<String>dataAlumno = procesos.leerAlumno(vista);
+            ArrayList<String>dataGrado = procesos.leerGradoAlumno(vista);
+            boolean dataValida=verificarGradoAlumno(dataAlumno,dataGrado);
+                
+            if(dataValida){
+                int codGrado=crudAlumno.obtenerCodGrado(dataGrado.get(1),
+                        dataGrado.get(2));
+                int codEstado=crudAlumno.obtenerCodEstado(dataGrado.get(3));
+
+                int[] valores={Integer.parseInt(dataGrado.get(0)),//1°Año
+                               Integer.parseInt(dataAlumno.get(0)),//2°codAlumno
+                                codGrado,codEstado};
+
+                boolean registroExiste=crudAlumno.buscarRegistroGradoAlumno(valores);
+                if(registroExiste){
+                    procesos.msjDialog("Esta informacion de grado ya existe");
+                }else{
+                    crudAlumno.insertarGradoAlumno(valores);
+                    ActualizarLista();    
+                }
+            }
         }
     }
 
@@ -350,14 +442,19 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         int numfila = vista.tblListaAlumnos.rowAtPoint(e.getPoint());
         int columNumDoc = 0; //num de columna de Num Doc dentro de la fila seleccionada
         int columEstado = 3; //num de columna de estado dentro de la fila seleccionada
+        int columGradoAlumno = 4; //num de columna de estado dentro de la fila seleccionada
         
         if(numfila>-1){
-            String numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
+            numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
             String estado=vista.tblListaAlumnos.getValueAt(numfila, columEstado).toString();
-            dataAlumno= crudAlumno.Buscar(numDocAlumno,estado);
+            codGradoAlumno=Integer.parseInt(vista.tblListaAlumnos.
+                    getValueAt(numfila, columGradoAlumno).toString());
+            
+            String[] dataAlumno= crudAlumno.BuscarAlumno(Integer.parseInt(numDocAlumno));
             procesos.MostrarAlumno(dataAlumno, vista);
             
-            
+            String[] dataGradoAlumno= crudAlumno.buscarGradoAlumno(codGradoAlumno);
+            procesos.MostrarGradoAlumno(dataGradoAlumno, vista);
         }
         
     }

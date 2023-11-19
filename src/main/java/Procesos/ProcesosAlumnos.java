@@ -24,8 +24,7 @@ public class ProcesosAlumnos {
     public ArrayList<String> leerAlumno(lista_estudiantes_directivo_1 led){
         
         JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
-        led.txtApellidoP,led.txtApellidoM,led.txtAnio,led.cbxGrado,led.cbxNivel,
-        led.cbxEstadoGrado};
+        led.txtApellidoP,led.txtApellidoM};
         int numCampos= campos.length;
         
         ArrayList<String>data = new ArrayList<>();
@@ -34,8 +33,8 @@ public class ProcesosAlumnos {
         
         for (int i = 0; i < numCampos; i++) {
             if(campos[i] instanceof JTextField){
-                campoVacio= ((JTextField)campos[i]).getText().isBlank();
-                if(!campoVacio )
+                campoVacio=((JTextField)campos[i]).getText().isBlank();
+                if(!campoVacio)
                     data.add(i, ((JTextField)campos[i]).getText());
                 else 
                     data.add("0");
@@ -48,17 +47,9 @@ public class ProcesosAlumnos {
         return data;
     }
     
-    
-    //muestra sugerencias de autocompletado de nombres en la barra de busqueda
-    public void MostrarSugerencias(JTextField campo,ArrayList<String> nombresAlumnos){
-         AutoCompleteDecorator.decorate(campo, nombresAlumnos, false);
-    }
-    
     //muestra en el frm todos los datos del alumno seleccionado de la tabla 
     public void MostrarAlumno(String[] data,lista_estudiantes_directivo_1 led){
-        JComponent campos[]= {led.cbxTipoDoc,led.txtNombres,
-        led.txtApellidoP,led.txtApellidoM,led.cbxNivel,led.cbxGrado,
-        led.cbxEstadoGrado,led.txtAnio};
+        JComponent campos[]= {led.cbxTipoDoc,led.txtNombres,led.txtApellidoP,led.txtApellidoM};
         
         int numCampos= campos.length;
         
@@ -72,19 +63,66 @@ public class ProcesosAlumnos {
         led.txtNumDoc.setText(data[0]);
     }
     
+    public ArrayList<String> leerGradoAlumno(lista_estudiantes_directivo_1 led){
+        JComponent campos[]= {led.txtAnio,led.cbxNivel,led.cbxGrado,led.cbxEstadoGrado};
+        int numCampos= campos.length;
+        ArrayList<String>data = new ArrayList<>();
+        boolean campoVacio;
+        for (int i = 0; i < numCampos; i++) {
+            if(campos[i] instanceof JTextField){
+                campoVacio=((JTextField)campos[i]).getText().isBlank();
+                if(!campoVacio)
+                    data.add(i, ((JTextField)campos[i]).getText());
+                else 
+                    data.add("0");
+            }
+            else {
+                data.add(i, ((JComboBox)campos[i]).getSelectedItem().toString());
+
+            }
+        }
+        return data;
+    }
+    
+    public void MostrarGradoAlumno(String[] data,lista_estudiantes_directivo_1 led){
+        JComponent campos[]= {led.txtAnio,led.cbxNivel,led.cbxGrado,led.cbxEstadoGrado};
+        int numCampos= campos.length;
+        
+        for (int i = 0; i < numCampos; i++) {
+            if(campos[i] instanceof JTextField){
+                ((JTextField)campos[i]).setText(data[i]);
+            }else{
+                ((JComboBox)campos[i]).setSelectedItem(data[i]);
+            }
+        }
+    }
+    
+    //muestra sugerencias de autocompletado de nombres en la barra de busqueda
+    public void MostrarSugerencias(JTextField campo,ArrayList<String> nombresAlumnos){
+         AutoCompleteDecorator.decorate(campo, nombresAlumnos, false);
+    }
+    
+    
     
     
     public void formatoColumnasTabla (JTable tabla){
+        //codAlumno
         tabla.getColumnModel().getColumn(0).setMaxWidth(0);
         tabla.getColumnModel().getColumn(0).setMinWidth(0);
         tabla.getColumnModel().getColumn(0).setPreferredWidth(0);
         
+        //NombreCompletoAlumno
         tabla.getColumnModel().getColumn(1).setPreferredWidth(160);
+        //Icono Estado
         tabla.getColumnModel().getColumn(2).setPreferredWidth(60);
-        
+        //Estado
         tabla.getColumnModel().getColumn(3).setMaxWidth(0);
         tabla.getColumnModel().getColumn(3).setMinWidth(0);
         tabla.getColumnModel().getColumn(3).setPreferredWidth(0);
+        //codGrado Alumno
+        tabla.getColumnModel().getColumn(4).setMaxWidth(0);
+        tabla.getColumnModel().getColumn(4).setMinWidth(0);
+        tabla.getColumnModel().getColumn(4).setPreferredWidth(0);
     }
     
     public void cargarNiveles(JComboBox cbxNiveles){
