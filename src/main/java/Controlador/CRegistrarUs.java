@@ -6,17 +6,23 @@ import Vista.crear_cuenta_docentes_directivo_1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 // Controlador para la creación de cuentas de docentes en un entorno dirigido por un directivo
 public class CRegistrarUs implements ActionListener {
 
-    Usuario us; // Objeto que representa al usuario
-    crear_cuenta_docentes_directivo_1 v; // Vista para la creación de cuentas
-    IntoDocentes intd = new IntoDocentes(); // Objeto para interactuar con la base de datos
+    Usuario us;
+    crear_cuenta_docentes_directivo_1 v;
+    IntoDocentes intd = new IntoDocentes();
     private String nombre; // Variable para almacenar el nombre
 
-    // Constructor que inicializa la vista y agrega un listener al botón de registro
+    //variables de las areas
+    String matematica, personalsocial, artecultura, comunicacion, cienciassociales, edufisica,
+            ingles, religion, computacion, ciudadaniaetica, edutrabajo, cienciatecnologia, psicomotriz;
+
     public CRegistrarUs(crear_cuenta_docentes_directivo_1 cd) {
         v = cd;
         v.jbtnRegistrar.addActionListener(this);
@@ -29,7 +35,6 @@ public class CRegistrarUs implements ActionListener {
         v.setVisible(true);
     }
 
-    // Método para validar los campos y realizar el registro del usuario
     public void ValidacionYregistro() {
         // Obtener valores de los campos de texto
         nombre = v.Jtxtnombre.getText();
@@ -38,19 +43,19 @@ public class CRegistrarUs implements ActionListener {
         int numeroDocumento = Integer.parseInt(v.jTextFieldNumDocumento.getText());
 
         // Obtener valores de los campos de preguntas y respuestas
-        String pregunta1 = v.jTextFieldPregunta1.getText();
+        String pregunta1 = v.jTextFieldPregunta1.getSelectedItem().toString();
         String respuesta1 = v.jTextFieldRespuesta1.getText();
-        String pregunta2 = v.jTextFieldPregunta2.getText();
+        String pregunta2 = v.jTextFieldPregunta2.getSelectedItem().toString();
         String respuesta2 = v.jTextFieldRespuesta2.getText();
-        String pregunta3 = v.jTextFieldPregunta3.getText();
+        String pregunta3 = v.jTextFieldPregunta3.getSelectedItem().toString();
         String respuesta3 = v.jTextFieldRespuesta3.getText();
 
         String clave1 = v.jTextFieldClave.getText();
         String clave2 = v.textFieldClave2.getText(); // Segundo campo de contraseña
 
         // Validar que todos los campos obligatorios estén llenos
-        if (nombre.isEmpty() || apellidoP.isEmpty() || apellidoM.isEmpty() || numeroDocumento == 0 || clave1.isEmpty() || clave2.isEmpty() ||
-                pregunta1.isEmpty() || respuesta1.isEmpty() || pregunta2.isEmpty() || respuesta2.isEmpty() || pregunta3.isEmpty() || respuesta3.isEmpty()) {
+        if (nombre.isEmpty() || apellidoP.isEmpty() || apellidoM.isEmpty() || numeroDocumento == 0 || clave1.isEmpty() || clave2.isEmpty()
+                || pregunta1.isEmpty() || respuesta1.isEmpty() || pregunta2.isEmpty() || respuesta2.isEmpty() || pregunta3.isEmpty() || respuesta3.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos los campos obligatorios deben estar llenos.");
             return; // Salir del método si falta algún campo obligatorio
         }
@@ -75,12 +80,77 @@ public class CRegistrarUs implements ActionListener {
         us.setResp(respuestas);
     }
 
-    // Método invocado al realizar acciones en la interfaz gráfica
+    public void validarareas() throws SQLException {
+        
+        
+        try {//lplp
+            
+            // Lista para almacenar los valores de los checkboxes seleccionados
+        List<String> areasSeleccionadas = new ArrayList<>();
+
+// Obtener los valores del checkbox del campo elegir Áreas
+        if (v.cb_PersonalSocial.isSelected()) {
+            areasSeleccionadas.add("1");
+        }
+        if (v.cb_religion1.isSelected()) {
+            areasSeleccionadas.add("2");
+        }
+        if (v.cb_comunicacion.isSelected()) {
+            areasSeleccionadas.add("3");
+        }
+        if (v.cb_ArteCultura.isSelected()) {
+            areasSeleccionadas.add("4");
+        }
+        if (v.cb_matematica.isSelected()) {
+            areasSeleccionadas.add("5");
+        }
+        if (v.cb_ingles.isSelected()) {
+            areasSeleccionadas.add("6");
+        }
+        if (v.cb_CienciaTecnologia.isSelected()) {
+            areasSeleccionadas.add("7");
+        }
+        if (v.cb_computacion.isSelected()) {
+            areasSeleccionadas.add("8");
+        }
+        if (v.cb_EduFisica.isSelected()) {
+            areasSeleccionadas.add("9");
+        }
+        if (v.cb_CiudadaniaCivica.isSelected()) {
+            areasSeleccionadas.add("10");
+        }
+        if (v.cb_CienciasSociales.isSelected()) {
+            areasSeleccionadas.add("11");
+        }
+        if (v.cb_EduTrabajo.isSelected()) {
+            areasSeleccionadas.add("12");
+        }
+        if (v.cb_psicomotriz.isSelected()) {
+            areasSeleccionadas.add("13");
+        }
+
+        // Iterar sobre la lista y realizar el insert para cada área seleccionada
+        for (String area : areasSeleccionadas) {
+            
+            
+            
+        }
+        
+        JOptionPane.showMessageDialog(null, "si se pudo registrar las areas ");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en registrar las areas  " + e.getMessage());
+        }
+        
+        
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == v.jbtnRegistrar) {
             try {
                 ValidacionYregistro();
+                validarareas();
                 // Llamar al método para guardar el usuario en la base de datos
                 String codigoUsuario = intd.guardarUsuario(us);
 
@@ -88,11 +158,11 @@ public class CRegistrarUs implements ActionListener {
                 String nombreUsuario = intd.obtenerNombreUsuario(codigoUsuario);
 
                 // Construir el mensaje para el JOptionPane
-                String mensaje = "Bienvenido/a profesor/a " + nombreUsuario + " a la I.E.P. Maria Reyna de la Paz\n" +
-                        "Su código institucional es: " + codigoUsuario + "\n" +
-                        "Su contraseña es: " + us.getClave() + "\n" +
-                        "Anoté su código institucional y su contraseña\n" +
-                        "Por favor, no comparta con nadie su código institucional o su contraseña a menos que un directivo se lo pida personalmente.";
+                String mensaje = "Bienvenido/a profesor/a " + nombreUsuario + " a la I.E.P. Maria Reyna de la Paz\n"
+                        + "Su código institucional es: " + codigoUsuario + "\n"
+                        + "Su contraseña es: " + us.getClave() + "\n"
+                        + "Anoté su código institucional y su contraseña\n"
+                        + "Por favor, no comparta con nadie su código institucional o su contraseña a menos que un directivo se lo pida personalmente.";
 
                 // Mostrar un mensaje de éxito
                 JOptionPane.showMessageDialog(null, "Usuario registrado correctamente\n" + mensaje);

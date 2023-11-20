@@ -37,30 +37,31 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         jTextFieldApellidoM = new javax.swing.JTextField();
         jbtnRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        cb_CienciaTecnologia = new javax.swing.JCheckBox();
+        cb_matematica = new javax.swing.JCheckBox();
+        cb_PersonalSocial = new javax.swing.JCheckBox();
+        cb_ArteCultura = new javax.swing.JCheckBox();
+        cb_comunicacion = new javax.swing.JCheckBox();
+        cb_CienciasSociales = new javax.swing.JCheckBox();
+        cb_EduFisica = new javax.swing.JCheckBox();
+        cb_ingles = new javax.swing.JCheckBox();
+        cb_psicomotriz = new javax.swing.JCheckBox();
+        cb_computacion = new javax.swing.JCheckBox();
+        cb_CiudadaniaCivica = new javax.swing.JCheckBox();
+        cb_EduTrabajo = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldPregunta1 = new javax.swing.JTextField();
         jTextFieldRespuesta1 = new javax.swing.JTextField();
-        jTextFieldPregunta2 = new javax.swing.JTextField();
         jTextFieldRespuesta2 = new javax.swing.JTextField();
         jTextFieldRespuesta3 = new javax.swing.JTextField();
-        jTextFieldPregunta3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         textFieldClave2 = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jTextFieldClave = new javax.swing.JPasswordField();
+        jTextFieldPregunta1 = new javax.swing.JComboBox<>();
+        jTextFieldPregunta2 = new javax.swing.JComboBox<>();
+        jTextFieldPregunta3 = new javax.swing.JComboBox<>();
+        cb_religion1 = new javax.swing.JCheckBox();
 
         setMaximizable(true);
         setAutoscrolls(true);
@@ -74,16 +75,16 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
         getContentPane().add(Jtxtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, 30));
 
         jLabel3.setText("Ingrese su apellido paterno:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
-        getContentPane().add(jTextFieldNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, 20));
+        getContentPane().add(jTextFieldNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 160, 30));
 
         jLabel4.setText("Ingrese su apellido materno:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-        getContentPane().add(jTextFieldApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 160, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        getContentPane().add(jTextFieldApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 160, 30));
 
         jLabel5.setText("Ingrese su DNI:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
-        getContentPane().add(jTextFieldApellidoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+        getContentPane().add(jTextFieldApellidoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 160, 30));
 
         jbtnRegistrar.setText("REGISTRAR");
         jbtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -91,111 +92,118 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
                 jbtnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 120, 80));
+        getContentPane().add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 120, 40));
 
         jLabel6.setText("Ingrese los cursos en los que se encuentra calificado:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jCheckBox1.setText("Ciencia y tecnologia");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, -1, -1));
+        cb_CienciaTecnologia.setText("Ciencia y tecnologia");
+        getContentPane().add(cb_CienciaTecnologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
 
-        jCheckBox2.setText("Matematicas");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        cb_matematica.setText("Matematicas");
+        cb_matematica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                cb_matematicaActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        getContentPane().add(cb_matematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        jCheckBox3.setText("Personal Social");
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        cb_PersonalSocial.setText("Personal Social");
+        getContentPane().add(cb_PersonalSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        jCheckBox4.setText("Arte y cultura");
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+        cb_ArteCultura.setText("Arte y cultura");
+        getContentPane().add(cb_ArteCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        jCheckBox5.setText("Comunicación");
-        getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+        cb_comunicacion.setText("Comunicación");
+        getContentPane().add(cb_comunicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
 
-        jCheckBox6.setText("Ciencias Sociales");
-        getContentPane().add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+        cb_CienciasSociales.setText("Ciencias Sociales");
+        getContentPane().add(cb_CienciasSociales, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
-        jCheckBox7.setText("Educa.Fisica");
-        getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        cb_EduFisica.setText("Educa.Fisica");
+        getContentPane().add(cb_EduFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
-        jCheckBox8.setText("Ingles");
-        getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
+        cb_ingles.setText("Ingles");
+        getContentPane().add(cb_ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
-        jCheckBox9.setText("Religion");
-        getContentPane().add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+        cb_psicomotriz.setText("Psicomotriz");
+        getContentPane().add(cb_psicomotriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
 
-        jCheckBox10.setText("Computación");
-        getContentPane().add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, -1, -1));
+        cb_computacion.setText("Computación");
+        getContentPane().add(cb_computacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
 
-        jCheckBox11.setText("Desarrollo personal ciudadanía y cívica");
-        getContentPane().add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
+        cb_CiudadaniaCivica.setText("Desarrollo personal ciudadanía y cívica");
+        getContentPane().add(cb_CiudadaniaCivica, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
-        jCheckBox12.setText("Educación para el trabajo");
-        getContentPane().add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+        cb_EduTrabajo.setText("Educación para el trabajo");
+        getContentPane().add(cb_EduTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, -1));
 
         jLabel7.setText("Ingrese 5 preguntas para la recuperación de su contraseña en caso de un olvido");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        getContentPane().add(jTextFieldRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 250, 30));
+        getContentPane().add(jTextFieldRespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 250, 30));
 
-        jTextFieldPregunta1.setText("Pregunta 1");
-        jTextFieldPregunta1.setToolTipText("");
-        getContentPane().add(jTextFieldPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 250, 30));
-
-        jTextFieldRespuesta1.setText("Respuesta 1");
-        getContentPane().add(jTextFieldRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 250, 30));
-
-        jTextFieldPregunta2.setText("Pregunta 2");
-        getContentPane().add(jTextFieldPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 250, 30));
-
-        jTextFieldRespuesta2.setText("Respuesta 2");
-        getContentPane().add(jTextFieldRespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 250, 30));
-
-        jTextFieldRespuesta3.setText("Pregunta 3");
-        getContentPane().add(jTextFieldRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 250, 30));
-
-        jTextFieldPregunta3.setText("Respuesta 3");
-        getContentPane().add(jTextFieldPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 250, 30));
+        jTextFieldRespuesta3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldRespuesta3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 250, 30));
 
         jLabel11.setText("Crease una contraseña:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
-        getContentPane().add(textFieldClave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 760, 170, 30));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+        getContentPane().add(textFieldClave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 170, 30));
 
         jLabel9.setText("La contraseña debe de contener mayusculas, minusculas, números y signos especiales");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
 
         jLabel10.setText("verifique su contraseña:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, -1, -1));
-        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 170, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+        getContentPane().add(jTextFieldClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 170, 30));
+
+        jTextFieldPregunta1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        getContentPane().add(jTextFieldPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 280, 30));
+
+        jTextFieldPregunta2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        getContentPane().add(jTextFieldPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 280, 30));
+
+        jTextFieldPregunta3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        getContentPane().add(jTextFieldPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 280, 30));
+
+        cb_religion1.setText("Religion");
+        getContentPane().add(cb_religion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
+    private void cb_matematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_matematicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_matematicaActionPerformed
+
+    private void jTextFieldRespuesta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRespuesta3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldRespuesta3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField Jtxtnombre;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    public javax.swing.JCheckBox cb_ArteCultura;
+    public javax.swing.JCheckBox cb_CienciaTecnologia;
+    public javax.swing.JCheckBox cb_CienciasSociales;
+    public javax.swing.JCheckBox cb_CiudadaniaCivica;
+    public javax.swing.JCheckBox cb_EduFisica;
+    public javax.swing.JCheckBox cb_EduTrabajo;
+    public javax.swing.JCheckBox cb_PersonalSocial;
+    public javax.swing.JCheckBox cb_computacion;
+    public javax.swing.JCheckBox cb_comunicacion;
+    public javax.swing.JCheckBox cb_ingles;
+    public javax.swing.JCheckBox cb_matematica;
+    public javax.swing.JCheckBox cb_psicomotriz;
+    public javax.swing.JCheckBox cb_religion1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -210,9 +218,9 @@ public class crear_cuenta_docentes_directivo_1 extends javax.swing.JInternalFram
     public javax.swing.JTextField jTextFieldApellidoP;
     public javax.swing.JPasswordField jTextFieldClave;
     public javax.swing.JTextField jTextFieldNumDocumento;
-    public javax.swing.JTextField jTextFieldPregunta1;
-    public javax.swing.JTextField jTextFieldPregunta2;
-    public javax.swing.JTextField jTextFieldPregunta3;
+    public javax.swing.JComboBox<String> jTextFieldPregunta1;
+    public javax.swing.JComboBox<String> jTextFieldPregunta2;
+    public javax.swing.JComboBox<String> jTextFieldPregunta3;
     public javax.swing.JTextField jTextFieldRespuesta1;
     public javax.swing.JTextField jTextFieldRespuesta2;
     public javax.swing.JTextField jTextFieldRespuesta3;

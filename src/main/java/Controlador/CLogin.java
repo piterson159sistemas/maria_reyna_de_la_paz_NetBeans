@@ -38,8 +38,8 @@ public class CLogin implements ActionListener {
                 String tipoUsuario = user.ValidarTipoUsuario(user.getCodigo());
                 if (tipoUsuario.equals("DIRECTOR")) {
                     vista.dispose();
-                    MenuDirec2 menuD = new MenuDirec2();
-                    CMenuDirec2 cMenuD = new CMenuDirec2(menuD);
+                    MenuDirec menuD = new MenuDirec();
+                    CMenuDirec cMenuD = new CMenuDirec(menuD);
                     
                     //Menu anterior para mostrar luego la funcionalidad
                     //MenuDirec menuD1 = new MenuDirec();

@@ -97,12 +97,11 @@ public class IntoDocentes {
         Conexion db = new Conexion();
         String nombreUsuario = "";
 
-        try (Connection conexion = db.conectar();
-             PreparedStatement stmt = conexion.prepareStatement("SELECT Nombres FROM usuario WHERE Codigo_Usuario = ?")) {
+        try ( Connection conexion = db.conectar();  PreparedStatement stmt = conexion.prepareStatement("SELECT Nombres FROM usuario WHERE Codigo_Usuario = ?")) {
 
             stmt.setString(1, codigoUsuario);
 
-            try (ResultSet rs = stmt.executeQuery()) {
+            try ( ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     // Obtener el nombre del resultado
                     nombreUsuario = rs.getString("Nombres");
@@ -114,4 +113,60 @@ public class IntoDocentes {
 
         return nombreUsuario;
     }
-}
+
+    public String insertarDocenteArea(Usuario usu) throws SQLException {
+        String nuevoCodigoArea = "";
+        String codigousuario = "";
+        Conexion db = new Conexion();
+        Connection conexion = db.conectar();
+
+        // Obtener el Codigo_Docente_Area de la tabla docente_area
+        String consultaUltimoCodigoAreaSQL = "SELECT Codigo_Docente_Area FROM docente_area";
+        try ( PreparedStatement pst = conexion.prepareStatement(consultaUltimoCodigoAreaSQL);  ResultSet rs = pst.executeQuery()) {
+
+            if (rs.next()) {
+                codigousuario = rs.getString("Codigo_Docente_Area");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error al buscar el código de usuario: " + e.getMessage();
+        }
+
+        // Obtener el nuevo Codigo_Usuario
+        String consultaCodigoNuevoUsuario = "SELECT MAX(Codigo_Usuario) FROM usuario";
+        try ( PreparedStatement pstnuevo = conexion.prepareStatement(consultaCodigoNuevoUsuario);  ResultSet rsnu = pstnuevo.executeQuery()) {
+
+            if (rsnu.next()) {
+                int maxCodigoUsuario = rsnu.getInt(1) + 1;
+                nuevoCodigoArea = String.valueOf(maxCodigoUsuario);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error al generar el nuevo código de área: " + e.getMessage();
+        }
+
+        try {
+            // Consulta preparada para insertar en la tabla docente_area
+            String insertAreaSQL = "INSERT INTO docente_area (Codigo_Docente_Area, Codigo_Usuario, Codigo_Area) VALUES (?, ?, ?)";
+            try ( PreparedStatement stmtArea = conexion.prepareStatement(insertAreaSQL)) {
+                stmtArea.setString(1, nuevoCodigoArea);
+                stmtArea.setString(2, codigousuario);
+                stmtArea.setString(3, usu.getarea());
+
+                // Ejecutar la consulta preparada
+                stmtArea.executeUpdate();
+            }
+
+            return "Área insertada correctamente para el docente.";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error al insertar área para el docente: " + e.getMessage();
+        }
+    }
+    }
+
+
+
+

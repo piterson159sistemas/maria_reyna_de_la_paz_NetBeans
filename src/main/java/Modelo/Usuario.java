@@ -7,6 +7,7 @@ public class Usuario extends Persona implements Modificable, Registrable{
     protected String clave;
     private String Preg[]=new String[3];
     private String Resp[]=new String[3];
+    public String area;
     
     public Usuario(String codigo, String clave){
         this.codigo=codigo;
@@ -27,6 +28,14 @@ public class Usuario extends Persona implements Modificable, Registrable{
         // Inicializa el objeto sin argumentos
         super(0, "", "", "");
         this.codigo = "";
+    }
+    
+    public String getarea(){
+        return area;
+    }
+    
+    public void setarea(String area){
+        this.area = area;
     }
     
     public String getCodigo() {
