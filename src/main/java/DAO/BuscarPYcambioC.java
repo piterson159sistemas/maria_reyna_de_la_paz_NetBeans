@@ -7,15 +7,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+// Clase DAO para buscar preguntas y respuestas y realizar cambios de contraseña
 public class BuscarPYcambioC {
 
+    // Método para obtener preguntas por usuario y actualizar el objeto Usuario con la información obtenida
     public Usuario obtenerPreguntasPorUsuario(Usuario us) {
-        Conexion db = new Conexion();
+        Conexion db = new Conexion(); // Objeto para gestionar la conexión a la base de datos
 
         try (Connection conexion = db.conectar();
              PreparedStatement stmt = conexion.prepareStatement("SELECT Pregunta1, Respuesta1, Pregunta2, Respuesta2, Pregunta3, Respuesta3 FROM preguntas WHERE Codigo_Usuario = ?")) {
 
-            stmt.setString(1, us.getCodigo());
+            stmt.setString(1, us.getCodigo()); // Establecer el código de usuario en la consulta SQL
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
@@ -40,6 +42,6 @@ public class BuscarPYcambioC {
             e.printStackTrace();
         }
 
-        return us;
+        return us; // Devolver el objeto Usuario actualizado
     }
 }

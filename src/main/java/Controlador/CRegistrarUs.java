@@ -8,13 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+// Controlador para la creación de cuentas de docentes en un entorno dirigido por un directivo
 public class CRegistrarUs implements ActionListener {
 
-    Usuario us;
-    crear_cuenta_docentes_directivo_1 v;
-    IntoDocentes intd = new IntoDocentes();
+    Usuario us; // Objeto que representa al usuario
+    crear_cuenta_docentes_directivo_1 v; // Vista para la creación de cuentas
+    IntoDocentes intd = new IntoDocentes(); // Objeto para interactuar con la base de datos
     private String nombre; // Variable para almacenar el nombre
 
+    // Constructor que inicializa la vista y agrega un listener al botón de registro
     public CRegistrarUs(crear_cuenta_docentes_directivo_1 cd) {
         v = cd;
         v.jbtnRegistrar.addActionListener(this);
@@ -27,6 +29,7 @@ public class CRegistrarUs implements ActionListener {
         v.setVisible(true);
     }
 
+    // Método para validar los campos y realizar el registro del usuario
     public void ValidacionYregistro() {
         // Obtener valores de los campos de texto
         nombre = v.Jtxtnombre.getText();
@@ -72,6 +75,7 @@ public class CRegistrarUs implements ActionListener {
         us.setResp(respuestas);
     }
 
+    // Método invocado al realizar acciones en la interfaz gráfica
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == v.jbtnRegistrar) {

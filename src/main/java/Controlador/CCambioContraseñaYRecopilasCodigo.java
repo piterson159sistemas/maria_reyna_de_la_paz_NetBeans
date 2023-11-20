@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
 public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
     private RecopilarCodigo RC;
     private Usuario us;
-    private recopilar_codigo_cambioContraseña recocodi; // vista
+    private recopilar_codigo_cambioContraseña recocodi; // Vista
 
     public CCambioContraseñaYRecopilasCodigo(recopilar_codigo_cambioContraseña recocc) {
+        // Constructor para la clase controladora
         recocodi = recocc;
         recocodi.btn_RevisarCodigo.addActionListener(this);
         recocodi.jbtnChequeo.addActionListener(this); // Agregado para manejar el nuevo botón "Listo"
@@ -25,12 +26,14 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
     }
 
     private void desactivarCamposContraseña() {
+        // Método para desactivar los campos de contraseña
         recocodi.jtxtNuevaContra.setEnabled(false);
         recocodi.jtxtNuevaContraRepitelo.setEnabled(false);
         recocodi.btnActualizarz.setEnabled(false);
     }
 
     private void activarCamposContraseña() {
+        // Método para activar los campos de contraseña
         recocodi.jtxtNuevaContra.setEnabled(true);
         recocodi.jtxtNuevaContraRepitelo.setEnabled(true);
         recocodi.btnActualizarz.setEnabled(true);
@@ -38,77 +41,77 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == recocodi.btn_RevisarCodigo) {
+            // Manejar el clic en el botón "Revisar Código"
+            RC = new RecopilarCodigo();
+            us = new Usuario();
+            us.setCodigo(recocodi.Jtxt_RecopilarDato_codigo.getText());
 
-            if (e.getSource() == recocodi.btn_RevisarCodigo) {
-                RC = new RecopilarCodigo();
-                us = new Usuario();
-                us.setCodigo(recocodi.Jtxt_RecopilarDato_codigo.getText());
+            // Obtener las preguntas de seguridad
+            String[] preguntas = RC.obtenerPreguntas(us);
 
-                // Obtener las preguntas
-                String[] preguntas = RC.obtenerPreguntas(us);
+            if (preguntas != null) {
+                // Asignar preguntas a los JLabel correspondientes
+                recocodi.jlbPregunta1.setText(preguntas[0]);
+                recocodi.jlbPregunta2.setText(preguntas[1]);
+                recocodi.jlbPregunta3.setText(preguntas[2]);
 
-                if (preguntas != null) {
-                    // Asignar preguntas a los JLabel correspondientes
-                    recocodi.jlbPregunta1.setText(preguntas[0]);
-                    recocodi.jlbPregunta2.setText(preguntas[1]);
-                    recocodi.jlbPregunta3.setText(preguntas[2]);
+                // Obtener las respuestas
+                String[] respuestas = RC.obtenerRespuestas(us);
 
-                    // Obtener las respuestas
-                    String[] respuestas = RC.obtenerRespuestas(us);
+                // Asignar respuestas a los JTextField correspondientes
+                recocodi.jtxtPregunta1.setText("");
+                recocodi.jtxtPregunta2.setText("");
+                recocodi.jtxtPregunta3.setText("");
 
-                    // Asignar respuestas a los JTextField correspondientes
-                    recocodi.jtxtPregunta1.setText("");
-                    recocodi.jtxtPregunta2.setText("");
-                    recocodi.jtxtPregunta3.setText("");
+            } else {
+                // Si no se encuentran preguntas para el usuario, mostrar un mensaje de error
+                JOptionPane.showMessageDialog(null, "No se encontraron preguntas para el usuario.", "Error", JOptionPane.ERROR_MESSAGE);
 
-                } else {
-                    // Si no se encuentran preguntas para el usuario, mostrar un mensaje de error
-                    JOptionPane.showMessageDialog(null, "No se encontraron preguntas para el usuario.", "Error", JOptionPane.ERROR_MESSAGE);
-
-                    // Desactivar los campos de contraseña en caso de error
-                    desactivarCamposContraseña();
-                }
+                // Desactivar los campos de contraseña en caso de error
+                desactivarCamposContraseña();
             }
+        }
 
-            if (e.getSource() == recocodi.jbtnChequeo) {
-                // Verificar respuestas al hacer clic en el botón de Chequeo
-                String respuesta1 = recocodi.jtxtPregunta1.getText();
-                String respuesta2 = recocodi.jtxtPregunta2.getText();
-                String respuesta3 = recocodi.jtxtPregunta3.getText();
+        if (e.getSource() == recocodi.jbtnChequeo) {
+            // Verificar respuestas al hacer clic en el botón de Chequeo
+            String respuesta1 = recocodi.jtxtPregunta1.getText();
+            String respuesta2 = recocodi.jtxtPregunta2.getText();
+            String respuesta3 = recocodi.jtxtPregunta3.getText();
 
-                // Obtener las respuestas correctas desde la base de datos
-                String[] respuestasCorrectas = RC.obtenerRespuestas(us);
+            // Obtener las respuestas correctas desde la base de datos
+            String[] respuestasCorrectas = RC.obtenerRespuestas(us);
 
-                // Imprimir información de depuración
-                System.out.println("Respuestas ingresadas: " + respuesta1 + ", " + respuesta2 + ", " + respuesta3);
-                System.out.println("Respuestas correctas: " + respuestasCorrectas[0] + ", " + respuestasCorrectas[1] + ", " + respuestasCorrectas[2]);
+            // Imprimir información de depuración
+            System.out.println("Respuestas ingresadas: " + respuesta1 + ", " + respuesta2 + ", " + respuesta3);
+            System.out.println("Respuestas correctas: " + respuestasCorrectas[0] + ", " + respuestasCorrectas[1] + ", " + respuestasCorrectas[2]);
 
-                // Verificar si las respuestas ingresadas son correctas
-                if (respuesta1.equals(respuestasCorrectas[0]) &&
-                        respuesta2.equals(respuestasCorrectas[1]) &&
-                        respuesta3.equals(respuestasCorrectas[2])) {
-                    JOptionPane.showMessageDialog(null, "Preguntas correctas. Puedes cambiar tu contraseña.");
-                    // Activar los campos de contraseña después de verificar las preguntas
-                    activarCamposContraseña();
+            // Verificar si las respuestas ingresadas son correctas
+            if (respuesta1.equals(respuestasCorrectas[0]) &&
+                respuesta2.equals(respuestasCorrectas[1]) &&
+                respuesta3.equals(respuestasCorrectas[2])) {
+                JOptionPane.showMessageDialog(null, "Preguntas correctas. Puedes cambiar tu contraseña.");
+                // Activar los campos de contraseña después de verificar las preguntas
+                activarCamposContraseña();
 
-                } else {
-                    JOptionPane.showMessageDialog(null, "Al menos una de las respuestas es incorrecta. Intenta de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Al menos una de las respuestas es incorrecta. Intenta de nuevo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
 
-if (e.getSource() == recocodi.btnActualizarz) {
-    // Aquí deberías tener la lógica para obtener las contraseñas nuevas
-    String nuevaContraseña = recocodi.jtxtNuevaContra.getText();
-    String nuevaContraseñaRepitelo = recocodi.jtxtNuevaContraRepitelo.getText();
+        if (e.getSource() == recocodi.btnActualizarz) {
+            // Aquí deberías tener la lógica para obtener las contraseñas nuevas
+            String nuevaContraseña = recocodi.jtxtNuevaContra.getText();
+            String nuevaContraseñaRepitelo = recocodi.jtxtNuevaContraRepitelo.getText();
 
-    // Verificar si ambas contraseñas son iguales
-    if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
-        // Ambas contraseñas son iguales, procede con la actualización
-        boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
+            // Verificar si ambas contraseñas son iguales
+            if (!nuevaContraseña.isEmpty() && !nuevaContraseñaRepitelo.isEmpty() && nuevaContraseña.equals(nuevaContraseñaRepitelo)) {
+                // Ambas contraseñas son iguales, procede con la actualización
+                boolean actualizacionExitosa = RC.actualizarContraseña(us, nuevaContraseña);
 
-        if (actualizacionExitosa) {
+                if (actualizacionExitosa) {
                     // Mostrar el mensaje con la información del usuario
-                    String mensajeBienvenida = "Bienvenido/a profesor/a " + us.getNombre() + " a la I.E.P. Maria Reyna de la Paz\n"
+                    String mensajeBienvenida ="I.E.P. Maria Reyna de la Paz\n"
                             + "Su código institucional es: " + us.getCodigo() + "\n"
                             + "Su contraseña es: " + nuevaContraseña + "\n"
                             + "Anoté su correo institucional y su contraseña\n"
@@ -116,14 +119,11 @@ if (e.getSource() == recocodi.btnActualizarz) {
 
                     JOptionPane.showMessageDialog(null, mensajeBienvenida);
                 } else {
-                    // Resto del código...
+                    // Manejar la actualización de la contraseña no exitosa
+                    // Puedes agregar lógica aquí si es necesario
                 }
             }
-        } 
+        }
     }
 }
-    
 
-
-     
- 
