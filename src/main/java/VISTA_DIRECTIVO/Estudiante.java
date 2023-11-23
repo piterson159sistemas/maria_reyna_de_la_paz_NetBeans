@@ -147,6 +147,8 @@ public class Estudiante extends javax.swing.JFrame {
         //instanciar el controlador aqui
         Principal.removeAll();
         Principal.setLayout(new BorderLayout());
+        //controlador frm Estudiante Notas
+        CAlumnoNotas can = new CAlumnoNotas(estNot);
         Principal.add(estNot.getContentPane(),BorderLayout.CENTER);
         Principal.revalidate();
         Principal.repaint();
