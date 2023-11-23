@@ -9,7 +9,13 @@ import Modelo.GradoAlumno;
 import Modelo.GradoDocencia;
 import Procesos.ProcesosAlumnos;
 import Procesos.procesosAreasGrados;
+
+
+
 import Vista.asignar_area_directivo_1;
+import VISTA_DIRECTIVO.Asignar_Area;
+
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,7 +43,7 @@ import javax.swing.text.PlainDocument;
 
 public class CAsignarArea implements ActionListener,MouseListener {
     
-    asignar_area_directivo_1 vista;
+    Asignar_Area vista;
     ProcesosAlumnos procesosAux=new ProcesosAlumnos();
     procesosAreasGrados procesos=new procesosAreasGrados();
     crudAreasGrados crudAG = new crudAreasGrados();
@@ -45,7 +51,7 @@ public class CAsignarArea implements ActionListener,MouseListener {
     int indexVetanaContenedor=0;
     int[] registroaModificar={0,0};
     
-    public CAsignarArea(asignar_area_directivo_1 frm){
+    public CAsignarArea(Asignar_Area frm){
         vista=frm;
         LocalDate fechaActual = LocalDate.now();
         int anioActual = fechaActual.getYear();
@@ -67,8 +73,8 @@ public class CAsignarArea implements ActionListener,MouseListener {
         DefinirDocentes();
         Actualizar();
         
-        frm.setTitle("Asignacion de Area");
-        frm.setVisible(true);
+        //frm.setTitle("Asignacion de Area");
+        //frm.setVisible(true);
     }
     
     

@@ -1,5 +1,8 @@
 package Controlador;
-import Vista.*;
+import VISTA_INICIARSESION.login;
+import VISTA_DIRECTIVO.MenuDirec2;
+import Vista.MenuDocente;
+import Vista.recopilar_codigo_cambioContraseña;
 import Modelo.Usuario;
 import DAO.QueryLogin;
 import java.awt.event.ActionEvent;
@@ -38,8 +41,8 @@ public class CLogin implements ActionListener {
                 String tipoUsuario = user.ValidarTipoUsuario(user.getCodigo());
                 if (tipoUsuario.equals("DIRECTOR")) {
                     vista.dispose();
-                    MenuDirec menuD = new MenuDirec();
-                    CMenuDirec cMenuD = new CMenuDirec(menuD);
+                    MenuDirec2 menuD = new MenuDirec2();
+                    CMenuDirec2 cMenuD = new CMenuDirec2(menuD);
                     
                     //Menu anterior para mostrar luego la funcionalidad
                     //MenuDirec menuD1 = new MenuDirec();

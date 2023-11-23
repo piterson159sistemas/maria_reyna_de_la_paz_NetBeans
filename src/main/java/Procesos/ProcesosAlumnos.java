@@ -2,6 +2,7 @@
 package Procesos;
 import DAO.crudAlumno;
 import Vista.lista_estudiantes_directivo_1;
+import VISTA_DIRECTIVO.Estudiante_Lista;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Queue;
@@ -21,7 +22,7 @@ public class ProcesosAlumnos {
     crudAlumno crudA=new crudAlumno();
     String none="..."; // los "..." indica ningun elemento seleccionado
     
-    public ArrayList<String> leerAlumno(lista_estudiantes_directivo_1 led){
+    public ArrayList<String> leerAlumno(Estudiante_Lista led){
         
         JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
         led.txtApellidoP,led.txtApellidoM};
@@ -48,7 +49,7 @@ public class ProcesosAlumnos {
     }
     
     //muestra en el frm todos los datos del alumno seleccionado de la tabla 
-    public void MostrarAlumno(String[] data,lista_estudiantes_directivo_1 led){
+    public void MostrarAlumno(String[] data,Estudiante_Lista led){
         JComponent campos[]= {led.cbxTipoDoc,led.txtNombres,led.txtApellidoP,led.txtApellidoM};
         
         int numCampos= campos.length;
@@ -63,7 +64,7 @@ public class ProcesosAlumnos {
         led.txtNumDoc.setText(data[0]);
     }
     
-    public ArrayList<String> leerGradoAlumno(lista_estudiantes_directivo_1 led){
+    public ArrayList<String> leerGradoAlumno(Estudiante_Lista led){
         JComponent campos[]= {led.txtAnio,led.cbxNivel,led.cbxGrado,led.cbxEstadoGrado};
         int numCampos= campos.length;
         ArrayList<String>data = new ArrayList<>();
@@ -84,7 +85,7 @@ public class ProcesosAlumnos {
         return data;
     }
     
-    public void MostrarGradoAlumno(String[] data,lista_estudiantes_directivo_1 led){
+    public void MostrarGradoAlumno(String[] data,Estudiante_Lista led){
         JComponent campos[]= {led.txtAnio,led.cbxNivel,led.cbxGrado,led.cbxEstadoGrado};
         int numCampos= campos.length;
         
@@ -160,7 +161,7 @@ public class ProcesosAlumnos {
         cbxGrados.addItem(none);
     }
     
-    public void Limpiarcampos(lista_estudiantes_directivo_1 led){
+    public void Limpiarcampos(Estudiante_Lista led){
         JComponent campos[]= {led.txtNumDoc,led.cbxTipoDoc,led.txtNombres,
             led.txtApellidoP,led.txtApellidoM,led.cbxNivel,led.cbxGrado,
             led.cbxEstadoGrado,led.txtAnio};

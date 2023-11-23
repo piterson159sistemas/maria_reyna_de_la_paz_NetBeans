@@ -1,6 +1,6 @@
 
 package Main;
-import Vista.login;
+import VISTA_INICIARSESION.login;
 import Controlador.CLogin;
 
 public class Main {

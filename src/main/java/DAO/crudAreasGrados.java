@@ -5,6 +5,8 @@ import Modelo.GradoDocencia;
 import Procesos.ProcesosAlumnos;
 import Procesos.procesosAreasGrados;
 import Vista.asignar_area_directivo_1;
+import VISTA_DIRECTIVO.Asignar_Area;
+
 import java.awt.Component;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -209,7 +211,7 @@ public class crudAreasGrados {
         return codDocente;
     }
     
-    public int obtenerCodGrado(int indiceVentana,asignar_area_directivo_1 frm){
+    public int obtenerCodGrado(int indiceVentana,Asignar_Area frm){
         int codGrado=0;
         String Grado="";
         String Nivel="";

@@ -2,6 +2,8 @@ package Procesos;
 
 import DAO.crudAreasGrados;
 import Vista.asignar_area_directivo_1;
+import VISTA_DIRECTIVO.Asignar_Area;
+
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -53,7 +55,7 @@ public class procesosAreasGrados {
         }
     }
 
-    public Component[] UbicarCombosVentana(int indiceVentana, asignar_area_directivo_1 frm) {
+    public Component[] UbicarCombosVentana(int indiceVentana, Asignar_Area frm) {
         Component[] Elementos;
         switch (indiceVentana) {
             case 0 ->
@@ -66,7 +68,7 @@ public class procesosAreasGrados {
         return Elementos;
     }
 
-    public void limpiarCampos(int indiceVentana, asignar_area_directivo_1 frm) {
+    public void limpiarCampos(int indiceVentana, Asignar_Area frm) {
         frm.txtAnio.setText(String.valueOf(0));
         Component[] comboBoxes = UbicarCombosVentana(indiceVentana, frm);
         for (Component comboBox : comboBoxes) {
@@ -77,7 +79,7 @@ public class procesosAreasGrados {
 
     }
 
-    public ArrayList<String> leerCampos(int indiceVentana, asignar_area_directivo_1 frm) {
+    public ArrayList<String> leerCampos(int indiceVentana, Asignar_Area frm) {
         ArrayList<String> data = new ArrayList<>();
         if (!frm.txtAnio.getText().isBlank()) {
             data.add(frm.txtAnio.getText()); // 1° dato: Año
@@ -98,7 +100,7 @@ public class procesosAreasGrados {
         return data;
     }
 
-    public int obtenerCantAreas(int indiceVentana, asignar_area_directivo_1 frm) {
+    public int obtenerCantAreas(int indiceVentana, Asignar_Area frm) {
         int cantAreas = 0;
         Component[] elementos = UbicarCombosVentana(indiceVentana, frm);
         for (Component elemento : elementos) {
@@ -113,7 +115,7 @@ public class procesosAreasGrados {
         return cantAreas;
     }
     
-    public ArrayList<String> obtenerAreaDocente(int indiceVentana, asignar_area_directivo_1 frm){
+    public ArrayList<String> obtenerAreaDocente(int indiceVentana, Asignar_Area frm){
         ArrayList<String> AreaDocente = new ArrayList<>();
         ArrayList<String> Area = new ArrayList<>();
         ArrayList<String> Docente = new ArrayList<>();

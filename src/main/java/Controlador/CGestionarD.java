@@ -2,7 +2,11 @@ package Controlador;
 
 import DAO.GestionarDocente;
 import Modelo.Usuario;
+
+
 import Vista.gestionar_cuenta_docente_directivo_1;
+import VISTA_DIRECTIVO.Administrar_Docente1;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -13,12 +17,12 @@ import javax.swing.table.DefaultTableModel;
 // Controlador para la gestión de cuentas de docentes en un entorno dirigido por un directivo
 public class CGestionarD implements ActionListener {
     Usuario us;
-    gestionar_cuenta_docente_directivo_1 gcdd1;
+    Administrar_Docente1 gcdd1;
     GestionarDocente gd;
     DefaultTableModel modelo = new DefaultTableModel();
 
     // Constructor que inicializa la vista y agrega listeners a los botones relevantes
-    public CGestionarD(gestionar_cuenta_docente_directivo_1 gcdd) {
+    public CGestionarD(Administrar_Docente1 gcdd) {
         gcdd1 = gcdd;
         gd = new GestionarDocente();
 
@@ -30,8 +34,8 @@ public class CGestionarD implements ActionListener {
         gcdd1.jbtnEditar.addActionListener(this);
 
         // Configurar el título y hacer visible la vista
-        gcdd1.setTitle("Gestionar Docentes");
-        gcdd1.setVisible(true);
+        //gcdd1.setTitle("Gestionar Docentes");
+        //gcdd1.setVisible(true);
     }
 
     // Método para actualizar la información de un docente

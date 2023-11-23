@@ -4,6 +4,8 @@ import DAO.crudAlumno;
 import Modelo.Alumno;
 import Procesos.ProcesosAlumnos;
 import Vista.lista_estudiantes_directivo_1;
+import VISTA_DIRECTIVO.Estudiante_Lista;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -25,7 +27,7 @@ import javax.swing.text.BadLocationException;
 import java.awt.event.KeyEvent;
 
 public class CListadoAlumDirec implements ActionListener,MouseListener{
-    lista_estudiantes_directivo_1 vista;
+    Estudiante_Lista vista;
     Alumno alumno;
     crudAlumno crudAlumno = new crudAlumno();
     ProcesosAlumnos procesos=new ProcesosAlumnos();
@@ -33,7 +35,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     String numDocAlumno="0";
     int codGradoAlumno=0;
 
-    public CListadoAlumDirec(lista_estudiantes_directivo_1 listaEst) {
+    public CListadoAlumDirec(Estudiante_Lista listaEst) {
         vista=listaEst;
         vista.btnCrearAlumno.addActionListener(this);
         vista.btnModificarAlumno.addActionListener(this);
@@ -44,8 +46,8 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         vista.btnFiltrar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         vista.tblListaAlumnos.addMouseListener(this);
-        listaEst.setTitle("Gestion de Estudiantes");
-        listaEst.setVisible(true);
+        //listaEst.setTitle("Gestion de Estudiantes");
+        //listaEst.setVisible(true);
         //TextFiled del buscador mostrará sugerecias segun se escriba
         ArrayList<String> nombres= crudAlumno.BuscarNombresAlumno();
         procesos.MostrarSugerencias(vista.txtBuscar, nombres);

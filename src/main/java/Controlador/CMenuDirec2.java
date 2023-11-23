@@ -4,15 +4,15 @@ package Controlador;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import Animacion.Animacion;
 import RSMaterialComponent.*;
 import rsbuttom.RSButtonMetro;
 import Modelo.*;
-import Vista.MenuDirec2;
-import Vista.AdministrarCuenta.Principal;
-//import Vista.Asignar.Principal;
-//import Vista.Docente.Principal;
-//import Vista.Estudiantes.Principal;
+import VISTA_DIRECTIVO.Administrar;//importamos las vistas portadas de menu directivo
+import VISTA_DIRECTIVO.Asignar;
+import VISTA_DIRECTIVO.Docente;
+import VISTA_DIRECTIVO.Estudiante;
+import VISTA_DIRECTIVO.MenuDirec2; //importamos la vista del menu del directivo
+import java.awt.BorderLayout;
 
 
 public class CMenuDirec2 implements ActionListener{
@@ -38,8 +38,40 @@ public class CMenuDirec2 implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         if(e.getSource()==vista.btnAdministrarCuentas){//getSource
-            Vista.AdministrarCuenta.Principal admi = new Vista.AdministrarCuenta.Principal();
-            
+            System.out.println("administrar controlador");
+            Administrar adm=new Administrar(); 
+            vista.Principal.removeAll();
+            vista.Principal.setLayout(new BorderLayout());
+            vista.Principal.add(adm.getContentPane(),BorderLayout.CENTER);
+            vista.Principal.revalidate();
+            vista.Principal.repaint();
+        }
+        
+        if(e.getSource()==vista.btnAsignar){
+            Asignar asi=new Asignar();
+            vista.Principal.removeAll();
+            vista.Principal.setLayout(new BorderLayout());
+            vista.Principal.add(asi.getContentPane(),BorderLayout.CENTER);
+            vista.Principal.revalidate();
+            vista.Principal.repaint();
+        }
+        
+        if(e.getSource()==vista.btnDocente){
+            Docente doc=new Docente();
+            vista.Principal.removeAll();
+            vista.Principal.setLayout(new BorderLayout());
+            vista.Principal.add(doc.getContentPane(),BorderLayout.CENTER);
+            vista.Principal.revalidate();
+            vista.Principal.repaint();
+        }
+        
+        if(e.getSource()==vista.btnEstudiantes){
+            Estudiante est=new Estudiante();
+            vista.Principal.removeAll();
+            vista.Principal.setLayout(new BorderLayout());
+            vista.Principal.add(est.getContentPane(),BorderLayout.CENTER);
+            vista.Principal.revalidate();
+            vista.Principal.repaint();
         }
     }
 

@@ -6,7 +6,11 @@ import Modelo.GradoAlumno;
 import Modelo.Tutoria;
 import Procesos.ProcesosAlumnos;
 import Procesos.ProcesosTutoria;
+
+
 import Vista.asignar_tutor_directivo_1;
+import VISTA_DIRECTIVO.Asignar_Tutor;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -25,13 +29,13 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
 public class CAsignarTutoria implements ActionListener,MouseListener{
-    asignar_tutor_directivo_1 vista;
+    Asignar_Tutor vista;
     crudTutoria crudTutoria = new crudTutoria();
     ProcesosTutoria procesos = new ProcesosTutoria();
     ProcesosAlumnos procesosAux = new ProcesosAlumnos();
     String[] registroaModificar={"0","0"};
     
-    public CAsignarTutoria(asignar_tutor_directivo_1 tutoria){
+    public CAsignarTutoria(Asignar_Tutor tutoria){
         vista=tutoria;
         vista.btnBorrar.addActionListener(this);
         vista.btnActualizar.addActionListener(this);

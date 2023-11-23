@@ -2,6 +2,8 @@ package Procesos;
 
 import DAO.crudAlumno;
 import Vista.asignar_tutor_directivo_1;
+import VISTA_DIRECTIVO.Asignar_Tutor;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -16,13 +18,13 @@ public class ProcesosTutoria {
     crudAlumno crudAlumno=new crudAlumno();
     
     
-    public void limpiarCampos(asignar_tutor_directivo_1 frm){
+    public void limpiarCampos(Asignar_Tutor frm){
         frm.txtAnio.setText("");
         frm.cbxTutor.setSelectedIndex(0);
         vaciarChekBox(frm);
     }
     
-    public void vaciarChekBox(asignar_tutor_directivo_1 frm){
+    public void vaciarChekBox(Asignar_Tutor frm){
         JPanel[] paneles={frm.panelInicial,frm.panelPrimaria,frm.panelSecundaria};
         for(JPanel panel: paneles){
             for(Component checkBox: panel.getComponents()){
@@ -35,7 +37,7 @@ public class ProcesosTutoria {
         
     }
     
-    public ArrayList<String> leerDatos(asignar_tutor_directivo_1 frm){
+    public ArrayList<String> leerDatos(Asignar_Tutor frm){
         JPanel[] paneles={frm.panelInicial,frm.panelPrimaria,frm.panelSecundaria};
         ArrayList<String> data = new ArrayList<>();
         if(!frm.txtAnio.getText().isBlank()){
@@ -79,7 +81,7 @@ public class ProcesosTutoria {
         }
     }
     
-    public void cargarGrados(asignar_tutor_directivo_1 frm){
+    public void cargarGrados(Asignar_Tutor frm){
         JPanel[] paneles={frm.panelInicial,frm.panelPrimaria,frm.panelSecundaria};
         String nivel;
         for(JPanel panel:paneles){

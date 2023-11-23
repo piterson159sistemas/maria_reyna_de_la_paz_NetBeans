@@ -3,6 +3,7 @@ package Controlador;
 import DAO.IntoDocentes;
 import Modelo.Usuario;
 import Vista.crear_cuenta_docentes_directivo_1;
+import VISTA_DIRECTIVO.Docente_CrearDocent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
 public class CRegistrarUs implements ActionListener {
 
     Usuario us;
-    crear_cuenta_docentes_directivo_1 v;
+    Docente_CrearDocent v;
     IntoDocentes intd = new IntoDocentes();
     private String nombre; // Variable para almacenar el nombre
 
@@ -23,7 +24,7 @@ public class CRegistrarUs implements ActionListener {
     String matematica, personalsocial, artecultura, comunicacion, cienciassociales, edufisica,
             ingles, religion, computacion, ciudadaniaetica, edutrabajo, cienciatecnologia, psicomotriz;
 
-    public CRegistrarUs(crear_cuenta_docentes_directivo_1 cd) {
+    public CRegistrarUs(Docente_CrearDocent cd) {
         v = cd;
         v.jbtnRegistrar.addActionListener(this);
         v.setTitle("Crear cuenta Docente");
@@ -107,7 +108,7 @@ public class CRegistrarUs implements ActionListener {
         if (v.cb_ingles.isSelected()) {
             areasSeleccionadas.add("6");
         }
-        if (v.cb_CienciaTecnologia.isSelected()) {
+        if (v.cb_psicomotriz.isSelected()) {
             areasSeleccionadas.add("7");
         }
         if (v.cb_computacion.isSelected()) {
