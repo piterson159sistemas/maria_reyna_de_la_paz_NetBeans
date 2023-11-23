@@ -5,16 +5,29 @@
 package VISTA_DIRECTIVO;
 
 //import Animacion.Animacion;
-import Vista.*;
+import static VISTA_DIRECTIVO.MenuDirec2.DISPOSE_ON_CLOSE;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author SARA
  */
 public class MenuDirec2 extends javax.swing.JFrame {
-
+    private void Cerrar(){//METODO PARA QUE PREGUNTE AL INTENTAR CERRAR LA APLICACION
+         String botones[]= {"Cerrar","Cancelar"};
+         int eleccion = JOptionPane.showOptionDialog(this,"¿Desea cerrar la aplicacion?","Titulo",0,0,null,botones,this);
+         if(eleccion==JOptionPane.YES_OPTION){
+             System.exit(0);
+             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         }else if(eleccion==JOptionPane.NO_OPTION){
+             System.out.println("Se cancelo el cierre");
+             setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Evita que la ventana se cierre automáticamente
+         }
+         
+     }
     /**
      * Creates new form MenuDirec
      */
@@ -52,6 +65,11 @@ public class MenuDirec2 extends javax.swing.JFrame {
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
 
@@ -492,6 +510,10 @@ public class MenuDirec2 extends javax.swing.JFrame {
         this.btnAsignar.setSelected(true);
         this.btnEstudiantes.setSelected(false);
     }//GEN-LAST:event_btnAsignarMousePressed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        Cerrar();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
