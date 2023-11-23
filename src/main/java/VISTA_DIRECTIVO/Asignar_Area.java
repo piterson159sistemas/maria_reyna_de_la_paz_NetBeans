@@ -144,7 +144,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER);
         jPanel2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Año");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
@@ -209,15 +209,15 @@ public class Asignar_Area extends javax.swing.JFrame {
         jLabel2.setText("Grado");
         Inicial.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        lblDocenteI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDocenteI.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDocenteI.setForeground(new java.awt.Color(102, 102, 102));
         lblDocenteI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDocenteI.setText("Docente");
         lblDocenteI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblDocenteI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
 
-        lblAreaI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAreaI.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAreaI.setForeground(new java.awt.Color(102, 102, 102));
         lblAreaI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAreaI.setText("Area");
         lblAreaI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
@@ -283,6 +283,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblIni9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblIni9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 370, 30));
 
+        cbxGradoI.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
         cbxGradoI.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxGradoI.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxGradoI.setColorBoton(new java.awt.Color(102, 102, 255));

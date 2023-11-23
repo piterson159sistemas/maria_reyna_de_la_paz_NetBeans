@@ -147,6 +147,8 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Nivel");
 
+        cbxFiltrarNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
+        cbxFiltrarNivel.setSelectedIndex(2);
         cbxFiltrarNivel.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarNivel.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxFiltrarNivel.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -189,6 +191,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Filtro");
 
+        cbxFiltrarGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxFiltrarGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarGrado.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxFiltrarGrado.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -197,6 +200,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         cbxFiltrarGrado.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxFiltrarGrado.setName("cbxFiltrarGrado"); // NOI18N
 
+        cbxFiltrarEstadoGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxFiltrarEstadoGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarEstadoGrado.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxFiltrarEstadoGrado.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -412,6 +416,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         rSPanelMaterial7.setBgShade(new java.awt.Color(255, 255, 255));
         rSPanelMaterial7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        cbxTipoDoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxTipoDoc.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxTipoDoc.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxTipoDoc.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -421,6 +426,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         cbxTipoDoc.setName("cbxTipoDoc"); // NOI18N
         rSPanelMaterial7.add(cbxTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 139, -1));
 
+        cbxGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxGrado.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxGrado.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -434,7 +440,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtApellidoP.setBorderColor(new java.awt.Color(0, 51, 102));
         txtApellidoP.setCaretColor(new java.awt.Color(0, 51, 102));
         txtApellidoP.setName("txtApellidoP"); // NOI18N
-        txtApellidoP.setPhColor(new java.awt.Color(102, 102, 102));
+        txtApellidoP.setPhColor(new java.awt.Color(255, 255, 255));
         txtApellidoP.setPlaceholder("Apellido Paterno");
         rSPanelMaterial7.add(txtApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 134, 30));
 
@@ -442,10 +448,11 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtApellidoM.setBorderColor(new java.awt.Color(0, 51, 102));
         txtApellidoM.setCaretColor(new java.awt.Color(0, 51, 102));
         txtApellidoM.setName("txtApellidoM"); // NOI18N
-        txtApellidoM.setPhColor(new java.awt.Color(102, 102, 102));
+        txtApellidoM.setPhColor(new java.awt.Color(255, 255, 255));
         txtApellidoM.setPlaceholder("Apellido Materno");
         rSPanelMaterial7.add(txtApellidoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 141, 30));
 
+        cbxNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxNivel.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxNivel.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxNivel.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -459,10 +466,11 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtNumDoc.setBorderColor(new java.awt.Color(0, 51, 102));
         txtNumDoc.setCaretColor(new java.awt.Color(0, 51, 102));
         txtNumDoc.setName("txtNumDoc"); // NOI18N
-        txtNumDoc.setPhColor(new java.awt.Color(102, 102, 102));
+        txtNumDoc.setPhColor(new java.awt.Color(255, 255, 255));
         txtNumDoc.setPlaceholder("Número de Documento");
         rSPanelMaterial7.add(txtNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 180, 30));
 
+        cbxEstadoGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxEstadoGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxEstadoGrado.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxEstadoGrado.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -476,7 +484,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtAnio.setBorderColor(new java.awt.Color(0, 51, 102));
         txtAnio.setCaretColor(new java.awt.Color(0, 51, 102));
         txtAnio.setName("txtAnio"); // NOI18N
-        txtAnio.setPhColor(new java.awt.Color(102, 102, 102));
+        txtAnio.setPhColor(new java.awt.Color(255, 255, 255));
         txtAnio.setPlaceholder("Año");
         rSPanelMaterial7.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 322, 70, 30));
 
@@ -498,57 +506,57 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         btnLimpiar.setName("btnLimpiar"); // NOI18N
         rSPanelMaterial7.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
 
-        lblNombres.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNombres.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNombres.setForeground(new java.awt.Color(102, 102, 102));
         lblNombres.setText("Nombres");
         rSPanelMaterial7.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        lblApellidoP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblApellidoP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblApellidoP.setForeground(new java.awt.Color(102, 102, 102));
         lblApellidoP.setText("Apellido Paterno");
         rSPanelMaterial7.add(lblApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
-        lblApellidoM.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblApellidoM.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblApellidoM.setForeground(new java.awt.Color(102, 102, 102));
         lblApellidoM.setText("Apellido Materno");
         rSPanelMaterial7.add(lblApellidoM, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
 
-        lblTipoDoc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTipoDoc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblTipoDoc.setForeground(new java.awt.Color(102, 102, 102));
         lblTipoDoc.setText("Tipo de Documento");
         rSPanelMaterial7.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
-        lblNumDoc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNumDoc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNumDoc.setForeground(new java.awt.Color(102, 102, 102));
         lblNumDoc.setText("Número de Documento");
         rSPanelMaterial7.add(lblNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
-        lblAnio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblAnio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblAnio.setForeground(new java.awt.Color(102, 102, 102));
         lblAnio.setText("Año");
-        rSPanelMaterial7.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, 10));
+        rSPanelMaterial7.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, -1, 20));
 
-        lblGradro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblGradro.setForeground(new java.awt.Color(102, 102, 102));
         lblGradro.setText("Grado");
         rSPanelMaterial7.add(lblGradro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
-        lblEstado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblEstado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(102, 102, 102));
         lblEstado.setText("Estado");
         rSPanelMaterial7.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(102, 102, 102));
         jLabel26.setText("Modificar");
         rSPanelMaterial7.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(102, 102, 102));
         jLabel28.setText("Agregar");
         rSPanelMaterial7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(102, 102, 102));
         jLabel29.setText("Limpiar");
         rSPanelMaterial7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
@@ -557,7 +565,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtNombres.setBorderColor(new java.awt.Color(0, 51, 102));
         txtNombres.setCaretColor(new java.awt.Color(0, 51, 102));
         txtNombres.setName("txtNombres"); // NOI18N
-        txtNombres.setPhColor(new java.awt.Color(102, 102, 102));
+        txtNombres.setPhColor(new java.awt.Color(255, 255, 255));
         txtNombres.setPlaceholder("Nombres");
         txtNombres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -584,7 +592,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         btnModificar.setName("btnModificar"); // NOI18N
         rSPanelMaterial7.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(102, 102, 102));
         jLabel30.setText("Modificar");
         rSPanelMaterial7.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
@@ -595,7 +603,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         btnInsertar.setName("btnInsertar"); // NOI18N
         rSPanelMaterial7.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
-        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 102, 102));
         jLabel31.setText("Agregar");
         rSPanelMaterial7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
@@ -611,7 +619,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         jLabel32.setText("Eliminar");
         rSPanelMaterial7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
 
-        lblNivel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNivel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNivel1.setForeground(new java.awt.Color(102, 102, 102));
         lblNivel1.setText("Nivel");
         rSPanelMaterial7.add(lblNivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));

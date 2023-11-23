@@ -85,136 +85,82 @@ public class Estudiante_Asistencia extends javax.swing.JFrame {
 
         rSPanelMaterial3.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterial3.setBgShade(new java.awt.Color(255, 255, 255));
+        rSPanelMaterial3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Grado");
+        rSPanelMaterial3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
+        rSComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
         rSComboBox1.setColorArrow(new java.awt.Color(153, 153, 255));
         rSComboBox1.setColorBorde(new java.awt.Color(58, 66, 225));
         rSComboBox1.setColorBoton(new java.awt.Color(102, 102, 255));
         rSComboBox1.setColorFondo(new java.awt.Color(102, 102, 255));
         rSComboBox1.setColorListaItems(new java.awt.Color(204, 204, 204));
         rSComboBox1.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(rSComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 29, 210, -1));
 
         rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
         rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
         rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
+        rSPanelMaterial3.add(rSButtonIconShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
 
         rSButtonIconShadow2.setBackground(new java.awt.Color(255, 102, 102));
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
         rSButtonIconShadow2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
+        rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
 
         rSButtonIconShadow3.setBackground(new java.awt.Color(255, 153, 51));
         rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(145, 72, 0));
         rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.COMMENT);
+        rSPanelMaterial3.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Bimestre");
+        rSPanelMaterial3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 73, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Área");
+        rSPanelMaterial3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 140, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Exportar a PDF");
+        rSPanelMaterial3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("Resumen del Bimestre");
+        rSPanelMaterial3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Filtro");
+        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
+        rSComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
         rSComboBox2.setColorArrow(new java.awt.Color(153, 153, 255));
         rSComboBox2.setColorBorde(new java.awt.Color(58, 66, 225));
         rSComboBox2.setColorBoton(new java.awt.Color(102, 102, 255));
         rSComboBox2.setColorFondo(new java.awt.Color(102, 102, 255));
         rSComboBox2.setColorListaItems(new java.awt.Color(204, 204, 204));
         rSComboBox2.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(rSComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 96, 210, -1));
 
+        rSComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
         rSComboBox3.setColorArrow(new java.awt.Color(153, 153, 255));
         rSComboBox3.setColorBorde(new java.awt.Color(58, 66, 225));
         rSComboBox3.setColorBoton(new java.awt.Color(102, 102, 255));
         rSComboBox3.setColorFondo(new java.awt.Color(102, 102, 255));
         rSComboBox3.setColorListaItems(new java.awt.Color(204, 204, 204));
         rSComboBox3.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(rSComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 163, 210, -1));
 
-        javax.swing.GroupLayout rSPanelMaterial3Layout = new javax.swing.GroupLayout(rSPanelMaterial3);
-        rSPanelMaterial3.setLayout(rSPanelMaterial3Layout);
-        rSPanelMaterial3Layout.setHorizontalGroup(
-            rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(177, 177, 177))
-            .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial3Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial3Layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial3Layout.createSequentialGroup()
-                            .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        rSPanelMaterial3Layout.setVerticalGroup(
-            rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel9)))
-                .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)))
-                .addGroup(rSPanelMaterial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelMaterial3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel8)))
-                .addContainerGap())
-        );
-
-        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 420));
+        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 420));
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -238,7 +184,14 @@ public class Estudiante_Asistencia extends javax.swing.JFrame {
         });
         rSTableMetroCustom1.setBackgoundHead(new java.awt.Color(102, 102, 255));
         rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        rSTableMetroCustom1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        rSTableMetroCustom1.setFontHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rSTableMetroCustom1.setFontRowHover(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rSTableMetroCustom1.setFontRowSelect(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jScrollPane1.setViewportView(rSTableMetroCustom1);
+        if (rSTableMetroCustom1.getColumnModel().getColumnCount() > 0) {
+            rSTableMetroCustom1.getColumnModel().getColumn(1).setPreferredWidth(500);
+        }
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 910, 410));
 

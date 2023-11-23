@@ -95,7 +95,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER_SHARED);
         jPanel2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Año");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
@@ -107,7 +107,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         txtAnio.setPlaceholder("Año");
         jPanel2.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Tutor");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
@@ -120,7 +120,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         cbxTutor.setColorSeleccion(new java.awt.Color(102, 102, 255));
         jPanel2.add(cbxTutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Grados Asignados");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
@@ -144,7 +144,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 250, 190));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Profesores Encargados");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
@@ -213,7 +213,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         panelInicial.setBackground(new java.awt.Color(249, 249, 249));
         panelInicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Inicial: ");
         panelInicial.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -221,21 +221,18 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         Ini3.setForeground(new java.awt.Color(0, 51, 102));
         Ini3.setText("3 Añitos");
         Ini3.setColorCheck(new java.awt.Color(102, 102, 255));
-        Ini3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ini3.setName("Ini3"); // NOI18N
         panelInicial.add(Ini3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 110, -1));
 
         Ini4.setForeground(new java.awt.Color(0, 51, 102));
         Ini4.setText("4 Añitos");
         Ini4.setColorCheck(new java.awt.Color(102, 102, 255));
-        Ini4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ini4.setName("Ini4"); // NOI18N
         panelInicial.add(Ini4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 110, -1));
 
         Ini5.setForeground(new java.awt.Color(0, 51, 102));
         Ini5.setText("5 Añitos");
         Ini5.setColorCheck(new java.awt.Color(102, 102, 255));
-        Ini5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ini5.setName("Ini5"); // NOI18N
         panelInicial.add(Ini5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 110, -1));
 
@@ -247,46 +244,40 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         Pri6.setForeground(new java.awt.Color(0, 51, 102));
         Pri6.setText("6to Grado");
         Pri6.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri6.setName("Pri6"); // NOI18N
         panelPrimaria.add(Pri6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, -1));
 
         Pri5.setForeground(new java.awt.Color(0, 51, 102));
         Pri5.setText("5to Grado");
         Pri5.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri5.setName("Pri5"); // NOI18N
         panelPrimaria.add(Pri5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 120, -1));
 
         Pri4.setForeground(new java.awt.Color(0, 51, 102));
         Pri4.setText("4to Grado");
         Pri4.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri4.setName("Pri4"); // NOI18N
         panelPrimaria.add(Pri4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 120, -1));
 
         Pri3.setForeground(new java.awt.Color(0, 51, 102));
         Pri3.setText("3er Grado");
         Pri3.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri3.setName("Pri3"); // NOI18N
         panelPrimaria.add(Pri3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 120, -1));
 
         Pri2.setForeground(new java.awt.Color(0, 51, 102));
         Pri2.setText("2do Grado");
         Pri2.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri2.setName("Pri2"); // NOI18N
         panelPrimaria.add(Pri2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 120, -1));
 
         Pri1.setForeground(new java.awt.Color(0, 51, 102));
         Pri1.setText("1er Grado");
         Pri1.setColorCheck(new java.awt.Color(102, 102, 255));
-        Pri1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Pri1.setName("Pri1"); // NOI18N
         panelPrimaria.add(Pri1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 120, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Primaria:");
         panelPrimaria.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -296,7 +287,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         panelSecundaria.setBackground(new java.awt.Color(249, 249, 249));
         panelSecundaria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Secundaria:");
         panelSecundaria.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
@@ -304,35 +295,30 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         Sec1.setForeground(new java.awt.Color(0, 51, 102));
         Sec1.setText("1er Año");
         Sec1.setColorCheck(new java.awt.Color(102, 102, 255));
-        Sec1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Sec1.setName("Sec1"); // NOI18N
         panelSecundaria.add(Sec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 110, -1));
 
         Sec2.setForeground(new java.awt.Color(0, 51, 102));
         Sec2.setText("2do Año");
         Sec2.setColorCheck(new java.awt.Color(102, 102, 255));
-        Sec2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Sec2.setName("Sec2"); // NOI18N
         panelSecundaria.add(Sec2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 110, -1));
 
         Sec3.setForeground(new java.awt.Color(0, 51, 102));
         Sec3.setText("3er Año");
         Sec3.setColorCheck(new java.awt.Color(102, 102, 255));
-        Sec3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Sec3.setName("Sec3"); // NOI18N
         panelSecundaria.add(Sec3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 110, -1));
 
         Sec4.setForeground(new java.awt.Color(0, 51, 102));
         Sec4.setText("4to Año");
         Sec4.setColorCheck(new java.awt.Color(102, 102, 255));
-        Sec4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Sec4.setName("Sec4"); // NOI18N
         panelSecundaria.add(Sec4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 110, -1));
 
         Sec5.setForeground(new java.awt.Color(0, 51, 102));
         Sec5.setText("5to Año");
         Sec5.setColorCheck(new java.awt.Color(102, 102, 255));
-        Sec5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Sec5.setName("Sec5"); // NOI18N
         panelSecundaria.add(Sec5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 110, -1));
 

@@ -109,6 +109,10 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
         });
         tbl_GD.setBackgoundHead(new java.awt.Color(102, 102, 255));
         tbl_GD.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        tbl_GD.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        tbl_GD.setFontHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tbl_GD.setFontRowHover(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        tbl_GD.setFontRowSelect(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         tbl_GD.setName("tbl_GD"); // NOI18N
         jScrollPane1.setViewportView(tbl_GD);
 
