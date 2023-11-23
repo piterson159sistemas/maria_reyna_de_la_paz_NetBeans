@@ -165,8 +165,22 @@ public class IntoDocentes {
             return "Error al insertar área para el docente: " + e.getMessage();
         }
     }
+    
+    public String obtenerNomCompletoUser(String codUsuario){
+        String sqlST="select CONCAT(Nombres, ' ', Apellido_P, ' ', Apellido_M)"
+                + " as user from usuario where Codigo_Usuario like '"+codUsuario+"';";
+        try {
+            Conexion con= new Conexion();
+            Connection cn = con.conectar();
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            
+            if(con.rs.next()){
+                return con.rs.getString(1);
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
-
-
-
-
+    
+}

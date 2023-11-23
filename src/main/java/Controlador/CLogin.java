@@ -42,11 +42,13 @@ public class CLogin implements ActionListener {
                 if (tipoUsuario.equals("DIRECTOR")) {
                     vista.dispose();
                     MenuDirec2 menuD = new MenuDirec2();
-                    CMenuDirec2 cMenuD = new CMenuDirec2(menuD);
+                    //paasamo el codigo de usuario al contralador para que el menu de inicio lo muestre 
+                    CMenuDirec2 cMenuD = new CMenuDirec2(menuD,user.getCodigo());
                     
-                    //Menu anterior para mostrar luego la funcionalidad
+                    //Menu anterior por si se necesitara mostrar
                     //MenuDirec menuD1 = new MenuDirec();
                     //CMenuDirec cMenuD1 = new CMenuDirec(menuD1);
+                    
                 } else {
                     vista.dispose();
                     MenuDocente menuProfe = new MenuDocente();

@@ -22,7 +22,7 @@ public class Main {
         login.txtClave.setText("raul");
         login.btnIngresar.doClick();
         */
-        
+            
     }
     
 }
