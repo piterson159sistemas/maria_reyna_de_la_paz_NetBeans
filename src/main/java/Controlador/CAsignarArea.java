@@ -122,10 +122,10 @@ public class CAsignarArea implements ActionListener,MouseListener {
                     procesos.cargarDocentes(((JComboBox)componentes[i][1]), "I",0);
                 }
                 if(i==18){
-                    ((JLabel)componentes[i][0]).setText("<html>Educacion para<br>el trabajo</html>");
+                    ((JLabel)componentes[i][0]).setText("Educacion para el trabajo");
                     codArea=12;
                 }else if(i==20){
-                    ((JLabel)componentes[i][0]).setText("<html>Desarrollo Personal,<br>Ciudadania y Civica</html>");
+                    ((JLabel)componentes[i][0]).setText("Desarrollo Personal,Ciudadania y Civica");
                     codArea=10;
                 }else{
                     ((JLabel)componentes[i][0]).setText(nombresAreas.get(j));
