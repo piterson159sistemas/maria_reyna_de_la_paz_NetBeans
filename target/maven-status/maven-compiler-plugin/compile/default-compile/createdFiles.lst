@@ -3,6 +3,7 @@ VISTA_DIRECTIVO\Docente_CrearDocent$1.class
 VISTA_DOCENTE\Tutor$2.class
 Vista\Registrar_Conducta.class
 VISTA_DIRECTIVO\Administrar_Tutor1.class
+Controlador\CAlumnoNotas$3.class
 Modelo\Modificable.class
 Vista\Registrar_Conducta$2.class
 Vista\recopilar_codigo_cambioContraseña$1.class
@@ -17,8 +18,8 @@ Modelo\Competencia.class
 Controlador\CAsignarTutoria$1.class
 VISTA_DOCENTE\Tutor_VerAsistencia$1.class
 VISTA_DOCENTE\MenuDocen$5.class
+Procesos\ProcesosAlumnos$2.class
 Vista\gestionar_tutor_directivo_1$2.class
-Controlador\CListadoAlumDirec$4.class
 VISTA_DIRECTIVO\MenuDirec2$4.class
 VISTA_DIRECTIVO\Asignar_Area$3.class
 Vista\MenuDocente$3.class
@@ -28,6 +29,7 @@ VISTA_DIRECTIVO\plantilla_noborrar$1.class
 DAO\BuscarPYcambioC.class
 VISTA_DOCENTE\Registrar_Notas.class
 Vista\recopilar_codigo_cambioContraseña$6.class
+Procesos\ProcesosAlumnos$3.class
 Vista\MenuDocente$7.class
 Vista\asignar_area_directivo_1$1.class
 VISTA_DIRECTIVO\Docente$1.class
@@ -69,6 +71,7 @@ VISTA_DIRECTIVO\Docente_CrearDocent$2.class
 Vista\asignar_area_directivo_1$2.class
 Modelo\Tutoria.class
 Vista\Registrar_TIC$1.class
+Procesos\procesosAlumnoNotas.class
 Controlador\CCambioContraseñaYRecopilasCodigo.class
 VISTA_DOCENTE\Tutor_RegistrarTic$1.class
 Controlador\CAsignarArea.class
@@ -128,6 +131,7 @@ VISTA_DIRECTIVO\Estudiante_Asistencia.class
 Vista\MenuDirec$6.class
 Modelo\Docente.class
 Modelo\Horario.class
+Controlador\CAlumnoNotas$1.class
 VISTA_DIRECTIVO\MenuDirec2$7.class
 Controlador\CAsignarArea$3.class
 Controlador\CListadoAlumDirec$2.class
@@ -161,6 +165,7 @@ Vista\Registrar_Notas.class
 Controlador\CAsignarTutoria$3.class
 Modelo\Calificacion.class
 Vista\crear_cuenta_docentes_directivo_1$3.class
+Procesos\ProcesosAlumnos$1.class
 VISTA_DIRECTIVO\Administrar_Docente1.class
 VISTA_DOCENTE\MenuDocen$4.class
 Vista\crear_cuenta_docentes_directivo_1$2.class
@@ -171,12 +176,14 @@ VISTA_DIRECTIVO\Estudiante_Lista$1.class
 Vista\asignar_tutor_directivo_1.class
 VISTA_DOCENTE\Tutor.class
 Modelo\Usuario.class
+DAO\crudAlumnoNotas.class
 VISTA_DIRECTIVO\Estudiante$1.class
 Vista\MenuDocente$6.class
 VISTA_DIRECTIVO\Administrar_Docente1$2.class
 Procesos\ProcesosAlumnos.class
 Vista\recopilar_codigo_cambioContraseña$5.class
 Procesos\ImgRender.class
+Controlador\CAlumnoNotas$2.class
 Main\Main.class
 Vista\recopilar_codigo_cambioContraseña$2.class
 Vista\recopilar_codigo_cambioContraseña$3.class
@@ -187,6 +194,7 @@ Vista\AdministrarCuenta\tabContent2.class
 DAO\IntoDocentes.class
 VISTA_DIRECTIVO\Estudiante_Notas.class
 Vista\MenuDocente.class
+Controlador\CAlumnoNotas.class
 Vista\AdministrarCuenta\tabContent2$1.class
 Vista\gestionar_cuenta_docente_directivo_1.class
 Vista\crear_cuenta_docentes_directivo_1.class
