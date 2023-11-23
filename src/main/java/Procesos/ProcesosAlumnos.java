@@ -1,8 +1,11 @@
 
 package Procesos;
 import DAO.crudAlumno;
+import DAO.crudAlumnoNotas;
 import Vista.lista_estudiantes_directivo_1;
 import VISTA_DIRECTIVO.Estudiante_Lista;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Queue;
@@ -21,6 +24,8 @@ import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 public class ProcesosAlumnos {
     crudAlumno crudA=new crudAlumno();
     String none="..."; // los "..." indica ningun elemento seleccionado
+    crudAlumnoNotas crudAux = new crudAlumnoNotas();
+    procesosAlumnoNotas procesosAux = new procesosAlumnoNotas();
     
     public ArrayList<String> leerAlumno(Estudiante_Lista led){
         
@@ -162,6 +167,69 @@ public class ProcesosAlumnos {
         cbxNiveles.addItem(none);
         cbxGrados.removeAllItems();
         cbxGrados.addItem(none);
+    }
+    
+        /* Metodo para cargar los comboBox Nivel y Grado de forma enlazada, es decir,
+    segun que Nivel se escoge se muestra los grados enlazados(pertenecientes)
+    a ese nivel */
+    public void CargarCombosEnlazados(JComboBox cbxNivel,JComboBox cbxGrado){ 
+        
+        /*Usamos un ItemListener en el comboBox Nivel para mostrar los grados
+        correspondientes al Nivel que se seleccione*/
+        cbxNivel.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getStateChange()==ItemEvent.SELECTED){
+                    String nivelSelect = cbxNivel.getSelectedItem().toString();
+                    
+                    // remueve todos los grados del anterior nivel seleccionado
+                    cbxGrado.removeAllItems();
+                    //cargamos los grados del actual el nivel seleccionado
+                    cargarGrados(cbxGrado, nivelSelect);
+                }
+            }
+        });
+    }
+    public void CargarCombosEnlazadosAreas(JComboBox cbxArea,JComboBox cbxComp){ 
+        
+        /*Usamos un ItemListener en el comboBox Nivel para mostrar los grados
+        correspondientes al Nivel que se seleccione*/
+        cbxArea.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getStateChange()==ItemEvent.SELECTED){
+                    String areaSelect = cbxArea.getSelectedItem().toString();
+                    
+                    // remueve todos los grados del anterior nivel seleccionado
+                    cbxComp.removeAllItems();
+                    //cargamos las competencias de determinada area
+                    ArrayList<String> competencias=crudAux.buscarCompetencias(areaSelect);
+                    procesosAux.cargarCombo(cbxComp, competencias);
+                }
+            }
+        });
+    }
+    
+    public void CargarCombosEnlazados(JComboBox cbxNivel,JComboBox cbxGrado,JComboBox cbxArea){ 
+        
+        /*Usamos un ItemListener en el comboBox Nivel para mostrar los grados
+        correspondientes al Nivel que se seleccione*/
+        cbxNivel.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getStateChange()==ItemEvent.SELECTED){
+                    String nivelSelect = cbxNivel.getSelectedItem().toString();
+                    
+                    // remueve todos los grados del anterior nivel seleccionado
+                    cbxGrado.removeAllItems();
+                    //cargamos los grados del actual el nivel seleccionado
+                    cargarGrados(cbxGrado, nivelSelect);
+                    ArrayList<String> areas=crudAux.buscarAreas(nivelSelect);
+                    procesosAux.cargarCombo(cbxArea, areas);
+                    
+                }
+            }
+        });
     }
     
     public void InfoGradoDefault(JComponent[] elementos){

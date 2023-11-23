@@ -72,9 +72,9 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         
         ActualizarLista();
         //Combos para filtrar
-        CargarCombosEnlazados(vista.cbxFiltrarNivel,vista.cbxFiltrarGrado);
+        procesos.CargarCombosEnlazados(vista.cbxFiltrarNivel,vista.cbxFiltrarGrado);
         //combos para ver y modificar datos de Alumno
-        CargarCombosEnlazados(vista.cbxNivel,vista.cbxGrado);
+        procesos.CargarCombosEnlazados(vista.cbxNivel,vista.cbxGrado);
     }
 
     
@@ -226,28 +226,6 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
             }
         });
         
-    }
-    
-    /* Metodo para cargar los comboBox Nivel y Grado de forma enlazada, es decir,
-    segun que Nivel se escoge se muestra los grados enlazados(pertenecientes)
-    a ese nivel */
-    public void CargarCombosEnlazados(JComboBox cbxNivel,JComboBox cbxGrado){ 
-        
-        /*Usamos un ItemListener en el comboBox Nivel para mostrar los grados
-        correspondientes al Nivel que se seleccione*/
-        cbxNivel.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if(e.getStateChange()==ItemEvent.SELECTED){
-                    String nivelSelect = cbxNivel.getSelectedItem().toString();
-                    
-                    // remueve todos los grados del anterior nivel seleccionado
-                    cbxGrado.removeAllItems();
-                    //cargamos los grados del actual el nivel seleccionado
-                    procesos.cargarGrados(cbxGrado, nivelSelect);
-                }
-            }
-        });
     }
     
     // FUNCIONALIDAD BOTONES
