@@ -2,6 +2,7 @@ package Controlador;
 import VISTA_INICIARSESION.login;
 import VISTA_DIRECTIVO.MenuDirec2;
 import Vista.MenuDocente;
+import VISTA_DOCENTE.MenuDocen;
 import VISTA_CAMBIARCONTRA.CambiarContraseña;
 import Modelo.Usuario;
 import DAO.QueryLogin;
@@ -51,8 +52,8 @@ public class CLogin implements ActionListener {
                     
                 } else {
                     vista.dispose();
-                    MenuDocente menuProfe = new MenuDocente();
-                    CMenuDocente cMenuProfe = new CMenuDocente(menuProfe);
+                    MenuDocen menuProfe = new MenuDocen();
+                    CMenuDocente cMenuP = new CMenuDocente(menuProfe, tipoUsuario);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Código/Contraseña incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);

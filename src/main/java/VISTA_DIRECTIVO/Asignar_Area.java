@@ -213,21 +213,21 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxComputacionI.setName("cb_AsignarArea_areas"); // NOI18N
         Inicial.add(cbxComputacionI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 200, 30));
 
-        lblDocenteI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblDocenteI.setForeground(new java.awt.Color(102, 102, 102));
+        lblDocenteI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteI.setForeground(new java.awt.Color(0, 0, 0));
         lblDocenteI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDocenteI.setText("Docente");
         lblDocenteI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblDocenteI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
 
-        lblAreaI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblAreaI.setForeground(new java.awt.Color(102, 102, 102));
+        lblAreaI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaI.setForeground(new java.awt.Color(0, 0, 0));
         lblAreaI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAreaI.setText("Area");
         lblAreaI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblAreaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
 
-        lblGradoI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradoI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblGradoI.setForeground(new java.awt.Color(102, 102, 102));
         lblGradoI.setText("Grado");
         Inicial.add(lblGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
@@ -292,19 +292,6 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblIni9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblIni9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 370, 30));
 
-<<<<<<< HEAD
-        cbxGradoI.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
-        cbxGradoI.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxGradoI.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxGradoI.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxGradoI.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxGradoI.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxGradoI.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxGradoI.setName("cb_AsignarArea_areas"); // NOI18N
-        Inicial.add(cbxGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
-
-=======
->>>>>>> 5e918e60232b0170d66d05ce8ebeb086f0bc17db
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -789,7 +776,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         btnLimpiar.setName("btnLimpiar"); // NOI18N
         jPanel2.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(102, 102, 102));
         jLabel29.setText("Limpiar");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
