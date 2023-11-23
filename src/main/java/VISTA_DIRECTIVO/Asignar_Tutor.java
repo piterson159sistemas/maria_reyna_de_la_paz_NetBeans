@@ -95,7 +95,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER_SHARED);
         jPanel2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Año");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
@@ -107,7 +107,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         txtAnio.setPlaceholder("Año");
         jPanel2.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Tutor");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
@@ -120,7 +120,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
         cbxTutor.setColorSeleccion(new java.awt.Color(102, 102, 255));
         jPanel2.add(cbxTutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Grados Asignados");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
@@ -144,7 +144,7 @@ public class Asignar_Tutor extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 250, 190));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Profesores Encargados");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
@@ -323,17 +323,17 @@ public class Asignar_Tutor extends javax.swing.JFrame {
 
         jPanel2.add(panelSecundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 110, 230));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Inicial");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Primaria");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Secundaria");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));

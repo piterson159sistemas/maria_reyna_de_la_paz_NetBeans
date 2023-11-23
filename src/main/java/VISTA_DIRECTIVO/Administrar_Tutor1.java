@@ -88,7 +88,7 @@ public class Administrar_Tutor1 extends javax.swing.JFrame {
         txt_GestionarTutor_grado_1.setPlaceholder("Grado");
         jPanel2.add(txt_GestionarTutor_grado_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Grado");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));

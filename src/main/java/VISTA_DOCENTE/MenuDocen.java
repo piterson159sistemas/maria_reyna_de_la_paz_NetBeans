@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VISTA_DIRECTIVO;
+package VISTA_DOCENTE;
 
-//import Animacion.Animacion;
-import static VISTA_DIRECTIVO.MenuDirec2.DISPOSE_ON_CLOSE;
+
+import VISTA_DIRECTIVO.*;
+//import static VISTA_DOCENTE.MenuDocen.DISPOSE_ON_CLOSE;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author SARA
  */
-public class MenuDirec2 extends javax.swing.JFrame {
+public class MenuDocen extends javax.swing.JFrame {
     private void Cerrar(){//METODO PARA QUE PREGUNTE AL INTENTAR CERRAR LA APLICACION
          String botones[]= {"Cerrar","Cancelar"};
          int eleccion = JOptionPane.showOptionDialog(this,"¿Desea cerrar la aplicacion?","Titulo",0,0,null,botones,this);
@@ -31,7 +32,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
     /**
      * Creates new form MenuDirec
      */
-    public MenuDirec2() {
+    public MenuDocen() {
         initComponents();
         //this.pnlSlider.setPanelNormal(this.bienvenida);
         //setSize(1500,800);
@@ -58,10 +59,8 @@ public class MenuDirec2 extends javax.swing.JFrame {
         imagenPerfil = new RSMaterialComponent.RSPanelBorderImage();
         lblNombreUsuario = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        btnAdministrarCuentas = new rsbuttom.RSButtonMetro();
-        btnDocente = new rsbuttom.RSButtonMetro();
-        btnEstudiantes = new rsbuttom.RSButtonMetro();
-        btnAsignar = new rsbuttom.RSButtonMetro();
+        btnRegistrar = new rsbuttom.RSButtonMetro();
+        btnTutor = new rsbuttom.RSButtonMetro();
         Principal = new RSMaterialComponent.RSPanelMaterial();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
 
@@ -144,75 +143,39 @@ public class MenuDirec2 extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
 
-        btnAdministrarCuentas.setBackground(new java.awt.Color(153, 153, 153));
-        btnAdministrarCuentas.setText("ADMINISTRAR CUENTAS");
-        btnAdministrarCuentas.setColorHover(new java.awt.Color(51, 102, 255));
-        btnAdministrarCuentas.setColorNormal(new java.awt.Color(153, 153, 153));
-        btnAdministrarCuentas.setColorPressed(new java.awt.Color(0, 102, 204));
-        btnAdministrarCuentas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnAdministrarCuentas.setIconTextGap(10);
-        btnAdministrarCuentas.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRegistrar.setBackground(new java.awt.Color(153, 153, 153));
+        btnRegistrar.setText("REGISTRAR");
+        btnRegistrar.setColorHover(new java.awt.Color(51, 102, 255));
+        btnRegistrar.setColorNormal(new java.awt.Color(153, 153, 153));
+        btnRegistrar.setColorPressed(new java.awt.Color(0, 102, 204));
+        btnRegistrar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnRegistrar.setIconTextGap(10);
+        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAdministrarCuentasMousePressed(evt);
+                btnRegistrarMousePressed(evt);
             }
         });
-        btnAdministrarCuentas.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdministrarCuentasActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
-        btnDocente.setBackground(new java.awt.Color(153, 153, 153));
-        btnDocente.setText("DOCENTE");
-        btnDocente.setColorHover(new java.awt.Color(51, 102, 255));
-        btnDocente.setColorNormal(new java.awt.Color(153, 153, 153));
-        btnDocente.setColorPressed(new java.awt.Color(0, 102, 204));
-        btnDocente.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnDocente.setIconTextGap(10);
-        btnDocente.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnTutor.setBackground(new java.awt.Color(153, 153, 153));
+        btnTutor.setText("TUTOR");
+        btnTutor.setColorHover(new java.awt.Color(51, 102, 255));
+        btnTutor.setColorNormal(new java.awt.Color(153, 153, 153));
+        btnTutor.setColorPressed(new java.awt.Color(0, 102, 204));
+        btnTutor.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnTutor.setIconTextGap(10);
+        btnTutor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnDocenteMousePressed(evt);
+                btnTutorMousePressed(evt);
             }
         });
-        btnDocente.addActionListener(new java.awt.event.ActionListener() {
+        btnTutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDocenteActionPerformed(evt);
-            }
-        });
-
-        btnEstudiantes.setBackground(new java.awt.Color(153, 153, 153));
-        btnEstudiantes.setText("ESTUDIANTES");
-        btnEstudiantes.setColorHover(new java.awt.Color(51, 102, 255));
-        btnEstudiantes.setColorNormal(new java.awt.Color(153, 153, 153));
-        btnEstudiantes.setColorPressed(new java.awt.Color(0, 102, 204));
-        btnEstudiantes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnEstudiantes.setIconTextGap(10);
-        btnEstudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnEstudiantesMousePressed(evt);
-            }
-        });
-        btnEstudiantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEstudiantesActionPerformed(evt);
-            }
-        });
-
-        btnAsignar.setBackground(new java.awt.Color(153, 153, 153));
-        btnAsignar.setText("ASIGNAR");
-        btnAsignar.setColorHover(new java.awt.Color(51, 102, 255));
-        btnAsignar.setColorNormal(new java.awt.Color(153, 153, 153));
-        btnAsignar.setColorPressed(new java.awt.Color(0, 102, 204));
-        btnAsignar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnAsignar.setIconTextGap(10);
-        btnAsignar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAsignarMousePressed(evt);
-            }
-        });
-        btnAsignar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAsignarActionPerformed(evt);
+                btnTutorActionPerformed(evt);
             }
         });
 
@@ -220,23 +183,17 @@ public class MenuDirec2 extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAdministrarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnDocente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAsignar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+            .addComponent(btnTutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAdministrarCuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAsignar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addComponent(btnTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
@@ -325,7 +282,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAdministrarCuentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarCuentasActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         //System.out.println("administrar vista");
         /*Administrar adm=new Administrar(); //aqui instanciamos la vista
         //en esta linea instanciar su controlador
@@ -336,40 +293,33 @@ public class MenuDirec2 extends javax.swing.JFrame {
         Principal.revalidate();
         Principal.repaint();*/
         
-        if(this.btnAdministrarCuentas.isSelected()){
-            this.btnAdministrarCuentas.setSelected(true);
-            this.btnDocente.setSelected(false);
-            this.btnEstudiantes.setSelected(false);
-            this.btnAsignar.setSelected(false);
+        if(this.btnRegistrar.isSelected()){
+            this.btnRegistrar.setSelected(true);
+            this.btnTutor.setSelected(false);
+            
             
             //this.pnlSlider.setPanelNormal(this.pnlAdministrar);
         }
         
-        if(this.btnAdministrarCuentas.isSelected()){
-            this.btnAdministrarCuentas.setColorNormal(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorHover(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorPressed(new Color(0,102,204));
+        if(this.btnRegistrar.isSelected()){
+            this.btnRegistrar.setColorNormal(new Color(0,102,204));
+            this.btnRegistrar.setColorHover(new Color(0,102,204));
+            this.btnRegistrar.setColorPressed(new Color(0,102,204));
             
             
-            this.btnDocente.setColorNormal(new Color(153,153,153));
-            this.btnDocente.setColorHover(new Color(0,102,204));
-            this.btnDocente.setColorPressed(new Color(153,153,153));
+            this.btnTutor.setColorNormal(new Color(153,153,153));
+            this.btnTutor.setColorHover(new Color(0,102,204));
+            this.btnTutor.setColorPressed(new Color(153,153,153));
             
-            this.btnAsignar.setColorNormal(new Color(153,153,153));
-            this.btnAsignar.setColorHover(new Color(0,102,204));
-            this.btnAsignar.setColorPressed(new Color(153,153,153));
-            
-            this.btnEstudiantes.setColorNormal(new Color(153,153,153));
-            this.btnEstudiantes.setColorHover(new Color(0,102,204));
-            this.btnEstudiantes.setColorPressed(new Color(153,153,153));
+           
         }else{
-            this.btnAdministrarCuentas.setColorNormal(new Color(153,153,153));
-            this.btnAdministrarCuentas.setColorHover(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorPressed(new Color(153,153,153));
+            this.btnRegistrar.setColorNormal(new Color(153,153,153));
+            this.btnRegistrar.setColorHover(new Color(0,102,204));
+            this.btnRegistrar.setColorPressed(new Color(153,153,153));
         }
-    }//GEN-LAST:event_btnAdministrarCuentasActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void btnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteActionPerformed
+    private void btnTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTutorActionPerformed
         /*Docente doc=new Docente();
         //en esta linea llamar a su controlador
         Principal.removeAll();
@@ -378,157 +328,58 @@ public class MenuDirec2 extends javax.swing.JFrame {
         Principal.revalidate();
         Principal.repaint();*/
         
-        if(this.btnDocente.isSelected()){
-            this.btnAdministrarCuentas.setSelected(false);
-            this.btnDocente.setSelected(true);
-            this.btnEstudiantes.setSelected(false);
-            this.btnAsignar.setSelected(false);
+        if(this.btnTutor.isSelected()){
+            this.btnRegistrar.setSelected(false);
+            this.btnTutor.setSelected(true);
+            
             
             //this.pnlSlider.setPanelNormal(this.pnlCrearCuentaDocente);
         }
         
-        if(this.btnDocente.isSelected()){
-            this.btnDocente.setColorNormal(new Color(0,102,204));
-            this.btnDocente.setColorHover(new Color(0,102,204));
-            this.btnDocente.setColorPressed(new Color(0,102,204));
+        if(this.btnTutor.isSelected()){
+            this.btnTutor.setColorNormal(new Color(0,102,204));
+            this.btnTutor.setColorHover(new Color(0,102,204));
+            this.btnTutor.setColorPressed(new Color(0,102,204));
             
-            this.btnAdministrarCuentas.setColorNormal(new Color(153,153,153));
-            this.btnAdministrarCuentas.setColorHover(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorPressed(new Color(153,153,153));
+            this.btnRegistrar.setColorNormal(new Color(153,153,153));
+            this.btnRegistrar.setColorHover(new Color(0,102,204));
+            this.btnRegistrar.setColorPressed(new Color(153,153,153));
             
-            this.btnAsignar.setColorNormal(new Color(153,153,153));
-            this.btnAsignar.setColorHover(new Color(0,102,204));
-            this.btnAsignar.setColorPressed(new Color(153,153,153));
-            
-            this.btnEstudiantes.setColorNormal(new Color(153,153,153));
-            this.btnEstudiantes.setColorHover(new Color(0,102,204));
-            this.btnEstudiantes.setColorPressed(new Color(153,153,153));
+          
         }else{
-            this.btnDocente.setColorNormal(new Color(153,153,153));
-            this.btnDocente.setColorHover(new Color(0,102,204));
-            this.btnDocente.setColorPressed(new Color(153,153,153));
+            this.btnTutor.setColorNormal(new Color(153,153,153));
+            this.btnTutor.setColorHover(new Color(0,102,204));
+            this.btnTutor.setColorPressed(new Color(153,153,153));
         }
-    }//GEN-LAST:event_btnDocenteActionPerformed
-
-    private void btnEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudiantesActionPerformed
-        /*Estudiante est=new Estudiante();
-        //en esta linea llamar a su controlador
-        Principal.removeAll();
-        Principal.setLayout(new BorderLayout());
-        Principal.add(est.getContentPane(),BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();*/
-        
-        if(this.btnEstudiantes.isSelected()){
-            this.btnAdministrarCuentas.setSelected(false);
-            this.btnDocente.setSelected(false);
-            this.btnEstudiantes.setSelected(true);
-            this.btnAsignar.setSelected(false);
-            
-            //this.pnlSlider.setPanelNormal(this.pnlEstudiantes);
-        }
-        
-        if(this.btnEstudiantes.isSelected()){
-            this.btnEstudiantes.setColorNormal(new Color(0,102,204));
-            this.btnEstudiantes.setColorHover(new Color(0,102,204));
-            this.btnEstudiantes.setColorPressed(new Color(0,102,204));
-            
-            this.btnAdministrarCuentas.setColorNormal(new Color(153,153,153));
-            this.btnAdministrarCuentas.setColorHover(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorPressed(new Color(153,153,153));
-            
-            this.btnAsignar.setColorNormal(new Color(153,153,153));
-            this.btnAsignar.setColorHover(new Color(0,102,204));
-            this.btnAsignar.setColorPressed(new Color(153,153,153));
-            
-            this.btnDocente.setColorNormal(new Color(153,153,153));
-            this.btnDocente.setColorHover(new Color(0,102,204));
-            this.btnDocente.setColorPressed(new Color(153,153,153));
-        }else{
-            this.btnEstudiantes.setColorNormal(new Color(153,153,153));
-            this.btnEstudiantes.setColorHover(new Color(0,102,204));
-            this.btnEstudiantes.setColorPressed(new Color(153,153,153));
-        }
-    }//GEN-LAST:event_btnEstudiantesActionPerformed
-
-    private void btnAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarActionPerformed
-        Asignar asi=new Asignar();
-        //en esta linea llamar a su controlador
-        
-        Principal.removeAll();
-        Principal.setLayout(new BorderLayout());
-        Principal.add(asi.getContentPane(),BorderLayout.CENTER);
-        Principal.revalidate();
-        Principal.repaint();
-        
-        if(this.btnAsignar.isSelected()){
-            this.btnAdministrarCuentas.setSelected(false);
-            this.btnDocente.setSelected(false);
-            this.btnEstudiantes.setSelected(false);
-            this.btnAsignar.setSelected(true);
-            
-            //this.pnlSlider.setPanelNormal(this.pnlAsignar);
-        }
-        
-        if(this.btnAsignar.isSelected()){
-            this.btnAsignar.setColorNormal(new Color(0,102,204));
-            this.btnAsignar.setColorHover(new Color(0,102,204));
-            this.btnAsignar.setColorPressed(new Color(0,102,204));
-            
-            this.btnAdministrarCuentas.setColorNormal(new Color(153,153,153));
-            this.btnAdministrarCuentas.setColorHover(new Color(0,102,204));
-            this.btnAdministrarCuentas.setColorPressed(new Color(153,153,153));
-            
-            this.btnEstudiantes.setColorNormal(new Color(153,153,153));
-            this.btnEstudiantes.setColorHover(new Color(0,102,204));
-            this.btnEstudiantes.setColorPressed(new Color(153,153,153));
-            
-            this.btnDocente.setColorNormal(new Color(153,153,153));
-            this.btnDocente.setColorHover(new Color(0,102,204));
-            this.btnDocente.setColorPressed(new Color(153,153,153));
-        }else{
-            this.btnAsignar.setColorNormal(new Color(153,153,153));
-            this.btnAsignar.setColorHover(new Color(0,102,204));
-            this.btnAsignar.setColorPressed(new Color(153,153,153));
-        }
-    }//GEN-LAST:event_btnAsignarActionPerformed
+    }//GEN-LAST:event_btnTutorActionPerformed
 
     
     
     
     
-    private void btnAdministrarCuentasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarCuentasMousePressed
-        this.btnDocente.setSelected(false);
-        this.btnAdministrarCuentas.setSelected(true);
-        this.btnAsignar.setSelected(false);
-        this.btnEstudiantes.setSelected(false);
-    }//GEN-LAST:event_btnAdministrarCuentasMousePressed
+    private void btnRegistrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMousePressed
+        this.btnTutor.setSelected(false);
+        this.btnRegistrar.setSelected(true);
+        
+    }//GEN-LAST:event_btnRegistrarMousePressed
 
-    private void btnDocenteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDocenteMousePressed
-        this.btnDocente.setSelected(true);
-        this.btnAdministrarCuentas.setSelected(false);
-        this.btnAsignar.setSelected(false);
-        this.btnEstudiantes.setSelected(false);
-    }//GEN-LAST:event_btnDocenteMousePressed
+    private void btnTutorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTutorMousePressed
+        this.btnTutor.setSelected(true);
+        this.btnRegistrar.setSelected(false);
+        
+    }//GEN-LAST:event_btnTutorMousePressed
 
-    private void btnEstudiantesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstudiantesMousePressed
-        this.btnDocente.setSelected(false);
-        this.btnAdministrarCuentas.setSelected(false);
-        this.btnAsignar.setSelected(false);
-        this.btnEstudiantes.setSelected(true);
-    }//GEN-LAST:event_btnEstudiantesMousePressed
-
-    private void btnAsignarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsignarMousePressed
-        this.btnDocente.setSelected(false);
-        this.btnAdministrarCuentas.setSelected(false);
-        this.btnAsignar.setSelected(true);
-        this.btnEstudiantes.setSelected(false);
-    }//GEN-LAST:event_btnAsignarMousePressed
-
+    
+    
+    
+    
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         Cerrar();
     }//GEN-LAST:event_formWindowClosing
 
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -536,10 +387,8 @@ public class MenuDirec2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public RSMaterialComponent.RSPanelMaterial Principal;
-    public rsbuttom.RSButtonMetro btnAdministrarCuentas;
-    public rsbuttom.RSButtonMetro btnAsignar;
-    public rsbuttom.RSButtonMetro btnDocente;
-    public rsbuttom.RSButtonMetro btnEstudiantes;
+    public rsbuttom.RSButtonMetro btnRegistrar;
+    public rsbuttom.RSButtonMetro btnTutor;
     public RSMaterialComponent.RSPanelBorderImage imagenPerfil;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

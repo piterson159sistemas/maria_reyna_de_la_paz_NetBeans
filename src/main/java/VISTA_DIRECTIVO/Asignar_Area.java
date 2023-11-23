@@ -144,7 +144,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FOLDER);
         jPanel2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Año");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
@@ -227,7 +227,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblAreaI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblAreaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
 
-        lblGradoI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradoI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblGradoI.setForeground(new java.awt.Color(102, 102, 102));
         lblGradoI.setText("Grado");
         Inicial.add(lblGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
@@ -776,7 +776,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         btnLimpiar.setName("btnLimpiar"); // NOI18N
         jPanel2.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(102, 102, 102));
         jLabel29.setText("Limpiar");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));

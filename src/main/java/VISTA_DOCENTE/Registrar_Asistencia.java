@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VISTA_DIRECTIVO;
+package VISTA_DOCENTE;
+
+import VISTA_DIRECTIVO.*;
 
 /**
  *
  * @author SARA
  */
-public class Estudiante_Asistencia extends javax.swing.JFrame {
+public class Registrar_Asistencia extends javax.swing.JFrame {
 
     /**
      * Creates new form frameejemplo
      */
-    public Estudiante_Asistencia() {
+    public Registrar_Asistencia() {
         initComponents();
     }
 
@@ -77,7 +79,7 @@ public class Estudiante_Asistencia extends javax.swing.JFrame {
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        rSLabelTextIcon1.setText("Ver Registro de Asistencia");
+        rSLabelTextIcon1.setText("Asistencia");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK_BOX);
         rSPanelMaterial2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 260, -1));
 

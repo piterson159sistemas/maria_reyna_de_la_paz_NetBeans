@@ -94,44 +94,38 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         cb_ingles.setForeground(new java.awt.Color(0, 51, 102));
         cb_ingles.setText("Inglés");
         cb_ingles.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_ingles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_ingles.setName("cb_ingles"); // NOI18N
-        jPanel2.add(cb_ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 110, -1));
+        jPanel2.add(cb_ingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 120, -1));
 
         cb_EduTrabajo.setForeground(new java.awt.Color(0, 51, 102));
         cb_EduTrabajo.setText("Educación para el Trabajo");
         cb_EduTrabajo.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_EduTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_EduTrabajo.setName("cb_EduTrabajo"); // NOI18N
-        jPanel2.add(cb_EduTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 200, -1));
+        jPanel2.add(cb_EduTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 230, -1));
 
         cb_CiudadaniaCivica.setForeground(new java.awt.Color(0, 51, 102));
         cb_CiudadaniaCivica.setText("Desarrollo Personal Ciudadanía y Cívica");
         cb_CiudadaniaCivica.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_CiudadaniaCivica.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_CiudadaniaCivica.setName("cb_CiudadaniaCivica"); // NOI18N
-        jPanel2.add(cb_CiudadaniaCivica, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 280, -1));
+        jPanel2.add(cb_CiudadaniaCivica, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 340, -1));
 
         cb_computacion.setForeground(new java.awt.Color(0, 51, 102));
         cb_computacion.setText("Computación");
         cb_computacion.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_computacion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_computacion.setName("cb_computacion"); // NOI18N
-        jPanel2.add(cb_computacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 130, -1));
+        jPanel2.add(cb_computacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 150, -1));
 
         cb_psicomotriz.setForeground(new java.awt.Color(0, 51, 102));
         cb_psicomotriz.setText("Psicomotriz");
         cb_psicomotriz.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_psicomotriz.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_psicomotriz.setName("cb_psicomotriz"); // NOI18N
         jPanel2.add(cb_psicomotriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 130, -1));
 
         cb_ArteCultura.setForeground(new java.awt.Color(0, 51, 102));
         cb_ArteCultura.setText("Arte y Cultura");
         cb_ArteCultura.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_ArteCultura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_ArteCultura.setName("cb_ArteCultura"); // NOI18N
-        jPanel2.add(cb_ArteCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 140, -1));
+        jPanel2.add(cb_ArteCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 150, -1));
 
         rSLabelTextIcon2.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -139,7 +133,7 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         rSLabelTextIcon2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ACCOUNT_BOX);
         jPanel2.add(rSLabelTextIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Nombres");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
@@ -159,7 +153,7 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         });
         jPanel2.add(jTextFieldNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Apellido Paterno");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
@@ -171,7 +165,7 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         Jtxtnombre.setPlaceholder("Nombre");
         jPanel2.add(Jtxtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 210, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Apellido Materno");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, -1, -1));
@@ -183,12 +177,12 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         jTextFieldApellidoP.setPlaceholder("Apellido Paterno");
         jPanel2.add(jTextFieldApellidoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 210, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Nº de Documento");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Seleccione los cursos en los que se encuentra calificado:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
@@ -212,14 +206,14 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         jTextFieldRespuesta2.setName("jTextFieldRespuesta2"); // NOI18N
         jTextFieldRespuesta2.setPhColor(new java.awt.Color(102, 102, 102));
         jTextFieldRespuesta2.setPlaceholder("Respuesta 2");
-        jPanel2.add(jTextFieldRespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, 30));
+        jPanel2.add(jTextFieldRespuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, 30));
 
         jTextFieldRespuesta3.setForeground(new java.awt.Color(0, 51, 102));
         jTextFieldRespuesta3.setBorderColor(new java.awt.Color(0, 51, 102));
         jTextFieldRespuesta3.setName("jTextFieldRespuesta3"); // NOI18N
         jTextFieldRespuesta3.setPhColor(new java.awt.Color(102, 102, 102));
         jTextFieldRespuesta3.setPlaceholder("Respuesta 3");
-        jPanel2.add(jTextFieldRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, -1, 30));
+        jPanel2.add(jTextFieldRespuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, -1, 30));
 
         jbtnRegistrar.setBackground(new java.awt.Color(102, 102, 255));
         jbtnRegistrar.setBackgroundHover(new java.awt.Color(51, 51, 255));
@@ -227,7 +221,7 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         jbtnRegistrar.setName("jbtnRegistrar"); // NOI18N
         jPanel2.add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Ingrese 3 preguntas para la recuperación de su contraseña en caso de olvido.");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
@@ -236,16 +230,15 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         cb_PersonalSocial.setText("Persona Social");
         cb_PersonalSocial.setToolTipText("");
         cb_PersonalSocial.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_PersonalSocial.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_PersonalSocial.setName("cb_PersonalSocial"); // NOI18N
         cb_PersonalSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_PersonalSocialActionPerformed(evt);
             }
         });
-        jPanel2.add(cb_PersonalSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 140, -1));
+        jPanel2.add(cb_PersonalSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 150, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Contraseña");
@@ -253,12 +246,11 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
 
         cb_matematica.setForeground(new java.awt.Color(0, 51, 102));
         cb_matematica.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_matematica.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_matematica.setLabel("Matemáticas");
         cb_matematica.setName("cb_matematica"); // NOI18N
         jPanel2.add(cb_matematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("La contraseña debe de contener mayúsculas, munúsculas, números y simbolos especiales.");
@@ -267,11 +259,10 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         cb_religion1.setForeground(new java.awt.Color(0, 51, 102));
         cb_religion1.setText("Religión");
         cb_religion1.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_religion1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_religion1.setName("cb_religion1"); // NOI18N
-        jPanel2.add(cb_religion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, -1));
+        jPanel2.add(cb_religion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 120, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 102));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("Verifique su contraseña");
@@ -280,9 +271,8 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         cb_CienciasSociales.setForeground(new java.awt.Color(0, 51, 102));
         cb_CienciasSociales.setText("Ciencias Sociales");
         cb_CienciasSociales.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_CienciasSociales.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_CienciasSociales.setName("cb_CienciasSociales"); // NOI18N
-        jPanel2.add(cb_CienciasSociales, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 140, -1));
+        jPanel2.add(cb_CienciasSociales, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 160, -1));
 
         jTextFieldClave.setForeground(new java.awt.Color(0, 51, 102));
         jTextFieldClave.setToolTipText("");
@@ -295,26 +285,24 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         cb_comunicacion.setForeground(new java.awt.Color(0, 51, 102));
         cb_comunicacion.setText("Comunicación");
         cb_comunicacion.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_comunicacion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_comunicacion.setName("cb_comunicacion"); // NOI18N
         cb_comunicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_comunicacionActionPerformed(evt);
             }
         });
-        jPanel2.add(cb_comunicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 130, -1));
+        jPanel2.add(cb_comunicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 140, -1));
 
         cb_EduFisica.setForeground(new java.awt.Color(0, 51, 102));
         cb_EduFisica.setText("Edu. Física");
         cb_EduFisica.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_EduFisica.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_EduFisica.setName("cb_EduFisica"); // NOI18N
         cb_EduFisica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_EduFisicaActionPerformed(evt);
             }
         });
-        jPanel2.add(cb_EduFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, -1));
+        jPanel2.add(cb_EduFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 120, -1));
 
         jbtnRegistrar1.setBackground(new java.awt.Color(0, 204, 102));
         jbtnRegistrar1.setBackgroundHover(new java.awt.Color(0, 102, 51));
@@ -322,36 +310,35 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         jbtnRegistrar1.setName("jbtnRegistrar"); // NOI18N
         jPanel2.add(jbtnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 500, -1, -1));
 
-        jTextFieldPregunta3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        jTextFieldPregunta3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿Cuál es tu libro favorito?", "¿En qué año comenzaste a enseñar?", "¿Quién es tu héroe?", "¿Cuál fue tu primer número de tlf?", "¿Nombre de tu primera mascota?", "¿Nombre de tu mentor/a a docente?", "¿Titulo de tu proyecto de investigación?" }));
         jTextFieldPregunta3.setColorArrow(new java.awt.Color(153, 153, 255));
         jTextFieldPregunta3.setColorBoton(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta3.setColorFondo(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta3.setColorListaItems(new java.awt.Color(204, 204, 204));
         jTextFieldPregunta3.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        jPanel2.add(jTextFieldPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 250, -1));
+        jPanel2.add(jTextFieldPregunta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 320, -1));
 
-        jTextFieldPregunta1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        jTextFieldPregunta1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿Cuál es tu libro favorito?", "¿En qué año comenzaste a enseñar?", "¿Quién es tu héroe?", "¿Cuál fue tu primer número de tlf?", "¿Nombre de tu primera mascota?", "¿Nombre de tu mentor/a a docente?", "¿Titulo de tu proyecto de investigación?" }));
         jTextFieldPregunta1.setColorArrow(new java.awt.Color(153, 153, 255));
         jTextFieldPregunta1.setColorBoton(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta1.setColorFondo(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta1.setColorListaItems(new java.awt.Color(204, 204, 204));
         jTextFieldPregunta1.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        jPanel2.add(jTextFieldPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 250, -1));
+        jPanel2.add(jTextFieldPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 320, -1));
 
-        jTextFieldPregunta2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿En qué año comenzaste a trabajar como docente en la institución actual?", "¿En qué institución educativa diste tu primera clase como docente?", "¿Cuál es el nombre de tu profesor/a favorito/a durante tus estudios?", "¿Qué asignatura o materia enseñabas en tu primer año como docente" }));
+        jTextFieldPregunta2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿Cuál es tu libro favorito?", "¿En qué año comenzaste a enseñar?", "¿Quién es tu héroe?", "¿Cuál fue tu primer número de tlf?", "¿Nombre de tu primera mascota?", "¿Nombre de tu mentor/a a docente?", "¿Titulo de tu proyecto de investigación?" }));
         jTextFieldPregunta2.setColorArrow(new java.awt.Color(153, 153, 255));
         jTextFieldPregunta2.setColorBoton(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta2.setColorFondo(new java.awt.Color(102, 102, 255));
         jTextFieldPregunta2.setColorListaItems(new java.awt.Color(204, 204, 204));
         jTextFieldPregunta2.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        jPanel2.add(jTextFieldPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 250, -1));
+        jPanel2.add(jTextFieldPregunta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 320, -1));
 
         cb_CienciaTecnologia1.setForeground(new java.awt.Color(0, 51, 102));
         cb_CienciaTecnologia1.setText("Ciencia y Tecnología");
         cb_CienciaTecnologia1.setColorCheck(new java.awt.Color(102, 102, 255));
-        cb_CienciaTecnologia1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cb_CienciaTecnologia1.setName("cb_CienciaTecnologia"); // NOI18N
-        jPanel2.add(cb_CienciaTecnologia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 170, -1));
+        jPanel2.add(cb_CienciaTecnologia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 190, -1));
 
         rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 560));
 

@@ -142,10 +142,12 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         rSPanelMaterial4.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterial4.setBgShade(new java.awt.Color(255, 255, 255));
         rSPanelMaterial4.setPixels(0);
+        rSPanelMaterial4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Nivel");
+        rSPanelMaterial4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 16, -1, -1));
 
         cbxFiltrarNivel.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarNivel.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -154,40 +156,49 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         cbxFiltrarNivel.setColorListaItems(new java.awt.Color(204, 204, 204));
         cbxFiltrarNivel.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxFiltrarNivel.setName("cbxFiltrarNivel"); // NOI18N
+        rSPanelMaterial4.add(cbxFiltrarNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 37, 170, -1));
 
         btnFiltrar.setBackground(new java.awt.Color(0, 102, 204));
         btnFiltrar.setBackgroundHover(new java.awt.Color(0, 51, 102));
         btnFiltrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
         btnFiltrar.setName("btnFiltrar"); // NOI18N
+        rSPanelMaterial4.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 288, -1, -1));
 
         rSButtonIconShadow2.setBackground(new java.awt.Color(255, 102, 102));
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
         rSButtonIconShadow2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
+        rSPanelMaterial4.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 334, -1, -1));
 
         rSButtonIconShadow3.setBackground(new java.awt.Color(255, 153, 51));
         rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(145, 72, 0));
         rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.COMMENT);
+        rSPanelMaterial4.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 380, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Grado");
+        rSPanelMaterial4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 81, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Estado");
+        rSPanelMaterial4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 146, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Exportar a PDF");
+        rSPanelMaterial4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 346, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("Resumen del Bimestre");
+        rSPanelMaterial4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Filtro");
+        rSPanelMaterial4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 301, -1, -1));
 
         cbxFiltrarGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarGrado.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -196,6 +207,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         cbxFiltrarGrado.setColorListaItems(new java.awt.Color(204, 204, 204));
         cbxFiltrarGrado.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxFiltrarGrado.setName("cbxFiltrarGrado"); // NOI18N
+        rSPanelMaterial4.add(cbxFiltrarGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 102, 170, -1));
 
         cbxFiltrarEstadoGrado.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxFiltrarEstadoGrado.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -204,10 +216,12 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         cbxFiltrarEstadoGrado.setColorListaItems(new java.awt.Color(204, 204, 204));
         cbxFiltrarEstadoGrado.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxFiltrarEstadoGrado.setName("cbxFiltrarEstadoGrado"); // NOI18N
+        rSPanelMaterial4.add(cbxFiltrarEstadoGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 167, 170, -1));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(102, 102, 102));
         jLabel27.setText("Año");
+        rSPanelMaterial4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
 
         txtFiltrarAnio.setForeground(new java.awt.Color(0, 51, 102));
         txtFiltrarAnio.setBorderColor(new java.awt.Color(0, 51, 102));
@@ -220,81 +234,9 @@ public class Estudiante_Lista extends javax.swing.JFrame {
                 txtFiltrarAnioActionPerformed(evt);
             }
         });
+        rSPanelMaterial4.add(txtFiltrarAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 232, 170, -1));
 
-        javax.swing.GroupLayout rSPanelMaterial4Layout = new javax.swing.GroupLayout(rSPanelMaterial4);
-        rSPanelMaterial4.setLayout(rSPanelMaterial4Layout);
-        rSPanelMaterial4Layout.setHorizontalGroup(
-            rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbxFiltrarNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(cbxFiltrarGrado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(cbxFiltrarEstadoGrado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27)
-                    .addComponent(txtFiltrarAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                .addGroup(rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial4Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        rSPanelMaterial4Layout.setVerticalGroup(
-            rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial4Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxFiltrarNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxFiltrarGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxFiltrarEstadoGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFiltrarAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addGroup(rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel9)))
-                .addGroup(rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)))
-                .addGroup(rSPanelMaterial4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonIconShadow3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelMaterial4Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel8))))
-        );
-
-        rSPanelMaterial3.add(rSPanelMaterial4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 420));
+        rSPanelMaterial3.add(rSPanelMaterial4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 420));
 
         rSPanelMaterial5.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterial5.setBgShade(new java.awt.Color(215, 215, 215));

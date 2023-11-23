@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VISTA_DIRECTIVO;
+package VISTA_DOCENTE;
+
+import VISTA_DIRECTIVO.*;
 
 /**
  *
  * @author SARA
  */
-public class Estudiante_Asistencia extends javax.swing.JFrame {
+public class Tutor_VerAsistencia extends javax.swing.JFrame {
 
     /**
      * Creates new form frameejemplo
      */
-    public Estudiante_Asistencia() {
+    public Tutor_VerAsistencia() {
         initComponents();
     }
 
