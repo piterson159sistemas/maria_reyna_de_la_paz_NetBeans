@@ -50,7 +50,7 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         cbxNivel = new RSMaterialComponent.RSComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
+        tblDatos = new RSMaterialComponent.RSTableMetroCustom();
         cbxComp = new RSMaterialComponent.RSComboBox();
         jLabel6 = new javax.swing.JLabel();
         lblNomCompetencia = new javax.swing.JLabel();
@@ -203,7 +203,7 @@ public class Estudiante_Notas extends javax.swing.JFrame {
 
         jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 420));
 
-        rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -214,9 +214,9 @@ public class Estudiante_Notas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        rSTableMetroCustom1.setBackgoundHead(new java.awt.Color(102, 102, 255));
-        rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
-        jScrollPane1.setViewportView(rSTableMetroCustom1);
+        tblDatos.setBackgoundHead(new java.awt.Color(102, 102, 255));
+        tblDatos.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        jScrollPane1.setViewportView(tblDatos);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 910, 350));
 
@@ -341,6 +341,6 @@ public class Estudiante_Notas extends javax.swing.JFrame {
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial3;
-    public RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
+    public RSMaterialComponent.RSTableMetroCustom tblDatos;
     // End of variables declaration//GEN-END:variables
 }
