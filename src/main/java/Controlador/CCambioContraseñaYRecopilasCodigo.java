@@ -3,22 +3,25 @@ package Controlador;
 import DAO.RecopilarCodigo;
 import Modelo.Usuario;
 import Vista.recopilar_codigo_cambioContraseña;
+import VISTA_CAMBIARCONTRA.CambiarContraseña;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
     private RecopilarCodigo RC;
     private Usuario us;
-    private recopilar_codigo_cambioContraseña recocodi; // Vista
+    private CambiarContraseña recocodi; // Vista
 
-    public CCambioContraseñaYRecopilasCodigo(recopilar_codigo_cambioContraseña recocc) {
+    public CCambioContraseñaYRecopilasCodigo(CambiarContraseña recocc) {
         // Constructor para la clase controladora
         recocodi = recocc;
         recocodi.btn_RevisarCodigo.addActionListener(this);
         recocodi.jbtnChequeo.addActionListener(this); // Agregado para manejar el nuevo botón "Listo"
         recocodi.btnActualizarz.addActionListener(this); // Agregado para manejar el botón de actualizar contraseña
-
+        recocodi.btn_Cancelarr.addActionListener(this);
         recocc.setVisible(true);
 
         // Desactivar los campos de contraseña al inicio
@@ -124,6 +127,14 @@ public class CCambioContraseñaYRecopilasCodigo implements ActionListener {
                 }
             }
         }
+        
+        if(e.getSource()== recocodi.btn_Cancelarr){
+            recocodi.dispose();
+        }
     }
+
+  
+
+    
 }
 

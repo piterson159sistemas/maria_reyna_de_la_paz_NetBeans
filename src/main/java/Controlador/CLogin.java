@@ -2,7 +2,7 @@ package Controlador;
 import VISTA_INICIARSESION.login;
 import VISTA_DIRECTIVO.MenuDirec2;
 import Vista.MenuDocente;
-import Vista.recopilar_codigo_cambioContraseña;
+import VISTA_CAMBIARCONTRA.CambiarContraseña;
 import Modelo.Usuario;
 import DAO.QueryLogin;
 import java.awt.event.ActionEvent;
@@ -58,7 +58,7 @@ public class CLogin implements ActionListener {
         }
 
         if (e.getSource() == vista.btnCambiarClave) {   
-            recopilar_codigo_cambioContraseña recopilarCodigo = new recopilar_codigo_cambioContraseña();
+            CambiarContraseña recopilarCodigo = new CambiarContraseña();
             CCambioContraseñaYRecopilasCodigo CCRC = new CCambioContraseñaYRecopilasCodigo(recopilarCodigo);
 
             
