@@ -263,10 +263,7 @@ public class Estudiante_Notas extends javax.swing.JFrame {
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Alumno", "12", "123", null}
             },
             new String [] {
                 "Alumno", "Notas", "Notas", "Prom"
