@@ -31,30 +31,7 @@ public class procesosAreasGrados {
             combo.addItem(docente);
         }
     }
-
-    public void cargarAreas(JLabel[] nombreAreas, String nivel) {
-        ArrayList<String> areas = crudAG.buscarAreas(nivel);
-        int lastIndex = nombreAreas.length - 1;
-        for (int i = 0; i <= lastIndex; i++) {
-            nombreAreas[i].setText(areas.get(i));
-        }
-        if (nivel.equals("Secundaria")) {
-            String edT="<html>Educacion para<br>el trabajo</html>";
-            String codedT="";
-            String PCC="<html>Desarrollo Personal,<br>Ciudadania y Civica</html>";
-            String codPCC="";
-            String nombreFormateado = "<html>"
-                    + nombreAreas[0].getText().substring(0, 14)
-                    + "<br>" + nombreAreas[0].getText().substring(14) + "</html>";
-            nombreAreas[0].setText(nombreFormateado);
-
-            String nombreFormateado2 = "<html>"
-                    + nombreAreas[2].getText().substring(0, 20)
-                    + "<br>" + nombreAreas[2].getText().substring(20) + "</html>";
-            nombreAreas[2].setText(nombreFormateado2);
-        }
-    }
-
+    
     public Component[] UbicarCombosVentana(int indiceVentana, Asignar_Area frm) {
         Component[] Elementos;
         switch (indiceVentana) {

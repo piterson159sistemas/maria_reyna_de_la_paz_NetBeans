@@ -73,6 +73,11 @@ public class ProcesosTutoria {
         
     }
     
+    public void cargaInicialCombo(JComboBox combo){
+        combo.removeAllItems();
+        combo.addItem(none);
+    }
+    
     public void cargarDocentes(JComboBox combo,ArrayList<String> docentes){
         combo.removeAllItems();
         combo.addItem(none);

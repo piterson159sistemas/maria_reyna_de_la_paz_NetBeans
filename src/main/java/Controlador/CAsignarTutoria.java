@@ -44,13 +44,11 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
         vista.txtAnio.addActionListener(this);
         vista.tblProfes.addMouseListener(this);
         PermitirSoloNumeros(vista.txtAnio, 4);
+        procesos.cargaInicialCombo(vista.cbxTutor);
         limitarNumeroGrados();
         LimitarGrados();
         procesos.cargarGrados(vista);
-        actualizarDatos();
-        
-        tutoria.setTitle("Asignacion de Tutoria");
-        tutoria.setVisible(true);
+        actualizarDatos();  
     }
 
     public void actualizarDatos(){
@@ -447,6 +445,7 @@ public class CAsignarTutoria implements ActionListener,MouseListener{
                     crudTutoria.BuscarDocentes(anio));
         }else{
             procesos.vaciarChekBox(vista);
+            procesos.cargaInicialCombo(vista.cbxTutor);
         }
     }
 

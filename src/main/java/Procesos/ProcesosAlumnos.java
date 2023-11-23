@@ -114,20 +114,18 @@ public class ProcesosAlumnos {
         
         //NombreCompletoAlumno
         tabla.getColumnModel().getColumn(1).setPreferredWidth(160);
-        //Icono Estado
+        //Icono Estado/Estado
         tabla.getColumnModel().getColumn(2).setPreferredWidth(60);
-        //Estado
+        //codGrado Alumno
         tabla.getColumnModel().getColumn(3).setMaxWidth(0);
         tabla.getColumnModel().getColumn(3).setMinWidth(0);
         tabla.getColumnModel().getColumn(3).setPreferredWidth(0);
-        //codGrado Alumno
-        tabla.getColumnModel().getColumn(4).setMaxWidth(0);
-        tabla.getColumnModel().getColumn(4).setMinWidth(0);
-        tabla.getColumnModel().getColumn(4).setPreferredWidth(0);
     }
     
     public void cargarNiveles(JComboBox cbxNiveles){
         Queue<String> niveles = crudA.BuscarNiveles();
+        cbxNiveles.removeAllItems();
+        cbxNiveles.addItem(none);
         while(!niveles.isEmpty()){
             cbxNiveles.addItem(niveles.poll());
         }
@@ -135,6 +133,7 @@ public class ProcesosAlumnos {
     
     public void cargarGrados(JComboBox cbxGrados,String nivel){
         Queue<String> grados = crudA.BuscarGrados(nivel);
+        cbxGrados.removeAllItems();
         cbxGrados.addItem(none);
         while(!grados.isEmpty()){
             cbxGrados.addItem(grados.poll());   
@@ -143,6 +142,7 @@ public class ProcesosAlumnos {
     
     public void cargarEstados(JComboBox cbxEstados){
         String[] estados={"...","Aprobado","En Curso","Desaprobado","Retirado"};
+        cbxEstados.removeAllItems();
         for(String estado:estados){
             cbxEstados.addItem(estado);
         }
@@ -150,6 +150,7 @@ public class ProcesosAlumnos {
     
     public void cargarTiposDoc(JComboBox cbxTiposDoc){
         String[] tiposDoc={"...","DNI","Carnet de extranjeria","Pasaporte"};
+        cbxTiposDoc.removeAllItems();
         for(String tipo:tiposDoc){
             cbxTiposDoc.addItem(tipo);
         }
@@ -157,8 +158,20 @@ public class ProcesosAlumnos {
     }
     
     public void cargaInicialCombos(JComboBox cbxNiveles,JComboBox cbxGrados){
+        cbxNiveles.removeAllItems();
         cbxNiveles.addItem(none);
+        cbxGrados.removeAllItems();
         cbxGrados.addItem(none);
+    }
+    
+    public void InfoGradoDefault(JComponent[] elementos){
+        for( JComponent elemento: elementos){
+            if(elemento instanceof JComboBox){
+                ((JComboBox)elemento).setSelectedItem(none);
+            }else{
+               ((JTextField)elemento).setText("0"); 
+            }
+        }
     }
     
     public void Limpiarcampos(Estudiante_Lista led){
@@ -207,8 +220,10 @@ public class ProcesosAlumnos {
                 case "En Curso"-> {tblAlumnos.setValueAt("",i, 2);
                                   tblAlumnos.setValueAt(lblEnCurso,i, 2);}
                 
-                default -> {tblAlumnos.setValueAt("",i, 2);
+                case "Retirado"-> {tblAlumnos.setValueAt("",i, 2);
                                   tblAlumnos.setValueAt(lblRetirado,i, 2);}
+                
+                default -> tblAlumnos.setValueAt("N/D",i, 2);
             }
         }
     

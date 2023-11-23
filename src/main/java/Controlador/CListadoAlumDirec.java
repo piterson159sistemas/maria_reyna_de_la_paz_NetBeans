@@ -46,8 +46,7 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         vista.btnFiltrar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         vista.tblListaAlumnos.addMouseListener(this);
-        //listaEst.setTitle("Gestion de Estudiantes");
-        //listaEst.setVisible(true);
+        
         //TextFiled del buscador mostrará sugerecias segun se escriba
         ArrayList<String> nombres= crudAlumno.BuscarNombresAlumno();
         procesos.MostrarSugerencias(vista.txtBuscar, nombres);
@@ -81,9 +80,10 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
     
     public void ActualizarLista(){
         String filtro = definirFiltros(null);
+        System.out.println(filtro);
         crudAlumno.Listar(vista.tblListaAlumnos, vista.lblNumAlumnos,filtro);
         procesos.formatoColumnasTabla(vista.tblListaAlumnos);
-        //procesos.CargarIconoEstado(vista.tblListaAlumnos);
+        procesos.CargarIconoEstado(vista.tblListaAlumnos);
     }
     
     public String definirFiltros(String nombreAlumno){
@@ -377,20 +377,22 @@ public class CListadoAlumDirec implements ActionListener,MouseListener{
         //captura la fila que se selecciona
         int numfila = vista.tblListaAlumnos.rowAtPoint(e.getPoint());
         int columNumDoc = 0; //num de columna de Num Doc dentro de la fila seleccionada
-        int columEstado = 3; //num de columna de estado dentro de la fila seleccionada
-        int columGradoAlumno = 4; //num de columna de estado dentro de la fila seleccionada
+        int columGradoAlumno = 3; //num de columna de codGradoAlumno dentro de la fila seleccionada
         
         if(numfila>-1){
             numDocAlumno= vista.tblListaAlumnos.getValueAt(numfila, columNumDoc).toString();
-            String estado=vista.tblListaAlumnos.getValueAt(numfila, columEstado).toString();
-            codGradoAlumno=Integer.parseInt(vista.tblListaAlumnos.
-                    getValueAt(numfila, columGradoAlumno).toString());
-            
             String[] dataAlumno= crudAlumno.BuscarAlumno(Integer.parseInt(numDocAlumno));
             procesos.MostrarAlumno(dataAlumno, vista);
             
-            String[] dataGradoAlumno= crudAlumno.buscarGradoAlumno(codGradoAlumno);
-            procesos.MostrarGradoAlumno(dataGradoAlumno, vista);
+            codGradoAlumno=Integer.parseInt(vista.tblListaAlumnos.
+                    getValueAt(numfila, columGradoAlumno).toString());
+            if(codGradoAlumno==0){
+                JComponent[] elementos={vista.cbxNivel,vista.cbxGrado,vista.cbxEstadoGrado,vista.txtAnio};
+                procesos.InfoGradoDefault(elementos);
+            }else{
+                String[] dataGradoAlumno= crudAlumno.buscarGradoAlumno(codGradoAlumno);
+                procesos.MostrarGradoAlumno(dataGradoAlumno, vista);
+            }
         }
         
     }

@@ -195,19 +195,19 @@ public class crudAlumno {
         // 2° Filtro: Nivel y Grado
             if(!(grado.equals("..."))){  // y si además el grado es diferente a "..."
                 // Filtrando por Nivel y grado
-                filtroNG= " where Codigo_Grado"
+                filtroNG= " where g.Codigo_Grado"
                         +" =(select Codigo_Grado from grado where Grado='"+grado+"'"
                         +" and Nivel='"+nivel+"')";                       
                 
             }else{ //Filtrando solo por Nivel
                 switch(nivel){
-                    case "Inicial" ->  filtroNG=" where Codigo_Grado<=3";
-                    case "Primaria" ->  filtroNG=" where Codigo_Grado>3 and Codigo_Grado<=9";
-                    default ->  filtroNG=" where Codigo_Grado >9";  
+                    case "Inicial" ->  filtroNG=" where g.Codigo_Grado<=3";
+                    case "Primaria" ->  filtroNG=" where g.Codigo_Grado>3 and Codigo_Grado<=9";
+                    default ->  filtroNG=" where g.Codigo_Grado >9 ";  
                 }
             }
         }else{ //Sin filtrar por nivel y grado
-            filtroNG=" where Codigo_Grado is not null"; 
+            filtroNG=" where Codigo_Grado is null or Codigo_Grado>=1 "; 
         }
 
         // 3° Filtro: Estado
@@ -231,7 +231,18 @@ public class crudAlumno {
         //5° Filtro: Año
         if(!(anio.isBlank()) && (anio != null)){ //si el año no está vacio y no es nulo
             filtroAnio=" and Año='"+anio+"'";
-        } 
+        }
+        
+        if( (!(filtroAnio.isBlank()) || !(filtroEst.isBlank()))  && 
+               filtroNG.equals(" where Codigo_Grado is null or Codigo_Grado>=1 ") ){
+            filtroNG=" where Codigo_Grado is not null "; 
+        }
+        
+        if( !(filtroNom.isBlank()) && 
+             filtroNG.equals(" where Codigo_Grado is null or Codigo_Grado>=1 ")){
+            filtroNG=" where nombres is not null "; 
+        }
+       
         return sb.append(filtroNG).append(filtroEst).append(filtroNom).
                 append(filtroAnio).toString();
         
@@ -240,7 +251,7 @@ public class crudAlumno {
     //Lista los alumnos en una tabla
     public void Listar(JTable tabla, JLabel cantAulmnos,String filtroCompleto){
         //Definimos un modelo de encabezados para la tabla 
-        String[] Titulos= {"Cod","Alumno","Estado","Estado","codGradoAlumno"};
+        String[] Titulos= {"Cod","Alumno","Estado","codGradoAlumno"};
         DefaultTableModel tableModel = new DefaultTableModel(null,Titulos);
         tabla.setModel(tableModel);
         
@@ -250,14 +261,14 @@ public class crudAlumno {
         /* consulta para extraer [cod. alumno, nombre completo, estado de grado]
          de todos los alumnos del colegio */
         String sqlStatement="select a.N_DocumentoA as cod,"
-                +" concat(Nombres,' ',Apellido_P,' ',Apellido_M)"
-                +" as Alumno, e.Estado,g.Codigo_Grado_Alumno from grado_alumno g" 
-                +" inner join alumno a on (g.CodigoA = a.N_DocumentoA)" 
-                +" inner join estado_grado_alumno e on"
-                +" (g.Codigo_EstadoGA = e.Codigo_EstadoGA) "
-                +filtroCompleto+" ;";
+                + " concat(Nombres,' ',Apellido_P,' ',Apellido_M)"
+                + " as Alumno,COALESCE(e.Estado, 'N/D') AS Estado,"
+                + " COALESCE(g.Codigo_Grado_Alumno, 0) AS Codigo_Grado_Alumno from" 
+                + " alumno a LEFT JOIN grado_alumno g ON g.CodigoA = a.N_DocumentoA" 
+                + " LEFT JOIN estado_grado_alumno e ON g.Codigo_EstadoGA = e.Codigo_EstadoGA "
+                + filtroCompleto+" ;";
         
-        Object[] dataAlumno = new Object[5];
+        Object[] dataAlumno = new Object[4];
         int cantRegisttros=0;
         try {
             Connection cn = con.conectar();
@@ -269,9 +280,8 @@ public class crudAlumno {
                 dataAlumno[0]= con.rs.getInt(1);
                 dataAlumno[1]= con.rs.getString(2);
                 dataAlumno[2]= con.rs.getString(3);
-                dataAlumno[3]= con.rs.getString(3);
                 //codGrado_Alumno
-                dataAlumno[4]= con.rs.getInt(4);
+                dataAlumno[3]= con.rs.getInt(4);
                 tableModel.addRow(dataAlumno);
                 
             }

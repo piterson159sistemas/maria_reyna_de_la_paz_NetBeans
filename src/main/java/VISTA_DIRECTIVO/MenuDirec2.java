@@ -54,8 +54,9 @@ public class MenuDirec2 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jlblUsuario = new javax.swing.JLabel();
+        lblCodUsuario = new javax.swing.JLabel();
         imagenPerfil = new RSMaterialComponent.RSPanelBorderImage();
+        lblNombreUsuario = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btnAdministrarCuentas = new rsbuttom.RSButtonMetro();
         btnDocente = new rsbuttom.RSButtonMetro();
@@ -88,11 +89,11 @@ public class MenuDirec2 extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
-        jlblUsuario.setBackground(new java.awt.Color(102, 102, 102));
-        jlblUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jlblUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        jlblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblUsuario.setText("USUARIO");
+        lblCodUsuario.setBackground(new java.awt.Color(102, 102, 102));
+        lblCodUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblCodUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        lblCodUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCodUsuario.setText("Cod.USUARIO");
 
         imagenPerfil.setShapePanel(rojeru_san.efectos.ValoresEnum.PANEL_FORMA.CIRCLE);
 
@@ -107,17 +108,30 @@ public class MenuDirec2 extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        lblNombreUsuario.setBackground(new java.awt.Color(102, 102, 102));
+        lblNombreUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblNombreUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        lblNombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombreUsuario.setText("Cod.USUARIO");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblCodUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 19, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -125,8 +139,10 @@ public class MenuDirec2 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCodUsuario)
                 .addGap(18, 18, 18)
-                .addComponent(jlblUsuario)
+                .addComponent(lblNombreUsuario)
                 .addContainerGap())
         );
 
@@ -531,7 +547,8 @@ public class MenuDirec2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel4;
     public javax.swing.JPanel jPanel5;
-    public javax.swing.JLabel jlblUsuario;
+    public javax.swing.JLabel lblCodUsuario;
+    public javax.swing.JLabel lblNombreUsuario;
     public javax.swing.JPanel pnlMenu;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     // End of variables declaration//GEN-END:variables

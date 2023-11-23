@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import DAO.IntoDocentes;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,16 @@ import java.awt.BorderLayout;
 
 public class CMenuDirec2 implements ActionListener{
     MenuDirec2 vista;
+    IntoDocentes intoDocente= new IntoDocentes();
     
-    public CMenuDirec2(MenuDirec2 menu){
+    public CMenuDirec2(MenuDirec2 menu,String codUsuario){
         vista=menu;
         menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
         menu.setDefaultCloseOperation(menu.EXIT_ON_CLOSE);
+        //mostramos el codigo
+        vista.lblCodUsuario.setText(codUsuario);
+        //mostramos el nombre del usuario
+        vista.lblNombreUsuario.setText(intoDocente.obtenerNomCompletoUser(codUsuario));
         menu.setVisible(true);
         menu.setTitle("Menu de Gestión Directivo");
         vista.btnAdministrarCuentas.addActionListener(this);

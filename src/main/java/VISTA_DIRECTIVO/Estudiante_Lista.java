@@ -307,24 +307,12 @@ public class Estudiante_Lista extends javax.swing.JFrame {
 
         tblListaAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                { new Integer(1), "aNDRADEHIDALGO SARA AMALIA DE LOS ANGELES", "ENERO"},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Nº", "Apellidos y Nombres", "Estado"
+                "Nº", "Apellidos y Nombres", "Estado", "Title 4", "Title 5"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         tblListaAlumnos.setBackgoundHead(new java.awt.Color(102, 102, 255));
         tblListaAlumnos.setBackgoundHover(new java.awt.Color(153, 153, 255));
         tblListaAlumnos.setName("tblListaAlumnos"); // NOI18N
@@ -362,30 +350,30 @@ public class Estudiante_Lista extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel14.setText("0");
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Aprobado.png"))); // NOI18N
         rSPanelMaterial6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel15.setText("0");
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Retirado.png"))); // NOI18N
         rSPanelMaterial6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 204, 255));
-        jLabel16.setText("0");
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/EnCurso.png"))); // NOI18N
         rSPanelMaterial6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel33.setText("Pendiente");
-        rSPanelMaterial6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jLabel33.setText("Desaprobado");
+        rSPanelMaterial6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 100, 20));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel34.setText("0");
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Desaprobado.png"))); // NOI18N
         rSPanelMaterial6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        rSPanelMaterial5.add(rSPanelMaterial6, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 320, 120, 150));
+        rSPanelMaterial5.add(rSPanelMaterial6, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 320, 150, 150));
 
         txtBuscar.setForeground(new java.awt.Color(0, 51, 102));
         txtBuscar.setBorderColor(new java.awt.Color(0, 51, 102));

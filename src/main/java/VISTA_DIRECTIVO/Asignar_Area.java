@@ -39,11 +39,12 @@ public class Asignar_Area extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         Contenedor = new javax.swing.JTabbedPane();
         Inicial = new javax.swing.JPanel();
-        cbxComputacionI = new RSMaterialComponent.RSComboBox();
+        cbxGradoI = new RSMaterialComponent.RSComboBox();
         cbxDocenteI = new RSMaterialComponent.RSComboBox();
-        jLabel2 = new javax.swing.JLabel();
+        cbxComputacionI = new RSMaterialComponent.RSComboBox();
         lblDocenteI = new javax.swing.JLabel();
         lblAreaI = new javax.swing.JLabel();
+        lblGradoI = new javax.swing.JLabel();
         lblContenedorI = new javax.swing.JLabel();
         lblIni1 = new javax.swing.JLabel();
         lblIni2 = new javax.swing.JLabel();
@@ -54,23 +55,22 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblIni7 = new javax.swing.JLabel();
         lblIni8 = new javax.swing.JLabel();
         lblIni9 = new javax.swing.JLabel();
-        cbxGradoI = new RSMaterialComponent.RSComboBox();
         jPanel1 = new javax.swing.JPanel();
         Primaria = new javax.swing.JPanel();
-        cbxComputacionP = new RSMaterialComponent.RSComboBox();
         cbxGradoP = new RSMaterialComponent.RSComboBox();
-        cbxInglesP = new RSMaterialComponent.RSComboBox();
-        cbxComunicacionP = new RSMaterialComponent.RSComboBox();
-        cbxMatematicaP = new RSMaterialComponent.RSComboBox();
-        cbxEdFisicaP = new RSMaterialComponent.RSComboBox();
         cbxPSocialP = new RSMaterialComponent.RSComboBox();
         cbxReligionP = new RSMaterialComponent.RSComboBox();
+        cbxComunicacionP = new RSMaterialComponent.RSComboBox();
         cbxArteComodinP = new RSMaterialComponent.RSComboBox();
+        cbxMatematicaP = new RSMaterialComponent.RSComboBox();
         cbxCienciaP = new RSMaterialComponent.RSComboBox();
-        jLabel8 = new javax.swing.JLabel();
-        lblDocenteI1 = new javax.swing.JLabel();
-        lblAreaI1 = new javax.swing.JLabel();
-        lblContenedorI1 = new javax.swing.JLabel();
+        cbxEdFisicaP = new RSMaterialComponent.RSComboBox();
+        cbxInglesP = new RSMaterialComponent.RSComboBox();
+        cbxComputacionP = new RSMaterialComponent.RSComboBox();
+        lblDocenteIP = new javax.swing.JLabel();
+        lblAreaIP = new javax.swing.JLabel();
+        lblGradoP = new javax.swing.JLabel();
+        lblContenedorP = new javax.swing.JLabel();
         lblPri1 = new javax.swing.JLabel();
         lblPri2 = new javax.swing.JLabel();
         lblPri3 = new javax.swing.JLabel();
@@ -82,21 +82,21 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblPri9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Secundaria = new javax.swing.JPanel();
-        cbxComunicacionS = new RSMaterialComponent.RSComboBox();
         cbxGradoS = new RSMaterialComponent.RSComboBox();
-        cbxReligionS = new RSMaterialComponent.RSComboBox();
-        cbxDesarrolloPCCS = new RSMaterialComponent.RSComboBox();
-        cbxCienciaS = new RSMaterialComponent.RSComboBox();
-        cbxMatematicaS = new RSMaterialComponent.RSComboBox();
         CbxComputacionS = new RSMaterialComponent.RSComboBox();
         cbxCSocialesS = new RSMaterialComponent.RSComboBox();
+        cbxDesarrolloPCCS = new RSMaterialComponent.RSComboBox();
         cbxEdFisicaS = new RSMaterialComponent.RSComboBox();
+        cbxCienciaS = new RSMaterialComponent.RSComboBox();
         cbxInglesS = new RSMaterialComponent.RSComboBox();
+        cbxMatematicaS = new RSMaterialComponent.RSComboBox();
         cbxArteS = new RSMaterialComponent.RSComboBox();
-        jLabel9 = new javax.swing.JLabel();
-        lblDocenteI2 = new javax.swing.JLabel();
-        lblAreaI2 = new javax.swing.JLabel();
-        lblContenedorI2 = new javax.swing.JLabel();
+        cbxComunicacionS = new RSMaterialComponent.RSComboBox();
+        cbxReligionS = new RSMaterialComponent.RSComboBox();
+        lblContenedorS = new javax.swing.JLabel();
+        lblGradoS = new javax.swing.JLabel();
+        lblAreaS = new javax.swing.JLabel();
+        lblDocenteS = new javax.swing.JLabel();
         lblSec1 = new javax.swing.JLabel();
         lblSec2 = new javax.swing.JLabel();
         lblSec3 = new javax.swing.JLabel();
@@ -186,14 +186,14 @@ public class Asignar_Area extends javax.swing.JFrame {
         Inicial.setBackground(new java.awt.Color(255, 255, 255));
         Inicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cbxComputacionI.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxComputacionI.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxComputacionI.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxComputacionI.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxComputacionI.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxComputacionI.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxComputacionI.setName("cb_AsignarArea_areas"); // NOI18N
-        Inicial.add(cbxComputacionI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 200, 30));
+        cbxGradoI.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxGradoI.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxGradoI.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxGradoI.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxGradoI.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxGradoI.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxGradoI.setName("cb_AsignarArea_areas"); // NOI18N
+        Inicial.add(cbxGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         cbxDocenteI.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxDocenteI.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -204,10 +204,14 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxDocenteI.setName("cb_AsignarArea_areas"); // NOI18N
         Inicial.add(cbxDocenteI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("Grado");
-        Inicial.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        cbxComputacionI.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxComputacionI.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxComputacionI.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxComputacionI.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxComputacionI.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxComputacionI.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxComputacionI.setName("cb_AsignarArea_areas"); // NOI18N
+        Inicial.add(cbxComputacionI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 200, 30));
 
         lblDocenteI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDocenteI.setForeground(new java.awt.Color(102, 102, 102));
@@ -222,6 +226,11 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblAreaI.setText("Area");
         lblAreaI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblAreaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
+
+        lblGradoI.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradoI.setForeground(new java.awt.Color(102, 102, 102));
+        lblGradoI.setText("Grado");
+        Inicial.add(lblGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         lblContenedorI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblContenedorI.setForeground(new java.awt.Color(0, 0, 0));
@@ -283,6 +292,7 @@ public class Asignar_Area extends javax.swing.JFrame {
         lblIni9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(0, 0, 0)));
         Inicial.add(lblIni9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 370, 30));
 
+<<<<<<< HEAD
         cbxGradoI.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
         cbxGradoI.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxGradoI.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -293,6 +303,8 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxGradoI.setName("cb_AsignarArea_areas"); // NOI18N
         Inicial.add(cbxGradoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+=======
+>>>>>>> 5e918e60232b0170d66d05ce8ebeb086f0bc17db
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -313,15 +325,6 @@ public class Asignar_Area extends javax.swing.JFrame {
         Primaria.setBackground(new java.awt.Color(255, 255, 255));
         Primaria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cbxComputacionP.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxComputacionP.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxComputacionP.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxComputacionP.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxComputacionP.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxComputacionP.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxComputacionP.setName("cb_AsignarArea_areas"); // NOI18N
-        Primaria.add(cbxComputacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 200, 30));
-
         cbxGradoP.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxGradoP.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxGradoP.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -330,42 +333,6 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxGradoP.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxGradoP.setName("cb_AsignarArea_areas"); // NOI18N
         Primaria.add(cbxGradoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
-
-        cbxInglesP.setColorArrow(new java.awt.Color(153, 153, 153));
-        cbxInglesP.setColorBorde(new java.awt.Color(102, 102, 102));
-        cbxInglesP.setColorBoton(new java.awt.Color(187, 187, 187));
-        cbxInglesP.setColorFondo(new java.awt.Color(187, 187, 187));
-        cbxInglesP.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxInglesP.setColorSeleccion(new java.awt.Color(187, 187, 187));
-        cbxInglesP.setName("cb_AsignarArea_areas"); // NOI18N
-        Primaria.add(cbxInglesP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 200, 30));
-
-        cbxComunicacionP.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxComunicacionP.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxComunicacionP.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxComunicacionP.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxComunicacionP.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxComunicacionP.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxComunicacionP.setName("cb_AsignarArea_areas"); // NOI18N
-        Primaria.add(cbxComunicacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 200, 30));
-
-        cbxMatematicaP.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxMatematicaP.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxMatematicaP.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxMatematicaP.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxMatematicaP.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxMatematicaP.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxMatematicaP.setName("cb_AsignarArea_areas"); // NOI18N
-        Primaria.add(cbxMatematicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 200, 30));
-
-        cbxEdFisicaP.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxEdFisicaP.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxEdFisicaP.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxEdFisicaP.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxEdFisicaP.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxEdFisicaP.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxEdFisicaP.setName("cb_AsignarArea_areas"); // NOI18N
-        Primaria.add(cbxEdFisicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 200, 30));
 
         cbxPSocialP.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxPSocialP.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -385,6 +352,15 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxReligionP.setName("cb_AsignarArea_areas"); // NOI18N
         Primaria.add(cbxReligionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 200, 30));
 
+        cbxComunicacionP.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxComunicacionP.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxComunicacionP.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxComunicacionP.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxComunicacionP.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxComunicacionP.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxComunicacionP.setName("cb_AsignarArea_areas"); // NOI18N
+        Primaria.add(cbxComunicacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 200, 30));
+
         cbxArteComodinP.setColorArrow(new java.awt.Color(153, 153, 153));
         cbxArteComodinP.setColorBorde(new java.awt.Color(102, 102, 102));
         cbxArteComodinP.setColorBoton(new java.awt.Color(187, 187, 187));
@@ -393,6 +369,15 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxArteComodinP.setColorSeleccion(new java.awt.Color(187, 187, 187));
         cbxArteComodinP.setName("cb_AsignarArea_areas"); // NOI18N
         Primaria.add(cbxArteComodinP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 200, 30));
+
+        cbxMatematicaP.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxMatematicaP.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxMatematicaP.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxMatematicaP.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxMatematicaP.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxMatematicaP.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxMatematicaP.setName("cb_AsignarArea_areas"); // NOI18N
+        Primaria.add(cbxMatematicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 200, 30));
 
         cbxCienciaP.setColorArrow(new java.awt.Color(153, 153, 153));
         cbxCienciaP.setColorBorde(new java.awt.Color(102, 102, 102));
@@ -403,30 +388,57 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxCienciaP.setName("cb_AsignarArea_areas"); // NOI18N
         Primaria.add(cbxCienciaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 200, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel8.setText("Grado");
-        Primaria.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        cbxEdFisicaP.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxEdFisicaP.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxEdFisicaP.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxEdFisicaP.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxEdFisicaP.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxEdFisicaP.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxEdFisicaP.setName("cb_AsignarArea_areas"); // NOI18N
+        Primaria.add(cbxEdFisicaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 200, 30));
 
-        lblDocenteI1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDocenteI1.setForeground(new java.awt.Color(0, 0, 0));
-        lblDocenteI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDocenteI1.setText("Docente");
-        lblDocenteI1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
-        Primaria.add(lblDocenteI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
+        cbxInglesP.setColorArrow(new java.awt.Color(153, 153, 153));
+        cbxInglesP.setColorBorde(new java.awt.Color(102, 102, 102));
+        cbxInglesP.setColorBoton(new java.awt.Color(187, 187, 187));
+        cbxInglesP.setColorFondo(new java.awt.Color(187, 187, 187));
+        cbxInglesP.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxInglesP.setColorSeleccion(new java.awt.Color(187, 187, 187));
+        cbxInglesP.setName("cb_AsignarArea_areas"); // NOI18N
+        Primaria.add(cbxInglesP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 200, 30));
 
-        lblAreaI1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAreaI1.setForeground(new java.awt.Color(0, 0, 0));
-        lblAreaI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAreaI1.setText("Area");
-        lblAreaI1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
-        Primaria.add(lblAreaI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
+        cbxComputacionP.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxComputacionP.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxComputacionP.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxComputacionP.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxComputacionP.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxComputacionP.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxComputacionP.setName("cb_AsignarArea_areas"); // NOI18N
+        Primaria.add(cbxComputacionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 200, 30));
 
-        lblContenedorI1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblContenedorI1.setForeground(new java.awt.Color(0, 0, 0));
-        lblContenedorI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblContenedorI1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
-        Primaria.add(lblContenedorI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 270));
+        lblDocenteIP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteIP.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteIP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDocenteIP.setText("Docente");
+        lblDocenteIP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblDocenteIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
+
+        lblAreaIP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaIP.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaIP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAreaIP.setText("Area");
+        lblAreaIP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblAreaIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
+
+        lblGradoP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradoP.setForeground(new java.awt.Color(102, 102, 102));
+        lblGradoP.setText("Grado");
+        Primaria.add(lblGradoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        lblContenedorP.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContenedorP.setForeground(new java.awt.Color(0, 0, 0));
+        lblContenedorP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContenedorP.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Primaria.add(lblContenedorP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 270));
 
         lblPri1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPri1.setForeground(new java.awt.Color(0, 0, 0));
@@ -503,15 +515,6 @@ public class Asignar_Area extends javax.swing.JFrame {
         Secundaria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 4, new java.awt.Color(204, 204, 204)));
         Secundaria.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cbxComunicacionS.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxComunicacionS.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxComunicacionS.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxComunicacionS.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxComunicacionS.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxComunicacionS.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxComunicacionS.setName("cb_AsignarArea_areas"); // NOI18N
-        Secundaria.add(cbxComunicacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 200, 20));
-
         cbxGradoS.setColorArrow(new java.awt.Color(153, 153, 255));
         cbxGradoS.setColorBorde(new java.awt.Color(58, 66, 225));
         cbxGradoS.setColorBoton(new java.awt.Color(102, 102, 255));
@@ -520,47 +523,6 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxGradoS.setColorSeleccion(new java.awt.Color(102, 102, 255));
         cbxGradoS.setName("cb_AsignarArea_areas"); // NOI18N
         Secundaria.add(cbxGradoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
-
-        cbxReligionS.setColorArrow(new java.awt.Color(153, 153, 153));
-        cbxReligionS.setColorBorde(new java.awt.Color(102, 102, 102));
-        cbxReligionS.setColorBoton(new java.awt.Color(187, 187, 187));
-        cbxReligionS.setColorFondo(new java.awt.Color(187, 187, 187));
-        cbxReligionS.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxReligionS.setColorSeleccion(new java.awt.Color(187, 187, 187));
-        cbxReligionS.setName("cb_AsignarArea_areas"); // NOI18N
-        Secundaria.add(cbxReligionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 200, 20));
-
-        cbxDesarrolloPCCS.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxDesarrolloPCCS.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxDesarrolloPCCS.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxDesarrolloPCCS.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxDesarrolloPCCS.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxDesarrolloPCCS.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxDesarrolloPCCS.setName("cb_AsignarArea_areas"); // NOI18N
-        Secundaria.add(cbxDesarrolloPCCS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 200, 20));
-
-        cbxCienciaS.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxCienciaS.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxCienciaS.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxCienciaS.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxCienciaS.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxCienciaS.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxCienciaS.setName("cb_AsignarArea_areas"); // NOI18N
-        cbxCienciaS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxCienciaSActionPerformed(evt);
-            }
-        });
-        Secundaria.add(cbxCienciaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 200, 20));
-
-        cbxMatematicaS.setColorArrow(new java.awt.Color(153, 153, 255));
-        cbxMatematicaS.setColorBorde(new java.awt.Color(58, 66, 225));
-        cbxMatematicaS.setColorBoton(new java.awt.Color(102, 102, 255));
-        cbxMatematicaS.setColorFondo(new java.awt.Color(102, 102, 255));
-        cbxMatematicaS.setColorListaItems(new java.awt.Color(204, 204, 204));
-        cbxMatematicaS.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        cbxMatematicaS.setName("cb_AsignarArea_areas"); // NOI18N
-        Secundaria.add(cbxMatematicaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 200, 20));
 
         CbxComputacionS.setColorArrow(new java.awt.Color(153, 153, 255));
         CbxComputacionS.setColorBorde(new java.awt.Color(58, 66, 225));
@@ -580,6 +542,15 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxCSocialesS.setName("cb_AsignarArea_areas"); // NOI18N
         Secundaria.add(cbxCSocialesS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 200, 20));
 
+        cbxDesarrolloPCCS.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxDesarrolloPCCS.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxDesarrolloPCCS.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxDesarrolloPCCS.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxDesarrolloPCCS.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxDesarrolloPCCS.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxDesarrolloPCCS.setName("cb_AsignarArea_areas"); // NOI18N
+        Secundaria.add(cbxDesarrolloPCCS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 200, 20));
+
         cbxEdFisicaS.setColorArrow(new java.awt.Color(153, 153, 153));
         cbxEdFisicaS.setColorBorde(new java.awt.Color(102, 102, 102));
         cbxEdFisicaS.setColorBoton(new java.awt.Color(187, 187, 187));
@@ -588,6 +559,20 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxEdFisicaS.setColorSeleccion(new java.awt.Color(187, 187, 187));
         cbxEdFisicaS.setName("cb_AsignarArea_areas"); // NOI18N
         Secundaria.add(cbxEdFisicaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 200, 20));
+
+        cbxCienciaS.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxCienciaS.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxCienciaS.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxCienciaS.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxCienciaS.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxCienciaS.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxCienciaS.setName("cb_AsignarArea_areas"); // NOI18N
+        cbxCienciaS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCienciaSActionPerformed(evt);
+            }
+        });
+        Secundaria.add(cbxCienciaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 200, 20));
 
         cbxInglesS.setColorArrow(new java.awt.Color(153, 153, 153));
         cbxInglesS.setColorBorde(new java.awt.Color(102, 102, 102));
@@ -598,6 +583,15 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxInglesS.setName("cb_AsignarArea_areas"); // NOI18N
         Secundaria.add(cbxInglesS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 200, 20));
 
+        cbxMatematicaS.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxMatematicaS.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxMatematicaS.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxMatematicaS.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxMatematicaS.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxMatematicaS.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxMatematicaS.setName("cb_AsignarArea_areas"); // NOI18N
+        Secundaria.add(cbxMatematicaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 200, 20));
+
         cbxArteS.setColorArrow(new java.awt.Color(153, 153, 153));
         cbxArteS.setColorBorde(new java.awt.Color(102, 102, 102));
         cbxArteS.setColorBoton(new java.awt.Color(187, 187, 187));
@@ -607,30 +601,48 @@ public class Asignar_Area extends javax.swing.JFrame {
         cbxArteS.setName("cb_AsignarArea_areas"); // NOI18N
         Secundaria.add(cbxArteS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 200, 20));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Grado");
-        Secundaria.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        cbxComunicacionS.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxComunicacionS.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxComunicacionS.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxComunicacionS.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxComunicacionS.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxComunicacionS.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        cbxComunicacionS.setName("cb_AsignarArea_areas"); // NOI18N
+        Secundaria.add(cbxComunicacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 200, 20));
 
-        lblDocenteI2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDocenteI2.setForeground(new java.awt.Color(0, 0, 0));
-        lblDocenteI2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDocenteI2.setText("Docente");
-        lblDocenteI2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
-        Secundaria.add(lblDocenteI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
+        cbxReligionS.setColorArrow(new java.awt.Color(153, 153, 153));
+        cbxReligionS.setColorBorde(new java.awt.Color(102, 102, 102));
+        cbxReligionS.setColorBoton(new java.awt.Color(187, 187, 187));
+        cbxReligionS.setColorFondo(new java.awt.Color(187, 187, 187));
+        cbxReligionS.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxReligionS.setColorSeleccion(new java.awt.Color(187, 187, 187));
+        cbxReligionS.setName("cb_AsignarArea_areas"); // NOI18N
+        Secundaria.add(cbxReligionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 200, 20));
 
-        lblAreaI2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAreaI2.setForeground(new java.awt.Color(0, 0, 0));
-        lblAreaI2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAreaI2.setText("Area");
-        lblAreaI2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
-        Secundaria.add(lblAreaI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
+        lblContenedorS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContenedorS.setForeground(new java.awt.Color(0, 0, 0));
+        lblContenedorS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContenedorS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblContenedorS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 200));
 
-        lblContenedorI2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblContenedorI2.setForeground(new java.awt.Color(0, 0, 0));
-        lblContenedorI2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblContenedorI2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
-        Secundaria.add(lblContenedorI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 200));
+        lblGradoS.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblGradoS.setForeground(new java.awt.Color(102, 102, 102));
+        lblGradoS.setText("Grado");
+        Secundaria.add(lblGradoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        lblAreaS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAreaS.setForeground(new java.awt.Color(0, 0, 0));
+        lblAreaS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAreaS.setText("Area");
+        lblAreaS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblAreaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 40));
+
+        lblDocenteS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDocenteS.setForeground(new java.awt.Color(0, 0, 0));
+        lblDocenteS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDocenteS.setText("Docente");
+        lblDocenteS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        Secundaria.add(lblDocenteS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 200, 40));
 
         lblSec1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSec1.setForeground(new java.awt.Color(0, 0, 0));
@@ -846,10 +858,7 @@ public class Asignar_Area extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -857,14 +866,17 @@ public class Asignar_Area extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAreaI;
-    private javax.swing.JLabel lblAreaI1;
-    private javax.swing.JLabel lblAreaI2;
+    private javax.swing.JLabel lblAreaIP;
+    private javax.swing.JLabel lblAreaS;
     private javax.swing.JLabel lblContenedorI;
-    private javax.swing.JLabel lblContenedorI1;
-    private javax.swing.JLabel lblContenedorI2;
+    private javax.swing.JLabel lblContenedorP;
+    private javax.swing.JLabel lblContenedorS;
     private javax.swing.JLabel lblDocenteI;
-    private javax.swing.JLabel lblDocenteI1;
-    private javax.swing.JLabel lblDocenteI2;
+    private javax.swing.JLabel lblDocenteIP;
+    private javax.swing.JLabel lblDocenteS;
+    private javax.swing.JLabel lblGradoI;
+    private javax.swing.JLabel lblGradoP;
+    private javax.swing.JLabel lblGradoS;
     public javax.swing.JLabel lblIni1;
     public javax.swing.JLabel lblIni2;
     public javax.swing.JLabel lblIni3;
