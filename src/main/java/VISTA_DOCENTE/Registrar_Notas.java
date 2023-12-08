@@ -33,23 +33,37 @@ public class Registrar_Notas extends javax.swing.JFrame {
         rSPanelMaterial2 = new RSMaterialComponent.RSPanelMaterial();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
+        lblCurso = new javax.swing.JLabel();
+        lblPeriodo = new javax.swing.JLabel();
         rSPanelMaterial3 = new RSMaterialComponent.RSPanelMaterial();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox6 = new RSMaterialComponent.RSComboBox();
-        rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
+        cbxGrado = new RSMaterialComponent.RSComboBox();
+        btnMostrar = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
-        rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox5 = new RSMaterialComponent.RSComboBox();
-        rSComboBox3 = new RSMaterialComponent.RSComboBox();
+        cbxPeriodo = new RSMaterialComponent.RSComboBox();
+        cbxArea = new RSMaterialComponent.RSComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        cbxNivel = new RSMaterialComponent.RSComboBox();
+        btnCantNotas = new RSMaterialComponent.RSButtonIconShadow();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        txtFiltrarAnio = new RSMaterialComponent.RSTextFieldTwo();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
+        tblDatos = new RSMaterialComponent.RSTableMetroCustom();
+        lblNomCompetencia = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        btnRetroceder = new RSMaterialComponent.RSButtonIconShadow();
+        btnRegistrar = new RSMaterialComponent.RSButtonIconShadow();
+        lblPagina = new javax.swing.JLabel();
+        btnAvanzar = new RSMaterialComponent.RSButtonIconShadow();
+        btnBuscar = new RSMaterialComponent.RSButtonIconShadow();
+        txtBuscar = new RSMaterialComponent.RSTextFieldTwo();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,17 +92,23 @@ public class Registrar_Notas extends javax.swing.JFrame {
         jLabel2.setText("MARIA REYNA DE LA PAZ");
         rSPanelMaterial2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 600, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("FILTRAR EL NOMBRE DEL CURSO Y EL BIMESTRE");
-        rSPanelMaterial2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 600, -1));
-
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rSLabelTextIcon1.setText("Notas");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
         rSPanelMaterial2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        lblCurso.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblCurso.setForeground(new java.awt.Color(102, 102, 102));
+        lblCurso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCurso.setText("Nombre Curso");
+        rSPanelMaterial2.add(lblCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 530, -1));
+
+        lblPeriodo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblPeriodo.setForeground(new java.awt.Color(102, 102, 102));
+        lblPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPeriodo.setText("Periodo");
+        rSPanelMaterial2.add(lblPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 240, -1));
 
         jPanel2.add(rSPanelMaterial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 120));
 
@@ -99,96 +119,239 @@ public class Registrar_Notas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Grado");
-        rSPanelMaterial3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, -1));
+        rSPanelMaterial3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 210, -1));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
-        jComboBox6.setColorArrow(new java.awt.Color(153, 153, 255));
-        jComboBox6.setColorBorde(new java.awt.Color(58, 66, 225));
-        jComboBox6.setColorBoton(new java.awt.Color(102, 102, 255));
-        jComboBox6.setColorFondo(new java.awt.Color(102, 102, 255));
-        jComboBox6.setColorListaItems(new java.awt.Color(204, 204, 204));
-        jComboBox6.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        cbxGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxGrado.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxGrado.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxGrado.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxGrado.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxGrado.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxGrado.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
-        rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
-        rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
-        rSPanelMaterial3.add(rSButtonIconShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        btnMostrar.setBackground(new java.awt.Color(0, 102, 204));
+        btnMostrar.setBackgroundHover(new java.awt.Color(0, 51, 102));
+        btnMostrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
+        rSPanelMaterial3.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
 
         rSButtonIconShadow2.setBackground(new java.awt.Color(255, 102, 102));
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
         rSButtonIconShadow2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
-        rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
-
-        rSButtonIconShadow3.setBackground(new java.awt.Color(255, 153, 51));
-        rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(145, 72, 0));
-        rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.COMMENT);
-        rSPanelMaterial3.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
+        rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Bimestre");
-        rSPanelMaterial3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("Área");
-        rSPanelMaterial3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 200, -1));
+        rSPanelMaterial3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 200, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Exportar a PDF");
-        rSPanelMaterial3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        rSPanelMaterial3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel8.setText("Resumen del Bimestre");
-        rSPanelMaterial3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        cbxPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
+        cbxPeriodo.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxPeriodo.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxPeriodo.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxPeriodo.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxPeriodo.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxPeriodo.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        cbxArea.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxArea.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxArea.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxArea.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxArea.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxArea.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxArea.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setText("Área");
+        rSPanelMaterial3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 200, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel11.setText("Nivel");
+        rSPanelMaterial3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, -1));
+
+        cbxNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxNivel.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxNivel.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxNivel.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxNivel.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxNivel.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxNivel.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        btnCantNotas.setBackground(new java.awt.Color(153, 153, 153));
+        btnCantNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Configurar.png"))); // NOI18N
+        btnCantNotas.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnCantNotas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
+        btnCantNotas.setName("btnCantNotas"); // NOI18N
+        rSPanelMaterial3.add(btnCantNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 40, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setText("Mostrar Estudiantes ");
+        rSPanelMaterial3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel13.setText("Cantidad de Notas ");
+        rSPanelMaterial3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel27.setText("Año");
+        rSPanelMaterial3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+
+        txtFiltrarAnio.setForeground(new java.awt.Color(0, 51, 102));
+        txtFiltrarAnio.setBorderColor(new java.awt.Color(0, 51, 102));
+        txtFiltrarAnio.setCaretColor(new java.awt.Color(0, 51, 102));
+        txtFiltrarAnio.setName("txtFiltrarAnio"); // NOI18N
+        txtFiltrarAnio.setPhColor(new java.awt.Color(102, 102, 102));
+        txtFiltrarAnio.setPlaceholder("Año");
+        rSPanelMaterial3.add(txtFiltrarAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, 30));
+
+        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 470));
+
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Alumno Apellido ", null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Estudiante", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "Promedio", "Seleccionado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, true, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblDatos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        tblDatos.setBackgoundHead(new java.awt.Color(102, 102, 255));
+        tblDatos.setBackgoundHover(new java.awt.Color(153, 153, 255));
+        tblDatos.setSelectionBackground(new java.awt.Color(80, 104, 224));
+        tblDatos.setShowHorizontalLines(true);
+        tblDatos.getTableHeader().setResizingAllowed(false);
+        tblDatos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblDatos);
+        if (tblDatos.getColumnModel().getColumnCount() > 0) {
+            tblDatos.getColumnModel().getColumn(0).setResizable(false);
+            tblDatos.getColumnModel().getColumn(0).setPreferredWidth(350);
+            tblDatos.getColumnModel().getColumn(1).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(1).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(1).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(2).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(2).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(2).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(3).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(3).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(3).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(4).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(4).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(4).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(5).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(5).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(5).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(6).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(6).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(6).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(7).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(7).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(7).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(8).setMinWidth(50);
+            tblDatos.getColumnModel().getColumn(8).setPreferredWidth(50);
+            tblDatos.getColumnModel().getColumn(8).setMaxWidth(50);
+            tblDatos.getColumnModel().getColumn(9).setResizable(false);
+            tblDatos.getColumnModel().getColumn(9).setPreferredWidth(65);
+            tblDatos.getColumnModel().getColumn(10).setResizable(false);
+            tblDatos.getColumnModel().getColumn(10).setPreferredWidth(87);
+        }
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 900, 310));
+
+        lblNomCompetencia.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblNomCompetencia.setForeground(new java.awt.Color(102, 102, 102));
+        lblNomCompetencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNomCompetencia.setText("Nombre Competencia");
+        jPanel2.add(lblNomCompetencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 600, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Guardar");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 530, 60, -1));
+
+        btnRetroceder.setBackground(new java.awt.Color(102, 102, 255));
+        btnRetroceder.setBackgroundHover(new java.awt.Color(0, 102, 153));
+        btnRetroceder.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FAST_REWIND);
+        btnRetroceder.setName("btnRetroceder"); // NOI18N
+        jPanel2.add(btnRetroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 40, -1));
+
+        btnRegistrar.setBackground(new java.awt.Color(0, 204, 102));
+        btnRegistrar.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnRegistrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
+        btnRegistrar.setName("btnCrear"); // NOI18N
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 490, 40, -1));
+
+        lblPagina.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPagina.setForeground(new java.awt.Color(0, 0, 0));
+        lblPagina.setText("     N°");
+        lblPagina.setBorder(new javax.swing.border.MatteBorder(null));
+        lblPagina.setFocusable(false);
+        lblPagina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(lblPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 40, 40));
+
+        btnAvanzar.setBackground(new java.awt.Color(102, 102, 255));
+        btnAvanzar.setBackgroundHover(new java.awt.Color(0, 102, 153));
+        btnAvanzar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FAST_FORWARD);
+        btnAvanzar.setName("btnLimpiar"); // NOI18N
+        jPanel2.add(btnAvanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 40, -1));
+
+        btnBuscar.setBackground(new java.awt.Color(102, 102, 102));
+        btnBuscar.setBackgroundHover(new java.awt.Color(204, 204, 204));
+        btnBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        btnBuscar.setName("btnBuscar"); // NOI18N
+        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, -1, -1));
+
+        txtBuscar.setForeground(new java.awt.Color(0, 51, 102));
+        txtBuscar.setBorderColor(new java.awt.Color(0, 51, 102));
+        txtBuscar.setCaretColor(new java.awt.Color(0, 51, 102));
+        txtBuscar.setName("txtBuscar"); // NOI18N
+        txtBuscar.setPhColor(new java.awt.Color(153, 153, 153));
+        txtBuscar.setPlaceholder("Buscar Estudiante");
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 250, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Filtro");
-        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+        jLabel9.setText("Registrar Comentarios");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
-        jComboBox5.setColorArrow(new java.awt.Color(153, 153, 255));
-        jComboBox5.setColorBorde(new java.awt.Color(58, 66, 225));
-        jComboBox5.setColorBoton(new java.awt.Color(102, 102, 255));
-        jComboBox5.setColorFondo(new java.awt.Color(102, 102, 255));
-        jComboBox5.setColorListaItems(new java.awt.Color(204, 204, 204));
-        jComboBox5.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-
-        rSComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
-        rSComboBox3.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox3.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox3.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox3.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox3.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox3.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(rSComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
-
-        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 420));
-
-        rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        rSTableMetroCustom1.setBackgoundHead(new java.awt.Color(102, 102, 255));
-        rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
-        jScrollPane1.setViewportView(rSTableMetroCustom1);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 910, 410));
-
-        rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 560));
+        rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,11 +361,15 @@ public class Registrar_Notas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,27 +377,41 @@ public class Registrar_Notas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public RSMaterialComponent.RSComboBox jComboBox5;
-    public RSMaterialComponent.RSComboBox jComboBox6;
+    public RSMaterialComponent.RSButtonIconShadow btnAvanzar;
+    public RSMaterialComponent.RSButtonIconShadow btnBuscar;
+    public RSMaterialComponent.RSButtonIconShadow btnCantNotas;
+    public RSMaterialComponent.RSButtonIconShadow btnMostrar;
+    public RSMaterialComponent.RSButtonIconShadow btnRegistrar;
+    public RSMaterialComponent.RSButtonIconShadow btnRetroceder;
+    public RSMaterialComponent.RSComboBox cbxArea;
+    public RSMaterialComponent.RSComboBox cbxGrado;
+    public RSMaterialComponent.RSComboBox cbxNivel;
+    public RSMaterialComponent.RSComboBox cbxPeriodo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
+    public javax.swing.JLabel lblCurso;
+    public javax.swing.JLabel lblNomCompetencia;
+    public javax.swing.JLabel lblPagina;
+    public javax.swing.JLabel lblPeriodo;
     public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
-    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
-    public RSMaterialComponent.RSComboBox rSComboBox3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial3;
-    public RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
+    public RSMaterialComponent.RSTableMetroCustom tblDatos;
+    public RSMaterialComponent.RSTextFieldTwo txtBuscar;
+    public RSMaterialComponent.RSTextFieldTwo txtFiltrarAnio;
     // End of variables declaration//GEN-END:variables
 }

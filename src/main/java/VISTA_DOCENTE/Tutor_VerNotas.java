@@ -33,23 +33,37 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
         rSPanelMaterial2 = new RSMaterialComponent.RSPanelMaterial();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
+        lblCurso = new javax.swing.JLabel();
+        lblPeriodo = new javax.swing.JLabel();
         rSPanelMaterial3 = new RSMaterialComponent.RSPanelMaterial();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox6 = new RSMaterialComponent.RSComboBox();
-        rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
+        btnMostrar = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox5 = new RSMaterialComponent.RSComboBox();
-        rSComboBox3 = new RSMaterialComponent.RSComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        cbxGrado = new RSMaterialComponent.RSComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        cbxPeriodo = new RSMaterialComponent.RSComboBox();
+        cbxArea = new RSMaterialComponent.RSComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        cbxNivel = new RSMaterialComponent.RSComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
+        lblNomCompetencia = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cbxComp = new RSMaterialComponent.RSComboBox();
+        jLabel12 = new javax.swing.JLabel();
+        btnCrear = new RSMaterialComponent.RSButtonIconShadow();
+        btnActualizar = new RSMaterialComponent.RSButtonIconShadow();
+        btnBorrar = new RSMaterialComponent.RSButtonIconShadow();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        btnLimpiar = new RSMaterialComponent.RSButtonIconShadow();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,17 +92,23 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
         jLabel2.setText("MARIA REYNA DE LA PAZ");
         rSPanelMaterial2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 600, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("FILTRAR EL NOMBRE DEL CURSO Y EL BIMESTRE");
-        rSPanelMaterial2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 600, -1));
-
         rSLabelTextIcon1.setForeground(new java.awt.Color(102, 102, 255));
         rSLabelTextIcon1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         rSLabelTextIcon1.setText("Ver Registro de Notas");
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXTENSION);
         rSPanelMaterial2.add(rSLabelTextIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        lblCurso.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblCurso.setForeground(new java.awt.Color(102, 102, 102));
+        lblCurso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCurso.setText("Nombre Curso");
+        rSPanelMaterial2.add(lblCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 530, 20));
+
+        lblPeriodo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblPeriodo.setForeground(new java.awt.Color(102, 102, 102));
+        lblPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPeriodo.setText("Periodo");
+        rSPanelMaterial2.add(lblPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 240, 20));
 
         jPanel2.add(rSPanelMaterial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 120));
 
@@ -96,24 +116,10 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
         rSPanelMaterial3.setBgShade(new java.awt.Color(255, 255, 255));
         rSPanelMaterial3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("Grado");
-        rSPanelMaterial3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, -1));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
-        jComboBox6.setColorArrow(new java.awt.Color(153, 153, 255));
-        jComboBox6.setColorBorde(new java.awt.Color(58, 66, 225));
-        jComboBox6.setColorBoton(new java.awt.Color(102, 102, 255));
-        jComboBox6.setColorFondo(new java.awt.Color(102, 102, 255));
-        jComboBox6.setColorListaItems(new java.awt.Color(204, 204, 204));
-        jComboBox6.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-
-        rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
-        rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
-        rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
-        rSPanelMaterial3.add(rSButtonIconShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        btnMostrar.setBackground(new java.awt.Color(0, 102, 204));
+        btnMostrar.setBackgroundHover(new java.awt.Color(0, 51, 102));
+        btnMostrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
+        rSPanelMaterial3.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
 
         rSButtonIconShadow2.setBackground(new java.awt.Color(255, 102, 102));
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
@@ -125,16 +131,6 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
         rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(145, 72, 0));
         rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.COMMENT);
         rSPanelMaterial3.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("Bimestre");
-        rSPanelMaterial3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("Área");
-        rSPanelMaterial3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 200, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
@@ -148,26 +144,64 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Filtro");
-        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+        jLabel9.setText("Mostrar");
+        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
-        jComboBox5.setColorArrow(new java.awt.Color(153, 153, 255));
-        jComboBox5.setColorBorde(new java.awt.Color(58, 66, 225));
-        jComboBox5.setColorBoton(new java.awt.Color(102, 102, 255));
-        jComboBox5.setColorFondo(new java.awt.Color(102, 102, 255));
-        jComboBox5.setColorListaItems(new java.awt.Color(204, 204, 204));
-        jComboBox5.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Grado");
+        rSPanelMaterial3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 210, -1));
 
-        rSComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
-        rSComboBox3.setColorArrow(new java.awt.Color(153, 153, 255));
-        rSComboBox3.setColorBorde(new java.awt.Color(58, 66, 225));
-        rSComboBox3.setColorBoton(new java.awt.Color(102, 102, 255));
-        rSComboBox3.setColorFondo(new java.awt.Color(102, 102, 255));
-        rSComboBox3.setColorListaItems(new java.awt.Color(204, 204, 204));
-        rSComboBox3.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        rSPanelMaterial3.add(rSComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        cbxGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxGrado.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxGrado.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxGrado.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxGrado.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxGrado.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxGrado.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Bimestre");
+        rSPanelMaterial3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 200, -1));
+
+        cbxPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
+        cbxPeriodo.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxPeriodo.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxPeriodo.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxPeriodo.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxPeriodo.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxPeriodo.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        cbxArea.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxArea.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxArea.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxArea.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxArea.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxArea.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxArea.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setText("Área");
+        rSPanelMaterial3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 200, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel11.setText("Nivel");
+        rSPanelMaterial3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, -1));
+
+        cbxNivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxNivel.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxNivel.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxNivel.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxNivel.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxNivel.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxNivel.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        rSPanelMaterial3.add(cbxNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 420));
 
@@ -186,9 +220,73 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
         rSTableMetroCustom1.setBackgoundHover(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(rSTableMetroCustom1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 910, 410));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 910, 320));
 
-        rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 560));
+        lblNomCompetencia.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblNomCompetencia.setForeground(new java.awt.Color(102, 102, 102));
+        lblNomCompetencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNomCompetencia.setText("Nombre Competencia");
+        jPanel2.add(lblNomCompetencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 600, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("Competencia");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 110, 20));
+
+        cbxComp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
+        cbxComp.setColorArrow(new java.awt.Color(153, 153, 255));
+        cbxComp.setColorBorde(new java.awt.Color(58, 66, 225));
+        cbxComp.setColorBoton(new java.awt.Color(102, 102, 255));
+        cbxComp.setColorFondo(new java.awt.Color(102, 102, 255));
+        cbxComp.setColorListaItems(new java.awt.Color(204, 204, 204));
+        cbxComp.setColorSeleccion(new java.awt.Color(102, 102, 255));
+        jPanel2.add(cbxComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 420, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setText("Eliminar");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, -1, -1));
+
+        btnCrear.setBackground(new java.awt.Color(0, 204, 102));
+        btnCrear.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnCrear.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
+        btnCrear.setName("btnCrear"); // NOI18N
+        jPanel2.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, -1, -1));
+
+        btnActualizar.setBackground(new java.awt.Color(255, 204, 0));
+        btnActualizar.setBackgroundHover(new java.awt.Color(153, 102, 0));
+        btnActualizar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
+        btnActualizar.setName("btnActualizar"); // NOI18N
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, -1, -1));
+
+        btnBorrar.setBackground(new java.awt.Color(255, 102, 102));
+        btnBorrar.setBackgroundHover(new java.awt.Color(204, 0, 0));
+        btnBorrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
+        btnBorrar.setName("btnBorrar"); // NOI18N
+        jPanel2.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel14.setText("Actualizar");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 550, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Crear");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 550, -1, -1));
+
+        btnLimpiar.setBackground(new java.awt.Color(0, 204, 255));
+        btnLimpiar.setBackgroundHover(new java.awt.Color(0, 102, 153));
+        btnLimpiar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_SWEEP);
+        btnLimpiar.setName("btnLimpiar"); // NOI18N
+        jPanel2.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 500, -1, -1));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel29.setText("Limpiar");
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 550, -1, -1));
+
+        rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,11 +308,24 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public RSMaterialComponent.RSComboBox jComboBox5;
-    public RSMaterialComponent.RSComboBox jComboBox6;
+    public RSMaterialComponent.RSButtonIconShadow btnActualizar;
+    public RSMaterialComponent.RSButtonIconShadow btnBorrar;
+    public RSMaterialComponent.RSButtonIconShadow btnCrear;
+    public RSMaterialComponent.RSButtonIconShadow btnLimpiar;
+    public RSMaterialComponent.RSButtonIconShadow btnMostrar;
+    public RSMaterialComponent.RSComboBox cbxArea;
+    public RSMaterialComponent.RSComboBox cbxComp;
+    public RSMaterialComponent.RSComboBox cbxGrado;
+    public RSMaterialComponent.RSComboBox cbxNivel;
+    public RSMaterialComponent.RSComboBox cbxPeriodo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -223,10 +334,11 @@ public class Tutor_VerNotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
+    public javax.swing.JLabel lblCurso;
+    public javax.swing.JLabel lblNomCompetencia;
+    public javax.swing.JLabel lblPeriodo;
     public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
     public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
-    public RSMaterialComponent.RSComboBox rSComboBox3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
