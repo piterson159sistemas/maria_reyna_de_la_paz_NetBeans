@@ -16,6 +16,7 @@ Vista\MenuDirec$3.class
 Vista\asignar_area_directivo_1.class
 Modelo\Competencia.class
 Controlador\CAsignarTutoria$1.class
+Controlador\CRegistrarNotas$3.class
 VISTA_DOCENTE\Tutor_VerAsistencia$1.class
 VISTA_DOCENTE\MenuDocen$5.class
 Procesos\ProcesosAlumnos$2.class
@@ -27,6 +28,7 @@ VISTA_DIRECTIVO\Estudiante$2.class
 VISTA_DIRECTIVO\Asignar_Area$2.class
 VISTA_DIRECTIVO\plantilla_noborrar$1.class
 DAO\BuscarPYcambioC.class
+Controlador\CRegistrarNotas$2.class
 VISTA_DOCENTE\Registrar_Notas.class
 Vista\recopilar_codigo_cambioContraseña$6.class
 Procesos\ProcesosAlumnos$3.class
@@ -145,6 +147,7 @@ Vista\MenuDirec$7.class
 DAO\QueryLogin.class
 Modelo\GradoAlumno.class
 DAO\RecopilarCodigo.class
+Controlador\CRegistrarNotas.class
 Modelo\Persona.class
 VISTA_DIRECTIVO\Administrar$2.class
 Vista\gestionar_tutor_directivo_1.class
@@ -161,6 +164,7 @@ Modelo\Gestionable.class
 VISTA_DIRECTIVO\Estudiante.class
 Vista\Registrar_Asistencia$2.class
 Vista\Registrar_GestionAprendi$2.class
+Controlador\CRegistrarNotas$1.class
 Vista\Registrar_Notas.class
 Controlador\CAsignarTutoria$3.class
 Modelo\Calificacion.class
@@ -178,6 +182,7 @@ VISTA_DOCENTE\Tutor.class
 Modelo\Usuario.class
 DAO\crudAlumnoNotas.class
 VISTA_DIRECTIVO\Estudiante$1.class
+VISTA_DOCENTE\Registrar_Notas$1.class
 Vista\MenuDocente$6.class
 VISTA_DIRECTIVO\Administrar_Docente1$2.class
 Procesos\ProcesosAlumnos.class
