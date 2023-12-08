@@ -18,8 +18,8 @@ public class Main {
         
 
         /* Para inicar sesion rapido cuando hago pruebas
-        login.txtCod.setText("D0101232");
-        login.txtClave.setText("raul");
+        login.txtCod.setText("P0101231");
+        login.txtClave.setText("sa");
         login.btnIngresar.doClick();
         */
             
