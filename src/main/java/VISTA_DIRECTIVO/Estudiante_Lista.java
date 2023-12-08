@@ -229,12 +229,7 @@ public class Estudiante_Lista extends javax.swing.JFrame {
         txtFiltrarAnio.setName("txtFiltrarAnio"); // NOI18N
         txtFiltrarAnio.setPhColor(new java.awt.Color(102, 102, 102));
         txtFiltrarAnio.setPlaceholder("Año");
-        txtFiltrarAnio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFiltrarAnioActionPerformed(evt);
-            }
-        });
-        rSPanelMaterial4.add(txtFiltrarAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 232, 170, -1));
+        rSPanelMaterial4.add(txtFiltrarAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 170, 30));
 
         rSPanelMaterial3.add(rSPanelMaterial4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 420));
 
@@ -565,10 +560,6 @@ public class Estudiante_Lista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtFiltrarAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltrarAnioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFiltrarAnioActionPerformed
 
     private void txtNombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresActionPerformed
         // TODO add your handling code here:

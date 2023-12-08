@@ -112,7 +112,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
         lblNombreUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNombreUsuario.setForeground(new java.awt.Color(102, 102, 102));
         lblNombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNombreUsuario.setText("Cod.USUARIO");
+        lblNombreUsuario.setText("Nom.USUARIO");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

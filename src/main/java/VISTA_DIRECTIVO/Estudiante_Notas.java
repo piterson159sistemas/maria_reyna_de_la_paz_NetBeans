@@ -39,29 +39,27 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         cbxGrado = new RSMaterialComponent.RSComboBox();
         rSButtonIconShadow1 = new RSMaterialComponent.RSButtonIconShadow();
         rSButtonIconShadow2 = new RSMaterialComponent.RSButtonIconShadow();
-        rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         cbxPeriodo = new RSMaterialComponent.RSComboBox();
         cbxArea = new RSMaterialComponent.RSComboBox();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         cbxNivel = new RSMaterialComponent.RSComboBox();
+        btnCantNotas = new RSMaterialComponent.RSButtonIconShadow();
+        jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new RSMaterialComponent.RSTableMetroCustom();
         cbxComp = new RSMaterialComponent.RSComboBox();
         jLabel6 = new javax.swing.JLabel();
         lblNomCompetencia = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        btnCrear = new RSMaterialComponent.RSButtonIconShadow();
         btnActualizar = new RSMaterialComponent.RSButtonIconShadow();
-        btnBorrar = new RSMaterialComponent.RSButtonIconShadow();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btnLimpiar = new RSMaterialComponent.RSButtonIconShadow();
         jLabel29 = new javax.swing.JLabel();
+        btnCrear1 = new RSMaterialComponent.RSButtonIconShadow();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,18 +129,13 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         rSButtonIconShadow1.setBackground(new java.awt.Color(0, 102, 204));
         rSButtonIconShadow1.setBackgroundHover(new java.awt.Color(0, 51, 102));
         rSButtonIconShadow1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FILTER_LIST);
-        rSPanelMaterial3.add(rSButtonIconShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        rSPanelMaterial3.add(rSButtonIconShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
 
         rSButtonIconShadow2.setBackground(new java.awt.Color(255, 102, 102));
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
         rSButtonIconShadow2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
-        rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
-
-        rSButtonIconShadow3.setBackground(new java.awt.Color(255, 153, 51));
-        rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(145, 72, 0));
-        rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.COMMENT);
-        rSPanelMaterial3.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
+        rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
@@ -152,17 +145,12 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Exportar a PDF");
-        rSPanelMaterial3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel8.setText("Resumen del Bimestre");
-        rSPanelMaterial3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        rSPanelMaterial3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Filtro");
-        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+        jLabel9.setText("Cantidad de Notas");
+        rSPanelMaterial3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         cbxPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
         cbxPeriodo.setColorArrow(new java.awt.Color(153, 153, 255));
@@ -201,7 +189,19 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         cbxNivel.setColorSeleccion(new java.awt.Color(102, 102, 255));
         rSPanelMaterial3.add(cbxNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 420));
+        btnCantNotas.setBackground(new java.awt.Color(153, 153, 153));
+        btnCantNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Configurar.png"))); // NOI18N
+        btnCantNotas.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnCantNotas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
+        btnCantNotas.setName("btnCantNotas"); // NOI18N
+        rSPanelMaterial3.add(btnCantNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 40, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setText("Mostrar");
+        rSPanelMaterial3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
+
+        jPanel2.add(rSPanelMaterial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, 460));
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,14 +211,14 @@ public class Estudiante_Notas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Estudiante", "Nota", "Promedio", ""
             }
         ));
         tblDatos.setBackgoundHead(new java.awt.Color(102, 102, 255));
         tblDatos.setBackgoundHover(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(tblDatos);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 910, 350));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 910, 340));
 
         cbxComp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  " }));
         cbxComp.setColorArrow(new java.awt.Color(153, 153, 255));
@@ -227,12 +227,12 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         cbxComp.setColorFondo(new java.awt.Color(102, 102, 255));
         cbxComp.setColorListaItems(new java.awt.Color(204, 204, 204));
         cbxComp.setColorSeleccion(new java.awt.Color(102, 102, 255));
-        jPanel2.add(cbxComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
+        jPanel2.add(cbxComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 420, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Competencia");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 110, 20));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 110, 20));
 
         lblNomCompetencia.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblNomCompetencia.setForeground(new java.awt.Color(102, 102, 102));
@@ -240,49 +240,38 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         lblNomCompetencia.setText("Nombre Competencia");
         jPanel2.add(lblNomCompetencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 600, -1));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel12.setText("Eliminar");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 570, -1, -1));
-
-        btnCrear.setBackground(new java.awt.Color(0, 204, 102));
-        btnCrear.setBackgroundHover(new java.awt.Color(0, 102, 51));
-        btnCrear.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
-        btnCrear.setName("btnCrear"); // NOI18N
-        jPanel2.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 520, -1, -1));
-
         btnActualizar.setBackground(new java.awt.Color(255, 204, 0));
         btnActualizar.setBackgroundHover(new java.awt.Color(153, 102, 0));
         btnActualizar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.UPDATE);
         btnActualizar.setName("btnActualizar"); // NOI18N
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 520, -1, -1));
-
-        btnBorrar.setBackground(new java.awt.Color(255, 102, 102));
-        btnBorrar.setBackgroundHover(new java.awt.Color(204, 0, 0));
-        btnBorrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_FOREVER);
-        btnBorrar.setName("btnBorrar"); // NOI18N
-        jPanel2.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 520, -1, -1));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 510, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(102, 102, 102));
         jLabel14.setText("Actualizar");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 570, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel16.setText("Crear");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 570, -1, -1));
+        jLabel16.setText("Registrar");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, -1, -1));
 
         btnLimpiar.setBackground(new java.awt.Color(0, 204, 255));
         btnLimpiar.setBackgroundHover(new java.awt.Color(0, 102, 153));
         btnLimpiar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DELETE_SWEEP);
         btnLimpiar.setName("btnLimpiar"); // NOI18N
-        jPanel2.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 520, -1, -1));
+        jPanel2.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 510, -1, -1));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(102, 102, 102));
         jLabel29.setText("Limpiar");
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 570, -1, -1));
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 560, -1, -1));
+
+        btnCrear1.setBackground(new java.awt.Color(0, 204, 102));
+        btnCrear1.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnCrear1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
+        btnCrear1.setName("btnCrear"); // NOI18N
+        jPanel2.add(btnCrear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 510, -1, -1));
 
         rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 600));
 
@@ -290,7 +279,7 @@ public class Estudiante_Notas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, 1226, Short.MAX_VALUE)
+            .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,8 +296,8 @@ public class Estudiante_Notas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public RSMaterialComponent.RSButtonIconShadow btnActualizar;
-    public RSMaterialComponent.RSButtonIconShadow btnBorrar;
-    public RSMaterialComponent.RSButtonIconShadow btnCrear;
+    private RSMaterialComponent.RSButtonIconShadow btnCantNotas;
+    public RSMaterialComponent.RSButtonIconShadow btnCrear1;
     public RSMaterialComponent.RSButtonIconShadow btnLimpiar;
     public RSMaterialComponent.RSComboBox cbxArea;
     public RSMaterialComponent.RSComboBox cbxComp;
@@ -327,7 +316,6 @@ public class Estudiante_Notas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -336,7 +324,6 @@ public class Estudiante_Notas extends javax.swing.JFrame {
     public javax.swing.JLabel lblPeriodo;
     public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow1;
     public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
-    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
