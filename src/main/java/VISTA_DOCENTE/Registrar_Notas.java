@@ -189,7 +189,6 @@ public class Registrar_Notas extends javax.swing.JFrame {
         rSPanelMaterial3.add(cbxNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         btnCantNotas.setBackground(new java.awt.Color(153, 153, 153));
-        btnCantNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Configurar.png"))); // NOI18N
         btnCantNotas.setBackgroundHover(new java.awt.Color(0, 102, 51));
         btnCantNotas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
         btnCantNotas.setName("btnCantNotas"); // NOI18N
