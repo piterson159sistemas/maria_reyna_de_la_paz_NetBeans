@@ -29,17 +29,22 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 import rojeru_san.efectos.ValoresEnum;
+import javax.swing.table.TableRowSorter;
+import javax.swing.table.TableModel;
+import javax.swing.RowFilter;
 
 
 public class CRegistrarNotas implements ActionListener{
     
     Registrar_Notas vista;
+    TableRowSorter<TableModel> rowSorter;
     
     public CRegistrarNotas(Registrar_Notas frm){
         vista=frm;
         vista.btnCantNotas.addActionListener(this);
         vista.btnAvanzar.addActionListener(this);
         vista.btnRetroceder.addActionListener(this);
+        vista.btnBuscar.addActionListener(this);
         //cambiar icono de un boton
         //vista.btnAvanzar.setIcons(ValoresEnum.ICONS.CODE);
         cambiarColorEncabezadoRGB(1, 129, 128, 255);
@@ -56,10 +61,11 @@ public class CRegistrarNotas implements ActionListener{
         vista.lblPagina.setForeground(Color.WHITE);
         vista.lblPagina.setOpaque(true);
         vista.lblPagina.setHorizontalAlignment(SwingConstants.CENTER);
-        popMenuSeleccion(vista.tblDatos,10);
+        addPopUpMenu(vista.tblDatos);
         diseñoCheckBox(vista.tblDatos, 10);
         permitirNumeros(vista.tblDatos);
         detectarCambioPagina(vista.lblPagina);
+        definirFiltroTabla(vista.tblDatos);
     }
     
     public void modificarColumnas(int cantColumSolicitada){
@@ -142,7 +148,7 @@ public class CRegistrarNotas implements ActionListener{
         });
     }
     
-    public void popMenuSeleccion(JTable tabla,int columnIndex){
+    public void addPopUpMenu(JTable tabla){
         JTableHeader header = tabla.getTableHeader();
         header.addMouseListener(new MouseAdapter() {
             @Override
@@ -151,29 +157,46 @@ public class CRegistrarNotas implements ActionListener{
                     int columnIndex = tabla.columnAtPoint(e.getPoint());
                     //condiciones que haya 1 fila y solo hasta las columnas visibles que tenga nota
                     if (columnIndex == 10) {  // Solo para la columna "Seleccionar"
-                        addPopUpMenu(e, header, columnIndex);
-                    }else if(columnIndex>=1 && columnIndex<=8){
-                        
+                        manejoCheckBox(e, header, columnIndex);
+                    }else if( (columnIndex>=1 && columnIndex<=8) && tabla.getRowCount()==1 ){
+                        manejoComentario(e, header, columnIndex);
                     }
                 }
             }
         });
     }
     
-    private void addPopUpMenu(MouseEvent e,JTableHeader header,int columnIndex) {
+    private void manejoCheckBox(MouseEvent e,JTableHeader header,int columnIndex) {
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem seleccionarTodos = new JMenuItem("Seleccionar Todos");
-        seleccionCheckBox(seleccionarTodos, true, columnIndex);
+        edicionCheckBox(seleccionarTodos, true, columnIndex);
         
         JMenuItem deseleccionarTodos = new JMenuItem("Deseleccionar Todos");
-        seleccionCheckBox(deseleccionarTodos, false, columnIndex);
+        edicionCheckBox(deseleccionarTodos, false, columnIndex);
         
         popupMenu.add(seleccionarTodos);
         popupMenu.add(deseleccionarTodos);
         popupMenu.show(header, e.getX()+20, e.getY()-60);
     }
     
-    public void seleccionCheckBox(JMenuItem item,boolean seleccionar, int columnIndex){
+    private void manejoComentario(MouseEvent e,JTableHeader header,int columnIndex) {
+        JPopupMenu popupMenu = new JPopupMenu();
+        JMenuItem crear = new JMenuItem("Agregatr Comentario");
+        edicionComentario(crear, 0, columnIndex);
+        
+        JMenuItem editar = new JMenuItem("Editar Comentario");
+        edicionComentario(editar, 1, columnIndex);
+        
+        JMenuItem eliminar = new JMenuItem("Eliminar Comentario");
+        edicionComentario(eliminar, 2, columnIndex);
+        
+        popupMenu.add(crear);
+        popupMenu.add(editar);
+        popupMenu.add(eliminar);
+        popupMenu.show(header, e.getX(), e.getY()-60);
+    }
+    
+    public void edicionCheckBox(JMenuItem item,boolean seleccionar, int columnIndex){
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -181,6 +204,22 @@ public class CRegistrarNotas implements ActionListener{
                 for (int i = 0; i < cantFilas; i++) {
                     vista.tblDatos.setValueAt(seleccionar, i, columnIndex);
                 }
+            }
+        });
+    }
+    
+    public void edicionComentario(JMenuItem item,int opcion, int columnIndex){
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+            
+                switch (opcion) {
+                    case 0-> ProcesosAlumnos.msjDialog("Yo agrego un comentario");
+                    case 1-> ProcesosAlumnos.msjDialog("Yo edito un comentario");
+                    default-> ProcesosAlumnos.msjDialog("Yo elimino un comentario");
+                      
+                }
+                
             }
         });
     }
@@ -279,6 +318,11 @@ public class CRegistrarNotas implements ActionListener{
 
     }
     
+    public void definirFiltroTabla(JTable tabla){
+        rowSorter = new TableRowSorter<>(tabla.getModel());
+        tabla.setRowSorter(rowSorter);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnAvanzar){
@@ -305,6 +349,16 @@ public class CRegistrarNotas implements ActionListener{
                 numPagina --;
                 vista.lblPagina.setText(String.valueOf(numPagina));
                 vista.lblPagina.setBackground(new Color(102,102,255));
+            }
+            
+        }
+        
+        if(e.getSource()==vista.btnBuscar){
+            String text = vista.txtBuscar.getText();
+            if (text.trim().length() == 0) {
+                rowSorter.setRowFilter(null);
+            } else {
+                rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
             }
             
         }
