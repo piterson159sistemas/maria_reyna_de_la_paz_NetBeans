@@ -2,6 +2,7 @@
 package Controlador;
 
 import DAO.IntoDocentes;
+import Main.Main;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,17 +24,18 @@ public class CMenuDirec2 implements ActionListener{
     public CMenuDirec2(MenuDirec2 menu,String codUsuario){
         vista=menu;
         menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        menu.setDefaultCloseOperation(menu.EXIT_ON_CLOSE);
         //mostramos el codigo
         vista.lblCodUsuario.setText(codUsuario);
         //mostramos el nombre del usuario
-        vista.lblNombreUsuario.setText(intoDocente.obtenerNomCompletoUser(codUsuario));
+        vista.lblNombreUsuario.setText("<html><center>"+
+                intoDocente.obtenerNomCompletoUser(codUsuario)+"</center></html>");
         menu.setVisible(true);
         menu.setTitle("Menu de Gestión Directivo");
         vista.btnAdministrarCuentas.addActionListener(this);
         vista.btnAsignar.addActionListener(this);
         vista.btnDocente.addActionListener(this);
         vista.btnEstudiantes.addActionListener(this);
+        vista.btnSalir.addActionListener(this);
     }
     
     //metodos para los eventos de los botones del menu vertical
@@ -78,6 +80,11 @@ public class CMenuDirec2 implements ActionListener{
             vista.Principal.add(est.getContentPane(),BorderLayout.CENTER);
             vista.Principal.revalidate();
             vista.Principal.repaint();
+        }
+        
+        if(e.getSource()==vista.btnSalir){
+            vista.dispose();
+            Main.iniciarSesion();
         }
     }
 

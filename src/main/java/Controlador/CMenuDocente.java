@@ -1,6 +1,7 @@
 
 package Controlador;
 import DAO.IntoDocentes;
+import Main.Main;
 import VISTA_DIRECTIVO.Administrar;
 import VISTA_DIRECTIVO.Asignar;
 import VISTA_DOCENTE.MenuDocen;
@@ -18,13 +19,16 @@ public class CMenuDocente implements ActionListener{
     public CMenuDocente(MenuDocen menu, String codUsuario){
         vista=menu;
         menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        menu.setDefaultCloseOperation(menu.EXIT_ON_CLOSE);
+        //mostramos el codigo
+        vista.lblCodUsuario.setText(codUsuario);
+        //mostramos el nombre del usuario
+        vista.lblNombreUsuario.setText("<html><center>"
+                +intoDocente.obtenerNomCompletoUser(codUsuario)+"</center></html>");
         menu.setVisible(true);
         menu.setTitle("Menu de Gestión Docente");
-        vista.lblCodUsuario.setText(codUsuario); //mostramos el codigo
-        vista.lblNombreUsuario.setText(intoDocente.obtenerNomCompletoUser(codUsuario)); //mostramos el nombre del usuario
         vista.btnRegistrar.addActionListener(this);
         vista.btnTutor.addActionListener(this);
+        vista.btnSalir.addActionListener(this);
     }
 
     @Override
@@ -46,6 +50,11 @@ public class CMenuDocente implements ActionListener{
             vista.Principal.add(tut.getContentPane(),BorderLayout.CENTER);
             vista.Principal.revalidate();
             vista.Principal.repaint();
+        }
+        
+        if(e.getSource()==vista.btnSalir){
+            vista.dispose();
+            Main.iniciarSesion();
         }
     }
 }
