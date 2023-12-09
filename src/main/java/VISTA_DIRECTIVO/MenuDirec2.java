@@ -16,22 +16,11 @@ import javax.swing.JOptionPane;
  * @author SARA
  */
 public class MenuDirec2 extends javax.swing.JFrame {
-    private void Cerrar(){//METODO PARA QUE PREGUNTE AL INTENTAR CERRAR LA APLICACION
-         String botones[]= {"Cerrar","Cancelar"};
-         int eleccion = JOptionPane.showOptionDialog(this,"¿Desea cerrar la aplicacion?","Titulo",0,0,null,botones,this);
-         if(eleccion==JOptionPane.YES_OPTION){
-             System.exit(0);
-             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         }else if(eleccion==JOptionPane.NO_OPTION){
-             System.out.println("Se cancelo el cierre");
-             setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Evita que la ventana se cierre automáticamente
-         }
-         
-     }
     /**
      * Creates new form MenuDirec
      */
     public MenuDirec2() {
+        //this.setUndecorated(true);
         initComponents();
         //this.pnlSlider.setPanelNormal(this.bienvenida);
         //setSize(1500,800);
@@ -62,15 +51,11 @@ public class MenuDirec2 extends javax.swing.JFrame {
         btnDocente = new rsbuttom.RSButtonMetro();
         btnEstudiantes = new rsbuttom.RSButtonMetro();
         btnAsignar = new rsbuttom.RSButtonMetro();
+        btnSalir = new RSMaterialComponent.RSButtonIconShadow();
         Principal = new RSMaterialComponent.RSPanelMaterial();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
 
@@ -123,12 +108,12 @@ public class MenuDirec2 extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblCodUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 101, Short.MAX_VALUE))
-                    .addComponent(lblNombreUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblNombreUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +122,8 @@ public class MenuDirec2 extends javax.swing.JFrame {
                 .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCodUsuario)
-                .addGap(18, 18, 18)
-                .addComponent(lblNombreUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -216,14 +201,23 @@ public class MenuDirec2 extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(153, 153, 153));
+        btnSalir.setBackgroundHover(new java.awt.Color(0, 102, 51));
+        btnSalir.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXIT_TO_APP);
+        btnSalir.setName("btnSalir"); // NOI18N
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAdministrarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAdministrarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
             .addComponent(btnDocente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnAsignar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +230,9 @@ public class MenuDirec2 extends javax.swing.JFrame {
                 .addComponent(btnEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAsignar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
@@ -525,10 +521,6 @@ public class MenuDirec2 extends javax.swing.JFrame {
         this.btnEstudiantes.setSelected(false);
     }//GEN-LAST:event_btnAsignarMousePressed
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        Cerrar();
-    }//GEN-LAST:event_formWindowClosing
-
     /**
      * @param args the command line arguments
      */
@@ -540,6 +532,7 @@ public class MenuDirec2 extends javax.swing.JFrame {
     public rsbuttom.RSButtonMetro btnAsignar;
     public rsbuttom.RSButtonMetro btnDocente;
     public rsbuttom.RSButtonMetro btnEstudiantes;
+    public RSMaterialComponent.RSButtonIconShadow btnSalir;
     public RSMaterialComponent.RSPanelBorderImage imagenPerfil;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
