@@ -53,7 +53,7 @@ public class CLogin implements ActionListener {
                 } else {
                     vista.dispose();
                     MenuDocen menuProfe = new MenuDocen();
-                    CMenuDocente cMenuP = new CMenuDocente(menuProfe, tipoUsuario);
+                    CMenuDocente cMenuP = new CMenuDocente(menuProfe, user.getCodigo());
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Código/Contraseña incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
