@@ -221,11 +221,11 @@ public class Registrar_Notas extends javax.swing.JFrame {
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Alumno Apellido ", null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {"Alumno25", null, null, null, null, null, null, null, null, null, null},
+                {"Alumno20", null, null, null, null, null, null, null, null, null, null},
+                {"Alumno31", null, null, null, null, null, null, null, null, null, null},
+                {"Alumno55", null, null, null, null, null, null, null, null, null, null},
+                {"Alumno5", null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "Estudiante", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "Promedio", "Seleccionado"
@@ -302,7 +302,7 @@ public class Registrar_Notas extends javax.swing.JFrame {
 
         btnRetroceder.setBackground(new java.awt.Color(102, 102, 255));
         btnRetroceder.setBackgroundHover(new java.awt.Color(0, 102, 153));
-        btnRetroceder.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FAST_REWIND);
+        btnRetroceder.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.KEYBOARD_ARROW_LEFT);
         btnRetroceder.setName("btnRetroceder"); // NOI18N
         jPanel2.add(btnRetroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 40, -1));
 
@@ -322,7 +322,7 @@ public class Registrar_Notas extends javax.swing.JFrame {
 
         btnAvanzar.setBackground(new java.awt.Color(102, 102, 255));
         btnAvanzar.setBackgroundHover(new java.awt.Color(0, 102, 153));
-        btnAvanzar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.FAST_FORWARD);
+        btnAvanzar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.KEYBOARD_ARROW_RIGHT);
         btnAvanzar.setName("btnLimpiar"); // NOI18N
         jPanel2.add(btnAvanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 40, -1));
 

@@ -574,11 +574,11 @@
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="11" rowCount="5">
                         <Column editable="false" title="Estudiante" type="java.lang.Object">
-                          <Data value="Alumno Apellido "/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
+                          <Data value="Alumno25"/>
+                          <Data value="Alumno20"/>
+                          <Data value="Alumno31"/>
+                          <Data value="Alumno55"/>
+                          <Data value="Alumno5"/>
                         </Column>
                         <Column editable="true" title="C1" type="java.lang.Integer"/>
                         <Column editable="true" title="C2" type="java.lang.Integer"/>
@@ -717,7 +717,7 @@
                   <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="FAST_REWIND"/>
+                  <Value id="KEYBOARD_ARROW_LEFT"/>
                 </Property>
                 <Property name="name" type="java.lang.String" value="btnRetroceder" noResource="true"/>
               </Properties>
@@ -787,7 +787,7 @@
                   <Color blue="99" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="FAST_FORWARD"/>
+                  <Value id="KEYBOARD_ARROW_RIGHT"/>
                 </Property>
                 <Property name="name" type="java.lang.String" value="btnLimpiar" noResource="true"/>
               </Properties>
