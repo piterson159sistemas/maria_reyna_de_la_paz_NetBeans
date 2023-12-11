@@ -1,13 +1,282 @@
 
 package DAO;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class crudRegistroNotas {
 
-    public ArrayList<String> listarNiveles(){
-        return null;
+    Conexion con= new Conexion();
+    
+    public ArrayList<Integer> listarAnios(String codUsuario){
+        ArrayList<Integer> anios = new ArrayList<>();
+        String sqlST="select distinct Año from Docente_grado" 
+                +" where Codigo_Docente_Area IN" 
+                +" (select Codigo_Docente_Area from Docente_Area "
+                + " where Codigo_Usuario like '"+codUsuario+"')";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                anios.add(con.rs.getInt(1));
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los años "+e);
+        }
+        return anios;
     }
+    
+    public ArrayList<String> listarNiveles(String codUsuario,int anio){
+        ArrayList<String> niveles = new ArrayList<>();
+        String sqlST="select distinct g.Nivel from" +
+            " Docente_grado dg inner join grado g on" +
+            " (dg.Codigo_Grado=g.Codigo_Grado)" +
+            " where Codigo_Docente_Area IN" +
+            " (select Codigo_Docente_Area from Docente_Area where"+
+            " Codigo_Usuario like '"+codUsuario+"') and dg.Año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                niveles.add(con.rs.getString(1));
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los niveles "+e);
+        }
+        return niveles;
+    }
+    
+    public ArrayList<String> listarGrados(String codUsuario,int anio,String nivel){
+        ArrayList<String> grados = new ArrayList<>();
+        String sqlST="select distinct g.grado from" +
+            " Docente_grado dg inner join grado g on" +
+            " (dg.Codigo_Grado=g.Codigo_Grado)" +
+            " where Codigo_Docente_Area IN" +
+            " (select Codigo_Docente_Area from Docente_Area where "+
+            " Codigo_Usuario like '"+codUsuario+"')" +
+            " and g.Nivel='"+nivel+"' and dg.Año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                grados.add(con.rs.getString(1));
+            }
+            cn.close();
+        } catch (SQLException e) { 
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los grados "+e);
+        }
+        return grados;
+    }
+    
+    public ArrayList<String> listarAreas(String codUsuario,int anio,int codGrado){
+        ArrayList<String> areas = new ArrayList<>();
+        String sqlST="select a.Area from" +
+            " Docente_grado dg inner join Docente_area da"+
+            " on (da.Codigo_Docente_Area = dg.Codigo_Docente_Area)" +
+            " inner join area a on (a.Codigo_Area = da.Codigo_Area)" +
+            " where dg.Codigo_Docente_Area IN" +
+            " (select Codigo_Docente_Area from Docente_Area"+
+            " where Codigo_Usuario like '"+codUsuario+"')" +
+            "and dg.Codigo_Grado="+codGrado+" and dg.Año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                areas.add(con.rs.getString(1));
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener las areas "+e);
+        }
+        return areas;
+    }
+
+    public ArrayList<String> listarComp(int codArea,String nivel){
+        ArrayList<String> competencias = new ArrayList<>();
+        String dato;
+        String sqlST="select ac.Codigo_Competencia, c.competencia from" +
+                " areacompetencia ac inner join competencias c" +
+                " on (ac.Codigo_Competencia = c.Codigo_Competencia)" +
+                " where ac.Codigo_Area="+codArea+" and ac.Nivel like '"+nivel+"';";
+                            //ac.Nivel puede ser =   'I':Inicial 
+                                                 //  'P':Primaria
+                                                 //  'S':Secundaria
+        
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                dato= String.valueOf(con.rs.getInt(1))+":"+con.rs.getString(2); 
+                competencias.add(dato);
+            }
+            cn.close();
+        } catch (SQLException e) { 
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener las competencias "+e);
+        }
+        return competencias;
+    }
+    
+    public ArrayList<String> listarPeriodos(){
+        ArrayList<String> periodos = new ArrayList<>();
+        String sqlST="select Periodo from periodo;";
+
+        try(Connection cn = con.conectar()){
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                periodos.add(con.rs.getString(1));
+            }
+            cn.close();
+        } catch (SQLException e) {
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los periodos "+e);
+        }
+       return periodos;        
+    }
+    
+    public int getCodPeriodo(String periodo){
+        int codPeriodo=0;
+        String sqlST="select Codigo_Periodo from periodo where Periodo like '"+periodo+"' ;";
+
+        try(Connection cn = con.conectar()){
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                codPeriodo=con.rs.getInt(1);
+            }
+            cn.close();
+        } catch (SQLException e) {
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener codigo Periodo "+e);
+        }
+       return codPeriodo;        
+    }
+    
+    public int getCodDocenteGrado(int codDocenteArea, int codGrado, int anio){
+        int codDocenteGrado=0;
+        String sqlST="select Codigo_docente_grado  from docente_grado"
+                + " where Codigo_Docente_Area="+codDocenteArea
+                + " and Codigo_Grado="+codGrado
+                + " and Año="+anio+";";
+
+        try(Connection cn = con.conectar()){
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                codDocenteGrado=con.rs.getInt(1);
+            }
+            cn.close();
+        } catch (SQLException e) {
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener codigo Docente_Grado "+e);
+        }
+       return codDocenteGrado;        
+    }
+    
+    
+
+    public ArrayList<String> listarAlumnos(int codGrado,int anio){
+        ArrayList<String> alumnos = new ArrayList<>();
+        String sqlST="select CONCAT(a.Nombres,' ', a.Apellido_P,' ', a.Apellido_M)"+
+                " as nombre from alumno a inner join grado_alumno ga" +
+                " on (ga.CodigoA = a.N_DocumentoA) where ga.Codigo_EstadoGA=2" +
+                " and Codigo_Grado = "+codGrado+" and ga.Año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                alumnos.add(con.rs.getString(1));
+            }
+        cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los alumnos "+e);
+       }
+        return alumnos;
+    }
+    
+    public ArrayList<Integer> listarCodAlumnos(int codGrado,int anio){
+        ArrayList<Integer> codAlumnos = new ArrayList<>();
+        String sqlST="select CodigoA from grado_alumno" +
+                " where Codigo_EstadoGA=2" +
+                " and Codigo_Grado=" +codGrado+
+                " and Año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                codAlumnos.add(con.rs.getInt(1));
+            }
+        cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los Codigos de alumnos "+e);
+       }
+        return codAlumnos;
+    }
+    
+    public ArrayList<String> listarDataAlumnos(int codGrado,int anio){
+        ArrayList<String> dataAlumno = new ArrayList<>();
+        String dato;
+       String sqlST="select a.N_DocumentoA ,CONCAT(a.Nombres,' ', a.Apellido_P,"
+                + " ' ', a.Apellido_M) as nombre from" 
+                + " alumno a inner join grado_alumno ga"
+                + " on (ga.CodigoA = a.N_DocumentoA)"
+                + " where ga.Codigo_EstadoGA=2" //codgioEstado=2 : En curso
+                + " and Codigo_Grado="+codGrado
+                + " and ga.año="+anio+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                dato= String.valueOf(con.rs.getInt(1))+","+con.rs.getString(2);
+                dataAlumno.add(dato);
+            }
+        cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los Codigos de alumnos "+e);
+       }
+        return dataAlumno;
+    }
+    
+    
+    
+    
+    public ArrayList<Integer> buscarNotas(int codAlumno,int codPeriodo,
+           int codDocenteGrado, int codComp){
+        ArrayList<Integer> notas = new ArrayList<>();
+        String sqlST="select Nota1,Nota2,Nota3,Nota4,Nota5,Nota6,Nota7,Nota8"
+                + " from calificaciones where Codigo_A="+codAlumno
+                + " and Codigo_Periodo="+codPeriodo
+                + " and Codigo_docente_grado="+codDocenteGrado
+                + " and Codigo_Competencia="+codComp+";";
+
+        try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            while(con.rs.next()){
+                for (int i = 0; i < 8; i++) {
+                    notas.add(con.rs.getInt(i+1));
+                }
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los alumnos "+e);
+       }
+        return notas;
+    }
+
+    
+    
+    
+    
+    
+    
     
     /*
     
@@ -66,6 +335,24 @@ on (ga.CodigoA = a.N_DocumentoA)
 -- where ga.Codigo_EstadoGA=1 or ga.Codigo_EstadoGA=3 -- (aprobado y desaprobados, si es un año pasado)
 and Codigo_Grado=2 
 and ga.año=2023;
+    
+-- mostrar CODIGO de los alumnos de un determinado grado
+select CodigoA from grado_alumno
+ where Codigo_EstadoGA=2  -- ( en curso, si es el año actual)
+-- where Codigo_EstadoGA=1 or Codigo_EstadoGA=3 -- (aprobado y desaprobados, si es un año pasado)
+and Codigo_Grado=2 
+and Año=2023;    
+    
+-- mostrar CODIGO y NOMBRE COMPLETO de los alumnos de un determinado grado
+select a.N_DocumentoA ,CONCAT(a.Nombres, ' ', a.Apellido_P, ' ', a.Apellido_M) as nombre from
+alumno a inner join grado_alumno ga 
+on (ga.CodigoA = a.N_DocumentoA)
+ where ga.Codigo_EstadoGA=2  -- ( en curso, si es el año actual)
+-- where ga.Codigo_EstadoGA=1 or ga.Codigo_EstadoGA=3 -- (aprobado y desaprobados, si es un año pasado)
+and Codigo_Grado=2 
+and ga.año=2023;     
+
+    
 
 -- ******************************
 -- Manejo de Notas

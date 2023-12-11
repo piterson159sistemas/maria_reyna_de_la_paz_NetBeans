@@ -255,7 +255,7 @@ public class crudAreasGrados {
         return codGrado;   
     }
     
-    public int obtenerCodAreaDocente(String codDocente,int CodArea){
+    public int getCodDocenteArea(String codDocente,int CodArea){
         int codAreaDocente=0;
         String sqlST="select Codigo_Docente_Area from Docente_area where"
                 + " Codigo_Usuario like '"+codDocente+"' and Codigo_Area="+CodArea+";";
