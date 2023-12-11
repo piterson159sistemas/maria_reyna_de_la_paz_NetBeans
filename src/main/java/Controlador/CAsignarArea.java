@@ -300,7 +300,7 @@ public class CAsignarArea implements ActionListener,MouseListener {
                                 nomDocente=partes[1];
                             int codArea = crudAG.obtenerCodArea(nomArea);
                             String codDocente = crudAux.obtenerCodDocente(nomDocente);
-                            int codADnuevo=crudAG.obtenerCodAreaDocente(codDocente, codArea);
+                            int codADnuevo=crudAG.getCodDocenteArea(codDocente, codArea);
                             System.out.println(codADactual.get(i)+"-->"+codADnuevo);
                             crudAG.actualizar(codADnuevo, 
                                     codADactual.get(i), registroaModificar[0], 
@@ -357,7 +357,7 @@ public class CAsignarArea implements ActionListener,MouseListener {
 
                         int codArea = crudAG.obtenerCodArea(nomArea);
                         String codDocente = crudAux.obtenerCodDocente(nomDocente);
-                        int codAreaDocente=crudAG.obtenerCodAreaDocente(codDocente, codArea);
+                        int codAreaDocente=crudAG.getCodDocenteArea(codDocente, codArea);
                     
                         GradoDocencia gd = new GradoDocencia(
                                 Integer.parseInt(data.get(0)),//Año 

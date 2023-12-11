@@ -1,17 +1,25 @@
 
 package Controlador;
 
+import DAO.crudAlumno;
+import DAO.crudAreasGrados;
+import DAO.crudRegistroNotas;
 import Procesos.ProcesosAlumnos;
+import Procesos.procesosRegistroNotas;
 import VISTA_DOCENTE.Registrar_Notas;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -28,23 +36,57 @@ import javax.swing.text.AbstractDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
-import rojeru_san.efectos.ValoresEnum;
 import javax.swing.table.TableRowSorter;
 import javax.swing.table.TableModel;
 import javax.swing.RowFilter;
 
 
-public class CRegistrarNotas implements ActionListener{
+public class CRegistrarNotas implements ActionListener,ItemListener{
     
+    /*
+                         ****************
+                         CAMPOS DE CLASE
+                         ***************
+    */ 
     Registrar_Notas vista;
     TableRowSorter<TableModel> rowSorter;
+    procesosRegistroNotas procesos = new procesosRegistroNotas();
+    crudRegistroNotas crudNotas = new crudRegistroNotas();
     
-    public CRegistrarNotas(Registrar_Notas frm){
+    crudAlumno crudAux = new crudAlumno();
+    crudAreasGrados crudAux2 = new crudAreasGrados();
+    
+    String codDocente;
+    ArrayList<String> competencias = new ArrayList<>();
+    DefaultTableModel[] modelos;
+    int cantPaginas = 0;
+    
+    /*
+                         ****************
+                            CONSTRUCTOR
+                         ***************
+    */ 
+    public CRegistrarNotas(Registrar_Notas frm,String codUsuario){
         vista=frm;
+        codDocente=codUsuario;
+        //ACTION LISTENERS
+        vista.btnMostrar.addActionListener(this);
         vista.btnCantNotas.addActionListener(this);
-        vista.btnAvanzar.addActionListener(this);
-        vista.btnRetroceder.addActionListener(this);
+        vista.btnExportar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
+        vista.btnRetroceder.addActionListener(this);
+        vista.btnAvanzar.addActionListener(this);
+        vista.btnRegistrar.addActionListener(this);
+        
+        //ITEM LISTENERS
+        vista.cbxAnio.addItemListener(this);
+        vista.cbxNivel.addItemListener(this);
+        vista.cbxGrado.addItemListener(this);
+        vista.cbxArea.addItemListener(this);
+        
+        procesos.cagarAnios(vista.cbxAnio, codDocente);
+        procesos.cargarPeriodos(vista.cbxPeriodo);
+        
         //cambiar icono de un boton
         //vista.btnAvanzar.setIcons(ValoresEnum.ICONS.CODE);
         cambiarColorEncabezadoRGB(1, 129, 128, 255);
@@ -57,10 +99,20 @@ public class CRegistrarNotas implements ActionListener{
         cambiarColorEncabezadoRGB(8, 153, 153, 153);
         vista.lblPagina.setText("1");
         
+        //diseño visual Label pagina
         vista.lblPagina.setBackground(new Color(102,102,255));
         vista.lblPagina.setForeground(Color.WHITE);
         vista.lblPagina.setOpaque(true);
         vista.lblPagina.setHorizontalAlignment(SwingConstants.CENTER);
+        
+        //diseño visual Label pagina especial
+        vista.lblPaginaEsp.setBackground(new Color(102,102,102));
+        vista.lblPaginaEsp.setForeground(Color.WHITE);
+        vista.lblPaginaEsp.setOpaque(true);
+        vista.lblPaginaEsp.setHorizontalAlignment(SwingConstants.CENTER);
+        vista.lblPaginaEsp.setVisible(false);
+        
+        
         addPopUpMenu(vista.tblDatos);
         diseñoCheckBox(vista.tblDatos, 10);
         permitirNumeros(vista.tblDatos);
@@ -313,7 +365,18 @@ public class CRegistrarNotas implements ActionListener{
         String texto = (String) evt.getNewValue();
             if (texto.equals("R")) {
                 elaborarTablaResumen();
+            }else{
+                int numPagina = Integer.parseInt(texto);
+                if(numPagina<=cantPaginas){
+                    //cargamos dato visual: (Nombre Area,Periodo,nombre Competencia) segun la pagina
+                    vista.lblNomCompetencia.setText(competencias.get(numPagina-1).split(":")[1]);
+                    
+                    //cargamos modelo de tabla: segun la pagina
+                    vista.tblDatos.setModel(modelos[numPagina-1]);
+                    
+                }
             }
+            
         });
 
     }
@@ -323,44 +386,54 @@ public class CRegistrarNotas implements ActionListener{
         tabla.setRowSorter(rowSorter);
     }
     
+    
+    
+    /*
+    ***************************************************************
+                         ACCION DE BOTONES
+    ***************************************************************
+    */
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==vista.btnAvanzar){
-            int numPagina = Integer.parseInt(vista.lblPagina.getText());
-            if(numPagina<=7){
-                numPagina ++;
-                if(numPagina==8){
-                    vista.lblPagina.setText("R");
-                    vista.lblPagina.setBackground(new Color(102,102,102));
-                }else{
-                    vista.lblPagina.setText(String.valueOf(numPagina));
-                }
-            } 
-        }
         
-        if(e.getSource()==vista.btnRetroceder){
-            int numPagina;
-            try {
-                numPagina = Integer.parseInt(vista.lblPagina.getText());
-            } catch (NumberFormatException ex) {
-                numPagina=8;
+        //Aca mostramos Info de los Alumnos
+        if(e.getSource()==vista.btnMostrar){
+            boolean filtrosValidos=procesos.verificarFiltros(vista);
+            if(filtrosValidos){
+                int[]codigos = procesos.getCodigos(vista);
+                
+                //obtenemos codigoFiltro(codPeriodo,codDocenteGrado)
+                int codDocenteArea = crudAux2.getCodDocenteArea(codDocente, codigos[1]);
+                int anio = Integer.parseInt(vista.cbxAnio.getSelectedItem().toString());
+                
+                int codPeriodo = crudNotas.getCodPeriodo(vista.cbxPeriodo.getSelectedItem().toString());
+                int codDocenteGrado = crudNotas.getCodDocenteGrado(codDocenteArea, codigos[0], anio);
+                
+                int[] codFiltro = {codPeriodo,codDocenteGrado};
+ 
+                //obtenemos data Competencia(codgio,NomCompetencia)
+                String letraNivel = vista.cbxNivel.getSelectedItem().toString().substring(0,1);
+                competencias = crudNotas.listarComp(codigos[1], letraNivel);
+                
+                //obtenemos data Alumnno(codigo,NombreCompleto)
+                ArrayList<String> dataAlumno = crudNotas.listarDataAlumnos(codigos[0], anio);
+                
+                //creamos los modelos de tablas
+                modelos = procesos.crearTablasNotas(
+                        vista, codFiltro, competencias, dataAlumno);
+                cantPaginas = modelos .length;
+                
+                //cargamos datos visuales; (Nombre Area,Periodo,numPagina)
+                vista.lblArea.setText(vista.cbxArea.getSelectedItem().toString());
+                vista.lblPeriodo.setText(vista.cbxPeriodo.getSelectedItem().toString());
+                vista.lblPagina.setText("1");
+                
+                
+            }else{
+                ProcesosAlumnos.msjDialog("No puede haber campos con"
+                        + " el valor por defecto(\"...\")");
             }
-            if(numPagina>=2){
-                numPagina --;
-                vista.lblPagina.setText(String.valueOf(numPagina));
-                vista.lblPagina.setBackground(new Color(102,102,255));
-            }
-            
-        }
-        
-        if(e.getSource()==vista.btnBuscar){
-            String text = vista.txtBuscar.getText();
-            if (text.trim().length() == 0) {
-                rowSorter.setRowFilter(null);
-            } else {
-                rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
-            }
-            
         }
         
         if(e.getSource()==vista.btnCantNotas){
@@ -381,6 +454,133 @@ public class CRegistrarNotas implements ActionListener{
             }
                 
         }
+        
+        if(e.getSource()==vista.btnExportar){
+            //Aca se exporta la tabla 
+            ProcesosAlumnos.msjDialog("Yo exporto a PDF");
+        }
+        
+        if(e.getSource()==vista.btnAvanzar){
+            int numPagina = Integer.parseInt(vista.lblPagina.getText());
+            if(numPagina<cantPaginas+2){
+                numPagina ++;
+                vista.lblPagina.setText(String.valueOf(numPagina));
+                if(numPagina>cantPaginas){
+                    vista.lblPagina.setVisible(false);
+                    vista.lblPaginaEsp.setVisible(true);
+                    if(numPagina==cantPaginas+1){
+                        vista.lblPaginaEsp.setText("CT");
+                    }else if(numPagina==cantPaginas+2){
+                        vista.lblPaginaEsp.setText("R");
+                    } 
+                }
+
+            } 
+        }
+        
+        if(e.getSource()==vista.btnRetroceder){
+            int numPagina = Integer.parseInt(vista.lblPagina.getText());
+            if(numPagina>=2 ){
+                numPagina --;
+                vista.lblPagina.setText(String.valueOf(numPagina));
+                if(numPagina<cantPaginas+1){
+                    vista.lblPagina.setVisible(true);
+                    vista.lblPaginaEsp.setVisible(false);
+                }
+                if(numPagina==cantPaginas+1){
+                    vista.lblPaginaEsp.setText("CTpP");   
+                }
+            }
+            
+        }
+        
+        if(e.getSource()==vista.btnRegistrar){
+            ArrayList<Integer> indexFilas = new ArrayList<>();
+            int numFilas = vista.tblDatos.getRowCount();
+            for(int i=0;i<numFilas;i++){
+                boolean seleccionado = (boolean) vista.tblDatos.getValueAt(i, 10);
+                if(seleccionado){
+                    System.out.println("Fila num: "+i+" seleccionada");;
+                    indexFilas.add(i);
+                }
+            }
+            
+            //Dterminados si el alumno es REGISTRADO O NO
+            
+            //si es REGISTRADO(insercion)
+            
+            
+            //si es NO REGISTRADO(actualizacion)
+            
+            
+        }
+        
+        if(e.getSource()==vista.btnBuscar){
+            String text = vista.txtBuscar.getText();
+            if (text.trim().length() == 0) {
+                rowSorter.setRowFilter(null);
+            } else {
+                rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+            }
+            
+        }
+        
+    }
+    
+        /*
+    ***************************************************************
+                         ACCION DE COMBO_BOX
+    ***************************************************************
+    */
+
+    public int obtenerAnio(){
+        int anio;
+        try {
+            anio=Integer.parseInt(vista.cbxAnio.getSelectedItem().toString());
+        } catch (NumberFormatException ex) {
+            anio=0;
+        }
+        return anio;
+    } 
+    
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+         if (e.getStateChange() == ItemEvent.SELECTED) {
+            // Determinar cuál JComboBox generó el evento
+            JComboBox<?> sourceComboBox = (JComboBox<?>) e.getSource();
+            
+            // Acciones específicas según el JComboBox
+            if(sourceComboBox==vista.cbxAnio){
+                int anio=obtenerAnio();
+                procesos.cargarNiveles(vista.cbxNivel, codDocente, anio);
+                
+            }
+            
+            if(sourceComboBox==vista.cbxNivel){
+                String nivel = vista.cbxNivel.getSelectedItem().toString();
+                int anio=obtenerAnio();
+                procesos.cargarGrados(vista.cbxGrado, codDocente,
+                        anio, nivel);
+            }
+            
+            if(sourceComboBox==vista.cbxGrado){
+                String grado=vista.cbxGrado.getSelectedItem().toString();
+                String nivel = vista.cbxNivel.getSelectedItem().toString();
+                int anio=obtenerAnio();
+               
+                int codGrado = crudAux.obtenerCodGrado(nivel, grado);
+                
+                procesos.cargarAreas(vista.cbxArea, codDocente,
+                        anio, codGrado);
+            }
+            
+            if(sourceComboBox==vista.cbxArea){
+
+                
+            }
+            
+            
+         }
     }
 
 }

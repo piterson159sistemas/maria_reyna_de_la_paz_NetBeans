@@ -2,7 +2,6 @@ package Controlador;
 
 import DAO.crudAlumnoNotas;
 import Procesos.ProcesosAlumnos;
-import Procesos.procesosAlumnoNotas;
 import VISTA_DIRECTIVO.Estudiante_Notas;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -16,16 +15,13 @@ import javax.swing.table.DefaultTableModel;
 public class CAlumnoNotas{
 
     Estudiante_Notas vista;
-    procesosAlumnoNotas procesos = new procesosAlumnoNotas();
     crudAlumnoNotas crudANotas = new crudAlumnoNotas();
     ProcesosAlumnos procesosAux= new ProcesosAlumnos();
     
     public CAlumnoNotas(Estudiante_Notas estNotas){
         vista=estNotas;
-        procesos.cargaInicialCombos(vista);
         procesosAux.cargarNiveles(vista.cbxNivel);
         ArrayList<String> periodos=crudANotas.buscarPeriodos();
-        procesos.cargarCombo(vista.cbxPeriodo, periodos);
         procesosAux.CargarCombosEnlazados(vista.cbxNivel, vista.cbxGrado, vista.cbxArea);
         procesosAux.CargarCombosEnlazadosAreas( vista.cbxArea,vista.cbxComp);
         CargarNombreCompetencia(vista.cbxComp);

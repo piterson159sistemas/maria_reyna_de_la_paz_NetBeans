@@ -15,9 +15,10 @@ import javax.swing.JFrame;
 public class CMenuDocente implements ActionListener{
     MenuDocen vista;
     IntoDocentes intoDocente = new IntoDocentes();
-    
+    String codDocente;
     public CMenuDocente(MenuDocen menu, String codUsuario){
         vista=menu;
+        codDocente=codUsuario;
         menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //mostramos el codigo
         vista.lblCodUsuario.setText(codUsuario);
@@ -35,7 +36,7 @@ public class CMenuDocente implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnRegistrar){//getSource
             System.out.println("administrar controlador");
-            Registrar reg=new Registrar(); 
+            Registrar reg=new Registrar(codDocente); 
             vista.Principal.removeAll();
             vista.Principal.setLayout(new BorderLayout());
             vista.Principal.add(reg.getContentPane(),BorderLayout.CENTER);
