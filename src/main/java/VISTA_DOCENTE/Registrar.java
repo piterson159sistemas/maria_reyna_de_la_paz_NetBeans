@@ -18,7 +18,9 @@ public class Registrar extends javax.swing.JFrame {
     /**
      * Creates new form frameejemplo
      */
-    public Registrar() {
+    String codDocente;
+    public Registrar(String codUsuario) {
+        codDocente=codUsuario;
         initComponents();
     }
 
@@ -134,7 +136,7 @@ public class Registrar extends javax.swing.JFrame {
     private void tab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab1ActionPerformed
         Registrar_Notas docNot=new Registrar_Notas();
         //instanciar controlador de docente registra sus notas     
-        CRegistrarNotas CdocNot = new CRegistrarNotas(docNot);
+        CRegistrarNotas CdocNot = new CRegistrarNotas(docNot,codDocente);
         Principal.removeAll();
         Principal.setLayout(new BorderLayout());
         Principal.add(docNot.getContentPane(),BorderLayout.CENTER);
