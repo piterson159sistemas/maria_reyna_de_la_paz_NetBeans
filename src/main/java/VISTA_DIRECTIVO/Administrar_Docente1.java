@@ -4,6 +4,9 @@
  */
 package VISTA_DIRECTIVO;
 
+import Procesos.ExportarExcel;
+import java.io.IOException;
+
 /**
  *
  * @author SARA
@@ -63,6 +66,8 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jtxtCod = new RSMaterialComponent.RSTextFieldTwo();
+        rSButtonIconShadow3 = new RSMaterialComponent.RSButtonIconShadow();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -298,20 +303,45 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("Listar");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 370, -1, -1));
+        jLabel15.setText("Exportar PDF");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("Código");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 400, -1, -1));
 
+        jtxtCod.setEditable(false);
         jtxtCod.setForeground(new java.awt.Color(0, 51, 102));
+        jtxtCod.setActionCommand("<Not Set>");
         jtxtCod.setBorderColor(new java.awt.Color(0, 51, 102));
         jtxtCod.setName("jtxtContrass"); // NOI18N
         jtxtCod.setPhColor(new java.awt.Color(102, 102, 102));
         jtxtCod.setPlaceholder("Código");
+        jtxtCod.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+            public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
+            }
+            public void ancestorResized(java.awt.event.HierarchyEvent evt) {
+                jtxtCodAncestorResized(evt);
+            }
+        });
         jPanel2.add(jtxtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 420, -1, -1));
+
+        rSButtonIconShadow3.setBackground(new java.awt.Color(255, 102, 102));
+        rSButtonIconShadow3.setBackgroundHover(new java.awt.Color(204, 0, 0));
+        rSButtonIconShadow3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        rSButtonIconShadow3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
+        rSButtonIconShadow3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconShadow3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(rSButtonIconShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 300, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("Listar");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 370, -1, -1));
 
         rSPanelMaterial1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 560));
 
@@ -333,6 +363,31 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtNDocumentoActionPerformed
 
+    private void jtxtCodAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jtxtCodAncestorResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtCodAncestorResized
+/**
+     * Método que se llama cuando se hace clic en un botón (rSButtonIconShadow3).
+     * Exporta los datos de un JTable (tbl_GD) a un archivo de Excel utilizando
+     * la clase ExportarExcel.
+     * 
+     * @param evt Evento de acción que desencadena el método.
+     */
+    private void rSButtonIconShadow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconShadow3ActionPerformed
+             // Instancia de la clase ExportarExcel para exportar datos a Excel
+        ExportarExcel obj;
+
+        try {
+            // Intenta crear una nueva instancia de ExportarExcel
+            obj = new ExportarExcel();
+            // Llama al método exportarExcel con el JTable tbl_GD como parámetro
+            obj.exportarExcel(tbl_GD);
+        } catch (IOException ex) {
+            // Manejo de excepciones en caso de error durante la exportación
+            System.out.println("Error: " + ex);
+        }
+    }//GEN-LAST:event_rSButtonIconShadow3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,6 +403,7 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -373,6 +429,8 @@ public class Administrar_Docente1 extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldTwo jtxtRespuesta1;
     public RSMaterialComponent.RSTextFieldTwo jtxtRespuesta2;
     public RSMaterialComponent.RSTextFieldTwo jtxtRespuesta3;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow2;
+    public RSMaterialComponent.RSButtonIconShadow rSButtonIconShadow3;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon2;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     public RSMaterialComponent.RSTableMetroCustom tbl_GD;

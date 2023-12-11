@@ -33,6 +33,7 @@ public class Asignar extends javax.swing.JFrame {
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         tab1 = new newscomponents.RSButtonIcon_new();
         tab2 = new newscomponents.RSButtonIcon_new();
+        tab3 = new newscomponents.RSButtonIcon_new();
         Principal = new javax.swing.JPanel();
         rSLabelTextIcon2 = new RSMaterialComponent.RSLabelTextIcon();
 
@@ -67,7 +68,7 @@ public class Asignar extends javax.swing.JFrame {
                 tab1ActionPerformed(evt);
             }
         });
-        jPanel1.add(tab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 52, 139, -1));
+        jPanel1.add(tab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 139, -1));
 
         tab2.setBackground(new java.awt.Color(187, 187, 187));
         tab2.setText("Tutor");
@@ -82,7 +83,22 @@ public class Asignar extends javax.swing.JFrame {
                 tab2ActionPerformed(evt);
             }
         });
-        jPanel1.add(tab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 52, 139, -1));
+        jPanel1.add(tab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 139, -1));
+
+        tab3.setBackground(new java.awt.Color(187, 187, 187));
+        tab3.setText("Horario");
+        tab3.setBackgroundHover(new java.awt.Color(102, 102, 255));
+        tab3.setForegroundHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundIcon(new java.awt.Color(102, 102, 102));
+        tab3.setForegroundIconHover(new java.awt.Color(204, 204, 255));
+        tab3.setForegroundText(new java.awt.Color(102, 102, 102));
+        tab3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.TIMER);
+        tab3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 139, -1));
 
         rSPanelMaterial1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1200, 100));
 
@@ -174,6 +190,17 @@ public class Asignar extends javax.swing.JFrame {
         //this.pnlSlider.setPanelNormal(this.pnlAdminTutor);
     }//GEN-LAST:event_tab2ActionPerformed
 
+    private void tab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab3ActionPerformed
+        Asignar_Horario asiHor=new Asignar_Horario();
+        CAsignar_Horario controlador=new CAsignar_Horario(asiHor);
+        //instanciar controlador de administrar docente
+        Principal.removeAll();
+        Principal.setLayout(new BorderLayout());
+        Principal.add(asiHor.getContentPane(),BorderLayout.CENTER);
+        Principal.revalidate();
+        Principal.repaint();
+    }//GEN-LAST:event_tab3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -187,5 +214,6 @@ public class Asignar extends javax.swing.JFrame {
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private newscomponents.RSButtonIcon_new tab1;
     private newscomponents.RSButtonIcon_new tab2;
+    private newscomponents.RSButtonIcon_new tab3;
     // End of variables declaration//GEN-END:variables
 }

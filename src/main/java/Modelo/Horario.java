@@ -5,13 +5,15 @@ import java.time.LocalTime;
 
 public class Horario {
     private String Dia;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
+    private String Hora;
+    private String Color;
+    private String Area;
 
-    public Horario(String Dia, LocalTime horaInicio, LocalTime horaFin) {
+    public Horario(String Dia, String Hora, String Color, String Area) {
         this.Dia = Dia;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
+        this.Hora = Hora;
+        this.Color = Color;
+        this.Area = Area;
     }
 
     public String getDia() {
@@ -22,21 +24,32 @@ public class Horario {
         this.Dia = Dia;
     }
 
-    public LocalTime getHoraInicio() {
-        return horaInicio;
+    public String getHora() {
+        return Hora;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public LocalTime getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
+    public void setHora(String Hora) {
+        this.Hora = Hora;
     }
     
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public String getArea() {
+        return Area;
+    }
+
+    public void setArea(String Area) {
+        this.Area = Area;
+    }
+    
+
+   
     
 }
+

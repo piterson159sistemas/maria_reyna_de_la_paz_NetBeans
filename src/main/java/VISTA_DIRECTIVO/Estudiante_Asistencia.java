@@ -4,6 +4,9 @@
  */
 package VISTA_DIRECTIVO;
 
+import Procesos.ExportarExcel;
+import java.io.IOException;
+
 /**
  *
  * @author SARA
@@ -110,6 +113,11 @@ public class Estudiante_Asistencia extends javax.swing.JFrame {
         rSButtonIconShadow2.setBackgroundHover(new java.awt.Color(204, 0, 0));
         rSButtonIconShadow2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rSButtonIconShadow2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.RATE_REVIEW);
+        rSButtonIconShadow2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconShadow2ActionPerformed(evt);
+            }
+        });
         rSPanelMaterial3.add(rSButtonIconShadow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
 
         rSButtonIconShadow3.setBackground(new java.awt.Color(255, 153, 51));
@@ -210,6 +218,17 @@ public class Estudiante_Asistencia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rSButtonIconShadow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconShadow2ActionPerformed
+   ExportarExcel obj;
+
+        try {
+            obj = new ExportarExcel();
+            obj.exportarExcel(rSTableMetroCustom1);
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+        }
+    }//GEN-LAST:event_rSButtonIconShadow2ActionPerformed
 
     /**
      * @param args the command line arguments
