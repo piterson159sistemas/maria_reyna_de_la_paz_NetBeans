@@ -56,10 +56,15 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
     crudAlumno crudAux = new crudAlumno();
     crudAreasGrados crudAux2 = new crudAreasGrados();
     
+    //Para manejar datos
     String codDocente;
+    ArrayList<String> dataAlumno = new ArrayList<>();
     ArrayList<String> competencias = new ArrayList<>();
+    int codDocenteGrado = 0;
+    int codPeriodo = 0;
     DefaultTableModel[] modelos;
     int cantPaginas = 0;
+    
     
     /*
                          ****************
@@ -408,7 +413,7 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
                 int anio = Integer.parseInt(vista.cbxAnio.getSelectedItem().toString());
                 
                 int codPeriodo = crudNotas.getCodPeriodo(vista.cbxPeriodo.getSelectedItem().toString());
-                int codDocenteGrado = crudNotas.getCodDocenteGrado(codDocenteArea, codigos[0], anio);
+                codDocenteGrado = crudNotas.getCodDocenteGrado(codDocenteArea, codigos[0], anio);
                 
                 int[] codFiltro = {codPeriodo,codDocenteGrado};
  
@@ -417,7 +422,7 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
                 competencias = crudNotas.listarComp(codigos[1], letraNivel);
                 
                 //obtenemos data Alumnno(codigo,NombreCompleto)
-                ArrayList<String> dataAlumno = crudNotas.listarDataAlumnos(codigos[0], anio);
+                dataAlumno = crudNotas.listarDataAlumnos(codigos[0], anio);
                 
                 //creamos los modelos de tablas
                 modelos = procesos.crearTablasNotas(
@@ -497,21 +502,63 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
         if(e.getSource()==vista.btnRegistrar){
             ArrayList<Integer> indexFilas = new ArrayList<>();
             int numFilas = vista.tblDatos.getRowCount();
+            
+            // recorremos todas las fillas de la tabla y
+            //almacenamos los indices de las filas seleccionadas para gurardar
             for(int i=0;i<numFilas;i++){
-                boolean seleccionado = (boolean) vista.tblDatos.getValueAt(i, 10);
+                Object value = vista.tblDatos.getValueAt(i, 10);
+                boolean seleccionado = (value != null && (Boolean) value);
                 if(seleccionado){
                     System.out.println("Fila num: "+i+" seleccionada");;
                     indexFilas.add(i);
                 }
             }
-            
+             
             //Dterminados si el alumno es REGISTRADO O NO
+            int cantFilasSeleccionadas = indexFilas.size();
+            //1° recorremos arrayList de las filas seleccionadas
+            for(int i=0;i<cantFilasSeleccionadas;i++){
+                Object value2 = vista.tblDatos.getValueAt(indexFilas.get(i), 11);
+                boolean Registrado = (value2 != null && (Boolean) value2);
+                
+                if(Registrado){
+                    // msj de UPDATE
+                    System.out.println("Se ACTUALIZA fila(indice): "+indexFilas.get(i));
+  
+                }else{
+                    //INSERT INTO
+                    System.out.println("Se INSERTA fila(indice): "+indexFilas.get(i));
+                    //obtenemos los datos(notas y promedio)
+                    int[]notas=new int[9]; //+4
+                    for (int j = 1; j <=9; j++) {
+                        Object value = vista.tblDatos.getValueAt(indexFilas.get(i), j);
+                       if (value!=null){
+                           int nota = Integer.parseInt(value.toString());
+                            notas[j-1]=nota;
+                        }
+                    }
+                    //datos para especificar al alumno(codA, codComp, codPeriodo, codDocenteGrado)
+                    
+                    int codAlumno = crudNotas.getCodAlumno(vista.tblDatos.getValueAt(
+                                                indexFilas.get(i), 0).toString());
+                    System.out.println(codAlumno);
+                    int codCompetencia = crudNotas.getCodCompetencia(vista.lblNomCompetencia
+                                                                    .getText());
+                    System.out.println(codCompetencia);
+                    
+                    crudNotas.insertar(notas, codAlumno, codPeriodo, codDocenteGrado, codCompetencia);
+                    
+                }  
+            }
+            //actualizamos en los modelos
+            for(int i=0;i<cantFilasSeleccionadas;i++){
+                vista.tblDatos.setValueAt(true, indexFilas.get(i), 11);
+            }
+            DefaultTableModel modeloAct = (DefaultTableModel) vista.tblDatos.getModel();
+            int numeroModelo = Integer.parseInt(vista.lblPagina.getText())-1;
             
-            //si es REGISTRADO(insercion)
-            
-            
-            //si es NO REGISTRADO(actualizacion)
-            
+            modelos[numeroModelo]=modeloAct;
+            vista.tblDatos.setModel(modeloAct);
             
         }
         
@@ -522,9 +569,8 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
             } else {
                 rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
             }
-            
         }
-        
+
     }
     
         /*

@@ -248,7 +248,7 @@ public class crudRegistroNotas {
     
     
     public ArrayList<Integer> buscarNotas(int codAlumno,int codPeriodo,
-           int codDocenteGrado, int codComp){
+       int codDocenteGrado, int codComp){
         ArrayList<Integer> notas = new ArrayList<>();
         String sqlST="select Nota1,Nota2,Nota3,Nota4,Nota5,Nota6,Nota7,Nota8"
                 + " from calificaciones where Codigo_A="+codAlumno
@@ -270,6 +270,88 @@ public class crudRegistroNotas {
        }
         return notas;
     }
+    
+    public int getCodAlumno(String nombreAlumno){
+        int codAlumno=0;
+        String sqlST="Select N_DocumentoA from alumno where "
+                + "CONCAT(Nombres,' ', Apellido_P,' ',Apellido_M) like '"+nombreAlumno+"';";
+       try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                codAlumno= con.rs.getInt(1);
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los codigo de alumno "+e);
+       } 
+        
+        return codAlumno;    
+    }
+    
+    
+    public int getCodCompetencia(String nombre){
+        int codComp=0;
+        String sqlST="Select Codigo_Competencia from competencias where "
+                + "Competencia like '"+nombre+"';";
+       try (Connection cn = con.conectar()) {
+            con.st = cn.createStatement();
+            con.rs = con.st.executeQuery(sqlST);
+            if(con.rs.next()){
+                codComp= con.rs.getInt(1);
+            }
+            cn.close();
+        } catch (SQLException e) { 
+           Procesos.ProcesosAlumnos.msjDialog("ERROR al obtener los codigo de alumno "+e);
+       } 
+        
+        return codComp;    
+    }
+    
+    
+    public void actualizar(int[]notas,int codAlumno,int codPeriodo,
+        int codDocenteGrado,int codComp){
+        String sqlST="UPDATE calificaciones set Nota1=(?) ,Nota2=(?), Nota3=(?),"
+                + " Nota4=(?) ,Nota5=(?),Nota6=(?) ,Nota7=(?) ,Nota8=(?),promedio=(?)" 
+                + " WHERE Codigo_A=(?) and Codigo_Periodo=(?)"
+                + " and Codigo_docente_grado=(?)"
+                + " and Codigo_Competencia=(?);";
+        try(Connection cn = con.conectar()) { 
+            con.pst =cn.prepareStatement(sqlST);
+            for(int i=0;i<notas.length;i++){
+                con.pst.setInt((i+1), notas[i]);
+            }
+            con.pst.setInt(10, codAlumno);
+            con.pst.setInt(11, codPeriodo);
+            con.pst.setInt(12, codDocenteGrado);
+            con.pst.setInt(13, codComp);
+            con.pst.executeUpdate();
+            cn.close();
+        } catch (SQLException e) {
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al actualizar notas "+e);
+        }
+        
+    }
+    public void insertar(int[]notas,int codAlumno,int codPeriodo,
+        int codDocenteGrado,int codComp){
+        String sqlST="INSERT INTO calificaciones(Nota1,Nota2,Nota3,Nota4,Nota5"
+                + " ,Nota6,Nota7,Nota8,promedio,Codigo_A,Codigo_Periodo"
+                + " ,Codigo_Docente_Grado,Codigo_Competencia) values"
+                + " ((?),(?),(?),(?),(?),(?),(?),(?),(?)"
+                + " ,("+codAlumno+"),("+codPeriodo+"),("+codDocenteGrado+"),("+codComp+"));";
+        try(Connection cn = con.conectar()) { 
+            con.pst =cn.prepareStatement(sqlST);
+            for(int i=0;i<notas.length;i++){
+                con.pst.setInt((i+1), notas[i]);
+            }
+            con.pst.executeUpdate();
+            cn.close();
+        } catch (SQLException e) {
+            Procesos.ProcesosAlumnos.msjDialog("ERROR al insertar notas "+e);
+        }
+        
+    }
+    
 
     
     
@@ -375,7 +457,6 @@ where Codigo_A=22 and Codigo_Periodo=3 and Codigo_docente_grado=2 and Codigo_Com
 
 -- ************ PARA REGISTRO *********
 -- si es un alumno YA REGISTRADO en la tabla:calificaciones (UPDATE)
-select * from calificaciones;
 UPDATE calificaciones set Nota1=20 ,Nota2=20 ,Nota3=20 ,Nota4=20 ,Nota5=20 ,Nota6=20 ,Nota7=20 ,Nota8=20 ,promedio=20
 WHERE Codigo_A=22 and Codigo_Periodo=3 and Codigo_docente_grado=2 and Codigo_Competencia=1;
 
