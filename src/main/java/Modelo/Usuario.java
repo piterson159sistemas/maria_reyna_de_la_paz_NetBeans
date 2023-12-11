@@ -1,13 +1,15 @@
 
 package Modelo;
 
+import java.util.List;
+
 
 public class Usuario extends Persona implements Modificable, Registrable{
     public String codigo;
     protected String clave;
     private String Preg[]=new String[3];
     private String Resp[]=new String[3];
-    public String area;
+    private List<String> areas;
     
     public Usuario(String codigo, String clave){
         this.codigo=codigo;
@@ -22,6 +24,14 @@ public class Usuario extends Persona implements Modificable, Registrable{
     public Usuario(String Nombre){
         super(Nombre);
     }
+    
+    public List<String> getAreas() {
+        return areas;
+    }
+    
+    public void setAreas(List<String> areas) {
+        this.areas = areas;
+    }
 
        // Constructor sin argumentos
     public Usuario() {
@@ -30,13 +40,13 @@ public class Usuario extends Persona implements Modificable, Registrable{
         this.codigo = "";
     }
     
-    public String getarea(){
-        return area;
-    }
-    
-    public void setarea(String area){
-        this.area = area;
-    }
+//    public String getarea(){
+//        return area;
+//    }
+//    
+//    public void setarea(String area){
+//        this.area = area;
+//    }
     
     public String getCodigo() {
         return codigo;
@@ -87,9 +97,7 @@ public class Usuario extends Persona implements Modificable, Registrable{
     public String ValidarTipoUsuario(String cod){
         
             if (cod.startsWith("D") || cod.startsWith("d") ) {return "DIRECTOR"; } 
-            else {return "PROFESOR"; } 
-    } 
-    
+            else {return "PROFESOR"; }
 }
-    
 
+}

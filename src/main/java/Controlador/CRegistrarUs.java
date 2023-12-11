@@ -26,7 +26,7 @@ public class CRegistrarUs implements ActionListener {
 
     public CRegistrarUs(Docente_CrearDocent cd) {
         v = cd;
-        v.jbtnRegistrar.addActionListener(this);
+        v.jbtnRegistrar1.addActionListener(this);
         v.setTitle("Crear cuenta Docente");
         try {
             us = new Usuario();
@@ -82,78 +82,73 @@ public class CRegistrarUs implements ActionListener {
     }
 
     public void validarareas() throws SQLException {
-        
-        
-        try {//lplp
-            
+
+        try {
+
             // Lista para almacenar los valores de los checkboxes seleccionados
-        List<String> areasSeleccionadas = new ArrayList<>();
+            List<String> areasSeleccionadas = new ArrayList<>();
 
 // Obtener los valores del checkbox del campo elegir Áreas
-        if (v.cb_PersonalSocial.isSelected()) {
-            areasSeleccionadas.add("1");
-        }
-        if (v.cb_religion1.isSelected()) {
-            areasSeleccionadas.add("2");
-        }
-        if (v.cb_comunicacion.isSelected()) {
-            areasSeleccionadas.add("3");
-        }
-        if (v.cb_ArteCultura.isSelected()) {
-            areasSeleccionadas.add("4");
-        }
-        if (v.cb_matematica.isSelected()) {
-            areasSeleccionadas.add("5");
-        }
-        if (v.cb_ingles.isSelected()) {
-            areasSeleccionadas.add("6");
-        }
-        if (v.cb_psicomotriz.isSelected()) {
-            areasSeleccionadas.add("7");
-        }
-        if (v.cb_computacion.isSelected()) {
-            areasSeleccionadas.add("8");
-        }
-        if (v.cb_EduFisica.isSelected()) {
-            areasSeleccionadas.add("9");
-        }
-        if (v.cb_CiudadaniaCivica.isSelected()) {
-            areasSeleccionadas.add("10");
-        }
-        if (v.cb_CienciasSociales.isSelected()) {
-            areasSeleccionadas.add("11");
-        }
-        if (v.cb_EduTrabajo.isSelected()) {
-            areasSeleccionadas.add("12");
-        }
-        if (v.cb_psicomotriz.isSelected()) {
-            areasSeleccionadas.add("13");
-        }
+            if (v.cb_PersonalSocial.isSelected()) {
+                areasSeleccionadas.add("1");
+            }
+            if (v.cb_religion1.isSelected()) {
+                areasSeleccionadas.add("2");
+            }
+            if (v.cb_comunicacion.isSelected()) {
+                areasSeleccionadas.add("3");
+            }
+            if (v.cb_ArteCultura.isSelected()) {
+                areasSeleccionadas.add("4");
+            }
+            if (v.cb_matematica.isSelected()) {
+                areasSeleccionadas.add("5");
+            }
+            if (v.cb_ingles.isSelected()) {
+                areasSeleccionadas.add("6");
+            }
+            if (v.cb_CienciaTecnologia1.isSelected()) {
+                areasSeleccionadas.add("7");
+            }
+            if (v.cb_computacion.isSelected()) {
+                areasSeleccionadas.add("8");
+            }
+            if (v.cb_EduFisica.isSelected()) {
+                areasSeleccionadas.add("9");
+            }
+            if (v.cb_CiudadaniaCivica.isSelected()) {
+                areasSeleccionadas.add("10");
+            }
+            if (v.cb_CienciasSociales.isSelected()) {
+                areasSeleccionadas.add("11");
+            }
+            if (v.cb_EduTrabajo.isSelected()) {
+                areasSeleccionadas.add("12");
+            }
+            if (v.cb_psicomotriz.isSelected()) {
+                areasSeleccionadas.add("13");
+            }
 
-        // Iterar sobre la lista y realizar el insert para cada área seleccionada
-        for (String area : areasSeleccionadas) {
-            
-            
-            
-        }
-        
-        JOptionPane.showMessageDialog(null, "si se pudo registrar las areas ");
-            
+//            JOptionPane.showMessageDialog(null,"***"+areasSeleccionadas.size());
+            // Pasar la lista de áreas seleccionadas al objeto Usuario
+            us.setAreas(areasSeleccionadas);
+
+            JOptionPane.showMessageDialog(null, "lista de areas guardadas correctamente correctamente");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en registrar las areas  " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar las áreas: " + e.getMessage());
         }
-        
-        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == v.jbtnRegistrar) {
+        if (e.getSource() == v.jbtnRegistrar1) {
             try {
                 ValidacionYregistro();
                 validarareas();
                 // Llamar al método para guardar el usuario en la base de datos
                 String codigoUsuario = intd.guardarUsuario(us);
+                us.setCodigo(codigoUsuario);
+                intd.insertarDocenteArea(us, us.getAreas());
 
                 // Obtener el nombre de usuario usando el método del DAO
                 String nombreUsuario = intd.obtenerNombreUsuario(codigoUsuario);
@@ -173,5 +168,8 @@ public class CRegistrarUs implements ActionListener {
                 ex.printStackTrace();
             }
         }
-    }
+
+    
+
+}
 }

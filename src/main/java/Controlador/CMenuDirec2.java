@@ -28,7 +28,7 @@ public class CMenuDirec2 implements ActionListener{
         vista.lblCodUsuario.setText(codUsuario);
         //mostramos el nombre del usuario
         vista.lblNombreUsuario.setText("<html><center>"+
-                intoDocente.obtenerNomCompletoUser(codUsuario)+"</center></html>");
+                intoDocente.obtenerNombreUsuario(codUsuario)+"</center></html>");
         menu.setVisible(true);
         menu.setTitle("Menu de Gestión Directivo");
         vista.btnAdministrarCuentas.addActionListener(this);
