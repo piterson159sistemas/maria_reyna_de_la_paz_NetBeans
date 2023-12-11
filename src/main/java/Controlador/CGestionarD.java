@@ -158,25 +158,46 @@ public class CGestionarD implements ActionListener {
             Actualizar();
         }
         if (e.getSource() == gcdd1.jbtnEditar) {
-            // Obtener la fila seleccionada en la tabla
-            int fila = gcdd1.tbl_GD.getSelectedRow();
-            if (fila == -1) {
-                JOptionPane.showMessageDialog(gcdd1, "Debe Seleccionar una Fila");
-            } else {
-                // Autocompletar los campos de texto con los valores de la fila seleccionada
-                gcdd1.jtxtNombre.setText((String) gcdd1.tbl_GD.getValueAt(fila, 0));
-                gcdd1.jtxtAP.setText((String) gcdd1.tbl_GD.getValueAt(fila, 1));
-                gcdd1.jtxtAM.setText((String) gcdd1.tbl_GD.getValueAt(fila, 2));
-                gcdd1.jtxtCod.setText((String) gcdd1.tbl_GD.getValueAt(fila, 3));
-                gcdd1.jtxtNDocumento.setText(String.valueOf(gcdd1.tbl_GD.getValueAt(fila, 4)));
-                gcdd1.jtxtContrass.setText((String) gcdd1.tbl_GD.getValueAt(fila, 5));
-                gcdd1.jtxtPregunta1.setText((String) gcdd1.tbl_GD.getValueAt(fila, 6));
-                gcdd1.jtxtRespuesta1.setText((String) gcdd1.tbl_GD.getValueAt(fila, 7));
-                gcdd1.jtxtPregunta2.setText((String) gcdd1.tbl_GD.getValueAt(fila, 8));
-                gcdd1.jtxtRespuesta2.setText((String) gcdd1.tbl_GD.getValueAt(fila, 9));
-                gcdd1.jtxtPregunta3.setText((String) gcdd1.tbl_GD.getValueAt(fila, 10));
-                gcdd1.jtxtRespuesta3.setText((String) gcdd1.tbl_GD.getValueAt(fila, 11));
+    // Obtener la fila seleccionada en la tabla
+    int fila = gcdd1.tbl_GD.getSelectedRow();
+    if (fila == -1) {
+        JOptionPane.showMessageDialog(gcdd1, "Debe Seleccionar una Fila");
+    } else {
+        // Autocompletar los campos de texto con los valores de la fila seleccionada
+        gcdd1.jtxtNombre.setText((String) gcdd1.tbl_GD.getValueAt(fila, 0));
+        gcdd1.jtxtAP.setText((String) gcdd1.tbl_GD.getValueAt(fila, 1));
+        gcdd1.jtxtAM.setText((String) gcdd1.tbl_GD.getValueAt(fila, 2));
+        gcdd1.jtxtCod.setText((String) gcdd1.tbl_GD.getValueAt(fila, 3));
+        gcdd1.jtxtNDocumento.setText(String.valueOf(gcdd1.tbl_GD.getValueAt(fila, 4)));
+        gcdd1.jtxtContrass.setText((String) gcdd1.tbl_GD.getValueAt(fila, 5));
+
+        for (int i = 0; i < 3; i++) {
+            String pregunta = (String) gcdd1.tbl_GD.getValueAt(fila, 6 + i * 2);
+            String respuesta = (String) gcdd1.tbl_GD.getValueAt(fila, 7 + i * 2);
+
+            // Verificar si los valores son null y asignar cadena vacía en su lugar
+            pregunta = (pregunta != null) ? pregunta : "";
+            respuesta = (respuesta != null) ? respuesta : "";
+
+            // Asignar valores a los campos de texto correspondientes
+            switch (i) {
+                case 0:
+                    gcdd1.jtxtPregunta1.setText(pregunta);
+                    gcdd1.jtxtRespuesta1.setText(respuesta);
+                    break;
+                case 1:
+                    gcdd1.jtxtPregunta2.setText(pregunta);
+                    gcdd1.jtxtRespuesta2.setText(respuesta);
+                    break;
+                case 2:
+                    gcdd1.jtxtPregunta3.setText(pregunta);
+                    gcdd1.jtxtRespuesta3.setText(respuesta);
+                    break;
             }
         }
     }
 }
+
+    }
+}
+        
