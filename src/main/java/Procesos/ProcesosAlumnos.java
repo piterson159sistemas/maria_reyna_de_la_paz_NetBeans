@@ -25,7 +25,6 @@ public class ProcesosAlumnos {
     crudAlumno crudA=new crudAlumno();
     String none="..."; // los "..." indica ningun elemento seleccionado
     crudAlumnoNotas crudAux = new crudAlumnoNotas();
-    procesosAlumnoNotas procesosAux = new procesosAlumnoNotas();
     
     public ArrayList<String> leerAlumno(Estudiante_Lista led){
         
@@ -162,6 +161,14 @@ public class ProcesosAlumnos {
         
     }
     
+    public <E> void cargarCombo(JComboBox combo,ArrayList<? extends E> data){
+        combo.removeAllItems();
+        combo.addItem(none);
+        for(E dato:data){
+            combo.addItem(dato);
+        }
+    }
+    
     public void cargaInicialCombos(JComboBox cbxNiveles,JComboBox cbxGrados){
         cbxNiveles.removeAllItems();
         cbxNiveles.addItem(none);
@@ -204,7 +211,7 @@ public class ProcesosAlumnos {
                     cbxComp.removeAllItems();
                     //cargamos las competencias de determinada area
                     ArrayList<String> competencias=crudAux.buscarCompetencias(areaSelect);
-                    procesosAux.cargarCombo(cbxComp, competencias);
+                    
                 }
             }
         });
@@ -225,7 +232,7 @@ public class ProcesosAlumnos {
                     //cargamos los grados del actual el nivel seleccionado
                     cargarGrados(cbxGrado, nivelSelect);
                     ArrayList<String> areas=crudAux.buscarAreas(nivelSelect);
-                    procesosAux.cargarCombo(cbxArea, areas);
+                    
                     
                 }
             }
