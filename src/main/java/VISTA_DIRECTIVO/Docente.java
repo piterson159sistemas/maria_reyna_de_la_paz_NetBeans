@@ -111,7 +111,7 @@ public class Docente extends javax.swing.JFrame {
 
     private void tab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab1ActionPerformed
         Docente_CrearDocent docCre=new Docente_CrearDocent();
-        CRegistrarUs contro = new CRegistrarUs(docCre);
+        CRegistrarUs controlador = new CRegistrarUs(docCre);
         //instanciar el controlador aqui
         Principal.removeAll();
         Principal.setLayout(new BorderLayout());

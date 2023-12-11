@@ -308,6 +308,11 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
         jbtnRegistrar1.setBackgroundHover(new java.awt.Color(0, 102, 51));
         jbtnRegistrar1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE_OUTLINE);
         jbtnRegistrar1.setName("jbtnRegistrar"); // NOI18N
+        jbtnRegistrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrar1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jbtnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 500, -1, -1));
 
         jTextFieldPregunta3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "¿Dónde realizaste tus prácticas docentes?", "¿Cuál es tu libro favorito?", "¿En qué año comenzaste a enseñar?", "¿Quién es tu héroe?", "¿Cuál fue tu primer número de tlf?", "¿Nombre de tu primera mascota?", "¿Nombre de tu mentor/a a docente?", "¿Titulo de tu proyecto de investigación?" }));
@@ -371,6 +376,10 @@ public class Docente_CrearDocent extends javax.swing.JFrame {
     private void cb_comunicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_comunicacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_comunicacionActionPerformed
+
+    private void jbtnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnRegistrar1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -127,17 +127,23 @@ public class DAOHorario {
         return nombresAreas;
     }
     
-    public ArrayList<ArrayList<Object>> obtenerInfoDocentes(){
+    public ArrayList<ArrayList<Object>> obtenerInfoDocentes(String anio, String grado){
+        
         ArrayList<ArrayList<Object>> infoDocentes = new ArrayList<>();
-        String sqlLST = "SELECT Grado, Año, a.Area, u.Nombres, u.Apellido_P, u.Apellido_M " +
-                        "FROM docente_area da " +
-                        "INNER JOIN docente_grado dg ON da.Codigo_Docente_Area = dg.Codigo_Docente_Area " +
+        String sqlLST = "SELECT g.Grado, dg.Año, a.Area, u.Nombres, u.Apellido_P, u.Apellido_M " +
+                        "FROM docente_grado dg " +
                         "INNER JOIN grado g ON dg.Codigo_Grado = g.Codigo_Grado " +
-                        "INNER JOIN usuario u ON da.Codigo_Usuario = u.Codigo_Usuario "+
-                        "INNER JOIN area a ON da.Codigo_Area=a.Codigo_Area;";
+                        "INNER JOIN docente_area da ON da.Codigo_Docente_Area = dg.Codigo_Docente_Area " +
+                        "INNER JOIN usuario u ON u.Codigo_Usuario = da.Codigo_Usuario " +
+                        "INNER JOIN area a ON da.Codigo_Area = a.Codigo_Area " +
+                        "WHERE dg.Año = ? AND g.Grado = ?;";
         try (Connection cn = con.conectar();
-             PreparedStatement pst = cn.prepareStatement(sqlLST);
-             ResultSet rs = pst.executeQuery()) {
+         PreparedStatement pst = cn.prepareStatement(sqlLST)) {
+
+        pst.setString(1, anio);
+        pst.setString(2, grado);
+
+        try (ResultSet rs = pst.executeQuery()) {
             while (rs.next()) {
                 ArrayList<Object> docenteInfo = new ArrayList<>();
                 docenteInfo.add(rs.getString("Grado"));
@@ -149,9 +155,10 @@ public class DAOHorario {
 
                 infoDocentes.add(docenteInfo);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
         return infoDocentes;
     }
     

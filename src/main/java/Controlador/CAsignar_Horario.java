@@ -303,8 +303,9 @@ public class CAsignar_Horario implements ActionListener{
         ////
         if(e.getSource()==vista.btnFiltrar){
             textoAño=vista.txtAño.getText();
-            mostrarInfoDocentesEnTabla(grado, textoAño);
+            
             codigoDocenteGrado=daoHora.obtenerCodigoDocenteGrado(textoAño,grado,area);
+            mostrarInfoDocentesEnTabla(grado, textoAño);
             cargarHorarioAbtn();
         }
 //////////////////////
@@ -426,9 +427,10 @@ public class CAsignar_Horario implements ActionListener{
                 System.out.println("No se ha seleccionado nada.");
             }
             cargarNombresAreas();
-            mostrarInfoDocentesEnTabla(grado, textoAño);
+            
             codigoDocenteGrado=daoHora.obtenerCodigoDocenteGrado(textoAño, grado, area);
             cargarHorarioAbtn();
+            mostrarInfoDocentesEnTabla(grado, textoAño);
         }
         //////
         if(e.getSource() == vista.cbxArea){
@@ -531,92 +533,127 @@ public class CAsignar_Horario implements ActionListener{
                 if(info.getDia().equals("Lunes")){
                     System.out.println("entre en el if2");
                     vista.btnL1.setBackground(new Color(red,green,blue));
+                    vista.btnL1.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM1.setBackground(new Color(red,green,blue));
+                    vista.btnM1.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI1.setBackground(new Color(red,green,blue));
+                    vista.btnMI1.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ1.setBackground(new Color(red,green,blue));
+                    vista.btnJ1.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV1.setBackground(new Color(red,green,blue));
+                    vista.btnV1.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("8:45-9:30")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL2.setBackground(new Color(red,green,blue));
+                    vista.btnL2.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM2.setBackground(new Color(red,green,blue));
+                    vista.btnM2.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI2.setBackground(new Color(red,green,blue));
+                    vista.btnMI2.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ2.setBackground(new Color(red,green,blue));
+                    vista.btnJ2.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV2.setBackground(new Color(red,green,blue));
+                    vista.btnV2.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("9:30-10:15")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL3.setBackground(new Color(red,green,blue));
+                    vista.btnL3.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM3.setBackground(new Color(red,green,blue));
+                    vista.btnM3.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI3.setBackground(new Color(red,green,blue));
+                    vista.btnMI3.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ3.setBackground(new Color(red,green,blue));
+                    vista.btnJ3.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV3.setBackground(new Color(red,green,blue));
+                    vista.btnV3.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("10:30-11:15")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL4.setBackground(new Color(red,green,blue));
+                    vista.btnL4.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM4.setBackground(new Color(red,green,blue));
+                    vista.btnM4.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI4.setBackground(new Color(red,green,blue));
+                    vista.btnMI4.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ4.setBackground(new Color(red,green,blue));
+                    vista.btnJ4.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV4.setBackground(new Color(red,green,blue));
+                    vista.btnV4.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("11:15-12:00")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL5.setBackground(new Color(red,green,blue));
+                    vista.btnL5.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM5.setBackground(new Color(red,green,blue));
+                    vista.btnM5.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI5.setBackground(new Color(red,green,blue));
+                    vista.btnMI5.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ5.setBackground(new Color(red,green,blue));
+                    vista.btnJ5.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV5.setBackground(new Color(red,green,blue));
+                    vista.btnV5.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("12:00-12:45")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL6.setBackground(new Color(red,green,blue));
+                    vista.btnL6.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM6.setBackground(new Color(red,green,blue));
+                    vista.btnM6.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
-                    vista.btnM6.setBackground(new Color(red,green,blue));
+                    vista.btnMI6.setBackground(new Color(red,green,blue));
+                    vista.btnMI6.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
-                    vista.btnM6.setBackground(new Color(red,green,blue));
+                    vista.btnJ6.setBackground(new Color(red,green,blue));
+                    vista.btnJ6.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
-                    vista.btnM6.setBackground(new Color(red,green,blue));
+                    vista.btnV6.setBackground(new Color(red,green,blue));
+                    vista.btnV6.setText(info.getArea());
                 }
             }
             if(info.getHora().equals("12:45-13:30")){
                 if(info.getDia().equals("Lunes")){
                     vista.btnL7.setBackground(new Color(red,green,blue));
+                    vista.btnL7.setText(info.getArea());
                 }else if(info.getDia().equals("Martes")){
                     vista.btnM7.setBackground(new Color(red,green,blue));
+                    vista.btnM7.setText(info.getArea());
                 }else if(info.getDia().equals("Miercoles")){
                     vista.btnMI7.setBackground(new Color(red,green,blue));
+                    vista.btnMI7.setText(info.getArea());
                 }else if(info.getDia().equals("Jueves")){
                     vista.btnJ7.setBackground(new Color(red,green,blue));
+                    vista.btnJ7.setText(info.getArea());
                 }else if(info.getDia().equals("Viernes")){
                     vista.btnV7.setBackground(new Color(red,green,blue));
+                    vista.btnV7.setText(info.getArea());
                 }
             }
             // Aquí puedes aplicar tus condicionales y ajustar los botones según sea necesario
@@ -636,7 +673,8 @@ public class CAsignar_Horario implements ActionListener{
         // Obtén la referencia a la tabla desde tu vista
         JTable tblAreas = vista.tblAreas;
         // Llama al método del DAO para obtener la información de los docentes
-        ArrayList<ArrayList<Object>> infoDocentes = daoHora.obtenerInfoDocentes();
+        ArrayList<ArrayList<Object>> infoDocentes = daoHora.obtenerInfoDocentes(año, grado);
+        System.out.println("Número de filas obtenidas del DAO: " + infoDocentes.size());
         // Crea un modelo de tabla
         DefaultTableModel modeloTabla = new DefaultTableModel();
         // Agrega las columnas al modelo de tabla
@@ -647,11 +685,16 @@ public class CAsignar_Horario implements ActionListener{
         modeloTabla.addColumn("Apellido_P");
         modeloTabla.addColumn("Apellido_M");
         // Agrega las filas al modelo de tabla
+        // Agrega las filas al modelo de tabla
         for (ArrayList<Object> fila : infoDocentes) {
+            System.out.println("Fila del DAO: " + fila.toString());
+            modeloTabla.addRow(fila.toArray());
+        }
+/*        for (ArrayList<Object> fila : infoDocentes) {
             if (fila.get(0).equals(grado) && fila.get(1).equals(año)) {
                 modeloTabla.addRow(fila.toArray());
             }
-        }
+        }*/
         // Configura la tabla con el modelo
         tblAreas.setModel(modeloTabla);
     }

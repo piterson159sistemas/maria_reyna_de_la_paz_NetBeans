@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class IntoDocentes {
@@ -38,12 +39,17 @@ public class IntoDocentes {
             if (resultSet.next()) {
                 String ultimoCodigo = resultSet.getString(1);
                 if (ultimoCodigo != null && ultimoCodigo.startsWith(formatodocente)) {
-                    // Extraer el número y aumentarlo en 1
-                    int numero = Integer.parseInt(ultimoCodigo.substring(7)) + 1;
-                    nuevoCodigoUsuario = formatodocente + numero;
+                    // Extraer los dos últimos dígitos
+                    String ultimosDigitos = ultimoCodigo.substring(ultimoCodigo.length() - 2);
+
+                    // Incrementar el número y formatearlo para asegurarse de que tenga dos dígitos
+                    int numero = Integer.parseInt(ultimosDigitos) + 1;
+                    String nuevoNumero = String.format("%02d", numero);
+
+                    nuevoCodigoUsuario = formatodocente + nuevoNumero;
                 } else {
                     // No hay ningún registro previo, generar el primer código
-                    nuevoCodigoUsuario = formatodocente + "1";
+                    nuevoCodigoUsuario = formatodocente + "01";
                 }
             }
 
@@ -114,73 +120,32 @@ public class IntoDocentes {
         return nombreUsuario;
     }
 
-    public String insertarDocenteArea(Usuario usu) throws SQLException {
-        String nuevoCodigoArea = "";
-        String codigousuario = "";
-        Conexion db = new Conexion();
-        Connection conexion = db.conectar();
+    public String insertarDocenteArea(Usuario usu, List<String> areas) throws SQLException {
 
-        // Obtener el Codigo_Docente_Area de la tabla docente_area
-        String consultaUltimoCodigoAreaSQL = "SELECT Codigo_Docente_Area FROM docente_area";
-        try ( PreparedStatement pst = conexion.prepareStatement(consultaUltimoCodigoAreaSQL);  ResultSet rs = pst.executeQuery()) {
-
-            if (rs.next()) {
-                codigousuario = rs.getString("Codigo_Docente_Area");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return "Error al buscar el código de usuario: " + e.getMessage();
-        }
-
-        // Obtener el nuevo Codigo_Usuario
-        String consultaCodigoNuevoUsuario = "SELECT MAX(Codigo_Usuario) FROM usuario";
-        try ( PreparedStatement pstnuevo = conexion.prepareStatement(consultaCodigoNuevoUsuario);  ResultSet rsnu = pstnuevo.executeQuery()) {
-
-            if (rsnu.next()) {
-                int maxCodigoUsuario = rsnu.getInt(1) + 1;
-                nuevoCodigoArea = String.valueOf(maxCodigoUsuario);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return "Error al generar el nuevo código de área: " + e.getMessage();
-        }
-
-        try {
+        try ( Connection conexion = new Conexion().conectar()) {
             // Consulta preparada para insertar en la tabla docente_area
-            String insertAreaSQL = "INSERT INTO docente_area (Codigo_Docente_Area, Codigo_Usuario, Codigo_Area) VALUES (?, ?, ?)";
+            String insertAreaSQL = "INSERT INTO docente_area (Codigo_Usuario, Codigo_Area) VALUES (?, ?)";
             try ( PreparedStatement stmtArea = conexion.prepareStatement(insertAreaSQL)) {
-                stmtArea.setString(1, nuevoCodigoArea);
-                stmtArea.setString(2, codigousuario);
-                stmtArea.setString(3, usu.getarea());
-
-                // Ejecutar la consulta preparada
-                stmtArea.executeUpdate();
+                for (String area : areas) {
+                    stmtArea.setString(1, usu.getCodigo()); // Considerando que el código de usuario se obtiene de la instancia de Usuario
+                    stmtArea.setString(2, area);
+                    
+                    // Ejecutar la consulta preparada para cada área seleccionada
+                    stmtArea.executeUpdate();
+                }
+                JOptionPane.showMessageDialog(null, "for corriendo correctamente de inserts");
+                
+            } catch (SQLException ft) {
+                
+                JOptionPane.showMessageDialog(null, "error en el for insertar" + ft.getMessage());
+                ft.printStackTrace();
+                
             }
-
-            return "Área insertada correctamente para el docente.";
         } catch (SQLException e) {
             e.printStackTrace();
-            return "Error al insertar área para el docente: " + e.getMessage();
+            return "Error al conectar a la base de datos: " + e.getMessage();
         }
-    }
-    
-    public String obtenerNomCompletoUser(String codUsuario){
-        String sqlST="select CONCAT(Nombres, ' ', Apellido_P, ' ', Apellido_M)"
-                + " as user from usuario where Codigo_Usuario like '"+codUsuario+"';";
-        try {
-            Conexion con= new Conexion();
-            Connection cn = con.conectar();
-            con.st = cn.createStatement();
-            con.rs = con.st.executeQuery(sqlST);
-            
-            if(con.rs.next()){
-                return con.rs.getString(1);
-            }
-        } catch (Exception e) {
-        }
+        
         return null;
-    }
-    
+ }
 }
