@@ -119,6 +119,29 @@ public class IntoDocentes {
 
         return nombreUsuario;
     }
+    
+    public String getNombreUsuario(String codigoUsuario) {
+        Conexion db = new Conexion();
+        String nombreUsuario = "";
+
+        try ( Connection conexion = db.conectar();  PreparedStatement stmt = conexion.
+                prepareStatement("SELECT CONCAT(Nombres, ' ', Apellido_P, ' ', Apellido_M) "
+                        + "FROM usuario WHERE Codigo_Usuario = ?")) {
+
+            stmt.setString(1, codigoUsuario);
+
+            try ( ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    // Obtener el nombre del resultado
+                    nombreUsuario = rs.getString(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return nombreUsuario;
+    }
 
     public String insertarDocenteArea(Usuario usu, List<String> areas) throws SQLException {
 

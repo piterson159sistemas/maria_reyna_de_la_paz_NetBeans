@@ -532,21 +532,34 @@ public class CRegistrarNotas implements ActionListener,ItemListener{
                     int[]notas=new int[9]; //+4
                     for (int j = 1; j <=9; j++) {
                         Object value = vista.tblDatos.getValueAt(indexFilas.get(i), j);
-                       if (value!=null){
+                        if (value!=null){
                            int nota = Integer.parseInt(value.toString());
                             notas[j-1]=nota;
                         }
                     }
+                    for (int j = 0; j < notas.length; j++) {
+                        System.out.print(notas[j]+", ");
+                    }
+                    System.out.println();
                     //datos para especificar al alumno(codA, codComp, codPeriodo, codDocenteGrado)
                     
                     int codAlumno = crudNotas.getCodAlumno(vista.tblDatos.getValueAt(
                                                 indexFilas.get(i), 0).toString());
+                    
+                    System.out.println("Cod codAlumno;");
                     System.out.println(codAlumno);
+                    
                     int codCompetencia = crudNotas.getCodCompetencia(vista.lblNomCompetencia
                                                                     .getText());
+                    System.out.println("Cod Competencia;");
                     System.out.println(codCompetencia);
                     
-                    crudNotas.insertar(notas, codAlumno, codPeriodo, codDocenteGrado, codCompetencia);
+                    
+                    
+                    //TEST //
+                    
+                    
+                    //crudNotas.insertar(notas, codAlumno, codPeriodo, codDocenteGrado, codCompetencia);
                     
                 }  
             }

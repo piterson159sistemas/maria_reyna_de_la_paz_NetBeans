@@ -24,7 +24,7 @@ public class CMenuDocente implements ActionListener{
         vista.lblCodUsuario.setText(codUsuario);
         //mostramos el nombre del usuario
         vista.lblNombreUsuario.setText("<html><center>"
-                +intoDocente.obtenerNombreUsuario(codUsuario)+"</center></html>");
+                +intoDocente.getNombreUsuario(codUsuario)+"</center></html>");
         menu.setVisible(true);
         menu.setTitle("Menu de Gestión Docente");
         vista.btnRegistrar.addActionListener(this);
